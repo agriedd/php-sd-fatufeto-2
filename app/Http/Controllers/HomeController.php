@@ -11,18 +11,13 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
+    public function __construct(){
     }
-
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * mengatur alamat url (route)
+     *      / atau halaman beranda
      */
-    public function index()
-    {
-        return view('home');
+    public function index(){
+        return view('pages.home.home');
     }
 }

@@ -6,3 +6,31 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+.divider{
+    &-vertical{
+        height: 100%;
+        width: 0px;
+        border-left: 1px solid #0003;
+    }
+}
+.content-middle{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-height: 150px;
+
+    &-logo{
+        max-width: 75px;
+        max-height: 100px;
+    }
+}

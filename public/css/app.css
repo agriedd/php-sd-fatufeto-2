@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@charset "UTF-8";
 
 /*!
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
@@ -29,7 +29,7 @@
   --bs-danger: #e3342f;
   --bs-light: #f8f9fa;
   --bs-dark: #212529;
-  --bs-font-sans-serif: "Nunito", sans-serif;
+  --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 }
@@ -11774,11 +11774,37 @@ fieldset:disabled .btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-height: 150px;
+  min-height: 200px;
 }
 
 .header-logo {
   max-width: 75px;
   max-height: 100px;
+}
+
+a.card {
+  text-decoration: none;
+}
+
+.galery-home {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: minmax(100px, 1fr);
+}
+
+.galery-home > div {
+  background-position: center;
+  background-size: cover;
+  border-radius: 1.5rem;
+}
+
+.galery-home > div.wide {
+  grid-column-end: span 2;
+}
+
+.galery-home > div.large {
+  grid-column-end: span 2;
+  grid-row-end: span 2;
 }
 

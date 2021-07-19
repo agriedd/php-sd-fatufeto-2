@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
+Route::group(["prefix"=>"/"], function(){
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::get('/profil', 'HomeController@profil')->name('home.profil');
+    Route::get('/guru', 'HomeController@guru')->name('home.guru');
+});
 
 Auth::routes();

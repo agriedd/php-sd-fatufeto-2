@@ -16,7 +16,7 @@
 </div>
 @if($table = true)
 <div class="mb-3">
-    <div class="card mb-2 bg-light border-0" style="border-radius: 1rem;">
+    <div class="card mb-2 bg-dark text-light border-0" style="border-radius: 1rem;">
         <div class="card-body">
             <div class="row g-0">
                 <div class="col" style="max-width: 4rem;">
@@ -27,7 +27,7 @@
                 <div class="col-3">
                     Jenis Kelamin
                 </div>
-                <div class="col-3">
+                <div class="col-3 d-none d-sm-block">
                     Keterangan
                 </div>
             </div>
@@ -57,7 +57,7 @@
                         </small>
                     </div>
                 </div>
-                <div class="col-3">
+                <div class="col-3 d-none d-sm-block">
                     <div class="content-middle align-items-start">
                         <small>
                             Lorem ipsum dolor

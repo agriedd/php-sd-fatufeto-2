@@ -20,13 +20,17 @@
                     <x-galeri-home></x-galeri-home>
                     <x-kontak-home></x-kontak-home>
                     <x-alamat-home></x-alamat-home>
-                    <x-footer-home></x-footer-home>
                 </div>
             </div>
 
             <div class="col-4" style="max-width: 400px;">
                 <x-pengumuman-home></x-pengumuman-home>
             </div>
+        </div>
+    </div>
+    <div class="row g-0 bg-primary">
+        <div class="col-8 offset-2">
+            <x-footer-home></x-footer-home>
         </div>
     </div>
 </div>

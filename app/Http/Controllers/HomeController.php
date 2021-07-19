@@ -29,4 +29,11 @@ class HomeController extends Controller{
     public function guru(){
         return view('pages.home.guru');
     }
+    /**
+     * mengatur alamat url (route)
+     *      /siswa
+     */
+    public function siswa(){
+        return view('pages.home.siswa');
+    }
 }

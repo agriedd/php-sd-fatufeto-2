@@ -18,7 +18,7 @@
                     <a class="nav-link {{ request()->is('guru*') ? 'active' : null }}" href="{{ route('home.guru') }}">Guru</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Siswa</a>
+                    <a class="nav-link {{ request()->is('siswa*') ? 'active' : null }}" href="{{ route('home.siswa') }}">Siswa</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Kelas</a>

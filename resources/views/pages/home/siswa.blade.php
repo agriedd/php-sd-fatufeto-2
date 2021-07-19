@@ -3,16 +3,16 @@
 @section('content')
 <div style="min-height: 100vh;" class="d-flex flex-column">
     {{--
+        
         ⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠⚠
         file komponen cek di resources/views/components/header-home.blade.php 
+
     --}}
     <x-header-home></x-header-home>
     <x-navbar-home></x-navbar-home>
     <div class="container-fluid bg-white flex-grow p-3 py-5" style="flex-grow: 1;">
         <div class="row g-0">
-            <div class="col-1">
-                <x-nav-content-guru></x-nav-content-guru>
-            </div>
+            <div class="col-1"></div>
             <div class="col-md">
                 <div class="p-3">
                     <div class="mb-3" id="breadcrumb">
@@ -23,7 +23,7 @@
                                         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                                             <ol class="breadcrumb mb-0">
                                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                                <li class="breadcrumb-item active" aria-current="page">Guru</li>
+                                                <li class="breadcrumb-item active" aria-current="page">Siswa</li>
                                             </ol>
                                         </nav>
                                     </div>
@@ -36,12 +36,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mb-3" id="daftar-guru">
-                        <x-list-guru></x-list-guru>
+                    <div class="mb-3" id="daftar-siswa">
+                        <x-list-siswa></x-list-siswa>
                     </div>
                 </div>
             </div>
-
             <div class="col-4" style="max-width: 400px;">
                 <x-pengumuman-home></x-pengumuman-home>
             </div>

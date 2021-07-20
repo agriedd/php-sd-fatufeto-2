@@ -30,10 +30,9 @@
                     <a class="nav-link" href="#">Kegiatan</a>
                 </li>
                 @auth()
-                
                 <li class="nav-item d-flex">
                     <div>
-                        <a class="nav-link {{ request()->is('admin*') ? 'active' : null }}" href="{{ route('home') }}">Panel Admin</a>
+                        <a class="nav-link {{ request()->is('admin*') ? 'active' : null }}" href="{{ route('admin') }}">Panel Admin</a>
                     </div>
                     <div class="nav-item dropdown">
                         <a class="nav-link ps-0" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

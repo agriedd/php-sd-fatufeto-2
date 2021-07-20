@@ -19,5 +19,15 @@ Route::group(["prefix"=>"/"], function(){
     Route::get('/guru', 'HomeController@guru')->name('home.guru');
     Route::get('/siswa', 'HomeController@siswa')->name('home.siswa');
 });
+Route::group(["prefix"=>"/admin", "middleware"=>"web"], function(){
+    Route::get('/', 'AdminController@index')->name('admin');
+    Route::get('/{any}', 'AdminController@index')->where('any', '.*');
+});
 
-Auth::routes();
+/**
+ * hanya membolehkan login
+ * 
+ */
+Auth::routes([
+    'register' => false
+]);

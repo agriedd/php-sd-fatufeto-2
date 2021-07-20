@@ -11831,6 +11831,10 @@ a.card {
   background-color: rgba(226, 240, 251, 0.25);
 }
 
+.bg-grey-dark {
+  background-color: rgba(65, 107, 141, 0.5);
+}
+
 .foto-profil {
   background-size: cover;
   background-position: center;

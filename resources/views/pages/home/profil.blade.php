@@ -10,7 +10,7 @@
     <x-navbar-home></x-navbar-home>
     <div class="container-fluid bg-white flex-grow p-3 py-5" style="flex-grow: 1;">
         <div class="row g-0">
-            <div class="col-3">
+            <div class="col-lg-3">
                 <x-nav-content-profil></x-nav-content-profil>
             </div>
             <div class="col-md">
@@ -44,7 +44,7 @@
                 </div>
             </div>
 
-            <div class="col-4" style="max-width: 400px;">
+            <div class="col-lg-4 col-md-5" style="max-width: 400px;">
                 <x-pengumuman-home></x-pengumuman-home>
             </div>
         </div>

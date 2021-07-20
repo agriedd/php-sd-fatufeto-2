@@ -1,3 +1,11 @@
+<div class="bg-white p-2 border-bottom">
+    <div class="container-fluid small d-flex justify-content-between ">
+        <div></div>
+        <div class="text-muted">
+            {{ now()->format('d/M/Y') }}
+        </div>
+    </div>
+</div>
 <div class="shadow-sm bg-white" style="background-image: url('{{ asset('img/kyle-swaneveld-UdvuaATBaAU-unsplash.jpg') }}'); background-position: center; background-size: cover">
     <div class="" style="background: linear-gradient(100deg, #fffe 80%, transparent);">
         <div class="container">

@@ -1,4 +1,4 @@
-<div class="position-relative" style="height: 50vh;">
+<div class="position-relative" style="height: 150px;">
     <div class="position-absolute top-0 w-100 h-100 footer-absolute bg-primary" style="border-radius: 1.5rem;">
 
     </div>

@@ -30,7 +30,7 @@
             </div>
             <div v-else class="mb-3">
                 <v-card outlined flat rounded="lg">
-                    <v-list rounded>
+                    <v-list>
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-4">
                                 <v-icon>mdi-plus</v-icon>

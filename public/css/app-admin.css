@@ -310,3 +310,7 @@ tbody tr:nth-of-type(odd) {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 
+.d-grid-form > .rowspan-2 {
+  grid-row-end: span 2;
+}
+

@@ -53,12 +53,24 @@
 		<input-stuktur-organisasi-sekolah
 			v-model="item"
 			:errors="errors"/>
+		<input-visi-misi-sekolah
+			v-model="item"
+			:errors="errors"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.alamat"
+            name="alamat"
+            label="Alamat"
+            :error-messages="errors.alamat"
+            @keyup="errors.alamat = null"/>
     </div>
 </template>
 <script>
 import InputStukturOrganisasiSekolah from './InputStukturOrganisasiSekolah.vue';
+import InputVisiMisiSekolah from './InputVisiMisiSekolah.vue';
 export default {
-  components: { InputStukturOrganisasiSekolah },
+  components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah },
     data() {
         return {
 			modal_tanggal_berdiri: false,

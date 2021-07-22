@@ -2672,6 +2672,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _InputStukturOrganisasiSekolah_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputStukturOrganisasiSekolah.vue */ "./resources/js/pages/sekolah/form/InputStukturOrganisasiSekolah.vue");
+/* harmony import */ var _InputVisiMisiSekolah_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputVisiMisiSekolah.vue */ "./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2730,9 +2742,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    InputStukturOrganisasiSekolah: _InputStukturOrganisasiSekolah_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    InputStukturOrganisasiSekolah: _InputStukturOrganisasiSekolah_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    InputVisiMisiSekolah: _InputVisiMisiSekolah_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -2894,6 +2908,75 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.getImage();
     }
   }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    errors: {
+      required: true
+    },
+    value: {
+      required: true
+    }
+  },
+  data: function data() {
+    return {
+      visis: ['']
+    };
+  },
+  computed: {
+    item: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(val) {
+        this.$emit('input', val);
+      }
+    }
+  },
+  methods: {},
+  watch: {}
 });
 
 /***/ }),
@@ -23845,6 +23928,39 @@ var render = function() {
           },
           expression: "item"
         }
+      }),
+      _vm._v(" "),
+      _c("input-visi-misi-sekolah", {
+        attrs: { errors: _vm.errors },
+        model: {
+          value: _vm.item,
+          callback: function($$v) {
+            _vm.item = $$v
+          },
+          expression: "item"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "alamat",
+          label: "Alamat",
+          "error-messages": _vm.errors.alamat
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.alamat = null
+          }
+        },
+        model: {
+          value: _vm.item.alamat,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "alamat", $$v)
+          },
+          expression: "item.alamat"
+        }
       })
     ],
     1
@@ -24001,7 +24117,6 @@ var render = function() {
                   [
                     _c(
                       "v-list",
-                      { attrs: { rounded: "" } },
                       [
                         _c(
                           "v-list-item",
@@ -24067,6 +24182,95 @@ var render = function() {
           _vm.$attrs,
           false
         )
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "rowspan-2" },
+    [
+      _c(
+        "v-list",
+        [
+          _c("v-subheader", [_vm._v("\n            Visi\n        ")]),
+          _vm._v(" "),
+          _vm._l(_vm.visis, function(visi, i) {
+            return _c(
+              "v-list-item",
+              { key: i },
+              [
+                _c("v-text-field", {
+                  attrs: {
+                    dense: "",
+                    outlined: "",
+                    label: "Visi",
+                    "hide-details": ""
+                  },
+                  model: {
+                    value: _vm.visis[i],
+                    callback: function($$v) {
+                      _vm.$set(_vm.visis, i, $$v)
+                    },
+                    expression: "visis[i]"
+                  }
+                })
+              ],
+              1
+            )
+          }),
+          _vm._v(" "),
+          _c("v-subheader", [_vm._v("\n            Misi\n        ")]),
+          _vm._v(" "),
+          _vm._l(_vm.visis, function(visi, i) {
+            return _c(
+              "v-list-item",
+              { key: i },
+              [
+                _c("v-text-field", {
+                  attrs: {
+                    dense: "",
+                    outlined: "",
+                    label: "Visi",
+                    "hide-details": ""
+                  },
+                  model: {
+                    value: _vm.visis[i],
+                    callback: function($$v) {
+                      _vm.$set(_vm.visis, i, $$v)
+                    },
+                    expression: "visis[i]"
+                  }
+                })
+              ],
+              1
+            )
+          })
+        ],
+        2
       )
     ],
     1
@@ -87314,6 +87518,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputStukturOrganisasiSekolah_vue_vue_type_template_id_0844ff21_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputStukturOrganisasiSekolah_vue_vue_type_template_id_0844ff21_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InputVisiMisiSekolah_vue_vue_type_template_id_4ec05318_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true& */ "./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true&");
+/* harmony import */ var _InputVisiMisiSekolah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputVisiMisiSekolah.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InputVisiMisiSekolah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InputVisiMisiSekolah_vue_vue_type_template_id_4ec05318_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InputVisiMisiSekolah_vue_vue_type_template_id_4ec05318_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4ec05318",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputVisiMisiSekolah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InputVisiMisiSekolah.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputVisiMisiSekolah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputVisiMisiSekolah_vue_vue_type_template_id_4ec05318_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/InputVisiMisiSekolah.vue?vue&type=template&id=4ec05318&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputVisiMisiSekolah_vue_vue_type_template_id_4ec05318_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputVisiMisiSekolah_vue_vue_type_template_id_4ec05318_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

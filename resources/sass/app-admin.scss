@@ -315,5 +315,8 @@ tbody tr:nth-of-type(odd) {
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    & > .rowspan-2{
+      grid-row-end: span 2;
+    }
   }
 }

@@ -288,20 +288,22 @@
 	</template>
 	</v-navigation-drawer>
 	<router-view />
+	<logout-admin/>
 </v-app>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapMutations } from 'vuex'
+import LogoutAdmin from './login/LogoutAdmin.vue';
 export default {
+  	components: { 
+		LogoutAdmin 
+	},
 	methods: {
-		...mapActions({
-			clearSession: 'login/admin/logout'
+		...mapMutations({
+			showLogoutConfirm: 'login/admin/SET_LOGOUT_MODAL'
 		}),
-		async logout(){
-			let res = await this.clearSession().catch(e => {
-				console.log("clearSession@PanelAdmin.vue")
-			})
-			window.location = "/login"
+		logout(){
+			this.showLogoutConfirm(true)
 		}
 	},
 	created(){

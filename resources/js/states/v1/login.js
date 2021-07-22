@@ -23,10 +23,7 @@ export default {
 					datas	: []
 				},
 				modal		: {
-					tambah	: false,
-					ubah	: false,
-					hapus	: false,
-					info	: false,
+					logout	: false,
 				},
 				errors		: {},
 				session		: {
@@ -81,6 +78,9 @@ export default {
 				},
 				SET_SESSION_CODE(state, payload){
 					state.session.code = payload
+				},
+				SET_LOGOUT_MODAL(state, payload){
+					state.modal.logout = payload
 				}
 			},
 		}

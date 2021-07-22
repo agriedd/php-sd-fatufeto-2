@@ -18,7 +18,7 @@
 		</v-list>
 		<v-subheader v-text="'Sekolah'" inset/>
 		<v-list dense flat nav>
-			<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+			<v-list-item dense link color="primary" :to="{ name: 'sekolah' }" exact>
 				<v-list-item-icon>
 					<v-icon>mdi-school</v-icon>
 				</v-list-item-icon>

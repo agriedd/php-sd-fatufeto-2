@@ -45,7 +45,24 @@ router.beforeEach(async (to, from, next) => {
     })
     if(res.status == 200 && res?.data?.data){
         store.commit('login/admin/SET_USER', res.data.data)
-        if(store.state.login.admin.user) return next()
+        if(store.state.login.admin.user){
+            
+            /**
+             * jika ke sekolah
+             * skip
+             * atau jika sudah di sekolah tapi mau ke sekolah lagi
+             * skip
+             * atau ke sekolah dan dari kosong
+             */
+            if((to.name == 'sekolah' || from.name == 'sekolah') && (to.name == 'sekolah' && from.name != null)) return next()
+
+            let res = await store.dispatch('sekolah/get')
+            if(res?.status == 200 && res?.data?.data && res?.data?.meta?.total > 0){
+                store.commit('sekolah/SET_ITEMS', res.data.data)
+                return next()
+            }
+            else return next({ name: 'sekolah' })
+        }
     }
     next({
         path: '/admin/403'

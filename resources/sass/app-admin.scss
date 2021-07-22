@@ -302,3 +302,18 @@ tbody tr:nth-of-type(odd) {
         background: rgba($color: #000, $alpha: .25);
     }
 }
+
+.overflow-hidden{
+  overflow: hidden;
+}
+.w-100{
+  width: 100%;
+}
+
+.d-grid{
+  &-form{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

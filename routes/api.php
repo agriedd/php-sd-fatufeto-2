@@ -19,5 +19,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::prefix('v1')->group(function(){
+
+    Route::group(['prefix' => 'user'], function(){
+        /**
+         * authentikasi
+         * 
+         */
+        Route::post('authorize', 'api\v1\UserController@authorization');
+    });
+
     Route::resource('sekolah', 'api\v1\SekolahController');
 });

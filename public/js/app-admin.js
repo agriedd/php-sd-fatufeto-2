@@ -1922,6 +1922,45 @@ module.exports = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _login_LogoutAdmin_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./login/LogoutAdmin.vue */ "./resources/js/components/login/LogoutAdmin.vue");
+/* harmony import */ var _sidebar_SidebarAdmin_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./sidebar/SidebarAdmin.vue */ "./resources/js/components/sidebar/SidebarAdmin.vue");
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    LogoutAdmin: _login_LogoutAdmin_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    SidebarAdmin: _sidebar_SidebarAdmin_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  created: function created() {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/login/LogoutAdmin.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/login/LogoutAdmin.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -1946,6 +1985,80 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    dialog_value: function dialog_value(state) {
+      return state.login.admin.modal.logout;
+    }
+  })), {}, {
+    dialog: {
+      set: function set(val) {
+        this.showLogoutConfirm(val);
+      },
+      get: function get() {
+        return this.dialog_value;
+      }
+    }
+  }),
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    clearSession: 'login/admin/logout'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    showLogoutConfirm: 'login/admin/SET_LOGOUT_MODAL'
+  })), {}, {
+    logout: function logout() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _this.clearSession()["catch"](function (e) {
+                  console.error("clearSession@PanelAdmin.vue");
+                });
+
+              case 2:
+                res = _context.sent;
+                window.location = "/login";
+
+              case 4:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _SidebarAdminHeader_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarAdminHeader.vue */ "./resources/js/components/sidebar/SidebarAdminHeader.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2225,7 +2338,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    LogoutAdmin: _login_LogoutAdmin_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    SidebarAdminHeader: _SidebarAdminHeader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
     showLogoutConfirm: 'login/admin/SET_LOGOUT_MODAL'
@@ -2233,30 +2346,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     logout: function logout() {
       this.showLogoutConfirm(true);
     }
-  }),
-  created: function created() {}
+  })
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/login/LogoutAdmin.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/login/LogoutAdmin.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -2280,58 +2384,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
-    dialog_value: function dialog_value(state) {
-      return state.login.admin.modal.logout;
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    user: function user(state) {
+      return state.login.admin.user;
     }
   })), {}, {
-    dialog: {
-      set: function set(val) {
-        this.showLogoutConfirm(val);
-      },
-      get: function get() {
-        return this.dialog_value;
-      }
-    }
-  }),
-  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    clearSession: 'login/admin/logout'
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
-    showLogoutConfirm: 'login/admin/SET_LOGOUT_MODAL'
-  })), {}, {
-    logout: function logout() {
-      var _this = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _this.clearSession()["catch"](function (e) {
-                  console.error("clearSession@PanelAdmin.vue");
-                });
-
-              case 2:
-                res = _context.sent;
-                window.location = "/login";
-
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
+    exists: function exists() {
+      return this.user && this.user.id;
     }
   })
 });
@@ -21434,1157 +21495,7 @@ var render = function() {
   return _c(
     "v-app",
     [
-      _c(
-        "v-navigation-drawer",
-        {
-          attrs: { app: "", width: "275" },
-          scopedSlots: _vm._u([
-            {
-              key: "prepend",
-              fn: function() {
-                return [
-                  _c(
-                    "v-list",
-                    [
-                      _c(
-                        "v-list-item",
-                        [
-                          _c(
-                            "v-list-item-avatar",
-                            [
-                              _c("v-img", {
-                                attrs: {
-                                  src:
-                                    "https://cdn.vuetifyjs.com/images/john.png"
-                                }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item-content",
-                            [
-                              _c(
-                                "v-list-item-title",
-                                { staticClass: "text-h6" },
-                                [_vm._v(" John Leider ")]
-                              ),
-                              _vm._v(" "),
-                              _c("v-list-item-subtitle", [
-                                _vm._v("john@vuetifyjs.com")
-                              ])
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item-action",
-                            [_c("v-icon", [_vm._v("mdi-menu-down")])],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c("v-divider")
-                ]
-              },
-              proxy: true
-            },
-            {
-              key: "append",
-              fn: function() {
-                return [
-                  _c("v-divider"),
-                  _vm._v(" "),
-                  _c("v-subheader", {
-                    attrs: { inset: "" },
-                    domProps: { textContent: _vm._s("Akun dan Pengaturan") }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-list",
-                    { attrs: { dense: "", flat: "", nav: "" } },
-                    [
-                      _c(
-                        "v-menu",
-                        {
-                          attrs: {
-                            "content-class": "shadow-lg rounded-lg",
-                            "open-on-hover": "",
-                            "offset-x": "",
-                            "min-width": "250",
-                            "close-on-content-click": false,
-                            "close-on-click": false,
-                            "open-delay": ".5",
-                            transition: "slide-x-transition"
-                          },
-                          scopedSlots: _vm._u([
-                            {
-                              key: "activator",
-                              fn: function(ref) {
-                                var attrs = ref.attrs
-                                var on = ref.on
-                                return [
-                                  _c(
-                                    "v-list-item",
-                                    _vm._g(
-                                      _vm._b(
-                                        {
-                                          attrs: {
-                                            dense: "",
-                                            link: "",
-                                            color: "primary",
-                                            to: { name: "admin" },
-                                            exact: ""
-                                          }
-                                        },
-                                        "v-list-item",
-                                        attrs,
-                                        false
-                                      ),
-                                      on
-                                    ),
-                                    [
-                                      _c(
-                                        "v-list-item-icon",
-                                        [_c("v-icon", [_vm._v("mdi-cogs")])],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-item-content",
-                                        [
-                                          _c("v-list-item-title", {
-                                            domProps: {
-                                              textContent: _vm._s("Pengaturan")
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-list-item-action",
-                                        [
-                                          _c("v-icon", [
-                                            _vm._v("mdi-chevron-right")
-                                          ])
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ]
-                              }
-                            }
-                          ])
-                        },
-                        [
-                          _vm._v(" "),
-                          _c(
-                            "v-list",
-                            { attrs: { nav: "" } },
-                            [
-                              _c(
-                                "v-list-item",
-                                { attrs: { dense: "" } },
-                                [
-                                  _c(
-                                    "v-list-item-icon",
-                                    [_c("v-icon", [_vm._v("mdi-link")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-item-content",
-                                    [
-                                      _c("v-list-item-title", {
-                                        domProps: {
-                                          textContent: _vm._s("Lihat Website")
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item",
-                                {
-                                  attrs: { dense: "", link: "" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.logout()
-                                    }
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "v-list-item-icon",
-                                    [_c("v-icon", [_vm._v("mdi-power")])],
-                                    1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-list-item-content",
-                                    [
-                                      _c("v-list-item-title", {
-                                        domProps: {
-                                          textContent: _vm._s("Keluar")
-                                        }
-                                      })
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ]
-              },
-              proxy: true
-            }
-          ])
-        },
-        [
-          _vm._v(" "),
-          _c("v-subheader", {
-            attrs: { inset: "" },
-            domProps: { textContent: _vm._s("Menu") }
-          }),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            { attrs: { dense: "", flat: "", nav: "" } },
-            [
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-home")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Home") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: {
-                          textContent: _vm._s("Halaman awal panel admin")
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("v-subheader", {
-            attrs: { inset: "" },
-            domProps: { textContent: _vm._s("Sekolah") }
-          }),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            { attrs: { dense: "", flat: "", nav: "" } },
-            [
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-school")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Sekolah") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: {
-                          textContent: _vm._s("Halaman awal panel admin")
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Kelas") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: {
-                          textContent: _vm._s("Halaman awal panel admin")
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-menu",
-                    {
-                      attrs: {
-                        "content-class": "shadow-lg rounded-lg",
-                        "open-on-hover": "",
-                        right: "",
-                        "min-width": "250",
-                        "close-on-content-click": false,
-                        "close-on-click": false,
-                        "open-delay": ".5",
-                        transition: "slide-x-transition"
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var attrs = ref.attrs
-                            var on = ref.on
-                            return [
-                              _c(
-                                "v-list-item-action",
-                                _vm._g(
-                                  _vm._b(
-                                    {},
-                                    "v-list-item-action",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v("mdi-plus")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ])
-                    },
-                    [
-                      _vm._v(" "),
-                      _c(
-                        "v-list",
-                        [
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-bookmark-plus")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Tambah Kelas")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { path: "./admin/hei" }
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-account-group")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Siswa") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: { textContent: _vm._s("Kelola data siswa") }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-menu",
-                    {
-                      attrs: {
-                        "content-class": "shadow-lg rounded-lg",
-                        "open-on-hover": "",
-                        right: "",
-                        "min-width": "250",
-                        "close-on-content-click": false,
-                        "close-on-click": false,
-                        "open-delay": ".5",
-                        transition: "slide-x-transition"
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var attrs = ref.attrs
-                            var on = ref.on
-                            return [
-                              _c(
-                                "v-list-item-action",
-                                _vm._g(
-                                  _vm._b(
-                                    {},
-                                    "v-list-item-action",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v("mdi-plus")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ])
-                    },
-                    [
-                      _vm._v(" "),
-                      _c(
-                        "v-list",
-                        [
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-account-plus")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Tambah Siswa")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-account-search")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Temukan Siswa")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-account-tie")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Guru") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: { textContent: _vm._s("Kelola data guru") }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-menu",
-                    {
-                      attrs: {
-                        "content-class": "shadow-lg rounded-lg",
-                        "open-on-hover": "",
-                        right: "",
-                        "min-width": "250",
-                        "close-on-content-click": false,
-                        "close-on-click": false,
-                        "open-delay": ".5",
-                        transition: "slide-x-transition"
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var attrs = ref.attrs
-                            var on = ref.on
-                            return [
-                              _c(
-                                "v-list-item-action",
-                                _vm._g(
-                                  _vm._b(
-                                    {},
-                                    "v-list-item-action",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v("mdi-plus")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ])
-                    },
-                    [
-                      _vm._v(" "),
-                      _c(
-                        "v-list",
-                        [
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-plus")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Tambah Guru")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-magnify")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Temukan Guru")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-package-variant")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Sarana /Prasarana") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: {
-                          textContent: _vm._s(
-                            "Kelola data Sarana dan Prasarana"
-                          )
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("v-subheader", {
-            attrs: { inset: "" },
-            domProps: { textContent: _vm._s("Pimpinan dan Laporan") }
-          }),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            { attrs: { dense: "", flat: "", nav: "" } },
-            [
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-shield-account")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Pimpinan") }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-printer")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Laporan") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: { textContent: _vm._s("Daftar Laporan") }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-menu",
-                    {
-                      attrs: {
-                        "content-class": "shadow-lg rounded-lg",
-                        "open-on-hover": "",
-                        right: "",
-                        "min-width": "250",
-                        "close-on-content-click": false,
-                        "close-on-click": false,
-                        "open-delay": ".5",
-                        transition: "slide-x-transition"
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var attrs = ref.attrs
-                            var on = ref.on
-                            return [
-                              _c(
-                                "v-list-item-action",
-                                _vm._g(
-                                  _vm._b(
-                                    {},
-                                    "v-list-item-action",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v("mdi-plus")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ])
-                    },
-                    [
-                      _vm._v(" "),
-                      _c(
-                        "v-list",
-                        { attrs: { nav: "" } },
-                        [
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-printer")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Rekap Siswa")
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-list-item-subtitle", {
-                                    domProps: {
-                                      textContent: _vm._s("Rekap Siswa Tahunan")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-printer")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Rekap Guru")
-                                    }
-                                  }),
-                                  _vm._v(" "),
-                                  _c("v-list-item-subtitle", {
-                                    domProps: {
-                                      textContent: _vm._s("Rekap Guru Tahunan")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _c("v-subheader", {
-            attrs: { inset: "" },
-            domProps: { textContent: _vm._s("Berita dan Kegiatan") }
-          }),
-          _vm._v(" "),
-          _c(
-            "v-list",
-            { attrs: { dense: "", flat: "", nav: "" } },
-            [
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-newspaper")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Berita") }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-menu",
-                    {
-                      attrs: {
-                        "content-class": "shadow-lg rounded-lg",
-                        "open-on-hover": "",
-                        right: "",
-                        "min-width": "250",
-                        "close-on-content-click": false,
-                        "close-on-click": false,
-                        "open-delay": ".5",
-                        transition: "slide-x-transition"
-                      },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "activator",
-                          fn: function(ref) {
-                            var attrs = ref.attrs
-                            var on = ref.on
-                            return [
-                              _c(
-                                "v-list-item-action",
-                                _vm._g(
-                                  _vm._b(
-                                    {},
-                                    "v-list-item-action",
-                                    attrs,
-                                    false
-                                  ),
-                                  on
-                                ),
-                                [_c("v-icon", [_vm._v("mdi-plus")])],
-                                1
-                              )
-                            ]
-                          }
-                        }
-                      ])
-                    },
-                    [
-                      _vm._v(" "),
-                      _c(
-                        "v-list",
-                        [
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-newspaper-plus")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Tambah Berita")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-magnify")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s("Temukan Berita")
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c("v-subheader", {
-                            attrs: { inset: "" },
-                            domProps: { textContent: _vm._s("Kategori Berita") }
-                          }),
-                          _vm._v(" "),
-                          _c(
-                            "v-list-item",
-                            { attrs: { dense: "" } },
-                            [
-                              _c(
-                                "v-list-item-icon",
-                                [_c("v-icon", [_vm._v("mdi-tag-plus")])],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-list-item-content",
-                                [
-                                  _c("v-list-item-title", {
-                                    domProps: {
-                                      textContent: _vm._s(
-                                        "Tambah Kategori Berita"
-                                      )
-                                    }
-                                  })
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item",
-                {
-                  attrs: {
-                    dense: "",
-                    link: "",
-                    color: "primary",
-                    to: { name: "admin" },
-                    exact: ""
-                  }
-                },
-                [
-                  _c(
-                    "v-list-item-icon",
-                    [_c("v-icon", [_vm._v("mdi-flag")])],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-list-item-content",
-                    [
-                      _c("v-list-item-title", {
-                        domProps: { textContent: _vm._s("Kegiatan") }
-                      }),
-                      _vm._v(" "),
-                      _c("v-list-item-subtitle", {
-                        domProps: { textContent: _vm._s("Daftar Kegiatan") }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
+      _c("sidebar-admin"),
       _vm._v(" "),
       _c("router-view"),
       _vm._v(" "),
@@ -22684,6 +21595,1149 @@ var render = function() {
         ],
         1
       )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=template&id=01e1cb11&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=template&id=01e1cb11& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-navigation-drawer",
+    {
+      attrs: { app: "", width: "275" },
+      scopedSlots: _vm._u([
+        {
+          key: "prepend",
+          fn: function() {
+            return [_c("sidebar-admin-header"), _vm._v(" "), _c("v-divider")]
+          },
+          proxy: true
+        },
+        {
+          key: "append",
+          fn: function() {
+            return [
+              _c("v-divider"),
+              _vm._v(" "),
+              _c("v-subheader", {
+                attrs: { inset: "" },
+                domProps: { textContent: _vm._s("Akun dan Pengaturan") }
+              }),
+              _vm._v(" "),
+              _c(
+                "v-list",
+                { attrs: { dense: "", flat: "", nav: "" } },
+                [
+                  _c(
+                    "v-menu",
+                    {
+                      attrs: {
+                        "content-class": "shadow-lg rounded-lg",
+                        "open-on-hover": "",
+                        "offset-x": "",
+                        "min-width": "250",
+                        "close-on-content-click": false,
+                        "close-on-click": false,
+                        "open-delay": ".5",
+                        transition: "slide-x-transition"
+                      },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "activator",
+                          fn: function(ref) {
+                            var attrs = ref.attrs
+                            var on = ref.on
+                            return [
+                              _c(
+                                "v-list-item",
+                                _vm._g(
+                                  _vm._b(
+                                    {
+                                      attrs: {
+                                        dense: "",
+                                        link: "",
+                                        color: "primary",
+                                        to: { name: "admin" },
+                                        exact: ""
+                                      }
+                                    },
+                                    "v-list-item",
+                                    attrs,
+                                    false
+                                  ),
+                                  on
+                                ),
+                                [
+                                  _c(
+                                    "v-list-item-icon",
+                                    [_c("v-icon", [_vm._v("mdi-cogs")])],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-item-content",
+                                    [
+                                      _c("v-list-item-title", {
+                                        domProps: {
+                                          textContent: _vm._s("Pengaturan")
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-list-item-action",
+                                    [
+                                      _c("v-icon", [
+                                        _vm._v("mdi-chevron-right")
+                                      ])
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [
+                      _vm._v(" "),
+                      _c(
+                        "v-list",
+                        { attrs: { nav: "" } },
+                        [
+                          _c(
+                            "v-list-item",
+                            { attrs: { dense: "" } },
+                            [
+                              _c(
+                                "v-list-item-icon",
+                                [_c("v-icon", [_vm._v("mdi-link")])],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-list-item-content",
+                                [
+                                  _c("v-list-item-title", {
+                                    domProps: {
+                                      textContent: _vm._s("Lihat Website")
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item",
+                            {
+                              attrs: { dense: "", link: "" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.logout()
+                                }
+                              }
+                            },
+                            [
+                              _c(
+                                "v-list-item-icon",
+                                [_c("v-icon", [_vm._v("mdi-power")])],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-list-item-content",
+                                [
+                                  _c("v-list-item-title", {
+                                    domProps: { textContent: _vm._s("Keluar") }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ]
+          },
+          proxy: true
+        }
+      ])
+    },
+    [
+      _vm._v(" "),
+      _c("v-subheader", {
+        attrs: { inset: "" },
+        domProps: { textContent: _vm._s("Menu") }
+      }),
+      _vm._v(" "),
+      _c(
+        "v-list",
+        { attrs: { dense: "", flat: "", nav: "" } },
+        [
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-home")])], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Home") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: {
+                      textContent: _vm._s("Halaman awal panel admin")
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-subheader", {
+        attrs: { inset: "" },
+        domProps: { textContent: _vm._s("Sekolah") }
+      }),
+      _vm._v(" "),
+      _c(
+        "v-list",
+        { attrs: { dense: "", flat: "", nav: "" } },
+        [
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-school")])], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Sekolah") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: {
+                      textContent: _vm._s("Halaman awal panel admin")
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-bookmark")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Kelas") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: {
+                      textContent: _vm._s("Halaman awal panel admin")
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "content-class": "shadow-lg rounded-lg",
+                    "open-on-hover": "",
+                    right: "",
+                    "min-width": "250",
+                    "close-on-content-click": false,
+                    "close-on-click": false,
+                    "open-delay": ".5",
+                    transition: "slide-x-transition"
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var attrs = ref.attrs
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-list-item-action",
+                            _vm._g(
+                              _vm._b({}, "v-list-item-action", attrs, false),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-plus")])],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    [
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-bookmark-plus")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Tambah Kelas")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { path: "./admin/hei" }
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-account-group")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Siswa") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: { textContent: _vm._s("Kelola data siswa") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "content-class": "shadow-lg rounded-lg",
+                    "open-on-hover": "",
+                    right: "",
+                    "min-width": "250",
+                    "close-on-content-click": false,
+                    "close-on-click": false,
+                    "open-delay": ".5",
+                    transition: "slide-x-transition"
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var attrs = ref.attrs
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-list-item-action",
+                            _vm._g(
+                              _vm._b({}, "v-list-item-action", attrs, false),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-plus")])],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    [
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-account-plus")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Tambah Siswa")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-account-search")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Temukan Siswa")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-account-tie")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Guru") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: { textContent: _vm._s("Kelola data guru") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "content-class": "shadow-lg rounded-lg",
+                    "open-on-hover": "",
+                    right: "",
+                    "min-width": "250",
+                    "close-on-content-click": false,
+                    "close-on-click": false,
+                    "open-delay": ".5",
+                    transition: "slide-x-transition"
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var attrs = ref.attrs
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-list-item-action",
+                            _vm._g(
+                              _vm._b({}, "v-list-item-action", attrs, false),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-plus")])],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    [
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-plus")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: { textContent: _vm._s("Tambah Guru") }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-magnify")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Temukan Guru")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-package-variant")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Sarana /Prasarana") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: {
+                      textContent: _vm._s("Kelola data Sarana dan Prasarana")
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-subheader", {
+        attrs: { inset: "" },
+        domProps: { textContent: _vm._s("Pimpinan dan Laporan") }
+      }),
+      _vm._v(" "),
+      _c(
+        "v-list",
+        { attrs: { dense: "", flat: "", nav: "" } },
+        [
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-shield-account")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Pimpinan") }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-printer")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Laporan") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: { textContent: _vm._s("Daftar Laporan") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "content-class": "shadow-lg rounded-lg",
+                    "open-on-hover": "",
+                    right: "",
+                    "min-width": "250",
+                    "close-on-content-click": false,
+                    "close-on-click": false,
+                    "open-delay": ".5",
+                    transition: "slide-x-transition"
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var attrs = ref.attrs
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-list-item-action",
+                            _vm._g(
+                              _vm._b({}, "v-list-item-action", attrs, false),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-plus")])],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    { attrs: { nav: "" } },
+                    [
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-printer")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: { textContent: _vm._s("Rekap Siswa") }
+                              }),
+                              _vm._v(" "),
+                              _c("v-list-item-subtitle", {
+                                domProps: {
+                                  textContent: _vm._s("Rekap Siswa Tahunan")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-printer")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: { textContent: _vm._s("Rekap Guru") }
+                              }),
+                              _vm._v(" "),
+                              _c("v-list-item-subtitle", {
+                                domProps: {
+                                  textContent: _vm._s("Rekap Guru Tahunan")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-subheader", {
+        attrs: { inset: "" },
+        domProps: { textContent: _vm._s("Berita dan Kegiatan") }
+      }),
+      _vm._v(" "),
+      _c(
+        "v-list",
+        { attrs: { dense: "", flat: "", nav: "" } },
+        [
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c(
+                "v-list-item-icon",
+                [_c("v-icon", [_vm._v("mdi-newspaper")])],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Berita") }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-menu",
+                {
+                  attrs: {
+                    "content-class": "shadow-lg rounded-lg",
+                    "open-on-hover": "",
+                    right: "",
+                    "min-width": "250",
+                    "close-on-content-click": false,
+                    "close-on-click": false,
+                    "open-delay": ".5",
+                    transition: "slide-x-transition"
+                  },
+                  scopedSlots: _vm._u([
+                    {
+                      key: "activator",
+                      fn: function(ref) {
+                        var attrs = ref.attrs
+                        var on = ref.on
+                        return [
+                          _c(
+                            "v-list-item-action",
+                            _vm._g(
+                              _vm._b({}, "v-list-item-action", attrs, false),
+                              on
+                            ),
+                            [_c("v-icon", [_vm._v("mdi-plus")])],
+                            1
+                          )
+                        ]
+                      }
+                    }
+                  ])
+                },
+                [
+                  _vm._v(" "),
+                  _c(
+                    "v-list",
+                    [
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-newspaper-plus")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Tambah Berita")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-magnify")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Temukan Berita")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c("v-subheader", {
+                        attrs: { inset: "" },
+                        domProps: { textContent: _vm._s("Kategori Berita") }
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-list-item",
+                        { attrs: { dense: "" } },
+                        [
+                          _c(
+                            "v-list-item-icon",
+                            [_c("v-icon", [_vm._v("mdi-tag-plus")])],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-list-item-content",
+                            [
+                              _c("v-list-item-title", {
+                                domProps: {
+                                  textContent: _vm._s("Tambah Kategori Berita")
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            {
+              attrs: {
+                dense: "",
+                link: "",
+                color: "primary",
+                to: { name: "admin" },
+                exact: ""
+              }
+            },
+            [
+              _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-flag")])], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", {
+                    domProps: { textContent: _vm._s("Kegiatan") }
+                  }),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", {
+                    domProps: { textContent: _vm._s("Daftar Kegiatan") }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=template&id=7eeb0704&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=template&id=7eeb0704& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-list",
+    [
+      _vm.exists
+        ? _c(
+            "v-list-item",
+            [
+              _c(
+                "v-list-item-avatar",
+                [
+                  _c("v-img", {
+                    attrs: {
+                      src:
+                        "http://localhost/img/mitchell-orr-_0qSYr-IRbg-unsplash.jpg"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-title", [
+                    _vm._v(" " + _vm._s(_vm.user.nama) + " ")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-subtitle", [_vm._v(_vm._s(_vm.user.email))])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-list-item-action",
+                [_c("v-icon", [_vm._v("mdi-menu-down")])],
+                1
+              )
+            ],
+            1
+          )
+        : _vm._e()
     ],
     1
   )
@@ -85148,8 +85202,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vuetify_dist_vuetify_min_css__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var vuetify_lib_util_colors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vuetify/lib/util/colors */ "./node_modules/vuetify/lib/util/colors.js");
 /* harmony import */ var _routes_web__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes/web */ "./resources/js/routes/web.js");
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _states_states__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./states/states */ "./resources/js/states/states.js");
+/* harmony import */ var _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./states/vuex-admin */ "./resources/js/states/vuex-admin.js");
 __webpack_require__(/*! ./bootstrap-admin */ "./resources/js/bootstrap-admin.js");
 
 
@@ -85166,22 +85219,12 @@ window.Vue = vue__WEBPACK_IMPORTED_MODULE_0___default.a;
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_1___default.a);
 var vuetify = new vuetify__WEBPACK_IMPORTED_MODULE_1___default.a({});
 
-
-/**
- * konfigurasi vuex state
- * 
- */
-
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_5__["default"]);
-var store = new vuex__WEBPACK_IMPORTED_MODULE_5__["default"].Store({
-  modules: _states_states__WEBPACK_IMPORTED_MODULE_6__["default"]
-});
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('panel-admin', __webpack_require__(/*! ./components/PanelAdmin.vue */ "./resources/js/components/PanelAdmin.vue")["default"]);
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _routes_web__WEBPACK_IMPORTED_MODULE_4__["default"],
   vuetify: vuetify,
-  store: store
+  store: _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"]
 });
 
 /***/ }),
@@ -85344,6 +85387,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/sidebar/SidebarAdmin.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/components/sidebar/SidebarAdmin.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SidebarAdmin_vue_vue_type_template_id_01e1cb11___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarAdmin.vue?vue&type=template&id=01e1cb11& */ "./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=template&id=01e1cb11&");
+/* harmony import */ var _SidebarAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarAdmin.vue?vue&type=script&lang=js& */ "./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SidebarAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SidebarAdmin_vue_vue_type_template_id_01e1cb11___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SidebarAdmin_vue_vue_type_template_id_01e1cb11___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/sidebar/SidebarAdmin.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarAdmin.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=template&id=01e1cb11&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=template&id=01e1cb11& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdmin_vue_vue_type_template_id_01e1cb11___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarAdmin.vue?vue&type=template&id=01e1cb11& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdmin.vue?vue&type=template&id=01e1cb11&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdmin_vue_vue_type_template_id_01e1cb11___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdmin_vue_vue_type_template_id_01e1cb11___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/sidebar/SidebarAdminHeader.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/components/sidebar/SidebarAdminHeader.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SidebarAdminHeader_vue_vue_type_template_id_7eeb0704___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SidebarAdminHeader.vue?vue&type=template&id=7eeb0704& */ "./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=template&id=7eeb0704&");
+/* harmony import */ var _SidebarAdminHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SidebarAdminHeader.vue?vue&type=script&lang=js& */ "./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SidebarAdminHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SidebarAdminHeader_vue_vue_type_template_id_7eeb0704___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SidebarAdminHeader_vue_vue_type_template_id_7eeb0704___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/sidebar/SidebarAdminHeader.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdminHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarAdminHeader.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdminHeader_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=template&id=7eeb0704&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=template&id=7eeb0704& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdminHeader_vue_vue_type_template_id_7eeb0704___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SidebarAdminHeader.vue?vue&type=template&id=7eeb0704& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/sidebar/SidebarAdminHeader.vue?vue&type=template&id=7eeb0704&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdminHeader_vue_vue_type_template_id_7eeb0704___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SidebarAdminHeader_vue_vue_type_template_id_7eeb0704___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/Index.vue":
 /*!**************************************!*\
   !*** ./resources/js/pages/Index.vue ***!
@@ -85451,8 +85632,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./routes */ "./resources/js/routes/routes.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../states/vuex-admin */ "./resources/js/states/vuex-admin.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -85463,7 +85645,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
- // import store from './vuex'
+
 
 
 vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]);
@@ -85473,6 +85655,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
 });
 router.beforeEach( /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(to, from, next) {
+    var _res$data;
+
+    var token, res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -85482,35 +85667,63 @@ router.beforeEach( /*#__PURE__*/function () {
              * konfigurasi axios
              * 
              */
-            next(); // axios.interceptors.response.use(function (response) {
-            //     return response;
-            // }, function (error) {
-            //     if(error.response.status == 401){
-            //         localStorage.removeItem('authToken')
-            //         store.commit('SETLOADINGAPP', false)
-            //         if(to.path == '/admin/401'){
-            //             return null
-            //         }
-            //         next({ path: '/admin/401' })
-            //         return null
-            //     }
-            //     return Promise.reject(error);
-            // });
-            // store.commit('SETLOADINGAPP', true)
-            // if(to.path == '/admin/401') return next()
-            // let token = localStorage.getItem('authToken')
-            // let res = await store.dispatch('_login/admin/check', {
-            //     token
-            // })
-            // if(res.status == 200 && res?.data?.data){
-            //     store.commit('_login/admin/SET_USER', res.data.data)
-            //     if(store.state._login.admin.user) return next()
-            // }
-            // next({
-            //     path: '/admin/403'
-            // })
+            next();
+            axios__WEBPACK_IMPORTED_MODULE_6___default.a.interceptors.response.use(function (response) {
+              return response;
+            }, function (error) {
+              if (error.response.status == 401) {
+                localStorage.removeItem('authToken'); // store.commit('app/SET_LOADING_APP', false)
 
-          case 1:
+                if (to.path == '/admin/401') {
+                  return null;
+                }
+
+                next({
+                  path: '/admin/401'
+                });
+                return null;
+              }
+
+              return Promise.reject(error);
+            }); // store.commit('SETLOADINGAPP', true)
+
+            if (!(to.path == '/admin/401')) {
+              _context.next = 4;
+              break;
+            }
+
+            return _context.abrupt("return", next());
+
+          case 4:
+            token = localStorage.getItem('authToken');
+            _context.next = 7;
+            return _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('login/admin/check', {
+              token: token
+            });
+
+          case 7:
+            res = _context.sent;
+
+            if (!(res.status == 200 && res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data)) {
+              _context.next = 12;
+              break;
+            }
+
+            _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].commit('login/admin/SET_USER', res.data.data);
+
+            if (!_states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].state.login.admin.user) {
+              _context.next = 12;
+              break;
+            }
+
+            return _context.abrupt("return", next());
+
+          case 12:
+            next({
+              path: '/admin/403'
+            });
+
+          case 13:
           case "end":
             return _context.stop();
         }
@@ -85674,7 +85887,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   switch (_context.prev = _context.next) {
                     case 0:
                       _context.next = 2;
-                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v2/user/authorize'), {}, {
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/user/authorize'), {}, {
                         headers: {
                           Authorization: "Bearer ".concat(token)
                         }
@@ -85763,6 +85976,36 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     }
   }
 });
+
+/***/ }),
+
+/***/ "./resources/js/states/vuex-admin.js":
+/*!*******************************************!*\
+  !*** ./resources/js/states/vuex-admin.js ***!
+  \*******************************************/
+/*! exports provided: store, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "store", function() { return store; });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _states__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./states */ "./resources/js/states/states.js");
+
+
+
+/**
+ * konfigurasi vuex state
+ * 
+ */
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__["default"]);
+var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
+  modules: _states__WEBPACK_IMPORTED_MODULE_2__["default"]
+});
+/* harmony default export */ __webpack_exports__["default"] = (store);
 
 /***/ }),
 

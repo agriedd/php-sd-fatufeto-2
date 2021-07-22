@@ -14,14 +14,7 @@ window.Vue = Vue
 Vue.use(Vuetify)
 let vuetify = new Vuetify({})
 
-import Vuex from 'vuex'
-import states from './states/states'
-/**
- * konfigurasi vuex state
- * 
- */
-Vue.use(Vuex)
-const store = new Vuex.Store( { modules: states } )
+import store from './states/vuex-admin'
 
 Vue.component('panel-admin', require('./components/PanelAdmin.vue').default);
 

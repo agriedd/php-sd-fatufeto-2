@@ -44,7 +44,7 @@ export default {
 			actions: {
 				check(context, { token = null }){
 					return new Promise(async(resolve, reject)=>{
-						let res = await axios.post(api('v2/user/authorize'), {}, { headers: { Authorization: `Bearer ${token}` } }).catch(e => reject(e))
+						let res = await axios.post(api('v1/user/authorize'), {}, { headers: { Authorization: `Bearer ${token}` } }).catch(e => reject(e))
 						if(res) resolve(res)
 					})
 				},

@@ -1,6 +1,11 @@
 <template>
     <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta recusandae quae nihil accusantium vel consequuntur ut dicta voluptate. Rem voluptatem maxime dolorum velit excepturi necessitatibus nesciunt provident distinctio aliquid accusamus!
+        <v-app-bar title="Panel Admin" app flat floating>
+            <v-app-bar-nav-icon></v-app-bar-nav-icon>
+        </v-app-bar>
+        <v-main>
+            
+        </v-main>
     </div>
 </template>
 <script>

@@ -14,11 +14,9 @@ class SekolahController extends Controller{
         return SekolahCollection::collection($data);
     }
 
-    public function store(Request $request){
-    }
+    public function store(Request $request){}
 
-    public function show($id){
-    }
+    public function show($id){}
 
     public function update(Request $request, $id){
     }

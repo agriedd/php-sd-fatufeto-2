@@ -274,7 +274,7 @@
 						<v-list-item-title v-text="'Lihat Website'"/>
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item dense link>
+				<v-list-item dense link @click="logout()">
 					<v-list-item-icon>
 						<v-icon>mdi-power</v-icon>
 					</v-list-item-icon>
@@ -291,5 +291,21 @@
 </v-app>
 </template>
 <script>
-export default {};
+import { mapActions } from 'vuex'
+export default {
+	methods: {
+		...mapActions({
+			clearSession: 'login/admin/logout'
+		}),
+		async logout(){
+			let res = await this.clearSession().catch(e => {
+				console.log("clearSession@PanelAdmin.vue")
+			})
+			window.location = "/login"
+		}
+	},
+	created(){
+
+	}
+};
 </script>

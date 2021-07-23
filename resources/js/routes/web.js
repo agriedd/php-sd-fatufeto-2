@@ -23,7 +23,7 @@ router.beforeEach(async (to, from, next) => {
     axios.interceptors.response.use(function (response) {
         if(response.status == 201){
             store.dispatch('notifikasi/show', {
-                message: "Berhasil menambahkan data 👌"
+                message: "Berhasil menyimpan data 👌"
             })
         }
         return response;

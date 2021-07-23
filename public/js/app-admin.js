@@ -3261,7 +3261,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3607,10 +3606,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     },
     visi_misi: function visi_misi() {
       return JSON.stringify({
-        "visi": _toConsumableArray(this.item.visi.map(function (e) {
+        "visi": _toConsumableArray(this.visis.map(function (e) {
           return e.value;
         })),
-        "misi": _toConsumableArray(this.item.misi.map(function (e) {
+        "misi": _toConsumableArray(this.misis.map(function (e) {
           return e.value;
         }))
       });
@@ -89541,7 +89540,7 @@ router.beforeEach( /*#__PURE__*/function () {
             axios__WEBPACK_IMPORTED_MODULE_6___default.a.interceptors.response.use(function (response) {
               if (response.status == 201) {
                 _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
-                  message: "Berhasil menambahkan data 👌"
+                  message: "Berhasil menyimpan data 👌"
                 });
               }
 
@@ -90200,10 +90199,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 data = _ref6.data, id = _ref6.id;
 
                 if (!id) {
-                  _context7.next = 5;
+                  _context7.next = 6;
                   break;
                 }
 
+                if (data instanceof FormData) data.append('_method', 'PUT');
                 return _context7.abrupt("return", new Promise( /*#__PURE__*/function () {
                   var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(resolve, reject) {
                     var res;
@@ -90233,10 +90233,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   };
                 }()));
 
-              case 5:
+              case 6:
                 console.warn("update@sekolah.js", "id kosong 🤦‍♂️");
 
-              case 6:
+              case 7:
               case "end":
                 return _context7.stop();
             }

@@ -1,4 +1,3 @@
-// hello
 <template>
     <div class="d-grid-form">
         <v-text-field

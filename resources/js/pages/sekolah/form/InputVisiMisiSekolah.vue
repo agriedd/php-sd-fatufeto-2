@@ -78,8 +78,8 @@ export default {
         },
         visi_misi(){
             return JSON.stringify({ 
-                "visi": [...this.item.visi.map(e => e.value)], 
-                "misi": [...this.item.misi.map(e => e.value)] 
+                "visi": [...this.visis.map(e => e.value)], 
+                "misi": [...this.misis.map(e => e.value)] 
             })
         }
     },

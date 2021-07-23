@@ -59,11 +59,14 @@ export default {
             })
         },
         async update(context, { data, id }){
-            if(id)
+            if(id){
+                if(data instanceof FormData)
+                    data.append('_method', 'PUT')
                 return new Promise(async(resolve, reject)=>{
                     let res = await axios.post(api(`v1/sekolah/${id}`), data).catch(e => reject(e))
                     if(res) resolve(res)
                 })
+            }
             else
                 console.warn("update@sekolah.js", "id kosong 🤦‍♂️");
         },

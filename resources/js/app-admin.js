@@ -18,6 +18,15 @@ import store from './states/vuex-admin'
 
 Vue.component('panel-admin', require('./components/PanelAdmin.vue').default);
 
+Vue.mixin({
+    filters: {
+        datetime(val, local = 'id-ID'){
+            let date = new Date(val);
+            return new Intl.DateTimeFormat(local, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(date)
+        }
+    }
+})
+
 const app = new Vue({
     el: '#app',
     router,

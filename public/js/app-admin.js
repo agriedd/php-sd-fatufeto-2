@@ -1923,7 +1923,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
 /* harmony import */ var _image_ImageViewer_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./image/ImageViewer.vue */ "./resources/js/components/image/ImageViewer.vue");
 /* harmony import */ var _login_LogoutAdmin_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./login/LogoutAdmin.vue */ "./resources/js/components/login/LogoutAdmin.vue");
-/* harmony import */ var _sidebar_SidebarAdmin_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./sidebar/SidebarAdmin.vue */ "./resources/js/components/sidebar/SidebarAdmin.vue");
+/* harmony import */ var _notification_Notification_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./notification/Notification.vue */ "./resources/js/components/notification/Notification.vue");
+/* harmony import */ var _sidebar_SidebarAdmin_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./sidebar/SidebarAdmin.vue */ "./resources/js/components/sidebar/SidebarAdmin.vue");
 //
 //
 //
@@ -1932,6 +1933,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+
 
 
 
@@ -1939,8 +1942,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     LogoutAdmin: _login_LogoutAdmin_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    SidebarAdmin: _sidebar_SidebarAdmin_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    ImageViewer: _image_ImageViewer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    SidebarAdmin: _sidebar_SidebarAdmin_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ImageViewer: _image_ImageViewer_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    Notification: _notification_Notification_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   created: function created() {}
 });
@@ -2088,6 +2092,134 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }))();
     }
   })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/Notification.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/notification/Notification.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _NotificationSnackbar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NotificationSnackbar.vue */ "./resources/js/components/notification/NotificationSnackbar.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      message: "",
+      color: null,
+      timeout: 10000,
+      show: false,
+      top: null,
+      left: null,
+      bottom: null,
+      right: null
+    };
+  },
+  components: {
+    Snackbar: _NotificationSnackbar_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  created: function created() {
+    var _this = this;
+
+    this.$store.subscribe(function (mutation, state) {
+      if (mutation.type === "notifikasi/SHOW_MESSAGE") {
+        _this.message = state.notifikasi.message;
+        _this.color = state.notifikasi.color;
+        _this.timeout = state.notifikasi.timeout;
+        _this.show = true;
+        _this.top = state.notifikasi.top;
+        _this.right = state.notifikasi.right;
+        _this.bottom = state.notifikasi.bottom;
+        _this.left = state.notifikasi.left;
+      }
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/NotificationSnackbar.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/notification/NotificationSnackbar.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    value: {
+      required: true
+    },
+    message: {
+      type: String | Number
+    },
+    color: {
+      "default": 'black'
+    },
+    actioncolor: {
+      "default": null
+    },
+    timeout: {
+      "default": 10000
+    },
+    bottom: Boolean,
+    left: Boolean,
+    right: Boolean,
+    top: Boolean
+  },
+  computed: {
+    snackbar: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(val) {
+        this.$emit('input', val);
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2384,12 +2516,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     SidebarAdminHeader: _SidebarAdminHeader_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    total_sekolah: 'sekolah/getTotal'
+  })), {}, {
+    warning_sekolah: function warning_sekolah() {
+      return this.total_sekolah <= 0;
+    }
+  }),
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
     showLogoutConfirm: 'login/admin/SET_LOGOUT_MODAL'
   })), {}, {
@@ -2482,6 +2623,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _SekolahTambah_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SekolahTambah.vue */ "./resources/js/pages/sekolah/SekolahTambah.vue");
+/* harmony import */ var _SekolahUbah_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SekolahUbah.vue */ "./resources/js/pages/sekolah/SekolahUbah.vue");
+//
 //
 //
 //
@@ -2489,9 +2632,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    SekolahTambah: _SekolahTambah_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    SekolahTambah: _SekolahTambah_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    SekolahUbah: _SekolahUbah_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
@@ -2562,6 +2707,103 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -2569,18 +2811,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       loading: false
     };
   },
-  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    items: function items(state) {
+      return state.sekolah.items;
+    }
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
     total_sekolah: 'sekolah/getTotal'
   })), {}, {
     exists: function exists() {
       return this.total_sekolah > 0;
     }
   }),
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
     showTambahDialog: 'sekolah/SET_MODAL_TAMBAH'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
+    showUbahDialog: 'sekolah/openModalUbah'
   })), {}, {
     openModalTambah: function openModalTambah() {
       this.showTambahDialog(true);
+    },
+    ubahInfoSekolah: function ubahInfoSekolah(id) {
+      this.showUbahDialog(id);
     }
   })
 });
@@ -2672,7 +2923,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     setDialog: 'sekolah/SET_MODAL_TAMBAH'
   })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     storeSekolah: 'sekolah/store',
-    updateSession: 'sekolah/updateSession'
+    updateSession: 'sekolah/updateSession',
+    notif: 'notifikasi/show'
   })), {}, {
     submit: function submit(e) {
       var _this = this;
@@ -2689,6 +2941,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 return _this.storeSekolah(data)["catch"](function (e) {
                   console.log("storeSekolah@SekolahTambah.vue", e);
                   if (e.response.status == 422) _this.errors = e.response.data.errors;
+
+                  _this.notif({
+                    message: e.message
+                  });
                 });
 
               case 4:
@@ -2696,7 +2952,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = false;
                 console.log(res);
 
-              case 7:
+                if (res) {
+                  notif({
+                    message: e.message,
+                    color: 'teal'
+                  });
+                }
+
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -2705,6 +2968,207 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }))();
     }
   })
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _form_FormTambahSekolah_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form/FormTambahSekolah.vue */ "./resources/js/pages/sekolah/form/FormTambahSekolah.vue");
+/* harmony import */ var _form_FormTambahSekolahPlaceholder_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form/FormTambahSekolahPlaceholder.vue */ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    FormTambahSekolah: _form_FormTambahSekolah_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    FormTambahSekolahPlaceholder: _form_FormTambahSekolahPlaceholder_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  data: function data() {
+    return {
+      loading: false,
+      errors: {},
+      item: {},
+      ori: {},
+      exists: false
+    };
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    value_dialog: function value_dialog(state) {
+      return state.sekolah.modal.ubah;
+    },
+    id: function id(state) {
+      return state.sekolah.selected.id;
+    }
+  })), {}, {
+    dialog: {
+      get: function get() {
+        return this.value_dialog;
+      },
+      set: function set(val) {
+        this.setDialog(val);
+      }
+    }
+  }),
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    setDialog: 'sekolah/SET_MODAL_UBAH'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    updateSekolah: 'sekolah/update',
+    findSekolah: 'sekolah/show',
+    updateSession: 'sekolah/updateSession',
+    notif: 'notifikasi/show'
+  })), {}, {
+    submit: function submit(e) {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                data = new FormData(e.target);
+                _this.loading = true;
+                _context.next = 4;
+                return _this.updateSekolah({
+                  data: data,
+                  id: _this.id
+                })["catch"](function (e) {
+                  console.log("updateSekolah@SekolahTambah.vue", e);
+                  if (e.response.status == 422) _this.errors = e.response.data.errors;
+
+                  _this.notif({
+                    message: e.message
+                  });
+                });
+
+              case 4:
+                res = _context.sent;
+                _this.loading = false;
+
+                if (res) {
+                  notif({
+                    message: e.message,
+                    color: 'teal'
+                  });
+                }
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    loadItem: function loadItem() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var res, key;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this2.exists = false;
+                _this2.loading = true;
+                _context2.next = 4;
+                return _this2.findSekolah({
+                  id: _this2.id
+                })["catch"](function (e) {
+                  console.log("loadItem@SekolahTambah.vue", e);
+
+                  _this2.notif({
+                    message: e.message
+                  });
+                });
+
+              case 4:
+                res = _context2.sent;
+                _this2.loading = false;
+
+                if (res) {
+                  _this2.exists = true;
+
+                  for (key in res.data.data) {
+                    _this2.$set(_this2.item, key, res.data.data[key]);
+
+                    _this2.$set(_this2.ori, key, res.data.data[key]);
+                  }
+                }
+
+              case 7:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
+  }),
+  watch: {
+    id: function id(val) {
+      val && this.loadItem();
+    }
+  }
 });
 
 /***/ }),
@@ -2797,6 +3261,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2804,21 +3269,64 @@ __webpack_require__.r(__webpack_exports__);
     InputStukturOrganisasiSekolah: _InputStukturOrganisasiSekolah_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     InputVisiMisiSekolah: _InputVisiMisiSekolah_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  props: {
+    value: {
+      type: Object,
+      "default": function _default() {
+        return {
+          id_profil: null,
+          nama_sekolah: null,
+          jenjang: null,
+          tgl_berdiri: null,
+          struktur_organisasi: null,
+          visi_misi: null,
+          alamat: null,
+          npsn: null
+        };
+      }
+    }
+  },
+  computed: {
+    item: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(val) {
+        this.$emit('input', val);
+      }
+    }
+  },
   data: function data() {
     return {
       modal_tanggal_berdiri: false,
-      item: {
-        id_profil: null,
-        nama_sekolah: null,
-        jenjang: null,
-        tgl_berdiri: null,
-        struktur_organisasi: null,
-        visi_misi: null,
-        alamat: null,
-        npsn: null
-      },
       errors: {}
     };
+  },
+  methods: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {},
+  data: function data() {
+    return {};
   },
   methods: {}
 });
@@ -2841,6 +3349,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -22308,7 +22827,9 @@ var render = function() {
       _vm._v(" "),
       _c("logout-admin"),
       _vm._v(" "),
-      _c("image-viewer")
+      _c("image-viewer"),
+      _vm._v(" "),
+      _c("notification")
     ],
     1
   )
@@ -22451,6 +22972,126 @@ var render = function() {
       )
     ],
     1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/Notification.vue?vue&type=template&id=b968a718&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/notification/Notification.vue?vue&type=template&id=b968a718& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("snackbar", {
+    attrs: {
+      message: _vm.message,
+      color: _vm.color,
+      timeout: _vm.timeout,
+      transition: "slide-y-reverse-transition",
+      top: _vm.top,
+      right: _vm.right,
+      bottom: _vm.bottom,
+      left: _vm.left
+    },
+    model: {
+      value: _vm.show,
+      callback: function($$v) {
+        _vm.show = $$v
+      },
+      expression: "show"
+    }
+  })
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/NotificationSnackbar.vue?vue&type=template&id=3f7179ce&":
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/notification/NotificationSnackbar.vue?vue&type=template&id=3f7179ce& ***!
+  \************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-snackbar",
+    _vm._b(
+      {
+        attrs: {
+          "multi-line": "",
+          timeout: _vm.timeout,
+          color: _vm.color,
+          app: "",
+          top: _vm.top,
+          right: _vm.right,
+          left: _vm.left,
+          bottom: _vm.bottom
+        },
+        scopedSlots: _vm._u([
+          {
+            key: "action",
+            fn: function(ref) {
+              var attrs = ref.attrs
+              return [
+                _c(
+                  "v-btn",
+                  _vm._b(
+                    {
+                      attrs: { color: _vm.actioncolor, text: "" },
+                      on: {
+                        click: function($event) {
+                          _vm.snackbar = false
+                        }
+                      }
+                    },
+                    "v-btn",
+                    attrs,
+                    false
+                  ),
+                  [_vm._v("\n            Tutup\n        ")]
+                )
+              ]
+            }
+          }
+        ]),
+        model: {
+          value: _vm.snackbar,
+          callback: function($$v) {
+            _vm.snackbar = $$v
+          },
+          expression: "snackbar"
+        }
+      },
+      "v-snackbar",
+      _vm.$attrs,
+      false
+    ),
+    [_vm._v("\n    " + _vm._s(_vm.message) + "\n    ")]
   )
 }
 var staticRenderFns = []
@@ -22720,7 +23361,27 @@ var render = function() {
               }
             },
             [
-              _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-school")])], 1),
+              _c(
+                "v-list-item-icon",
+                [
+                  _c(
+                    "v-badge",
+                    {
+                      attrs: {
+                        dot: "",
+                        value: _vm.warning_sekolah,
+                        color: "error",
+                        "offset-x": "6",
+                        "offset-y": "6",
+                        bottom: ""
+                      }
+                    },
+                    [_c("v-icon", [_vm._v("mdi-school")])],
+                    1
+                  )
+                ],
+                1
+              ),
               _vm._v(" "),
               _c(
                 "v-list-item-content",
@@ -23655,7 +24316,17 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view"), _vm._v(" "), _c("sekolah-tambah")], 1)
+  return _c(
+    "div",
+    [
+      _c("router-view"),
+      _vm._v(" "),
+      _c("sekolah-tambah"),
+      _vm._v(" "),
+      _c("sekolah-ubah")
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -23808,8 +24479,359 @@ var render = function() {
                   1
                 )
               : _c("div", [
-                  _vm._v(
-                    "\n                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nulla, officia quibusdam recusandae quae quas repellat quisquam esse. Sunt placeat nesciunt vitae dolore quibusdam tempore obcaecati debitis nostrum quod doloribus!\n            "
+                  _c(
+                    "div",
+                    { staticClass: "d-grid-sekolah" },
+                    [
+                      _vm._l(_vm.items, function(item, i) {
+                        return _c(
+                          "v-card",
+                          {
+                            key: item.id_profil,
+                            attrs: {
+                              color: "grey lighten-4 overflow-hidden",
+                              rounded: "xl",
+                              flat: "",
+                              link: ""
+                            }
+                          },
+                          [
+                            i == 0
+                              ? _c(
+                                  "v-card-text",
+                                  [
+                                    _c(
+                                      "v-avatar",
+                                      { attrs: { color: "grey lighten-2" } },
+                                      [_c("v-icon", [_vm._v("mdi-pin")])],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e(),
+                            _vm._v(" "),
+                            _c(
+                              "v-card-title",
+                              [
+                                _c("div", [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(item.nama_sekolah) +
+                                      "\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("v-spacer"),
+                                _vm._v(" "),
+                                _c(
+                                  "v-menu",
+                                  {
+                                    attrs: {
+                                      "open-on-click": "",
+                                      "content-class": "shadow-sm rounded-lg",
+                                      "close-on-content-click": false
+                                    },
+                                    scopedSlots: _vm._u(
+                                      [
+                                        {
+                                          key: "activator",
+                                          fn: function(ref) {
+                                            var attrs = ref.attrs
+                                            var on = ref.on
+                                            return [
+                                              _c(
+                                                "v-btn",
+                                                _vm._g(
+                                                  _vm._b(
+                                                    { attrs: { icon: "" } },
+                                                    "v-btn",
+                                                    attrs,
+                                                    false
+                                                  ),
+                                                  on
+                                                ),
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-menu")
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      null,
+                                      true
+                                    )
+                                  },
+                                  [
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list",
+                                      { attrs: { nav: "" } },
+                                      [
+                                        _c("v-subheader", {
+                                          domProps: {
+                                            textContent: _vm._s("Aksi")
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item",
+                                          { attrs: { dense: "" } },
+                                          [
+                                            _c(
+                                              "v-list-item-icon",
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("mdi-school")
+                                                ])
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-list-item-content",
+                                              [
+                                                _c("v-list-item-title", [
+                                                  _vm._v(
+                                                    "\n                                                Lihat Rincian\n                                            "
+                                                  )
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item",
+                                          {
+                                            attrs: { dense: "", link: "" },
+                                            on: {
+                                              click: function($event) {
+                                                return _vm.ubahInfoSekolah(
+                                                  item.id_profil
+                                                )
+                                              }
+                                            }
+                                          },
+                                          [
+                                            _c(
+                                              "v-list-item-icon",
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("mdi-pencil")
+                                                ])
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-list-item-content",
+                                              [
+                                                _c("v-list-item-title", [
+                                                  _vm._v(
+                                                    "\n                                                Ubah\n                                            "
+                                                  )
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item",
+                                          { attrs: { dense: "" } },
+                                          [
+                                            _c(
+                                              "v-list-item-icon",
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("mdi-delete")
+                                                ])
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-list-item-content",
+                                              [
+                                                _c("v-list-item-title", [
+                                                  _vm._v(
+                                                    "\n                                                Hapus\n                                            "
+                                                  )
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c("v-subheader", {
+                                          domProps: {
+                                            textContent: _vm._s("Rincian")
+                                          }
+                                        }),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item",
+                                          { attrs: { dense: "" } },
+                                          [
+                                            _c(
+                                              "v-list-item-icon",
+                                              [
+                                                _c("v-icon", [
+                                                  _vm._v("mdi-calendar")
+                                                ])
+                                              ],
+                                              1
+                                            ),
+                                            _vm._v(" "),
+                                            _c(
+                                              "v-list-item-content",
+                                              [
+                                                _c("v-list-item-title", [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(
+                                                        _vm._f("datetime")(
+                                                          item.created_at
+                                                        )
+                                                      ) +
+                                                      "\n                                            "
+                                                  )
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-card-subtitle", [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(item.tgl_berdiri) +
+                                  "\n                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c("v-card-text", [
+                              _c("div", [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(item.alamat) +
+                                    "\n                            "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", [
+                                _vm._v(
+                                  "\n                                NPSN. " +
+                                    _vm._s(item.npsn) +
+                                    "\n                            "
+                                )
+                              ])
+                            ])
+                          ],
+                          1
+                        )
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        {
+                          attrs: {
+                            color: "grey lighten-4 overflow-hidden",
+                            rounded: "xl",
+                            flat: "",
+                            link: ""
+                          },
+                          on: { click: _vm.openModalTambah }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex",
+                              staticStyle: { "min-height": "300px" }
+                            },
+                            [
+                              _c("div", { staticClass: "w-100" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "content-middle" },
+                                  [
+                                    _c("v-card-text", [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "d-flex flex-column align-center w-100"
+                                        },
+                                        [
+                                          _c(
+                                            "v-avatar",
+                                            {
+                                              attrs: { color: "grey lighten-2" }
+                                            },
+                                            [
+                                              _c("v-icon", {
+                                                attrs: { color: "grey" },
+                                                domProps: {
+                                                  textContent: _vm._s(
+                                                    "mdi-plus"
+                                                  )
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "grow-1 pl-4" },
+                                            [
+                                              _c("v-subheader", [
+                                                _vm._v(
+                                                  "\n                                                    Tambah Profil Sekolah\n                                                "
+                                                )
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ],
+                    2
                   )
                 ])
           ])
@@ -23925,6 +24947,172 @@ var render = function() {
                         [
                           _vm._v(
                             "\n                        Tambah\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=template&id=fd869c74&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=template&id=fd869c74& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            "max-width": "600",
+            "content-class": "shadow-sm",
+            "overlay-opacity": ".25",
+            eager: "",
+            scrollable: "",
+            persistent: ""
+          },
+          model: {
+            value: _vm.dialog,
+            callback: function($$v) {
+              _vm.dialog = $$v
+            },
+            expression: "dialog"
+          }
+        },
+        [
+          _c(
+            "v-form",
+            {
+              attrs: { disabled: _vm.loading },
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.submit.apply(null, arguments)
+                }
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { flat: "" } },
+                    [
+                      _c("v-subheader", [
+                        _vm._v(
+                          "\n                        Form Ubah Profil Sekolah > " +
+                            _vm._s(_vm.item.nama_sekolah) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "grey lighten-3" } },
+                        [_c("v-icon", [_vm._v("mdi-school")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _vm.dialog && _vm.exists
+                    ? _c(
+                        "v-card-text",
+                        [
+                          _c("form-tambah-sekolah", {
+                            model: {
+                              value: _vm.item,
+                              callback: function($$v) {
+                                _vm.item = $$v
+                              },
+                              expression: "item"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm.dialog && _vm.loading
+                    ? _c(
+                        "v-card-text",
+                        [_c("form-tambah-sekolah-placeholder")],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: { text: "", loading: _vm.loading },
+                          on: {
+                            click: function($event) {
+                              _vm.dialog = false
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Batal\n                    "
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            text: "",
+                            color: "primary",
+                            type: "submit",
+                            loading: _vm.loading
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Simpan\n                    "
                           )
                         ]
                       )
@@ -24143,7 +25331,7 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("input-stuktur-organisasi-sekolah", {
-        attrs: { errors: _vm.errors },
+        attrs: { errors: _vm.errors, foto: _vm.item.struktur_organisasi },
         model: {
           value: _vm.item,
           callback: function($$v) {
@@ -24218,6 +25406,34 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [_c("v-skeleton-loader", { attrs: { type: "article, actions" } })],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/InputStukturOrganisasiSekolah.vue?vue&type=template&id=0844ff21&scoped=true&":
 /*!****************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/form/InputStukturOrganisasiSekolah.vue?vue&type=template&id=0844ff21&scoped=true& ***!
@@ -24237,11 +25453,77 @@ var render = function() {
     "div",
     { staticClass: "rowspan-3" },
     [
-      _c("transition", { attrs: { name: "fly-down" } }, [
+      _c("v-scale-transition", { attrs: { group: "", mode: "out-in" } }, [
+        _vm.foto
+          ? _c(
+              "div",
+              { key: "foto", staticClass: "mb-3" },
+              [
+                _c(
+                  "v-card",
+                  { attrs: { flat: "", outlined: "", rounded: "lg" } },
+                  [
+                    _c(
+                      "v-list",
+                      [
+                        _c(
+                          "v-list-item",
+                          [
+                            _c(
+                              "v-list-item-avatar",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    return _vm.previewImage(_vm.foto)
+                                  }
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-transition",
+                                  style: _vm.imgStyle,
+                                  attrs: { src: _vm.foto, alt: "" }
+                                })
+                              ]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-item-content",
+                              [
+                                _c("v-list-item-title", [
+                                  _vm._v(
+                                    "\n                                Berkas lama\n                            "
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("v-list-item-subtitle", [
+                                  _vm._v(
+                                    "\n                                " +
+                                      _vm._s(_vm.foto) +
+                                      "\n                            "
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          : _vm._e(),
+        _vm._v(" "),
         _vm.imgdata
           ? _c(
               "div",
-              { staticClass: "mb-3" },
+              { key: "local", staticClass: "mb-3" },
               [
                 _c(
                   "v-card",
@@ -24304,58 +25586,9 @@ var render = function() {
               ],
               1
             )
-          : _vm.foto
-          ? _c("div", { staticClass: "d-flex pb-10" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "d-flex justify-center",
-                  staticStyle: { position: "relative", width: "100%" }
-                },
-                [
-                  _c("img", {
-                    staticClass: "rounded-lg img-transition",
-                    style: _vm.imgStyle,
-                    attrs: { src: _vm.foto.src_md, alt: "" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "v-btn",
-                    {
-                      attrs: {
-                        fab: "",
-                        bottom: "",
-                        absolute: "",
-                        dark: "",
-                        small: "",
-                        type: "button"
-                      },
-                      on: {
-                        click: function($event) {
-                          $event.preventDefault()
-                          _vm.small = !_vm.small
-                        }
-                      }
-                    },
-                    [
-                      _c("v-icon", {
-                        attrs: { light: "" },
-                        domProps: {
-                          textContent: _vm._s(
-                            _vm.small ? "mdi-fullscreen" : "mdi-fullscreen-exit"
-                          )
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ])
           : _c(
               "div",
-              { staticClass: "mb-3" },
+              { key: "empty", staticClass: "mb-3" },
               [
                 _c(
                   "v-card",
@@ -24409,7 +25642,8 @@ var render = function() {
               label: "Struktur Organisasi",
               "error-messages": _vm.errors.struktur_organisasi,
               outlined: "",
-              dense: ""
+              dense: "",
+              name: "struktur_organisasi"
             },
             on: {
               change: function($event) {
@@ -87020,6 +88254,22 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_
 var vuetify = new vuetify__WEBPACK_IMPORTED_MODULE_1___default.a({});
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('panel-admin', __webpack_require__(/*! ./components/PanelAdmin.vue */ "./resources/js/components/PanelAdmin.vue")["default"]);
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
+  filters: {
+    datetime: function datetime(val) {
+      var local = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'id-ID';
+      var date = new Date(val);
+      return new Intl.DateTimeFormat(local, {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }).format(date);
+    }
+  }
+});
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _routes_web__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -87251,6 +88501,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LogoutAdmin_vue_vue_type_template_id_6fcf5038___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_LogoutAdmin_vue_vue_type_template_id_6fcf5038___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/notification/Notification.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/notification/Notification.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Notification_vue_vue_type_template_id_b968a718___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Notification.vue?vue&type=template&id=b968a718& */ "./resources/js/components/notification/Notification.vue?vue&type=template&id=b968a718&");
+/* harmony import */ var _Notification_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Notification.vue?vue&type=script&lang=js& */ "./resources/js/components/notification/Notification.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Notification_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Notification_vue_vue_type_template_id_b968a718___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Notification_vue_vue_type_template_id_b968a718___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/notification/Notification.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/notification/Notification.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/notification/Notification.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Notification_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Notification.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/Notification.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Notification_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/notification/Notification.vue?vue&type=template&id=b968a718&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/notification/Notification.vue?vue&type=template&id=b968a718& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Notification_vue_vue_type_template_id_b968a718___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Notification.vue?vue&type=template&id=b968a718& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/Notification.vue?vue&type=template&id=b968a718&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Notification_vue_vue_type_template_id_b968a718___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Notification_vue_vue_type_template_id_b968a718___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/notification/NotificationSnackbar.vue":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/notification/NotificationSnackbar.vue ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _NotificationSnackbar_vue_vue_type_template_id_3f7179ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NotificationSnackbar.vue?vue&type=template&id=3f7179ce& */ "./resources/js/components/notification/NotificationSnackbar.vue?vue&type=template&id=3f7179ce&");
+/* harmony import */ var _NotificationSnackbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NotificationSnackbar.vue?vue&type=script&lang=js& */ "./resources/js/components/notification/NotificationSnackbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _NotificationSnackbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _NotificationSnackbar_vue_vue_type_template_id_3f7179ce___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _NotificationSnackbar_vue_vue_type_template_id_3f7179ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/notification/NotificationSnackbar.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/notification/NotificationSnackbar.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/notification/NotificationSnackbar.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NotificationSnackbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./NotificationSnackbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/NotificationSnackbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NotificationSnackbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/notification/NotificationSnackbar.vue?vue&type=template&id=3f7179ce&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/js/components/notification/NotificationSnackbar.vue?vue&type=template&id=3f7179ce& ***!
+  \******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotificationSnackbar_vue_vue_type_template_id_3f7179ce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./NotificationSnackbar.vue?vue&type=template&id=3f7179ce& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/notification/NotificationSnackbar.vue?vue&type=template&id=3f7179ce&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotificationSnackbar_vue_vue_type_template_id_3f7179ce___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NotificationSnackbar_vue_vue_type_template_id_3f7179ce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -87670,6 +89058,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/sekolah/SekolahUbah.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/pages/sekolah/SekolahUbah.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SekolahUbah_vue_vue_type_template_id_fd869c74___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SekolahUbah.vue?vue&type=template&id=fd869c74& */ "./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=template&id=fd869c74&");
+/* harmony import */ var _SekolahUbah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SekolahUbah.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SekolahUbah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SekolahUbah_vue_vue_type_template_id_fd869c74___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SekolahUbah_vue_vue_type_template_id_fd869c74___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/SekolahUbah.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahUbah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahUbah.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahUbah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=template&id=fd869c74&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=template&id=fd869c74& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahUbah_vue_vue_type_template_id_fd869c74___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahUbah.vue?vue&type=template&id=fd869c74& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahUbah.vue?vue&type=template&id=fd869c74&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahUbah_vue_vue_type_template_id_fd869c74___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahUbah_vue_vue_type_template_id_fd869c74___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/sekolah/form/FormTambahSekolah.vue":
 /*!***************************************************************!*\
   !*** ./resources/js/pages/sekolah/form/FormTambahSekolah.vue ***!
@@ -87734,6 +89191,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolah_vue_vue_type_template_id_066602c0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolah_vue_vue_type_template_id_066602c0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue":
+/*!**************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormTambahSekolahPlaceholder_vue_vue_type_template_id_269c8543___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543& */ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543&");
+/* harmony import */ var _FormTambahSekolahPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormTambahSekolahPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormTambahSekolahPlaceholder_vue_vue_type_template_id_269c8543___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormTambahSekolahPlaceholder_vue_vue_type_template_id_269c8543___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolahPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolahPlaceholder_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543& ***!
+  \*********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolahPlaceholder_vue_vue_type_template_id_269c8543___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue?vue&type=template&id=269c8543&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolahPlaceholder_vue_vue_type_template_id_269c8543___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahSekolahPlaceholder_vue_vue_type_template_id_269c8543___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -87970,7 +89496,7 @@ router.beforeEach( /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(to, from, next) {
     var _res$data;
 
-    var token, res, _res$data2, _res$data3, _res$data3$meta, _res;
+    var token, res, _res$data2, _res$data3, _res$data3$data, _res;
 
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
@@ -87983,6 +89509,12 @@ router.beforeEach( /*#__PURE__*/function () {
              */
             next();
             axios__WEBPACK_IMPORTED_MODULE_6___default.a.interceptors.response.use(function (response) {
+              if (response.status == 201) {
+                _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
+                  message: "Berhasil menambahkan data 👌"
+                });
+              }
+
               return response;
             }, function (error) {
               if (error.response.status == 401) {
@@ -87996,6 +89528,10 @@ router.beforeEach( /*#__PURE__*/function () {
                   path: '/admin/401'
                 });
                 return null;
+              } else if (error.response.status == 403) {
+                _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
+                  message: error.message
+                });
               }
 
               return Promise.reject(error);
@@ -88044,7 +89580,7 @@ router.beforeEach( /*#__PURE__*/function () {
           case 15:
             _res = _context.sent;
 
-            if (!((_res === null || _res === void 0 ? void 0 : _res.status) == 200 && _res !== null && _res !== void 0 && (_res$data2 = _res.data) !== null && _res$data2 !== void 0 && _res$data2.data && (_res === null || _res === void 0 ? void 0 : (_res$data3 = _res.data) === null || _res$data3 === void 0 ? void 0 : (_res$data3$meta = _res$data3.meta) === null || _res$data3$meta === void 0 ? void 0 : _res$data3$meta.total) > 0)) {
+            if (!((_res === null || _res === void 0 ? void 0 : _res.status) == 200 && _res !== null && _res !== void 0 && (_res$data2 = _res.data) !== null && _res$data2 !== void 0 && _res$data2.data && _res !== null && _res !== void 0 && (_res$data3 = _res.data) !== null && _res$data3 !== void 0 && (_res$data3$data = _res$data3.data) !== null && _res$data3$data !== void 0 && _res$data3$data.length)) {
               _context.next = 21;
               break;
             }
@@ -88404,12 +89940,16 @@ __webpack_require__.r(__webpack_exports__);
       var commit = _ref.commit;
       commit("SHOW_MESSAGE", payload);
     },
-    showNotification: function showNotification(_ref2, payload) {
+    notif: function notif(_ref2, payload) {
       var commit = _ref2.commit;
       commit("SHOW_MESSAGE", payload);
     },
-    show: function show(_ref3, payload) {
+    showNotification: function showNotification(_ref3, payload) {
       var commit = _ref3.commit;
+      commit("SHOW_MESSAGE", payload);
+    },
+    show: function show(_ref4, payload) {
+      var commit = _ref4.commit;
       commit("SHOW_MESSAGE", payload);
     }
   }
@@ -88533,22 +90073,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         };
       }());
     },
-    show: function show(context, params) {
+    show: function show(context, _ref3) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
-        var id;
+        var _ref3$data, data, id;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
           while (1) {
             switch (_context4.prev = _context4.next) {
               case 0:
-                id = params.id;
+                _ref3$data = _ref3.data, data = _ref3$data === void 0 ? {} : _ref3$data, id = _ref3.id;
 
                 if (!id) {
-                  _context4.next = 3;
+                  _context4.next = 5;
                   break;
                 }
 
                 return _context4.abrupt("return", new Promise( /*#__PURE__*/function () {
-                  var _ref3 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(resolve, reject) {
+                  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(resolve, reject) {
                     var res;
                     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
                       while (1) {
@@ -88556,7 +90097,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                           case 0:
                             _context3.next = 2;
                             return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/sekolah/".concat(id)), {
-                              params: params
+                              params: data
                             })["catch"](function (e) {
                               return reject(e);
                             });
@@ -88574,11 +90115,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }));
 
                   return function (_x5, _x6) {
-                    return _ref3.apply(this, arguments);
+                    return _ref4.apply(this, arguments);
                   };
                 }()));
 
-              case 3:
+              case 5:
+                console.warn("show@sekolah.js", "id kosong 🤦‍♂️");
+
+              case 6:
               case "end":
                 return _context4.stop();
             }
@@ -88588,7 +90132,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     store: function store(context, data) {
       return new Promise( /*#__PURE__*/function () {
-        var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(resolve, reject) {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(resolve, reject) {
           var res;
           return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
             while (1) {
@@ -88612,26 +90156,26 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }));
 
         return function (_x7, _x8) {
-          return _ref4.apply(this, arguments);
+          return _ref5.apply(this, arguments);
         };
       }());
     },
-    update: function update(context, data) {
+    update: function update(context, _ref6) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7() {
-        var id;
+        var data, id;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
           while (1) {
             switch (_context7.prev = _context7.next) {
               case 0:
-                id = context.state.selected.id;
+                data = _ref6.data, id = _ref6.id;
 
                 if (!id) {
-                  _context7.next = 3;
+                  _context7.next = 5;
                   break;
                 }
 
                 return _context7.abrupt("return", new Promise( /*#__PURE__*/function () {
-                  var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(resolve, reject) {
+                  var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(resolve, reject) {
                     var res;
                     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
                       while (1) {
@@ -88655,11 +90199,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }));
 
                   return function (_x9, _x10) {
-                    return _ref5.apply(this, arguments);
+                    return _ref7.apply(this, arguments);
                   };
                 }()));
 
-              case 3:
+              case 5:
+                console.warn("update@sekolah.js", "id kosong 🤦‍♂️");
+
+              case 6:
               case "end":
                 return _context7.stop();
             }
@@ -88682,7 +90229,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 }
 
                 return _context9.abrupt("return", new Promise( /*#__PURE__*/function () {
-                  var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(resolve, reject) {
+                  var _ref8 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(resolve, reject) {
                     var res;
                     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
                       while (1) {
@@ -88706,7 +90253,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }));
 
                   return function (_x11, _x12) {
-                    return _ref6.apply(this, arguments);
+                    return _ref8.apply(this, arguments);
                   };
                 }()));
 
@@ -88720,6 +90267,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     updateSession: function updateSession(context, data) {
       context.commit('SET_SESSION_CODE', data || new Date().getTime());
+    },
+
+    /**
+     * modal
+     * 
+     */
+    openModalUbah: function openModalUbah(context, id) {
+      context.commit('PUSH_ID', id);
+      context.commit('SET_MODAL_UBAH', true);
+    },
+    closeModalUbah: function closeModalUbah(context, id) {
+      context.commit('POP_ID', id);
+      context.commit('SET_MODAL_UBAH', false);
     }
   },
   mutations: {
@@ -88746,6 +90306,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     SET_ID: function SET_ID(state, payload) {
       state.selected.id = payload;
+    },
+    PUSH_ID: function PUSH_ID(state, payload) {
+      state.selected.id = payload;
+      state.selected.ids.push(payload);
+    },
+    POP_ID: function POP_ID(state, payload) {
+      state.selected.id = null;
+      state.selected.ids.pop();
     },
     SET_ITEMS: function SET_ITEMS(state, payload) {
       state.items = payload;

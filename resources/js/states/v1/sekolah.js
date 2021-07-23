@@ -43,13 +43,14 @@ export default {
                 if(res) resolve(res)
             })
         },
-        async show(context, params){
-            let id = params.id
+        async show(context, {data = {}, id}){
             if(id)
                 return new Promise(async(resolve, reject)=>{
-                    let res = await axios.get(api(`v1/sekolah/${id}`), { params: params }).catch(e => reject(e))
+                    let res = await axios.get(api(`v1/sekolah/${id}`), { params: data }).catch(e => reject(e))
                     if(res) resolve(res)
                 })
+            else
+                console.warn("show@sekolah.js", "id kosong 🤦‍♂️");
         },
         store(context, data){
             return new Promise(async(resolve, reject)=>{
@@ -57,13 +58,14 @@ export default {
                 if(res) resolve(res)
             })
         },
-        async update(context, data){
-            let id = context.state.selected.id
+        async update(context, { data, id }){
             if(id)
                 return new Promise(async(resolve, reject)=>{
                     let res = await axios.post(api(`v1/sekolah/${id}`), data).catch(e => reject(e))
                     if(res) resolve(res)
                 })
+            else
+                console.warn("update@sekolah.js", "id kosong 🤦‍♂️");
         },
         async destroy(context, data){
             let id = context.state.selected.id
@@ -75,6 +77,19 @@ export default {
         },
         updateSession(context, data){
             context.commit('SET_SESSION_CODE', data || (new Date).getTime())
+        },
+
+        /**
+         * modal
+         * 
+         */
+        openModalUbah(context, id){
+            context.commit('PUSH_ID', id)
+            context.commit('SET_MODAL_UBAH', true)
+        },
+        closeModalUbah(context, id){
+            context.commit('POP_ID', id)
+            context.commit('SET_MODAL_UBAH', false)
         }
     },
     mutations: {
@@ -101,6 +116,14 @@ export default {
         },
         SET_ID(state, payload){
             state.selected.id = payload
+        },
+        PUSH_ID(state, payload){
+            state.selected.id = payload
+            state.selected.ids.push(payload)
+        },
+        POP_ID(state, payload){
+            state.selected.id = null
+            state.selected.ids.pop()
         },
         SET_ITEMS(state, payload){
             state.items = payload

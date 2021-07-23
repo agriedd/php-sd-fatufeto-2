@@ -1,7 +1,26 @@
 <template>
     <div class="rowspan-3">
-        <transition name="fly-down">
-            <div v-if="imgdata" class="mb-3">
+        <v-scale-transition group mode="out-in">
+            <div class="mb-3" v-if="foto" key="foto">
+                <v-card flat outlined rounded="lg">
+                    <v-list>
+                        <v-list-item>
+                            <v-list-item-avatar @click="previewImage(foto)">
+                                <img :src="foto" alt="" :style="imgStyle" class="img-transition">
+                            </v-list-item-avatar>
+                            <v-list-item-content>
+                                <v-list-item-title>
+                                    Berkas lama
+                                </v-list-item-title>
+                                <v-list-item-subtitle>
+                                    {{ foto }}
+                                </v-list-item-subtitle>
+                            </v-list-item-content>
+                        </v-list-item>
+                    </v-list>
+                </v-card>
+            </div>
+            <div v-if="imgdata" class="mb-3" key="local">
                 <v-card flat outlined rounded="lg">
                     <v-list>
                         <v-list-item>
@@ -20,15 +39,7 @@
                     </v-list>
                 </v-card>
             </div>
-            <div class="d-flex pb-10" v-else-if="foto">
-                <div class="d-flex justify-center" style="position: relative; width: 100%">
-                    <img :src="foto.src_md" alt="" :style="imgStyle" class="rounded-lg img-transition">
-                    <v-btn fab bottom absolute dark small @click.prevent="small = !small" type="button">
-                        <v-icon light v-text="small ? 'mdi-fullscreen' : 'mdi-fullscreen-exit'"/>
-                    </v-btn>
-                </div>
-            </div>
-            <div v-else class="mb-3">
+            <div v-else class="mb-3" key="empty">
                 <v-card outlined flat rounded="lg">
                     <v-list>
                         <v-list-item>
@@ -44,7 +55,7 @@
                     </v-list>
                 </v-card>
             </div>
-        </transition>
+        </v-scale-transition>
         <v-file-input
             accept="image/png, image/jpeg, image/bmp"
             prepend-icon="mdi-image"
@@ -55,7 +66,7 @@
             v-bind="$attrs"
             outlined
             dense
-            ></v-file-input>
+            name="struktur_organisasi"/>
     </div>
 </template>
 <script>

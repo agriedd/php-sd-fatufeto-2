@@ -21,6 +21,11 @@ router.beforeEach(async (to, from, next) => {
      */
     next()
     axios.interceptors.response.use(function (response) {
+        if(response.status == 201){
+            store.dispatch('notifikasi/show', {
+                message: "Berhasil menambahkan data 👌"
+            })
+        }
         return response;
     }, function (error) {
         if(error.response.status == 401){
@@ -31,6 +36,10 @@ router.beforeEach(async (to, from, next) => {
             }
             next({ path: '/admin/401' })
             return null
+        } else if(error.response.status == 403){
+            store.dispatch('notifikasi/show', {
+                message: error.message
+            })
         }
         return Promise.reject(error);
     });
@@ -46,7 +55,6 @@ router.beforeEach(async (to, from, next) => {
     if(res.status == 200 && res?.data?.data){
         store.commit('login/admin/SET_USER', res.data.data)
         if(store.state.login.admin.user){
-            
             /**
              * jika ke sekolah
              * skip
@@ -57,7 +65,7 @@ router.beforeEach(async (to, from, next) => {
             if((to.name == 'sekolah' || from.name == 'sekolah') && (to.name == 'sekolah' && from.name != null)) return next()
 
             let res = await store.dispatch('sekolah/get')
-            if(res?.status == 200 && res?.data?.data && res?.data?.meta?.total > 0){
+            if(res?.status == 200 && res?.data?.data && res?.data?.data?.length){
                 store.commit('sekolah/SET_ITEMS', res.data.data)
                 return next()
             }

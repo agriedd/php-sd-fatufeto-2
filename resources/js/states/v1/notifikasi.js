@@ -27,6 +27,9 @@ export default {
         showSnack({ commit }, payload) {
             commit("SHOW_MESSAGE", payload);
         },
+        notif({ commit }, payload) {
+            commit("SHOW_MESSAGE", payload);
+        },
         showNotification({ commit }, payload) {
             commit("SHOW_MESSAGE", payload);
         },

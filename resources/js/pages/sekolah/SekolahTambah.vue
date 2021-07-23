@@ -55,6 +55,7 @@ export default {
         ...mapActions({
             storeSekolah: 'sekolah/store',
             updateSession: 'sekolah/updateSession',
+            notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
@@ -63,9 +64,18 @@ export default {
                 console.log("storeSekolah@SekolahTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
+                this.notif({
+                    message: e.message
+                })
             })
             this.loading = false
             console.log(res);
+            if(res){
+                notif({
+                    message: e.message,
+                    color: 'teal',
+                })
+            }
         }
     }
 }

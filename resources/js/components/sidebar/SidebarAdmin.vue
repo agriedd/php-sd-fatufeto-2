@@ -20,7 +20,9 @@
 		<v-list dense flat nav>
 			<v-list-item dense link color="primary" :to="{ name: 'sekolah' }" exact>
 				<v-list-item-icon>
-					<v-icon>mdi-school</v-icon>
+					<v-badge dot :value="warning_sekolah" color="error" offset-x="6" offset-y="6" bottom>
+						<v-icon>mdi-school</v-icon>
+					</v-badge>
 				</v-list-item-icon>
 				<v-list-item-content>
 					<v-list-item-title v-text="'Sekolah'" />
@@ -274,12 +276,20 @@
 	</v-navigation-drawer>
 </template>
 <script>
-import { mapMutations } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import SidebarAdminHeader from './SidebarAdminHeader.vue'
 export default {
     components: { 
         SidebarAdminHeader 
     },
+	computed: {
+        ...mapGetters({
+            total_sekolah: 'sekolah/getTotal'
+        }),
+		warning_sekolah(){
+			return this.total_sekolah <= 0
+		}
+	},
 	methods: {
 		...mapMutations({
 			showLogoutConfirm: 'login/admin/SET_LOGOUT_MODAL'

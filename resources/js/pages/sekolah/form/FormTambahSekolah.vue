@@ -53,7 +53,8 @@
         </v-dialog>
 		<input-stuktur-organisasi-sekolah
 			v-model="item"
-			:errors="errors"/>
+			:errors="errors"
+            :foto="item.struktur_organisasi"/>
 		<input-visi-misi-sekolah
 			v-model="item"
 			:errors="errors"/>
@@ -79,20 +80,37 @@
 import InputStukturOrganisasiSekolah from './InputStukturOrganisasiSekolah.vue';
 import InputVisiMisiSekolah from './InputVisiMisiSekolah.vue';
 export default {
-  components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah },
+    components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah },
+    props: {
+        value: {
+            type: Object,
+            default: ()=>{
+                return {
+                    id_profil: null,
+                    nama_sekolah: null,
+                    jenjang: null,
+                    tgl_berdiri: null,
+                    struktur_organisasi: null,
+                    visi_misi: null,
+                    alamat: null,
+                    npsn: null
+                }
+            }
+        }
+    },
+    computed: {
+        item: {
+            get(){
+                return this.value
+            },
+            set(val){
+                this.$emit('input', val)
+            },
+        }
+    },
     data() {
         return {
 			modal_tanggal_berdiri: false,
-            item: {
-                id_profil: null,
-                nama_sekolah: null,
-                jenjang: null,
-                tgl_berdiri: null,
-                struktur_organisasi: null,
-                visi_misi: null,
-                alamat: null,
-                npsn: null
-            },
             errors: {}
         };
     },

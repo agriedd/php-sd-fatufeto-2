@@ -77,7 +77,7 @@
                                                     </v-list-item-title>
                                                 </v-list-item-content>
                                             </v-list-item>
-                                            <v-list-item dense>
+                                            <v-list-item dense link @click="hapusInfoSekolah(item.id_profil)">
                                                 <v-list-item-icon>
                                                     <v-icon>mdi-delete</v-icon>
                                                 </v-list-item-icon>
@@ -168,13 +168,17 @@ export default {
             showTambahDialog: 'sekolah/SET_MODAL_TAMBAH',
         }),
         ...mapActions({
-            showUbahDialog: 'sekolah/openModalUbah'
+            showUbahDialog: 'sekolah/openModalUbah',
+            showHapusDialog: 'sekolah/openModalHapus'
         }),
         openModalTambah(){
             this.showTambahDialog(true)
         },
         ubahInfoSekolah(id){
             this.showUbahDialog(id)
+        },
+        hapusInfoSekolah(id){
+            this.showHapusDialog(id)
         }
     }
 }

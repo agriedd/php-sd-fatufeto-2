@@ -93,7 +93,11 @@ export default {
         closeModalUbah(context, id){
             context.commit('POP_ID', id)
             context.commit('SET_MODAL_UBAH', false)
-        }
+        },
+        openModalHapus(context, id){
+            context.commit('PUSH_ID', id)
+            context.commit('SET_MODAL_HAPUS', true)
+        },
     },
     mutations: {
         SET_MODAL_TAMBAH(state, payload){

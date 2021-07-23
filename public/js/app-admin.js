@@ -3558,35 +3558,59 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   },
   data: function data() {
     return {
-      visis: [{
-        value: "",
-        empty: false,
-        message: ["Tekan Enter Untuk Menambah Kolom Baru"]
-      }],
-      misis: [{
-        value: "",
-        empty: false,
-        message: ["Tekan Enter Untuk Menambah Kolom Baru"]
-      }],
       removeVisiTransition: null,
-      removeMisiTransition: null
+      removeMisiTransition: null,
+      visis: [],
+      misis: []
     };
   },
   computed: {
+    value_formated: function value_formated() {
+      var _this$value, _this$value2;
+
+      var visi = ((_this$value = this.value) === null || _this$value === void 0 ? void 0 : _this$value.visi) || [{
+        value: "",
+        empty: false,
+        message: ["Tekan Enter Untuk Menambah Kolom Baru"]
+      }];
+      var misi = ((_this$value2 = this.value) === null || _this$value2 === void 0 ? void 0 : _this$value2.misi) || [{
+        value: "",
+        empty: false,
+        message: ["Tekan Enter Untuk Menambah Kolom Baru"]
+      }];
+      visi = visi.map(function (e) {
+        if (typeof e == "string") return {
+          value: e,
+          empty: false,
+          message: ["Tekan Enter Untuk Menambah Kolom Baru"]
+        };else return e;
+      });
+      misi = misi.map(function (e) {
+        if (typeof e == "string") return {
+          value: e,
+          empty: false,
+          message: ["Tekan Enter Untuk Menambah Kolom Baru"]
+        };else return e;
+      });
+      return {
+        visi: visi,
+        misi: misi
+      };
+    },
     item: {
       get: function get() {
-        return this.value;
+        return this.value_formated;
       },
       set: function set(val) {
-        this.$emit('input', val);
+        console.log(val);
       }
     },
     visi_misi: function visi_misi() {
       return JSON.stringify({
-        "visi": _toConsumableArray(this.visis.map(function (e) {
+        "visi": _toConsumableArray(this.item.visi.map(function (e) {
           return e.value;
         })),
-        "misi": _toConsumableArray(this.misis.map(function (e) {
+        "misi": _toConsumableArray(this.item.misi.map(function (e) {
           return e.value;
         }))
       });
@@ -3624,16 +3648,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             this.visis.splice(after, 1);
             this.$nextTick(function (e) {
               var focus_on = after - 1;
-
-              if (focus_on < 0) {
-                focus_on = 0;
-              }
+              if (focus_on < 0) focus_on = 0;
 
               _this2.$refs["visi".concat(focus_on)][0].focus();
+
+              clearTimeout(_this2.removeVisiTransition);
             });
           } else {
-            this.visis[after].empty = true;
-            this.visis[after].message = ['tekan hapus sekali lagi'];
+            this.$set(this.visis[after], 'empty', true);
+            this.$set(this.visis[after], 'message', ['tekan hapus sekali lagi']);
             this.removeVisiTransition = setTimeout(function () {
               _this2.visis[after].empty = false;
 
@@ -3674,12 +3697,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             this.misis.splice(after, 1);
             this.$nextTick(function (e) {
               var focus_on = after - 1;
-
-              if (focus_on < 0) {
-                focus_on = 0;
-              }
+              if (focus_on < 0) focus_on = 0;
 
               _this4.$refs["misi".concat(focus_on)][0].focus();
+
+              clearTimeout(_this4.removeMisiTransition);
             });
           } else {
             this.misis[after].empty = true;
@@ -3694,7 +3716,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       }
     }
   },
-  watch: {}
+  watch: {},
+  created: function created() {
+    var _this5 = this;
+
+    this.$nextTick(function (e) {
+      _this5.visis = _this5.item.visi;
+      _this5.misis = _this5.item.misi;
+    });
+  }
 });
 
 /***/ }),
@@ -25344,11 +25374,11 @@ var render = function() {
       _c("input-visi-misi-sekolah", {
         attrs: { errors: _vm.errors },
         model: {
-          value: _vm.item,
+          value: _vm.item.visi_misi,
           callback: function($$v) {
-            _vm.item = $$v
+            _vm.$set(_vm.item, "visi_misi", $$v)
           },
-          expression: "item"
+          expression: "item.visi_misi"
         }
       }),
       _vm._v(" "),

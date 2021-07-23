@@ -44,27 +44,42 @@ export default {
     },
     data(){
         return {
-            visis: [
-                {value: "", empty: false, message: ["Tekan Enter Untuk Menambah Kolom Baru"]},
-            ],
-            misis: [
-                {value: "", empty: false, message: ["Tekan Enter Untuk Menambah Kolom Baru"]},
-            ],
             removeVisiTransition: null,
-            removeMisiTransition: null
+            removeMisiTransition: null,
+            visis: [],
+            misis: []
         }
     },
     computed: {
+        value_formated(){
+
+            let visi = this.value?.visi || [{value: "", empty: false, message: ["Tekan Enter Untuk Menambah Kolom Baru"]}]
+            let misi = this.value?.misi || [{value: "", empty: false, message: ["Tekan Enter Untuk Menambah Kolom Baru"]}]
+
+            visi = visi.map(e => {
+                if(typeof e == "string")
+                    return {value: e, empty: false, message: ["Tekan Enter Untuk Menambah Kolom Baru"]}
+                else return e
+            })
+            misi = misi.map(e => {
+                if(typeof e == "string")
+                    return {value: e, empty: false, message: ["Tekan Enter Untuk Menambah Kolom Baru"]}
+                else return e
+            })
+            return { visi, misi }
+        },
         item: {
             get(){
-                return this.value
+                return this.value_formated
             },
-            set(val){ this.$emit('input', val) }
+            set(val){ 
+                console.log(val);
+            }
         },
         visi_misi(){
             return JSON.stringify({ 
-                "visi": [...this.visis.map(e => e.value)], 
-                "misi": [...this.misis.map(e => e.value)] 
+                "visi": [...this.item.visi.map(e => e.value)], 
+                "misi": [...this.item.misi.map(e => e.value)] 
             })
         }
     },
@@ -92,14 +107,14 @@ export default {
                         this.visis.splice(after, 1)
                         this.$nextTick(e => {
                             let focus_on = after - 1
-                            if(focus_on < 0){
+                            if(focus_on < 0)
                                 focus_on = 0
-                            }
                             this.$refs[`visi${focus_on}`][0].focus();
+                            clearTimeout(this.removeVisiTransition)
                         })
                     } else {
-                        this.visis[after].empty = true;
-                        this.visis[after].message = ['tekan hapus sekali lagi'];
+                        this.$set(this.visis[after], 'empty', true)
+                        this.$set(this.visis[after], 'message', ['tekan hapus sekali lagi'])
                         this.removeVisiTransition = setTimeout(()=>{
                             this.visis[after].empty = false;
                             this.visis[after].message.pop();
@@ -131,10 +146,10 @@ export default {
                         this.misis.splice(after, 1)
                         this.$nextTick(e => {
                             let focus_on = after - 1
-                            if(focus_on < 0){
+                            if(focus_on < 0)
                                 focus_on = 0
-                            }
                             this.$refs[`misi${focus_on}`][0].focus();
+                            clearTimeout(this.removeMisiTransition)
                         })
                     } else {
                         this.misis[after].empty = true;
@@ -149,6 +164,13 @@ export default {
         }
     },
     watch: {
+
+    },
+    created(){
+        this.$nextTick(e => {
+            this.visis = this.item.visi
+            this.misis = this.item.misi
+        })
     }
 }
 </script>

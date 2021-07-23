@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Casts\StrukturOrganisasi;
+use App\Casts\VisiMisiCast;
 use Illuminate\Database\Eloquent\Model;
 
 class Sekolah extends Model{
@@ -10,6 +11,7 @@ class Sekolah extends Model{
     protected $primaryKey = "id_profil";
     protected $guarded = [];
     protected $casts = [
-        'struktur_organisasi' => StrukturOrganisasi::class
+        'struktur_organisasi' => StrukturOrganisasi::class,
+        'visi_misi' => VisiMisiCast::class,
     ];
 }

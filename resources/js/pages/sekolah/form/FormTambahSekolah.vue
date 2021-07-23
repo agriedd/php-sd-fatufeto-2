@@ -56,7 +56,7 @@
 			:errors="errors"
             :foto="item.struktur_organisasi"/>
 		<input-visi-misi-sekolah
-			v-model="item"
+			v-model="item.visi_misi"
 			:errors="errors"/>
         <v-text-field
             dense

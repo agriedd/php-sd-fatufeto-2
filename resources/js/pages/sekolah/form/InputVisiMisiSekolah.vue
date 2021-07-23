@@ -32,6 +32,7 @@
                     :placeholder="misi.empty || !i ? misi.message[0] : null"/>
             </v-list-item>
         </v-list>
+        <input name="visi_misi" v-model="visi_misi" type="hidden">
     </div>
 </template>
 <script>
@@ -60,6 +61,12 @@ export default {
             },
             set(val){ this.$emit('input', val) }
         },
+        visi_misi(){
+            return JSON.stringify({ 
+                "visi": [...this.visis.map(e => e.value)], 
+                "misi": [...this.misis.map(e => e.value)] 
+            })
+        }
     },
     methods: {
         appendVisi(after){

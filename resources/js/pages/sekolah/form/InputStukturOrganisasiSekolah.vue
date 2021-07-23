@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="rowspan-3">
         <transition name="fly-down">
             <div v-if="imgdata" class="mb-3">
                 <v-card flat outlined rounded="lg">

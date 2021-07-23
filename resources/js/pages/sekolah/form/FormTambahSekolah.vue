@@ -26,7 +26,8 @@
             persistent
             width="300px"
 			content-class="shadow-sm"
-			overlay-opacity=".25">
+			overlay-opacity=".25"
+            eager>
             <template v-slot:activator="{ on, attrs }">
 				<v-text-field
 					dense
@@ -64,6 +65,14 @@
             label="Alamat"
             :error-messages="errors.alamat"
             @keyup="errors.alamat = null"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.npsn"
+            name="npsn"
+            label="NPSN"
+            :error-messages="errors.npsn"
+            @keyup="errors.npsn = null"/>
     </div>
 </template>
 <script>

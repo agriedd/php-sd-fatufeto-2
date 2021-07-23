@@ -2741,6 +2741,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2950,6 +2959,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -2962,7 +2979,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      visis: ['']
+      visis: [{
+        value: "",
+        empty: false,
+        message: ["Tekan Enter Untuk Menambah Kolom Baru"]
+      }],
+      misis: [{
+        value: "",
+        empty: false,
+        message: ["Tekan Enter Untuk Menambah Kolom Baru"]
+      }],
+      removeVisiTransition: null,
+      removeMisiTransition: null
     };
   },
   computed: {
@@ -2975,7 +3003,108 @@ __webpack_require__.r(__webpack_exports__);
       }
     }
   },
-  methods: {},
+  methods: {
+    appendVisi: function appendVisi(after) {
+      var _this = this;
+
+      /**
+       * cek jika masih index saat ini kosong maka abaikan
+       * 
+       */
+      if (this.visis[after].value.trim().length > 0) {
+        this.visis.splice(after + 1, 0, {
+          value: "",
+          empty: false,
+          message: []
+        });
+        this.$nextTick(function (e) {
+          _this.$refs["visi".concat(after + 1)][0].focus();
+        });
+      }
+    },
+    removeVisi: function removeVisi(after, e) {
+      var _this2 = this;
+
+      if (e.key === "Backspace" || e.key === "Delete") {
+        /**
+         * cek jika masih index saat ini tidak kosong maka abaikan
+         * 
+         */
+        if (this.visis[after].value.length <= 0 && this.visis.length > 1) {
+          if (this.removeVisiTransition && this.visis[after].empty) {
+            this.visis.splice(after, 1);
+            this.$nextTick(function (e) {
+              var focus_on = after - 1;
+
+              if (focus_on < 0) {
+                focus_on = 0;
+              }
+
+              _this2.$refs["visi".concat(focus_on)][0].focus();
+            });
+          } else {
+            this.visis[after].empty = true;
+            this.visis[after].message = ['tekan hapus sekali lagi'];
+            this.removeVisiTransition = setTimeout(function () {
+              _this2.visis[after].empty = false;
+
+              _this2.visis[after].message.pop();
+            }, 2000);
+          }
+        }
+      }
+    },
+    appendMisi: function appendMisi(after) {
+      var _this3 = this;
+
+      /**
+       * cek jika masih index saat ini kosong maka abaikan
+       * 
+       */
+      if (this.misis[after].value.trim().length > 0) {
+        this.misis.splice(after + 1, 0, {
+          value: "",
+          empty: false,
+          message: []
+        });
+        this.$nextTick(function (e) {
+          _this3.$refs["misi".concat(after + 1)][0].focus();
+        });
+      }
+    },
+    removeMisi: function removeMisi(after, e) {
+      var _this4 = this;
+
+      if (e.key === "Backspace" || e.key === "Delete") {
+        /**
+         * cek jika masih index saat ini tidak kosong maka abaikan
+         * 
+         */
+        if (this.misis[after].value.length <= 0 && this.misis.length > 1) {
+          if (this.removeMisiTransition && this.misis[after].empty) {
+            this.misis.splice(after, 1);
+            this.$nextTick(function (e) {
+              var focus_on = after - 1;
+
+              if (focus_on < 0) {
+                focus_on = 0;
+              }
+
+              _this4.$refs["misi".concat(focus_on)][0].focus();
+            });
+          } else {
+            this.misis[after].empty = true;
+            this.misis[after].message = ['tekan hapus sekali lagi'];
+            this.removeMisiTransition = setTimeout(function () {
+              _this4.misis[after].empty = false;
+
+              _this4.misis[after].message.pop();
+            }, 2000);
+          }
+        }
+      }
+    }
+  },
   watch: {}
 });
 
@@ -23804,7 +23933,8 @@ var render = function() {
             persistent: "",
             width: "300px",
             "content-class": "shadow-sm",
-            "overlay-opacity": ".25"
+            "overlay-opacity": ".25",
+            eager: ""
           },
           on: {
             "update:returnValue": function($event) {
@@ -23961,6 +24091,28 @@ var render = function() {
           },
           expression: "item.alamat"
         }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "npsn",
+          label: "NPSN",
+          "error-messages": _vm.errors.npsn
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.npsn = null
+          }
+        },
+        model: {
+          value: _vm.item.npsn,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "npsn", $$v)
+          },
+          expression: "item.npsn"
+        }
       })
     ],
     1
@@ -23990,6 +24142,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
+    { staticClass: "rowspan-3" },
     [
       _c("transition", { attrs: { name: "fly-down" } }, [
         _vm.imgdata
@@ -24211,7 +24364,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "rowspan-2" },
+    { staticClass: "rowspan-6" },
     [
       _c(
         "v-list",
@@ -24224,18 +24377,36 @@ var render = function() {
               { key: i },
               [
                 _c("v-text-field", {
+                  ref: "visi" + i,
+                  refInFor: true,
                   attrs: {
                     dense: "",
                     outlined: "",
-                    label: "Visi",
-                    "hide-details": ""
+                    label: "Visi " + (i + 1),
+                    "hide-details": "",
+                    placeholder: visi.empty || !i ? visi.message[0] : null
+                  },
+                  on: {
+                    keypress: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      $event.preventDefault()
+                      return _vm.appendVisi(i)
+                    },
+                    keyup: function($event) {
+                      return _vm.removeVisi(i, $event)
+                    }
                   },
                   model: {
-                    value: _vm.visis[i],
+                    value: visi.value,
                     callback: function($$v) {
-                      _vm.$set(_vm.visis, i, $$v)
+                      _vm.$set(visi, "value", $$v)
                     },
-                    expression: "visis[i]"
+                    expression: "visi.value"
                   }
                 })
               ],
@@ -24245,24 +24416,42 @@ var render = function() {
           _vm._v(" "),
           _c("v-subheader", [_vm._v("\n            Misi\n        ")]),
           _vm._v(" "),
-          _vm._l(_vm.visis, function(visi, i) {
+          _vm._l(_vm.misis, function(misi, i) {
             return _c(
               "v-list-item",
-              { key: i },
+              { key: "misi" + i },
               [
                 _c("v-text-field", {
+                  ref: "misi" + i,
+                  refInFor: true,
                   attrs: {
                     dense: "",
                     outlined: "",
-                    label: "Visi",
-                    "hide-details": ""
+                    label: "Misi " + (i + 1),
+                    "hide-details": "",
+                    placeholder: misi.empty || !i ? misi.message[0] : null
+                  },
+                  on: {
+                    keypress: function($event) {
+                      if (
+                        !$event.type.indexOf("key") &&
+                        _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+                      ) {
+                        return null
+                      }
+                      $event.preventDefault()
+                      return _vm.appendMisi(i)
+                    },
+                    keyup: function($event) {
+                      return _vm.removeMisi(i, $event)
+                    }
                   },
                   model: {
-                    value: _vm.visis[i],
+                    value: misi.value,
                     callback: function($$v) {
-                      _vm.$set(_vm.visis, i, $$v)
+                      _vm.$set(misi, "value", $$v)
                     },
-                    expression: "visis[i]"
+                    expression: "misi.value"
                   }
                 })
               ],

@@ -313,10 +313,12 @@ tbody tr:nth-of-type(odd) {
 .d-grid{
   &-form{
     display: grid;
-    gap: 1rem;
+    gap: .5rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    & > .rowspan-2{
-      grid-row-end: span 2;
+    @for $i from 1 to 10 {
+      & > .rowspan-#{$i}{
+        grid-row-end: span #{$i};
+      }
     }
   }
 }

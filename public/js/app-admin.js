@@ -24525,233 +24525,230 @@ var render = function() {
                             }
                           },
                           [
-                            i == 0
-                              ? _c(
-                                  "v-card-text",
-                                  [
-                                    _c(
-                                      "v-avatar",
-                                      { attrs: { color: "grey lighten-2" } },
-                                      [_c("v-icon", [_vm._v("mdi-pin")])],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              : _vm._e(),
-                            _vm._v(" "),
-                            _c(
-                              "v-card-title",
-                              [
-                                _c("div", [
-                                  _vm._v(
-                                    "\n                                " +
-                                      _vm._s(item.nama_sekolah) +
-                                      "\n                            "
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("v-spacer"),
-                                _vm._v(" "),
-                                _c(
-                                  "v-menu",
-                                  {
-                                    attrs: {
-                                      "open-on-click": "",
-                                      "content-class": "shadow-sm rounded-lg",
-                                      "close-on-content-click": false
-                                    },
-                                    scopedSlots: _vm._u(
-                                      [
-                                        {
-                                          key: "activator",
-                                          fn: function(ref) {
-                                            var attrs = ref.attrs
-                                            var on = ref.on
-                                            return [
-                                              _c(
-                                                "v-btn",
-                                                _vm._g(
-                                                  _vm._b(
-                                                    { attrs: { icon: "" } },
-                                                    "v-btn",
-                                                    attrs,
-                                                    false
+                            _c("v-card-text", [
+                              _c(
+                                "div",
+                                { staticClass: "d-flex w-100" },
+                                [
+                                  i == 0
+                                    ? _c(
+                                        "v-avatar",
+                                        { attrs: { color: "grey lighten-2" } },
+                                        [_c("v-icon", [_vm._v("mdi-pin")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-menu",
+                                    {
+                                      attrs: {
+                                        "open-on-click": "",
+                                        "content-class": "shadow-sm rounded-lg",
+                                        "close-on-content-click": false
+                                      },
+                                      scopedSlots: _vm._u(
+                                        [
+                                          {
+                                            key: "activator",
+                                            fn: function(ref) {
+                                              var attrs = ref.attrs
+                                              var on = ref.on
+                                              return [
+                                                _c(
+                                                  "v-btn",
+                                                  _vm._g(
+                                                    _vm._b(
+                                                      { attrs: { icon: "" } },
+                                                      "v-btn",
+                                                      attrs,
+                                                      false
+                                                    ),
+                                                    on
                                                   ),
-                                                  on
-                                                ),
+                                                  [
+                                                    _c("v-icon", [
+                                                      _vm._v("mdi-menu")
+                                                    ])
+                                                  ],
+                                                  1
+                                                )
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        null,
+                                        true
+                                      )
+                                    },
+                                    [
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list",
+                                        { attrs: { nav: "" } },
+                                        [
+                                          _c("v-subheader", {
+                                            domProps: {
+                                              textContent: _vm._s("Aksi")
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            { attrs: { dense: "" } },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
                                                 [
                                                   _c("v-icon", [
-                                                    _vm._v("mdi-menu")
+                                                    _vm._v("mdi-school")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    Lihat Rincian\n                                                "
+                                                    )
                                                   ])
                                                 ],
                                                 1
                                               )
-                                            ]
-                                          }
-                                        }
-                                      ],
-                                      null,
-                                      true
-                                    )
-                                  },
-                                  [
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-list",
-                                      { attrs: { nav: "" } },
-                                      [
-                                        _c("v-subheader", {
-                                          domProps: {
-                                            textContent: _vm._s("Aksi")
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-list-item",
-                                          { attrs: { dense: "" } },
-                                          [
-                                            _c(
-                                              "v-list-item-icon",
-                                              [
-                                                _c("v-icon", [
-                                                  _vm._v("mdi-school")
-                                                ])
-                                              ],
-                                              1
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "v-list-item-content",
-                                              [
-                                                _c("v-list-item-title", [
-                                                  _vm._v(
-                                                    "\n                                                Lihat Rincian\n                                            "
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            {
+                                              attrs: { dense: "", link: "" },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.ubahInfoSekolah(
+                                                    item.id_profil
                                                   )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-list-item",
-                                          {
-                                            attrs: { dense: "", link: "" },
-                                            on: {
-                                              click: function($event) {
-                                                return _vm.ubahInfoSekolah(
-                                                  item.id_profil
-                                                )
+                                                }
                                               }
+                                            },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-pencil")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    Ubah\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            { attrs: { dense: "" } },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-delete")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    Hapus\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-subheader", {
+                                            domProps: {
+                                              textContent: _vm._s("Rincian")
                                             }
-                                          },
-                                          [
-                                            _c(
-                                              "v-list-item-icon",
-                                              [
-                                                _c("v-icon", [
-                                                  _vm._v("mdi-pencil")
-                                                ])
-                                              ],
-                                              1
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "v-list-item-content",
-                                              [
-                                                _c("v-list-item-title", [
-                                                  _vm._v(
-                                                    "\n                                                Ubah\n                                            "
-                                                  )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-list-item",
-                                          { attrs: { dense: "" } },
-                                          [
-                                            _c(
-                                              "v-list-item-icon",
-                                              [
-                                                _c("v-icon", [
-                                                  _vm._v("mdi-delete")
-                                                ])
-                                              ],
-                                              1
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "v-list-item-content",
-                                              [
-                                                _c("v-list-item-title", [
-                                                  _vm._v(
-                                                    "\n                                                Hapus\n                                            "
-                                                  )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c("v-subheader", {
-                                          domProps: {
-                                            textContent: _vm._s("Rincian")
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c(
-                                          "v-list-item",
-                                          { attrs: { dense: "" } },
-                                          [
-                                            _c(
-                                              "v-list-item-icon",
-                                              [
-                                                _c("v-icon", [
-                                                  _vm._v("mdi-calendar")
-                                                ])
-                                              ],
-                                              1
-                                            ),
-                                            _vm._v(" "),
-                                            _c(
-                                              "v-list-item-content",
-                                              [
-                                                _c("v-list-item-title", [
-                                                  _vm._v(
-                                                    "\n                                                " +
-                                                      _vm._s(
-                                                        _vm._f("datetime")(
-                                                          item.created_at
-                                                        )
-                                                      ) +
-                                                      "\n                                            "
-                                                  )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                )
-                              ],
-                              1
-                            ),
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            { attrs: { dense: "" } },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-calendar")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    " +
+                                                        _vm._s(
+                                                          _vm._f("datetime")(
+                                                            item.created_at
+                                                          )
+                                                        ) +
+                                                        "\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("v-card-title", [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(item.nama_sekolah) +
+                                  "\n                        "
+                              )
+                            ]),
                             _vm._v(" "),
                             _c("v-card-subtitle", [
                               _vm._v(

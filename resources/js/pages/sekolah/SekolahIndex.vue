@@ -43,67 +43,67 @@
                 <div v-else>
                     <div class="d-grid-sekolah">
                         <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_profil">
-                            <v-card-text v-if="i == 0">
-                                <v-avatar color="grey lighten-2">
-                                    <v-icon>mdi-pin</v-icon>
-                                </v-avatar>
+                            <v-card-text>
+                                <div class="d-flex w-100">
+                                    <v-avatar color="grey lighten-2" v-if="i == 0">
+                                        <v-icon>mdi-pin</v-icon>
+                                    </v-avatar>
+                                    <v-spacer/>
+                                    <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
+                                        <template #activator="{ attrs, on }">
+                                            <v-btn icon v-on.prevent="on" v-bind="attrs">
+                                                <v-icon>mdi-menu</v-icon>
+                                            </v-btn>
+                                        </template>
+                                        <v-list nav>
+                                            <v-subheader v-text="'Aksi'"/>
+                                            <v-list-item dense>
+                                                <v-list-item-icon>
+                                                    <v-icon>mdi-school</v-icon>
+                                                </v-list-item-icon>
+                                                <v-list-item-content>
+                                                    <v-list-item-title>
+                                                        Lihat Rincian
+                                                    </v-list-item-title>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                            <v-list-item dense link @click="ubahInfoSekolah(item.id_profil)">
+                                                <v-list-item-icon>
+                                                    <v-icon>mdi-pencil</v-icon>
+                                                </v-list-item-icon>
+                                                <v-list-item-content>
+                                                    <v-list-item-title>
+                                                        Ubah
+                                                    </v-list-item-title>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                            <v-list-item dense>
+                                                <v-list-item-icon>
+                                                    <v-icon>mdi-delete</v-icon>
+                                                </v-list-item-icon>
+                                                <v-list-item-content>
+                                                    <v-list-item-title>
+                                                        Hapus
+                                                    </v-list-item-title>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                            <v-subheader v-text="'Rincian'"/>
+                                            <v-list-item dense>
+                                                <v-list-item-icon>
+                                                    <v-icon>mdi-calendar</v-icon>
+                                                </v-list-item-icon>
+                                                <v-list-item-content>
+                                                    <v-list-item-title>
+                                                        {{ item.created_at | datetime }}
+                                                    </v-list-item-title>
+                                                </v-list-item-content>
+                                            </v-list-item>
+                                        </v-list>
+                                    </v-menu>
+                                </div>
                             </v-card-text>
                             <v-card-title>
-                                <div>
-                                    {{ item.nama_sekolah }}
-                                </div>
-                                <v-spacer/>
-                                <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
-                                    <template #activator="{ attrs, on }">
-                                        <v-btn icon v-on.prevent="on" v-bind="attrs">
-                                            <v-icon>mdi-menu</v-icon>
-                                        </v-btn>
-                                    </template>
-                                    <v-list nav>
-                                        <v-subheader v-text="'Aksi'"/>
-                                        <v-list-item dense>
-                                            <v-list-item-icon>
-                                                <v-icon>mdi-school</v-icon>
-                                            </v-list-item-icon>
-                                            <v-list-item-content>
-                                                <v-list-item-title>
-                                                    Lihat Rincian
-                                                </v-list-item-title>
-                                            </v-list-item-content>
-                                        </v-list-item>
-                                        <v-list-item dense link @click="ubahInfoSekolah(item.id_profil)">
-                                            <v-list-item-icon>
-                                                <v-icon>mdi-pencil</v-icon>
-                                            </v-list-item-icon>
-                                            <v-list-item-content>
-                                                <v-list-item-title>
-                                                    Ubah
-                                                </v-list-item-title>
-                                            </v-list-item-content>
-                                        </v-list-item>
-                                        <v-list-item dense>
-                                            <v-list-item-icon>
-                                                <v-icon>mdi-delete</v-icon>
-                                            </v-list-item-icon>
-                                            <v-list-item-content>
-                                                <v-list-item-title>
-                                                    Hapus
-                                                </v-list-item-title>
-                                            </v-list-item-content>
-                                        </v-list-item>
-                                        <v-subheader v-text="'Rincian'"/>
-                                        <v-list-item dense>
-                                            <v-list-item-icon>
-                                                <v-icon>mdi-calendar</v-icon>
-                                            </v-list-item-icon>
-                                            <v-list-item-content>
-                                                <v-list-item-title>
-                                                    {{ item.created_at | datetime }}
-                                                </v-list-item-title>
-                                            </v-list-item-content>
-                                        </v-list-item>
-                                    </v-list>
-                                </v-menu>
+                                {{ item.nama_sekolah }}
                             </v-card-title>
                             <v-card-subtitle>
                                 {{ item.tgl_berdiri }}

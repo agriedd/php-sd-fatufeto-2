@@ -2658,8 +2658,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-/* harmony import */ var _form_FormTambahSekolah_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form/FormTambahSekolah.vue */ "./resources/js/pages/sekolah/form/FormTambahSekolah.vue");
-/* harmony import */ var _form_FormTambahSekolahPlaceholder_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./form/FormTambahSekolahPlaceholder.vue */ "./resources/js/pages/sekolah/form/FormTambahSekolahPlaceholder.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -2708,13 +2706,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    FormTambahSekolah: _form_FormTambahSekolah_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    FormTambahSekolahPlaceholder: _form_FormTambahSekolahPlaceholder_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
-  },
   data: function data() {
     return {
       loading: false,
@@ -2736,15 +2728,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       get: function get() {
         return this.value_dialog;
       },
-      set: function set(val) {
-        this.setDialog(val);
+      set: function set(value) {
+        this.setDialog({
+          value: value
+        });
       }
     }
   }),
-  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
-    setDialog: 'sekolah/SET_MODAL_HAPUS'
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    updateSekolah: 'sekolah/update',
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    setDialog: 'sekolah/setModalHapus',
+    deleteSekolah: 'sekolah/destroy',
     findSekolah: 'sekolah/show',
     updateSession: 'sekolah/updateSession',
     notif: 'notifikasi/show'
@@ -2761,11 +2754,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 data = new FormData(e.target);
                 _this.loading = true;
                 _context.next = 4;
-                return _this.updateSekolah({
+                return _this.deleteSekolah({
                   data: data,
                   id: _this.id
                 })["catch"](function (e) {
-                  console.log("updateSekolah@SekolahTambah.vue", e);
+                  console.log("deleteSekolah@SekolahTambah.vue", e);
                   if (e.response.status == 422) _this.errors = e.response.data.errors;
 
                   _this.notif({
@@ -2778,8 +2771,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = false;
 
                 if (res) {
-                  notif({
-                    message: e.message,
+                  _this.notif({
+                    message: "Berhasil dihapus 👌",
                     color: 'teal'
                   });
                 }
@@ -2826,6 +2819,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
                     _this2.$set(_this2.ori, key, res.data.data[key]);
                   }
+
+                  _this2.updateSession();
                 }
 
               case 7:
@@ -2838,8 +2833,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   watch: {
-    id: function id(val) {
-      val && this.loadItem();
+    value_dialog: function value_dialog(val) {
+      var _this3 = this;
+
+      val && this.$nextTick(function (e) {
+        return _this3.loadItem();
+      });
     }
   }
 });
@@ -2855,7 +2854,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -3015,33 +3022,82 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       loading: false
     };
   },
-  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
     items: function items(state) {
       return state.sekolah.items;
     }
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
-    total_sekolah: 'sekolah/getTotal'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    total_sekolah: 'sekolah/getTotal',
+    session: 'sekolah/getSession'
   })), {}, {
     exists: function exists() {
       return this.total_sekolah > 0;
     }
   }),
-  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
-    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH'
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapActions"])({
-    showUbahDialog: 'sekolah/openModalUbah',
-    showHapusDialog: 'sekolah/openModalHapus'
+  watch: {
+    session: function session() {
+      this.loadItems();
+    }
+  },
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH',
+    setItems: 'sekolah/SET_ITEMS'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    showUbahDialog: 'sekolah/setModalUbah',
+    showHapusDialog: 'sekolah/setModalHapus',
+    getItems: 'sekolah/get'
   })), {}, {
     openModalTambah: function openModalTambah() {
       this.showTambahDialog(true);
     },
     ubahInfoSekolah: function ubahInfoSekolah(id) {
-      this.showUbahDialog(id);
+      this.showUbahDialog({
+        id: id,
+        value: true
+      });
     },
     hapusInfoSekolah: function hapusInfoSekolah(id) {
-      this.showHapusDialog(id);
+      this.showHapusDialog({
+        id: id,
+        value: true
+      });
+    },
+    loadItems: function loadItems() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _res$data;
+
+        var res, _res$data2;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.loading = true;
+                _context.next = 3;
+                return _this.getItems({})["catch"](function (e) {
+                  console.log("loadItem@SekolahIndex.vue", e);
+                });
+
+              case 3:
+                res = _context.sent;
+                _this.loading = false;
+
+                if (res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data) {
+                  _this.setItems(res === null || res === void 0 ? void 0 : (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data);
+                }
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
     }
-  })
+  }),
+  created: function created() {}
 });
 
 /***/ }),
@@ -3148,7 +3204,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _context.next = 4;
                 return _this.storeSekolah(data)["catch"](function (e) {
                   console.log("storeSekolah@SekolahTambah.vue", e);
-                  if (e.response.status == 422) _this.errors = e.response.data.errors;
+                  if (e.response.status == 422) _this.setErrorForm(e);
 
                   _this.notif({
                     message: e.message
@@ -3161,10 +3217,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 console.log(res);
 
                 if (res) {
-                  notif({
-                    message: e.message,
+                  _this.notif({
                     color: 'teal'
                   });
+
+                  _this.dialog = false;
+
+                  _this.updateSession();
                 }
 
               case 8:
@@ -3271,14 +3330,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       get: function get() {
         return this.value_dialog;
       },
-      set: function set(val) {
-        this.setDialog(val);
+      set: function set(value) {
+        this.setDialog({
+          value: value
+        });
       }
     }
   }),
-  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
-    setDialog: 'sekolah/SET_MODAL_UBAH'
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    setDialog: 'sekolah/setModalUbah',
     updateSekolah: 'sekolah/update',
     findSekolah: 'sekolah/show',
     updateSession: 'sekolah/updateSession',
@@ -3313,10 +3373,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = false;
 
                 if (res) {
-                  notif({
-                    message: e.message,
+                  _this.notif({
                     color: 'teal'
                   });
+
+                  _this.updateSession();
                 }
 
               case 7:
@@ -3373,8 +3434,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   }),
   watch: {
-    id: function id(val) {
-      val && this.loadItem();
+    value_dialog: function value_dialog(val) {
+      var _this3 = this;
+
+      val && this.$nextTick(function (e) {
+        return _this3.loadItem();
+      });
     }
   }
 });
@@ -3468,7 +3533,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3477,6 +3541,7 @@ __webpack_require__.r(__webpack_exports__);
     InputVisiMisiSekolah: _InputVisiMisiSekolah_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   props: {
+    errors: Object,
     value: {
       type: Object,
       "default": function _default() {
@@ -3505,8 +3570,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      modal_tanggal_berdiri: false,
-      errors: {}
+      modal_tanggal_berdiri: false
     };
   },
   methods: {}
@@ -25341,7 +25405,17 @@ var render = function() {
                   _vm._v(" "),
                   _c("v-divider"),
                   _vm._v(" "),
-                  _c("v-card-text", [_c("form-tambah-sekolah")], 1),
+                  _vm.dialog
+                    ? _c(
+                        "v-card-text",
+                        [
+                          _c("form-tambah-sekolah", {
+                            attrs: { errors: _vm.errors }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
                   _c("v-divider"),
                   _vm._v(" "),
@@ -25661,11 +25735,6 @@ var render = function() {
                             readonly: "",
                             "error-messages": _vm.errors.tgl_berdiri
                           },
-                          on: {
-                            keyup: function($event) {
-                              _vm.errors.tgl_berdiri = null
-                            }
-                          },
                           model: {
                             value: _vm.item.tgl_berdiri,
                             callback: function($$v) {
@@ -25733,7 +25802,8 @@ var render = function() {
                   attrs: { text: "", color: "primary" },
                   on: {
                     click: function($event) {
-                      return _vm.$refs.tgl_berdiri.save(_vm.item.tgl_berdiri)
+                      _vm.$refs.tgl_berdiri.save(_vm.item.tgl_berdiri)
+                      _vm.errors.tgl_berdiri = null
                     }
                   }
                 },
@@ -88684,6 +88754,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
         minute: '2-digit'
       }).format(date);
     }
+  },
+  methods: {
+    setErrorForm: function setErrorForm(e) {
+      var _e$response, _e$response$data;
+
+      if (e !== null && e !== void 0 && (_e$response = e.response) !== null && _e$response !== void 0 && (_e$response$data = _e$response.data) !== null && _e$response$data !== void 0 && _e$response$data.errors) for (var key in e.response.data.errors) {
+        this.$set(this.errors, key, e.response.data.errors[key]);
+      }
+    }
   }
 });
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
@@ -90456,6 +90535,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config */ "./resources/js/states/v1/config.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -90489,6 +90570,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   getters: {
     getTotal: function getTotal(state) {
       return state.items.length;
+    },
+    getSession: function getSession(state) {
+      return state.session.code;
     }
   },
   actions: {
@@ -90700,22 +90784,23 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee7);
       }))();
     },
-    destroy: function destroy(context, data) {
+    destroy: function destroy(context, _ref8) {
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee9() {
-        var id;
+        var data, id;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee9$(_context9) {
           while (1) {
             switch (_context9.prev = _context9.next) {
               case 0:
-                id = context.state.selected.id;
+                data = _ref8.data, id = _ref8.id;
 
                 if (!id) {
-                  _context9.next = 3;
+                  _context9.next = 6;
                   break;
                 }
 
+                if (data instanceof FormData) data.append('_method', 'DELETE');
                 return _context9.abrupt("return", new Promise( /*#__PURE__*/function () {
-                  var _ref8 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(resolve, reject) {
+                  var _ref9 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(resolve, reject) {
                     var res;
                     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
                       while (1) {
@@ -90739,11 +90824,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }));
 
                   return function (_x11, _x12) {
-                    return _ref8.apply(this, arguments);
+                    return _ref9.apply(this, arguments);
                   };
                 }()));
 
-              case 3:
+              case 6:
+                console.warn("destroy@sekolah.js", "id kosong 🤦‍♂️");
+
+              case 7:
               case "end":
                 return _context9.stop();
             }
@@ -90759,17 +90847,31 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
      * modal
      * 
      */
-    openModalUbah: function openModalUbah(context, id) {
-      context.commit('PUSH_ID', id);
-      context.commit('SET_MODAL_UBAH', true);
+    setModalUbah: function setModalUbah(context, payload) {
+      if (_typeof(payload) != "object") throw Error("setModalUbah butuh parameter object { [id: string], value: bool }");
+      var mvalue = payload.value;
+
+      if (mvalue) {
+        if (payload.id == null) throw Error("setModalHapus butuh key id jika valuenya true");
+        context.commit('PUSH_ID', payload.id);
+        context.commit('SET_MODAL_UBAH', true);
+      } else {
+        context.commit('POP_ID', payload.id);
+        context.commit('SET_MODAL_UBAH', false);
+      }
     },
-    closeModalUbah: function closeModalUbah(context, id) {
-      context.commit('POP_ID', id);
-      context.commit('SET_MODAL_UBAH', false);
-    },
-    openModalHapus: function openModalHapus(context, id) {
-      context.commit('PUSH_ID', id);
-      context.commit('SET_MODAL_HAPUS', true);
+    setModalHapus: function setModalHapus(context, payload) {
+      if (_typeof(payload) != "object") throw Error("setModalHapus butuh parameter object { [id: string], value: bool }");
+      var mvalue = payload.value;
+
+      if (mvalue) {
+        if (payload.id == null) throw Error("setModalHapus butuh key id jika valuenya true");
+        context.commit('PUSH_ID', payload.id);
+        context.commit('SET_MODAL_HAPUS', true);
+      } else {
+        context.commit('POP_ID', payload.id);
+        context.commit('SET_MODAL_HAPUS', false);
+      }
     }
   },
   mutations: {
@@ -90802,8 +90904,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       state.selected.ids.push(payload);
     },
     POP_ID: function POP_ID(state, payload) {
-      state.selected.id = null;
+      /**
+       * push:    1
+       * id:      1
+       * push:    1, 2
+       * id:      2
+       * push:    1, 2, 3
+       * id:      3
+       * pop:     1, 2
+       * id:      2
+       *      
+       */
       state.selected.ids.pop();
+      if (state.selected.ids.length) state.selected.id = state.selected.ids[state.selected.ids.length - 1];else state.selected.id = null;
     },
     SET_ITEMS: function SET_ITEMS(state, payload) {
       state.items = payload;

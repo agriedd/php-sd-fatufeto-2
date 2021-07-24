@@ -37,15 +37,14 @@
                     readonly
                     v-bind="attrs"
                     v-on="on"
-					:error-messages="errors.tgl_berdiri"
-					@keyup="errors.tgl_berdiri = null"/>
+					:error-messages="errors.tgl_berdiri"/>
             </template>
             <v-date-picker v-model="item.tgl_berdiri" scrollable locale="id-id" first-day-of-week="1">
                 <v-spacer></v-spacer>
                 <v-btn text color="primary" @click="modal_tanggal_berdiri = false">
                     Batal
                 </v-btn>
-                <v-btn text color="primary" @click="$refs.tgl_berdiri.save(item.tgl_berdiri)">
+                <v-btn text color="primary" @click="$refs.tgl_berdiri.save(item.tgl_berdiri); errors.tgl_berdiri = null">
                     Pilih
                 </v-btn>
             </v-date-picker>
@@ -81,6 +80,7 @@ import InputVisiMisiSekolah from './InputVisiMisiSekolah.vue';
 export default {
     components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah },
     props: {
+        errors: Object,
         value: {
             type: Object,
             default: ()=>{
@@ -110,7 +110,6 @@ export default {
     data() {
         return {
 			modal_tanggal_berdiri: false,
-            errors: {}
         };
     },
     methods: {}

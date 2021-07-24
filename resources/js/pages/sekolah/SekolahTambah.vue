@@ -13,8 +13,8 @@
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
-                    <v-card-text>
-                        <form-tambah-sekolah/>
+                    <v-card-text v-if="dialog">
+                        <form-tambah-sekolah :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -62,8 +62,7 @@ export default {
             this.loading = true
             let res = await this.storeSekolah(data).catch(e => {
                 console.log("storeSekolah@SekolahTambah.vue", e);
-                if(e.response.status == 422)
-                    this.errors = e.response.data.errors
+                if(e.response.status == 422) this.setErrorForm(e)
                 this.notif({
                     message: e.message
                 })
@@ -71,10 +70,11 @@ export default {
             this.loading = false
             console.log(res);
             if(res){
-                notif({
-                    message: e.message,
+                this.notif({
                     color: 'teal',
                 })
+                this.dialog = false
+                this.updateSession()
             }
         }
     }

@@ -157,29 +157,51 @@ export default {
             items: state => state.sekolah.items,
         }),
         ...mapGetters({
-            total_sekolah: 'sekolah/getTotal'
+            total_sekolah: 'sekolah/getTotal',
+            session: 'sekolah/getSession',
         }),
         exists(){
             return this.total_sekolah > 0
         }
     },
+    watch: {
+        session(){
+            this.loadItems()
+        }
+    },
     methods: {
         ...mapMutations({
             showTambahDialog: 'sekolah/SET_MODAL_TAMBAH',
+            setItems: 'sekolah/SET_ITEMS',
         }),
         ...mapActions({
-            showUbahDialog: 'sekolah/openModalUbah',
-            showHapusDialog: 'sekolah/openModalHapus'
+            showUbahDialog: 'sekolah/setModalUbah',
+            showHapusDialog: 'sekolah/setModalHapus',
+            getItems: 'sekolah/get',
         }),
         openModalTambah(){
             this.showTambahDialog(true)
         },
         ubahInfoSekolah(id){
-            this.showUbahDialog(id)
+            this.showUbahDialog({id, value: true})
         },
         hapusInfoSekolah(id){
-            this.showHapusDialog(id)
+            this.showHapusDialog({id, value: true})
+        },
+        async loadItems(){
+            this.loading = true
+            let res = await this.getItems({}).catch(e => {
+                console.log("loadItem@SekolahIndex.vue", e);
+            });
+            this.loading = false
+
+            if(res?.data?.data){
+                this.setItems(res?.data?.data)
+            }
         }
+    },
+    created(){
+
     }
 }
 </script>

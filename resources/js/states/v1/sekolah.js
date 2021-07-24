@@ -28,7 +28,10 @@ export default {
     getters: {
         getTotal(state){
             return state.items.length
-        }
+        },
+        getSession(state){
+            return state.session.code
+        },
     },
     actions: {
         get(context, params = {}){
@@ -70,13 +73,17 @@ export default {
             else
                 console.warn("update@sekolah.js", "id kosong 🤦‍♂️");
         },
-        async destroy(context, data){
-            let id = context.state.selected.id
-            if(id)
+        async destroy(context, { data, id }){
+            if(id){
+                if(data instanceof FormData)
+                    data.append('_method', 'DELETE')
                 return new Promise(async(resolve, reject)=>{
                     let res = await axios.post(api(`v1/sekolah/${id}`), data).catch(e => reject(e))
                     if(res) resolve(res)
                 })
+            }
+            else
+                console.warn("destroy@sekolah.js", "id kosong 🤦‍♂️");
         },
         updateSession(context, data){
             context.commit('SET_SESSION_CODE', data || (new Date).getTime())
@@ -86,17 +93,33 @@ export default {
          * modal
          * 
          */
-        openModalUbah(context, id){
-            context.commit('PUSH_ID', id)
-            context.commit('SET_MODAL_UBAH', true)
+        setModalUbah(context, payload){
+            if(typeof payload != "object")
+                throw Error("setModalUbah butuh parameter object { [id: string], value: bool }")
+            let mvalue = payload.value
+            if(mvalue){
+                if(payload.id == null)
+                    throw Error("setModalHapus butuh key id jika valuenya true")
+                context.commit('PUSH_ID', payload.id)
+                context.commit('SET_MODAL_UBAH', true)
+            } else {
+                context.commit('POP_ID', payload.id)
+                context.commit('SET_MODAL_UBAH', false)
+            }
         },
-        closeModalUbah(context, id){
-            context.commit('POP_ID', id)
-            context.commit('SET_MODAL_UBAH', false)
-        },
-        openModalHapus(context, id){
-            context.commit('PUSH_ID', id)
-            context.commit('SET_MODAL_HAPUS', true)
+        setModalHapus(context, payload){
+            if(typeof payload != "object")
+                throw Error("setModalHapus butuh parameter object { [id: string], value: bool }")
+            let mvalue = payload.value
+            if(mvalue){
+                if(payload.id == null)
+                    throw Error("setModalHapus butuh key id jika valuenya true")
+                context.commit('PUSH_ID', payload.id)
+                context.commit('SET_MODAL_HAPUS', true)
+            } else {
+                context.commit('POP_ID', payload.id)
+                context.commit('SET_MODAL_HAPUS', false)
+            }
         },
     },
     mutations: {
@@ -129,8 +152,23 @@ export default {
             state.selected.ids.push(payload)
         },
         POP_ID(state, payload){
-            state.selected.id = null
+
+            /**
+             * push:    1
+             * id:      1
+             * push:    1, 2
+             * id:      2
+             * push:    1, 2, 3
+             * id:      3
+             * pop:     1, 2
+             * id:      2
+             *      
+             */
+
             state.selected.ids.pop()
+            if(state.selected.ids.length)
+                state.selected.id = state.selected.ids[state.selected.ids.length-1]
+            else state.selected.id = null
         },
         SET_ITEMS(state, payload){
             state.items = payload

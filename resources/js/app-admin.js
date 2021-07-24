@@ -24,6 +24,14 @@ Vue.mixin({
             let date = new Date(val);
             return new Intl.DateTimeFormat(local, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(date)
         }
+    },
+    methods: {
+        setErrorForm(e){
+            if(e?.response?.data?.errors)
+                for(let key in e.response.data.errors){
+                    this.$set(this.errors, key, e.response.data.errors[key])
+                }
+        }
     }
 })
 

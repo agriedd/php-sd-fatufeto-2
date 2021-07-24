@@ -35,10 +35,7 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahSekolah from './form/FormTambahSekolah.vue'
-import FormTambahSekolahPlaceholder from './form/FormTambahSekolahPlaceholder.vue'
 export default {
-    components: { FormTambahSekolah, FormTambahSekolahPlaceholder },
     data(){
         return {
             loading: false,
@@ -55,15 +52,13 @@ export default {
         }),
         dialog: {
             get(){ return this.value_dialog },
-            set(val){ this.setDialog(val) }
+            set(value){ this.setDialog({value}) }
         }
     },
     methods: {
-        ...mapMutations({
-            setDialog: 'sekolah/SET_MODAL_HAPUS'
-        }),
         ...mapActions({
-            updateSekolah: 'sekolah/update',
+            setDialog: 'sekolah/setModalHapus',
+            deleteSekolah: 'sekolah/destroy',
             findSekolah: 'sekolah/show',
             updateSession: 'sekolah/updateSession',
             notif: 'notifikasi/show'
@@ -71,8 +66,8 @@ export default {
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.updateSekolah({ data, id: this.id }).catch(e => {
-                console.log("updateSekolah@SekolahTambah.vue", e);
+            let res = await this.deleteSekolah({ data, id: this.id }).catch(e => {
+                console.log("deleteSekolah@SekolahTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 this.notif({
@@ -81,8 +76,8 @@ export default {
             })
             this.loading = false
             if(res){
-                notif({
-                    message: e.message,
+                this.notif({
+                    message: "Berhasil dihapus 👌",
                     color: 'teal',
                 })
             }
@@ -103,12 +98,13 @@ export default {
                     this.$set(this.item, key, res.data.data[key])
                     this.$set(this.ori, key, res.data.data[key])
                 }
+                this.updateSession()
             }
         }
     },
     watch: {
-        id(val){
-            val && this.loadItem()
+        value_dialog(val){
+            val && this.$nextTick(e => this.loadItem())
         }
     }
 }

@@ -26,7 +26,7 @@ class SekolahController extends Controller{
         
         $sekolah = Sekolah::create($data->all());
         $collection = new SekolahCollection($sekolah);
-        return new Response($collection, $sekolah ? 201 : 500);
+        return new Response($collection, $sekolah ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     public function show(Sekolah $sekolah){
@@ -45,9 +45,13 @@ class SekolahController extends Controller{
 
         $result = $sekolah->update($data->all());
         $collection = new SekolahCollection($sekolah);
-        return new Response($collection, $result ? 201 : 500);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    public function destroy($id){
+    public function destroy(Sekolah $sekolah){
+        if(Storage::exists($sekolah->getOriginal('struktur_organisasi')))
+            Storage::delete($sekolah->getOriginal('struktur_organisasi'));
+        $result = $sekolah->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

@@ -17,7 +17,7 @@ class RequestSekolahStore extends FormRequest{
             'struktur_organisasi'   => 'required|file|image',
             'visi_misi'     => 'required',
             'alamat'        => 'required',
-            'npsn'          => 'required',
+            'npsn'          => 'required|unique:tbl_sekolah',
         ];
     }
 }

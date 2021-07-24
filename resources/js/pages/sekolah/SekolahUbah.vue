@@ -56,14 +56,12 @@ export default {
         }),
         dialog: {
             get(){ return this.value_dialog },
-            set(val){ this.setDialog(val) }
+            set(value){ this.setDialog({value}) }
         }
     },
     methods: {
-        ...mapMutations({
-            setDialog: 'sekolah/SET_MODAL_UBAH'
-        }),
         ...mapActions({
+            setDialog: 'sekolah/setModalUbah',
             updateSekolah: 'sekolah/update',
             findSekolah: 'sekolah/show',
             updateSession: 'sekolah/updateSession',
@@ -82,10 +80,10 @@ export default {
             })
             this.loading = false
             if(res){
-                notif({
-                    message: e.message,
+                this.notif({
                     color: 'teal',
                 })
+                this.updateSession()
             }
         },
         async loadItem(){
@@ -108,8 +106,8 @@ export default {
         }
     },
     watch: {
-        id(val){
-            val && this.loadItem()
+        value_dialog(val){
+            val && this.$nextTick(e => this.loadItem())
         }
     }
 }

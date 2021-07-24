@@ -3023,6 +3023,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -4369,6 +4372,37 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _this5.visis = _this5.item.visi;
       _this5.misis = _this5.item.misi;
     });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
+    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH'
+  })),
+  created: function created() {
+    this.showTambahDialog(true);
   }
 });
 
@@ -25547,7 +25581,18 @@ var render = function() {
                                           _vm._v(" "),
                                           _c(
                                             "v-list-item",
-                                            { attrs: { dense: "" } },
+                                            {
+                                              attrs: {
+                                                dense: "",
+                                                link: "",
+                                                to: {
+                                                  name: "sekolah.show",
+                                                  params: {
+                                                    id_profil: item.id_profil
+                                                  }
+                                                }
+                                              }
+                                            },
                                             [
                                               _c(
                                                 "v-list-item-icon",
@@ -25818,7 +25863,9 @@ var render = function() {
                     ],
                     2
                   )
-                ])
+                ]),
+            _vm._v(" "),
+            _c("div", [_c("router-view")], 1)
           ])
         ],
         1
@@ -27585,6 +27632,30 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=template&id=6ab853e1&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=template&id=6ab853e1& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd&":
 /*!***************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd& ***!
@@ -27670,6 +27741,7 @@ var render = function() {
                       }
                     ],
                     key: "visi-" + i,
+                    staticClass: "mb-3",
                     attrs: {
                       color: "grey lighten-4 overflow-hidden",
                       rounded: "xl",
@@ -27705,7 +27777,8 @@ var render = function() {
                         expression: "misi.trim().length"
                       }
                     ],
-                    key: "visi-" + i,
+                    key: "misi-" + i,
+                    staticClass: "mb-3",
                     attrs: {
                       color: "grey lighten-4 overflow-hidden",
                       rounded: "xl",
@@ -91523,6 +91596,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/pages/sekolah/page/SekolahTambahIndex.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SekolahTambahIndex_vue_vue_type_template_id_6ab853e1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SekolahTambahIndex.vue?vue&type=template&id=6ab853e1& */ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=template&id=6ab853e1&");
+/* harmony import */ var _SekolahTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SekolahTambahIndex.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SekolahTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SekolahTambahIndex_vue_vue_type_template_id_6ab853e1___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SekolahTambahIndex_vue_vue_type_template_id_6ab853e1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/page/SekolahTambahIndex.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahTambahIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=template&id=6ab853e1&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=template&id=6ab853e1& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahTambahIndex_vue_vue_type_template_id_6ab853e1___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahTambahIndex.vue?vue&type=template&id=6ab853e1& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/page/SekolahTambahIndex.vue?vue&type=template&id=6ab853e1&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahTambahIndex_vue_vue_type_template_id_6ab853e1___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahTambahIndex_vue_vue_type_template_id_6ab853e1___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue":
 /*!**************************************************************!*\
   !*** ./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue ***!
@@ -91676,6 +91818,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/sekolah/SekolahInfo.vue */ "./resources/js/pages/sekolah/SekolahInfo.vue");
 /* harmony import */ var _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/sekolah/tab/SekolahInfoIndex.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue");
 /* harmony import */ var _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/sekolah/tab/SekolahInfoBerita.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue");
+/* harmony import */ var _pages_sekolah_page_SekolahTambahIndex_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/sekolah/page/SekolahTambahIndex.vue */ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue");
+
 
 
 
@@ -91690,6 +91834,14 @@ __webpack_require__.r(__webpack_exports__);
   path: '/admin/sekolah',
   component: _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   children: [{
+    path: 'tambah',
+    component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    children: [{
+      path: '/',
+      component: _pages_sekolah_page_SekolahTambahIndex_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+      name: 'sekolah.insert'
+    }]
+  }, {
     path: ':id_profil',
     component: _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     children: [{

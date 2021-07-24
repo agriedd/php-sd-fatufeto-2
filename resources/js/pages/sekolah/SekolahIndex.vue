@@ -68,7 +68,7 @@
                                         </template>
                                         <v-list nav>
                                             <v-subheader v-text="'Aksi'"/>
-                                            <v-list-item dense>
+                                            <v-list-item dense link :to="{ name: 'sekolah.show', params: { id_profil: item.id_profil }}">
                                                 <v-list-item-icon>
                                                     <v-icon>mdi-school</v-icon>
                                                 </v-list-item-icon>
@@ -150,6 +150,9 @@
                             </div>
                         </v-card>
                     </div>
+                </div>
+                <div>
+                    <router-view/>
                 </div>
             </v-container>
         </v-main>

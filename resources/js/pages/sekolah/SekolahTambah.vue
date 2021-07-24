@@ -13,7 +13,7 @@
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
-                    <v-card-text v-if="dialog">
+                    <v-card-text v-if="dialog || alive">
                         <form-tambah-sekolah :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
@@ -37,6 +37,7 @@ export default {
         return {
             loading: false,
             errors: {},
+            alive: true,
         }
     },
     computed: {
@@ -71,8 +72,15 @@ export default {
             console.log(res);
             if(res){
                 this.dialog = false
+                this.alive = false
                 this.updateSession()
             }
+        }
+    },
+    watch: {
+        dialog(val){
+            if(val)
+                this.alive = true
         }
     }
 }

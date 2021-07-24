@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-app-bar app flat floating>
+        <v-app-bar app flat absolute hide-on-scroll>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
                 Sekolah
@@ -53,7 +53,7 @@
                 </div>
                 <div v-else>
                     <div class="d-grid-sekolah">
-                        <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_profil">
+                        <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_profil" :to="{ name: 'sekolah.show', params: { id_profil: item.id_profil } }">
                             <v-card-text>
                                 <div class="d-flex w-100">
                                     <v-avatar color="grey lighten-2" v-if="i == 0">
@@ -62,8 +62,8 @@
                                     <v-spacer/>
                                     <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
                                         <template #activator="{ attrs, on }">
-                                            <v-btn icon v-on.prevent="on" v-bind="attrs">
-                                                <v-icon>mdi-menu</v-icon>
+                                            <v-btn icon v-on="on" v-bind="attrs" @click.prevent="">
+                                                <v-icon>mdi-dots-vertical</v-icon>
                                             </v-btn>
                                         </template>
                                         <v-list nav>

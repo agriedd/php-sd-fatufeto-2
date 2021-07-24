@@ -3112,6 +3112,364 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loading: false,
+      item: {},
+      ori: {},
+      exists: false,
+      breadcrumb: [{
+        text: 'Panel Admin',
+        disabled: false,
+        to: 'admin'
+      }, {
+        text: 'Sekolah',
+        disabled: false,
+        to: 'sekolah'
+      }, {
+        text: 'Info Sekolah',
+        disabled: true
+      }]
+    };
+  },
+  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    items: function items(state) {
+      return state.sekolah.items;
+    }
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    session: 'sekolah/getSession'
+  })), {}, {
+    id: function id() {
+      return this.$route.params.id_profil;
+    }
+  }),
+  watch: {
+    session: function session() {
+      this.loadItems();
+    }
+  },
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({})), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    showUbahDialog: 'sekolah/setModalUbah',
+    showHapusDialog: 'sekolah/setModalHapus',
+    getItem: 'sekolah/show'
+  })), {}, {
+    openModalTambah: function openModalTambah() {},
+    ubahInfoSekolah: function ubahInfoSekolah(id) {
+      this.showUbahDialog({
+        id: id,
+        value: true
+      });
+    },
+    hapusInfoSekolah: function hapusInfoSekolah(id) {
+      this.showHapusDialog({
+        id: id,
+        value: true
+      });
+    },
+    loadItem: function loadItem() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _res$data;
+
+        var res, key;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.loading = true;
+                _this.exists = false;
+                _context.next = 4;
+                return _this.getItem({
+                  id: _this.id
+                })["catch"](function (e) {
+                  console.log("loadItem@SekolahIndex.vue", e);
+                });
+
+              case 4:
+                res = _context.sent;
+                _this.loading = false;
+
+                if (res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data) {
+                  _this.exists = true;
+
+                  for (key in res.data.data) {
+                    _this.$set(_this.item, key, res.data.data[key]);
+
+                    _this.$set(_this.ori, key, res.data.data[key]);
+                  }
+                }
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }),
+  created: function created() {
+    this.loadItem();
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahTambah.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahTambah.vue?vue&type=script&lang=js& ***!
@@ -3176,7 +3534,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   data: function data() {
     return {
       loading: false,
-      errors: {}
+      errors: {},
+      alive: true
     };
   },
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
@@ -3228,6 +3587,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
                 if (res) {
                   _this.dialog = false;
+                  _this.alive = false;
 
                   _this.updateSession();
                 }
@@ -3240,7 +3600,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         }, _callee);
       }))();
     }
-  })
+  }),
+  watch: {
+    dialog: function dialog(val) {
+      if (val) this.alive = true;
+    }
+  }
 });
 
 /***/ }),
@@ -24833,7 +25198,7 @@ var render = function() {
     [
       _c(
         "v-app-bar",
-        { attrs: { app: "", flat: "", floating: "" } },
+        { attrs: { app: "", flat: "", absolute: "", "hide-on-scroll": "" } },
         [
           _c("v-app-bar-nav-icon"),
           _vm._v(" "),
@@ -25009,7 +25374,11 @@ var render = function() {
                               color: "grey lighten-4 overflow-hidden",
                               rounded: "xl",
                               flat: "",
-                              link: ""
+                              link: "",
+                              to: {
+                                name: "sekolah.show",
+                                params: { id_profil: item.id_profil }
+                              }
                             }
                           },
                           [
@@ -25049,7 +25418,16 @@ var render = function() {
                                                   "v-btn",
                                                   _vm._g(
                                                     _vm._b(
-                                                      { attrs: { icon: "" } },
+                                                      {
+                                                        attrs: { icon: "" },
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            $event.preventDefault()
+                                                          }
+                                                        }
+                                                      },
                                                       "v-btn",
                                                       attrs,
                                                       false
@@ -25058,7 +25436,9 @@ var render = function() {
                                                   ),
                                                   [
                                                     _c("v-icon", [
-                                                      _vm._v("mdi-menu")
+                                                      _vm._v(
+                                                        "mdi-dots-vertical"
+                                                      )
                                                     ])
                                                   ],
                                                   1
@@ -25372,6 +25752,825 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=template&id=26643e00&":
+/*!*****************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=template&id=26643e00& ***!
+  \*****************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-app-bar",
+        { attrs: { app: "", flat: "", floating: "", absolute: "" } },
+        [
+          _c("v-app-bar-nav-icon"),
+          _vm._v(" "),
+          _c("v-toolbar-title", [
+            _vm._v("\n            Sekolah Info\n        ")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-main",
+        [
+          _c("v-container", [
+            _vm.loading
+              ? _c("div", [
+                  _c("div", { staticClass: "d-grid-sekolah-info" }, [
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "v-card",
+                          {
+                            staticClass: "mb-3",
+                            attrs: {
+                              color: "grey lighten-4 overflow-hidden",
+                              flat: "",
+                              rounded: "xl"
+                            }
+                          },
+                          [
+                            _c("v-card-text", [
+                              _vm._v(
+                                "\n                                Memuat...\n                            "
+                              )
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _vm._l(1, function(i) {
+                          return _c(
+                            "v-card",
+                            {
+                              key: i,
+                              attrs: {
+                                color: "grey lighten-4 overflow-hidden",
+                                flat: "",
+                                rounded: "xl"
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticStyle: { "min-height": "300px" } },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    [
+                                      _c("v-skeleton-loader", {
+                                        attrs: { type: "avatar", loading: "" }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              : !_vm.exists && !_vm.loading
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "mx-auto",
+                    staticStyle: { "max-width": "400px" }
+                  },
+                  [
+                    _c(
+                      "v-alert",
+                      {
+                        attrs: {
+                          prominent: "",
+                          text: "",
+                          type: "warning",
+                          rounded: "xl"
+                        }
+                      },
+                      [
+                        _c("span", [
+                          _vm._v(
+                            "\n                        Profil Sekolah Tidak Ditemukan\n                    "
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-card",
+                      {
+                        attrs: {
+                          color: "grey lighten-4 overflow-hidden",
+                          rounded: "xl",
+                          flat: "",
+                          link: "",
+                          to: { name: "sekolah" }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-list-item",
+                          [
+                            _c(
+                              "v-list-item-avatar",
+                              { attrs: { color: "grey lighten-2" } },
+                              [_c("v-icon", [_vm._v("mdi-school")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-item-content",
+                              [
+                                _c("v-list-item-title", [
+                                  _vm._v(
+                                    "\n                                Kembali ke daftar Sekolah\n                            "
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              : _c("div", [
+                  _c("div", { staticClass: "d-grid-sekolah-info" }, [
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "v-card",
+                          {
+                            staticClass: "mb-3",
+                            attrs: {
+                              color: "grey lighten-4 overflow-hidden",
+                              rounded: "xl",
+                              flat: ""
+                            }
+                          },
+                          [
+                            _c("v-breadcrumbs", {
+                              attrs: { items: _vm.breadcrumb }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "sticky-top" },
+                          [
+                            _c(
+                              "v-card",
+                              {
+                                attrs: {
+                                  color: "grey lighten-4 overflow-hidden",
+                                  rounded: "xl",
+                                  flat: ""
+                                }
+                              },
+                              [
+                                _c("v-card-text", [
+                                  _c(
+                                    "div",
+                                    { staticClass: "d-flex w-100" },
+                                    [
+                                      _c(
+                                        "v-avatar",
+                                        { attrs: { color: "grey lighten-2" } },
+                                        [_c("v-icon", [_vm._v("mdi-school")])],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-menu",
+                                        {
+                                          attrs: {
+                                            "open-on-click": "",
+                                            "content-class":
+                                              "shadow-sm rounded-lg",
+                                            "close-on-content-click": false
+                                          },
+                                          scopedSlots: _vm._u([
+                                            {
+                                              key: "activator",
+                                              fn: function(ref) {
+                                                var attrs = ref.attrs
+                                                var on = ref.on
+                                                return [
+                                                  _c(
+                                                    "v-btn",
+                                                    _vm._g(
+                                                      _vm._b(
+                                                        { attrs: { icon: "" } },
+                                                        "v-btn",
+                                                        attrs,
+                                                        false
+                                                      ),
+                                                      on
+                                                    ),
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v(
+                                                          "mdi-dots-vertical"
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ]
+                                              }
+                                            }
+                                          ])
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list",
+                                            { attrs: { nav: "" } },
+                                            [
+                                              _c("v-subheader", {
+                                                domProps: {
+                                                  textContent: _vm._s("Aksi")
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item",
+                                                {
+                                                  attrs: {
+                                                    dense: "",
+                                                    link: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.ubahInfoSekolah(
+                                                        _vm.item.id_profil
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-list-item-icon",
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-pencil")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-content",
+                                                    [
+                                                      _c("v-list-item-title", [
+                                                        _vm._v(
+                                                          "\n                                                            Ubah\n                                                        "
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item",
+                                                {
+                                                  attrs: {
+                                                    dense: "",
+                                                    link: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.hapusInfoSekolah(
+                                                        _vm.item.id_profil
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-list-item-icon",
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-delete")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-content",
+                                                    [
+                                                      _c("v-list-item-title", [
+                                                        _vm._v(
+                                                          "\n                                                            Hapus\n                                                        "
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c("v-subheader", {
+                                                domProps: {
+                                                  textContent: _vm._s("Rincian")
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item",
+                                                { attrs: { dense: "" } },
+                                                [
+                                                  _c(
+                                                    "v-list-item-icon",
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-calendar")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-content",
+                                                    [
+                                                      _c("v-list-item-title", [
+                                                        _vm._v(
+                                                          "\n                                                            " +
+                                                            _vm._s(
+                                                              _vm._f(
+                                                                "datetime"
+                                                              )(
+                                                                _vm.item
+                                                                  .created_at
+                                                              )
+                                                            ) +
+                                                            "\n                                                        "
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c(
+                                          "v-list-item-subtitle",
+                                          { staticClass: "text--disabled" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            Nama Profil Sekolah\n                                        "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item-title",
+                                          { staticClass: "text-h5" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            " +
+                                                _vm._s(_vm.item.nama_sekolah) +
+                                                "\n                                        "
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c(
+                                          "v-list-item-subtitle",
+                                          { staticClass: "text--disabled" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            Jenjang\n                                        "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item-title",
+                                          { staticClass: "text-h5" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            " +
+                                                _vm._s(_vm.item.jenjang) +
+                                                "\n                                        "
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-calendar")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            Tanggal Berdiri\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(
+                                                _vm._f("date")(
+                                                  _vm.item.tgl_berdiri
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [_vm._v("mdi-map-marker")])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            Alamat\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(_vm.item.alamat) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-bookmark")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            Visi Misi\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-chevron-right")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-family-tree")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            Struktur Organisasi\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-chevron-right")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "v-container",
+                          [
+                            _c(
+                              "v-tabs",
+                              { attrs: { "align-with-title": "" } },
+                              [
+                                _c("v-tab", [_vm._v("Informasi")]),
+                                _vm._v(" "),
+                                _c("v-tab", [_vm._v("Berita")]),
+                                _vm._v(" "),
+                                _c("v-tab", [_vm._v("Laporan")])
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("v-divider")
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-container",
+                          [
+                            _c(
+                              "v-card",
+                              { attrs: { flat: "" } },
+                              [
+                                _c(
+                                  "v-card-title",
+                                  { attrs: { id: "visi-misi" } },
+                                  [
+                                    _vm._v(
+                                      "\n                                    Visi Misi\n                                "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-card-text",
+                                  [
+                                    _c(
+                                      "v-list",
+                                      [
+                                        _c("v-subheader", [
+                                          _vm._v(
+                                            "\n                                            # Visi\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _vm._l(
+                                          _vm.item.visi_misi.visi,
+                                          function(visi, i) {
+                                            return _c(
+                                              "v-card",
+                                              {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value: visi.trim().length,
+                                                    expression:
+                                                      "visi.trim().length"
+                                                  }
+                                                ],
+                                                key: "visi-" + i,
+                                                attrs: {
+                                                  color:
+                                                    "grey lighten-4 overflow-hidden",
+                                                  rounded: "xl",
+                                                  flat: ""
+                                                }
+                                              },
+                                              [
+                                                _c("v-card-text", [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(visi) +
+                                                      "\n                                            "
+                                                  )
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          }
+                                        ),
+                                        _vm._v(" "),
+                                        _c("v-subheader", [
+                                          _vm._v(
+                                            "\n                                            # Misi\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _vm._l(
+                                          _vm.item.visi_misi.misi,
+                                          function(misi, i) {
+                                            return _c(
+                                              "v-card",
+                                              {
+                                                directives: [
+                                                  {
+                                                    name: "show",
+                                                    rawName: "v-show",
+                                                    value: misi.trim().length,
+                                                    expression:
+                                                      "misi.trim().length"
+                                                  }
+                                                ],
+                                                key: "visi-" + i,
+                                                attrs: {
+                                                  color:
+                                                    "grey lighten-4 overflow-hidden",
+                                                  rounded: "xl",
+                                                  flat: ""
+                                                }
+                                              },
+                                              [
+                                                _c("v-card-text", [
+                                                  _vm._v(
+                                                    "\n                                                " +
+                                                      _vm._s(misi) +
+                                                      "\n                                            "
+                                                  )
+                                                ])
+                                              ],
+                                              1
+                                            )
+                                          }
+                                        )
+                                      ],
+                                      2
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-card-title",
+                                  { attrs: { id: "visi-misi" } },
+                                  [
+                                    _vm._v(
+                                      "\n                                    Struktur Organisasi\n                                "
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-card-text",
+                                  [
+                                    _c("v-img", {
+                                      staticClass: "rounded-xl",
+                                      attrs: {
+                                        src: _vm.item.struktur_organisasi
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          return _vm.previewImage(
+                                            _vm.item.struktur_organisasi
+                                          )
+                                        }
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahTambah.vue?vue&type=template&id=d8d7d48a&":
 /*!*******************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahTambah.vue?vue&type=template&id=d8d7d48a& ***!
@@ -25448,7 +26647,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("v-divider"),
                   _vm._v(" "),
-                  _vm.dialog
+                  _vm.dialog || _vm.alive
                     ? _c(
                         "v-card-text",
                         [
@@ -88797,6 +89996,15 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
         hour: '2-digit',
         minute: '2-digit'
       }).format(date);
+    },
+    date: function date(val) {
+      var local = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'id-ID';
+      var date = new Date(val);
+      return new Intl.DateTimeFormat(local, {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      }).format(date);
     }
   },
   methods: {
@@ -88806,6 +90014,11 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
       if (e !== null && e !== void 0 && (_e$response = e.response) !== null && _e$response !== void 0 && (_e$response$data = _e$response.data) !== null && _e$response$data !== void 0 && _e$response$data.errors) for (var key in e.response.data.errors) {
         this.$set(this.errors, key, e.response.data.errors[key]);
       }
+    },
+    previewImage: function previewImage(img) {
+      this.$store.dispatch('image/show', {
+        src: img
+      });
     }
   }
 });
@@ -89597,6 +90810,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/sekolah/SekolahInfo.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/pages/sekolah/SekolahInfo.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SekolahInfo_vue_vue_type_template_id_26643e00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SekolahInfo.vue?vue&type=template&id=26643e00& */ "./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=template&id=26643e00&");
+/* harmony import */ var _SekolahInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SekolahInfo.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SekolahInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SekolahInfo_vue_vue_type_template_id_26643e00___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SekolahInfo_vue_vue_type_template_id_26643e00___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/SekolahInfo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahInfo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=template&id=26643e00&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=template&id=26643e00& ***!
+  \***********************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfo_vue_vue_type_template_id_26643e00___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahInfo.vue?vue&type=template&id=26643e00& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahInfo.vue?vue&type=template&id=26643e00&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfo_vue_vue_type_template_id_26643e00___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfo_vue_vue_type_template_id_26643e00___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/sekolah/SekolahTambah.vue":
 /*!******************************************************!*\
   !*** ./resources/js/pages/sekolah/SekolahTambah.vue ***!
@@ -90041,6 +91323,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/Index.vue */ "./resources/js/pages/Index.vue");
 /* harmony import */ var _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/sekolah/SekolahBase.vue */ "./resources/js/pages/sekolah/SekolahBase.vue");
 /* harmony import */ var _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/sekolah/SekolahIndex.vue */ "./resources/js/pages/sekolah/SekolahIndex.vue");
+/* harmony import */ var _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/sekolah/SekolahInfo.vue */ "./resources/js/pages/sekolah/SekolahInfo.vue");
+
 
 
 
@@ -90052,6 +91336,10 @@ __webpack_require__.r(__webpack_exports__);
   path: '/admin/sekolah',
   component: _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
   children: [{
+    path: ':id_profil',
+    component: _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    name: 'sekolah.show'
+  }, {
     path: '/',
     component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     name: 'sekolah'

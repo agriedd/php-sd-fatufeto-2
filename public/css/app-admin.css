@@ -389,3 +389,14 @@ tbody tr:nth-of-type(odd) {
   grid-row-end: span 9;
 }
 
+.d-grid-sekolah-info {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.sticky-top {
+  position: sticky;
+  top: 1rem;
+}
+

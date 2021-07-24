@@ -23,6 +23,10 @@ Vue.mixin({
         datetime(val, local = 'id-ID'){
             let date = new Date(val);
             return new Intl.DateTimeFormat(local, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(date)
+        },
+        date(val, local = 'id-ID'){
+            let date = new Date(val);
+            return new Intl.DateTimeFormat(local, { year: 'numeric', month: 'long', day: 'numeric' }).format(date)
         }
     },
     methods: {
@@ -31,6 +35,9 @@ Vue.mixin({
                 for(let key in e.response.data.errors){
                     this.$set(this.errors, key, e.response.data.errors[key])
                 }
+        },
+        previewImage(img){
+            this.$store.dispatch('image/show', {src: img})
         }
     }
 })

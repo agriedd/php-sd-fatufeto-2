@@ -117,7 +117,7 @@
                                             <v-list-item-subtitle class="text--disabled">
                                                 Jenjang
                                             </v-list-item-subtitle>
-                                            <v-list-item-title class="text-h5">
+                                            <v-list-item-title class="text-h6">
                                                 {{ item.jenjang }}
                                             </v-list-item-title>
                                         </v-list-item-content>
@@ -150,6 +150,19 @@
                                     </v-list-item>
                                     <v-list-item>
                                         <v-list-item-icon>
+                                            <v-icon>mdi-tag</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-content>
+                                            <v-list-item-subtitle>
+                                                NPSN
+                                            </v-list-item-subtitle>
+                                            <v-list-item-title class="">
+                                                {{ item.npsn }}
+                                            </v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                    <v-list-item link>
+                                        <v-list-item-icon>
                                             <v-icon>mdi-bookmark</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
@@ -161,7 +174,7 @@
                                             <v-icon>mdi-chevron-right</v-icon>
                                         </v-list-item-icon>
                                     </v-list-item>
-                                    <v-list-item>
+                                    <v-list-item link>
                                         <v-list-item-icon>
                                             <v-icon>mdi-family-tree</v-icon>
                                         </v-list-item-icon>
@@ -174,50 +187,34 @@
                                             <v-icon>mdi-chevron-right</v-icon>
                                         </v-list-item-icon>
                                     </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-icon>
+                                            <v-icon>mdi-calendar</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-content>
+                                            <v-list-item-subtitle class="">
+                                                dibuat pada
+                                            </v-list-item-subtitle>
+                                            <v-list-item-title class="">
+                                                {{ item.created_at | datetime }}
+                                            </v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
                                 </v-card>
                             </div>
                         </div>
                         <div>
+                            <div class="sticky-top" style="z-index: 1;">
+                                <v-toolbar class="shadow-sm" rounded="xl">
+                                    <v-tabs align-with-title>
+                                        <v-tab :to="{name: 'sekolah.show'}" exact>Informasi</v-tab>
+                                        <v-tab :to="{name: 'sekolah.show.berita'}">Berita</v-tab>
+                                        <v-tab>Laporan</v-tab>
+                                    </v-tabs>
+                                </v-toolbar>
+                            </div>
                             <v-container>
-                                <v-tabs align-with-title>
-                                    <v-tab>Informasi</v-tab>
-                                    <v-tab>Berita</v-tab>
-                                    <v-tab>Laporan</v-tab>
-                                </v-tabs>
-                                <v-divider></v-divider>
-                            </v-container>
-                            <v-container>
-                                <v-card flat>
-                                    <v-card-title id="visi-misi">
-                                        Visi Misi
-                                    </v-card-title>
-                                    <v-card-text>
-                                        <v-list>
-                                            <v-subheader>
-                                                # Visi
-                                            </v-subheader>
-                                            <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat v-for="(visi, i) in item.visi_misi.visi" :key="`visi-${i}`" v-show="visi.trim().length">
-                                                <v-card-text>
-                                                    {{ visi }}
-                                                </v-card-text>
-                                            </v-card>
-                                            <v-subheader>
-                                                # Misi
-                                            </v-subheader>
-                                            <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat v-for="(misi, i) in item.visi_misi.misi" :key="`visi-${i}`" v-show="misi.trim().length">
-                                                <v-card-text>
-                                                    {{ misi }}
-                                                </v-card-text>
-                                            </v-card>
-                                        </v-list>
-                                    </v-card-text>
-                                    <v-card-title id="visi-misi">
-                                        Struktur Organisasi
-                                    </v-card-title>
-                                    <v-card-text>
-                                        <v-img :src="item.struktur_organisasi" class="rounded-xl" @click="previewImage(item.struktur_organisasi)"></v-img>
-                                    </v-card-text>
-                                </v-card>
+                                <router-view :item="item"/>
                             </v-container>
                         </div>
                     </div>
@@ -239,12 +236,16 @@ export default {
                 {
                     text: 'Panel Admin',
                     disabled: false,
-                    to: 'admin',
+                    to: {name: 'admin'},
+                    link: true,
+                    exact: true,
                 },
                 {
                     text: 'Sekolah',
                     disabled: false,
-                    to: 'sekolah',
+                    to: {name: 'sekolah'},
+                    link: true,
+                    exact: true,
                 },
                 {
                     text: 'Info Sekolah',

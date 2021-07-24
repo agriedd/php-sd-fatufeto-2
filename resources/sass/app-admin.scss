@@ -339,6 +339,6 @@ tbody tr:nth-of-type(odd) {
   }
 }
 .sticky-top{
-  position: sticky;
+  position: sticky!important;
   top: 1rem;
 }

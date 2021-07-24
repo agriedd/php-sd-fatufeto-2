@@ -3361,9 +3361,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3375,11 +3372,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       breadcrumb: [{
         text: 'Panel Admin',
         disabled: false,
-        to: 'admin'
+        to: {
+          name: 'admin'
+        },
+        link: true,
+        exact: true
       }, {
         text: 'Sekolah',
         disabled: false,
-        to: 'sekolah'
+        to: {
+          name: 'sekolah'
+        },
+        link: true,
+        exact: true
       }, {
         text: 'Info Sekolah',
         disabled: true
@@ -4364,6 +4369,83 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       _this5.visis = _this5.item.visi;
       _this5.misis = _this5.item.misi;
     });
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    item: Object
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    item: Object
   }
 });
 
@@ -26210,7 +26292,7 @@ var render = function() {
                                         _vm._v(" "),
                                         _c(
                                           "v-list-item-title",
-                                          { staticClass: "text-h5" },
+                                          { staticClass: "text-h6" },
                                           [
                                             _vm._v(
                                               "\n                                            " +
@@ -26301,6 +26383,39 @@ var render = function() {
                                   [
                                     _c(
                                       "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-tag")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            NPSN\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(_vm.item.npsn) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  { attrs: { link: "" } },
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
                                       [_c("v-icon", [_vm._v("mdi-bookmark")])],
                                       1
                                     ),
@@ -26332,6 +26447,7 @@ var render = function() {
                                 _vm._v(" "),
                                 _c(
                                   "v-list-item",
+                                  { attrs: { link: "" } },
                                   [
                                     _c(
                                       "v-list-item-icon",
@@ -26366,6 +26482,42 @@ var render = function() {
                                     )
                                   ],
                                   1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-calendar")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", {}, [
+                                          _vm._v(
+                                            "\n                                            dibuat pada\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(
+                                                _vm._f("datetime")(
+                                                  _vm.item.created_at
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
                                 )
                               ],
                               1
@@ -26381,167 +26533,45 @@ var render = function() {
                       "div",
                       [
                         _c(
-                          "v-container",
+                          "div",
+                          {
+                            staticClass: "sticky-top",
+                            staticStyle: { "z-index": "1" }
+                          },
                           [
                             _c(
-                              "v-tabs",
-                              { attrs: { "align-with-title": "" } },
-                              [
-                                _c("v-tab", [_vm._v("Informasi")]),
-                                _vm._v(" "),
-                                _c("v-tab", [_vm._v("Berita")]),
-                                _vm._v(" "),
-                                _c("v-tab", [_vm._v("Laporan")])
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c("v-divider")
-                          ],
-                          1
-                        ),
-                        _vm._v(" "),
-                        _c(
-                          "v-container",
-                          [
-                            _c(
-                              "v-card",
-                              { attrs: { flat: "" } },
+                              "v-toolbar",
+                              {
+                                staticClass: "shadow-sm",
+                                attrs: { rounded: "xl" }
+                              },
                               [
                                 _c(
-                                  "v-card-title",
-                                  { attrs: { id: "visi-misi" } },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Visi Misi\n                                "
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-card-text",
+                                  "v-tabs",
+                                  { attrs: { "align-with-title": "" } },
                                   [
                                     _c(
-                                      "v-list",
-                                      [
-                                        _c("v-subheader", [
-                                          _vm._v(
-                                            "\n                                            # Visi\n                                        "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _vm._l(
-                                          _vm.item.visi_misi.visi,
-                                          function(visi, i) {
-                                            return _c(
-                                              "v-card",
-                                              {
-                                                directives: [
-                                                  {
-                                                    name: "show",
-                                                    rawName: "v-show",
-                                                    value: visi.trim().length,
-                                                    expression:
-                                                      "visi.trim().length"
-                                                  }
-                                                ],
-                                                key: "visi-" + i,
-                                                attrs: {
-                                                  color:
-                                                    "grey lighten-4 overflow-hidden",
-                                                  rounded: "xl",
-                                                  flat: ""
-                                                }
-                                              },
-                                              [
-                                                _c("v-card-text", [
-                                                  _vm._v(
-                                                    "\n                                                " +
-                                                      _vm._s(visi) +
-                                                      "\n                                            "
-                                                  )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          }
-                                        ),
-                                        _vm._v(" "),
-                                        _c("v-subheader", [
-                                          _vm._v(
-                                            "\n                                            # Misi\n                                        "
-                                          )
-                                        ]),
-                                        _vm._v(" "),
-                                        _vm._l(
-                                          _vm.item.visi_misi.misi,
-                                          function(misi, i) {
-                                            return _c(
-                                              "v-card",
-                                              {
-                                                directives: [
-                                                  {
-                                                    name: "show",
-                                                    rawName: "v-show",
-                                                    value: misi.trim().length,
-                                                    expression:
-                                                      "misi.trim().length"
-                                                  }
-                                                ],
-                                                key: "visi-" + i,
-                                                attrs: {
-                                                  color:
-                                                    "grey lighten-4 overflow-hidden",
-                                                  rounded: "xl",
-                                                  flat: ""
-                                                }
-                                              },
-                                              [
-                                                _c("v-card-text", [
-                                                  _vm._v(
-                                                    "\n                                                " +
-                                                      _vm._s(misi) +
-                                                      "\n                                            "
-                                                  )
-                                                ])
-                                              ],
-                                              1
-                                            )
-                                          }
-                                        )
-                                      ],
-                                      2
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-card-title",
-                                  { attrs: { id: "visi-misi" } },
-                                  [
-                                    _vm._v(
-                                      "\n                                    Struktur Organisasi\n                                "
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-card-text",
-                                  [
-                                    _c("v-img", {
-                                      staticClass: "rounded-xl",
-                                      attrs: {
-                                        src: _vm.item.struktur_organisasi
-                                      },
-                                      on: {
-                                        click: function($event) {
-                                          return _vm.previewImage(
-                                            _vm.item.struktur_organisasi
-                                          )
+                                      "v-tab",
+                                      {
+                                        attrs: {
+                                          to: { name: "sekolah.show" },
+                                          exact: ""
                                         }
-                                      }
-                                    })
+                                      },
+                                      [_vm._v("Informasi")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-tab",
+                                      {
+                                        attrs: {
+                                          to: { name: "sekolah.show.berita" }
+                                        }
+                                      },
+                                      [_vm._v("Berita")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("v-tab", [_vm._v("Laporan")])
                                   ],
                                   1
                                 )
@@ -26549,6 +26579,12 @@ var render = function() {
                               1
                             )
                           ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-container",
+                          [_c("router-view", { attrs: { item: _vm.item } })],
                           1
                         )
                       ],
@@ -27538,6 +27574,182 @@ var render = function() {
           }
         }
       })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd& ***!
+  \***************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
+        _vm._v("\n        Berita\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-card-text",
+        [_c("v-skeleton-loader", { attrs: { type: "card@3" } })],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=template&id=3644309c&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=template&id=3644309c& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
+        _vm._v("\n        Visi Misi\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-card-text",
+        [
+          _c(
+            "v-list",
+            [
+              _c("v-subheader", [
+                _vm._v("\n                # Visi\n            ")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.item.visi_misi.visi, function(visi, i) {
+                return _c(
+                  "v-card",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: visi.trim().length,
+                        expression: "visi.trim().length"
+                      }
+                    ],
+                    key: "visi-" + i,
+                    attrs: {
+                      color: "grey lighten-4 overflow-hidden",
+                      rounded: "xl",
+                      flat: ""
+                    }
+                  },
+                  [
+                    _c("v-card-text", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(visi) +
+                          "\n                "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              _vm._v(" "),
+              _c("v-subheader", [
+                _vm._v("\n                # Misi\n            ")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.item.visi_misi.misi, function(misi, i) {
+                return _c(
+                  "v-card",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: misi.trim().length,
+                        expression: "misi.trim().length"
+                      }
+                    ],
+                    key: "visi-" + i,
+                    attrs: {
+                      color: "grey lighten-4 overflow-hidden",
+                      rounded: "xl",
+                      flat: ""
+                    }
+                  },
+                  [
+                    _c("v-card-text", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(misi) +
+                          "\n                "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              })
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
+        _vm._v("\n        Struktur Organisasi\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-card-text",
+        [
+          _c("v-img", {
+            staticClass: "rounded-xl",
+            attrs: { src: _vm.item.struktur_organisasi },
+            on: {
+              click: function($event) {
+                return _vm.previewImage(_vm.item.struktur_organisasi)
+              }
+            }
+          })
+        ],
+        1
+      )
     ],
     1
   )
@@ -91311,6 +91523,144 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SekolahInfoBerita_vue_vue_type_template_id_2b9bdccd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd& */ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd&");
+/* harmony import */ var _SekolahInfoBerita_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SekolahInfoBerita.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SekolahInfoBerita_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SekolahInfoBerita_vue_vue_type_template_id_2b9bdccd___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SekolahInfoBerita_vue_vue_type_template_id_2b9bdccd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/tab/SekolahInfoBerita.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoBerita_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahInfoBerita.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoBerita_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoBerita_vue_vue_type_template_id_2b9bdccd___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue?vue&type=template&id=2b9bdccd&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoBerita_vue_vue_type_template_id_2b9bdccd___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoBerita_vue_vue_type_template_id_2b9bdccd___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue":
+/*!*************************************************************!*\
+  !*** ./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _SekolahInfoIndex_vue_vue_type_template_id_3644309c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SekolahInfoIndex.vue?vue&type=template&id=3644309c& */ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=template&id=3644309c&");
+/* harmony import */ var _SekolahInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SekolahInfoIndex.vue?vue&type=script&lang=js& */ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _SekolahInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _SekolahInfoIndex_vue_vue_type_template_id_3644309c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _SekolahInfoIndex_vue_vue_type_template_id_3644309c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/sekolah/tab/SekolahInfoIndex.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahInfoIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=template&id=3644309c&":
+/*!********************************************************************************************!*\
+  !*** ./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=template&id=3644309c& ***!
+  \********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoIndex_vue_vue_type_template_id_3644309c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./SekolahInfoIndex.vue?vue&type=template&id=3644309c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue?vue&type=template&id=3644309c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoIndex_vue_vue_type_template_id_3644309c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SekolahInfoIndex_vue_vue_type_template_id_3644309c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/routes/routes.js":
 /*!***************************************!*\
   !*** ./resources/js/routes/routes.js ***!
@@ -91324,6 +91674,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/sekolah/SekolahBase.vue */ "./resources/js/pages/sekolah/SekolahBase.vue");
 /* harmony import */ var _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/sekolah/SekolahIndex.vue */ "./resources/js/pages/sekolah/SekolahIndex.vue");
 /* harmony import */ var _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/sekolah/SekolahInfo.vue */ "./resources/js/pages/sekolah/SekolahInfo.vue");
+/* harmony import */ var _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/sekolah/tab/SekolahInfoIndex.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue");
+/* harmony import */ var _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/sekolah/tab/SekolahInfoBerita.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue");
+
+
 
 
 
@@ -91338,7 +91692,15 @@ __webpack_require__.r(__webpack_exports__);
   children: [{
     path: ':id_profil',
     component: _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    name: 'sekolah.show'
+    children: [{
+      path: 'berita',
+      component: _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      name: 'sekolah.show.berita'
+    }, {
+      path: '/',
+      component: _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      name: 'sekolah.show'
+    }]
   }, {
     path: '/',
     component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__["default"],

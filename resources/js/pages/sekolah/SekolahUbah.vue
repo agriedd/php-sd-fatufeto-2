@@ -14,7 +14,7 @@
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog && exists">
-                        <form-tambah-sekolah v-model="item"/>
+                        <form-tambah-sekolah v-model="item" :errors="errors"/>
                     </v-card-text>
                     <v-card-text v-else-if="dialog && loading">
                         <form-tambah-sekolah-placeholder/>
@@ -71,19 +71,16 @@ export default {
             let data = new FormData(e.target)
             this.loading = true
             let res = await this.updateSekolah({ data, id: this.id }).catch(e => {
-                console.log("updateSekolah@SekolahTambah.vue", e);
-                if(e.response.status == 422)
-                    this.errors = e.response.data.errors
+                console.log("updateSekolah@SekolahTambah.vue", e)
+                e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message
                 })
             })
             this.loading = false
             if(res){
-                this.notif({
-                    color: 'teal',
-                })
                 this.updateSession()
+                this.dialog = false
             }
         },
         async loadItem(){

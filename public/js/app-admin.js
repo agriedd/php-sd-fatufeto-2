@@ -2771,10 +2771,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = false;
 
                 if (res) {
-                  _this.notif({
-                    message: "Berhasil dihapus 👌",
-                    color: 'teal'
-                  });
+                  _this.updateSession();
+
+                  _this.dialog = false;
                 }
 
               case 7:
@@ -2819,8 +2818,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
                     _this2.$set(_this2.ori, key, res.data.data[key]);
                   }
-
-                  _this2.updateSession();
                 }
 
               case 7:
@@ -2869,6 +2866,17 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3097,7 +3105,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }))();
     }
   }),
-  created: function created() {}
+  created: function created() {
+    this.loadItems();
+  }
 });
 
 /***/ }),
@@ -3204,7 +3214,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _context.next = 4;
                 return _this.storeSekolah(data)["catch"](function (e) {
                   console.log("storeSekolah@SekolahTambah.vue", e);
-                  if (e.response.status == 422) _this.setErrorForm(e);
+                  e.response.status == 422 && _this.setErrorForm(e);
 
                   _this.notif({
                     message: e.message
@@ -3217,10 +3227,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 console.log(res);
 
                 if (res) {
-                  _this.notif({
-                    color: 'teal'
-                  });
-
                   _this.dialog = false;
 
                   _this.updateSession();
@@ -3361,7 +3367,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   id: _this.id
                 })["catch"](function (e) {
                   console.log("updateSekolah@SekolahTambah.vue", e);
-                  if (e.response.status == 422) _this.errors = e.response.data.errors;
+                  e.response.status == 422 && _this.setErrorForm(e);
 
                   _this.notif({
                     message: e.message
@@ -3373,11 +3379,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = false;
 
                 if (res) {
-                  _this.notif({
-                    color: 'teal'
-                  });
-
                   _this.updateSession();
+
+                  _this.dialog = false;
                 }
 
               case 7:
@@ -24842,7 +24846,46 @@ var render = function() {
         "v-main",
         [
           _c("v-container", [
-            !_vm.exists && !_vm.loading
+            _vm.loading
+              ? _c("div", [
+                  _c(
+                    "div",
+                    { staticClass: "d-grid-sekolah" },
+                    _vm._l(_vm.total_sekolah || 4, function(i) {
+                      return _c(
+                        "v-card",
+                        {
+                          key: i,
+                          attrs: {
+                            color: "grey lighten-4 overflow-hidden",
+                            flat: "",
+                            rounded: "xl"
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticStyle: { "min-height": "300px" } },
+                            [
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c("v-skeleton-loader", {
+                                    attrs: { type: "avatar", loading: "" }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    }),
+                    1
+                  )
+                ])
+              : !_vm.exists && !_vm.loading
               ? _c(
                   "div",
                   {
@@ -25547,6 +25590,7 @@ var render = function() {
                         "v-card-text",
                         [
                           _c("form-tambah-sekolah", {
+                            attrs: { errors: _vm.errors },
                             model: {
                               value: _vm.item,
                               callback: function($$v) {
@@ -90073,6 +90117,12 @@ router.beforeEach( /*#__PURE__*/function () {
              */
             next();
             axios__WEBPACK_IMPORTED_MODULE_6___default.a.interceptors.response.use(function (response) {
+              if (response.config.category == 'DELETE' && response.status == 204) {
+                _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
+                  message: "Berhasil menghapus data 👌"
+                });
+              }
+
               if (response.status == 201) {
                 _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
                   message: "Berhasil menyimpan data 👌"
@@ -90807,7 +90857,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                         switch (_context8.prev = _context8.next) {
                           case 0:
                             _context8.next = 2;
-                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/sekolah/".concat(id)), data)["catch"](function (e) {
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                              method: 'post',
+                              url: Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/sekolah/".concat(id)),
+                              data: data,
+                              category: 'DELETE'
+                            })["catch"](function (e) {
                               return reject(e);
                             });
 

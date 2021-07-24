@@ -38,8 +38,8 @@ class SekolahController extends Controller{
         $data = $data->except(['struktur_organisasi']);
 
         if($request->file('struktur_organisasi')){
-            if(Storage::exists($sekolah->getOriginal('struktur_organisasi')))
-                Storage::delete($sekolah->getOriginal('struktur_organisasi'));
+            if(Storage::exists($sekolah->getRawOriginal('struktur_organisasi')))
+                Storage::delete($sekolah->getRawOriginal('struktur_organisasi'));
             $data->put('struktur_organisasi', $request->file('struktur_organisasi')->store('sekolah'));
         }
 
@@ -49,8 +49,8 @@ class SekolahController extends Controller{
     }
 
     public function destroy(Sekolah $sekolah){
-        if(Storage::exists($sekolah->getOriginal('struktur_organisasi')))
-            Storage::delete($sekolah->getOriginal('struktur_organisasi'));
+        if(Storage::exists($sekolah->getRawOriginal('struktur_organisasi')))
+            Storage::delete($sekolah->getRawOriginal('struktur_organisasi'));
         $result = $sekolah->delete();
         return new Response(null, Response::HTTP_NO_CONTENT);
     }

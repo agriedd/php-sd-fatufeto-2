@@ -8,7 +8,18 @@
         </v-app-bar>
         <v-main>
             <v-container>
-                <div class="mx-auto" style="max-width: 400px" v-if="!exists && !loading">
+                <div v-if="loading">
+                    <div class="d-grid-sekolah">
+                        <v-card v-for="i in total_sekolah || 4" :key="i" color="grey lighten-4 overflow-hidden" flat rounded="xl">
+                            <div style="min-height: 300px">
+                                <v-card-text>
+                                    <v-skeleton-loader type="avatar" loading/>
+                                </v-card-text>
+                            </div>
+                        </v-card>
+                    </div>
+                </div>
+                <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
                             Profil Sekolah Masih Kosong
@@ -201,7 +212,7 @@ export default {
         }
     },
     created(){
-
+        this.loadItems()
     }
 }
 </script>

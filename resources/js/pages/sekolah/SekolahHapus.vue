@@ -76,10 +76,8 @@ export default {
             })
             this.loading = false
             if(res){
-                this.notif({
-                    message: "Berhasil dihapus 👌",
-                    color: 'teal',
-                })
+                this.updateSession()
+                this.dialog = false
             }
         },
         async loadItem(){
@@ -98,7 +96,6 @@ export default {
                     this.$set(this.item, key, res.data.data[key])
                     this.$set(this.ori, key, res.data.data[key])
                 }
-                this.updateSession()
             }
         }
     },

@@ -21,6 +21,11 @@ router.beforeEach(async (to, from, next) => {
      */
     next()
     axios.interceptors.response.use(function (response) {
+        if(response.config.category == 'DELETE' && response.status == 204){
+            store.dispatch('notifikasi/show', {
+                message: "Berhasil menghapus data 👌"
+            })
+        }
         if(response.status == 201){
             store.dispatch('notifikasi/show', {
                 message: "Berhasil menyimpan data 👌"

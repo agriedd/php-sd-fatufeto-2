@@ -78,7 +78,12 @@ export default {
                 if(data instanceof FormData)
                     data.append('_method', 'DELETE')
                 return new Promise(async(resolve, reject)=>{
-                    let res = await axios.post(api(`v1/sekolah/${id}`), data).catch(e => reject(e))
+                    let res = await axios({
+                        method: 'post',
+                        url: api(`v1/sekolah/${id}`),
+                        data,
+                        category: 'DELETE',
+                    }).catch(e => reject(e))
                     if(res) resolve(res)
                 })
             }

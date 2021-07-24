@@ -62,7 +62,7 @@ export default {
             this.loading = true
             let res = await this.storeSekolah(data).catch(e => {
                 console.log("storeSekolah@SekolahTambah.vue", e);
-                if(e.response.status == 422) this.setErrorForm(e)
+                e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message
                 })
@@ -70,9 +70,6 @@ export default {
             this.loading = false
             console.log(res);
             if(res){
-                this.notif({
-                    color: 'teal',
-                })
                 this.dialog = false
                 this.updateSession()
             }

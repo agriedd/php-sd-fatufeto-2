@@ -3,59 +3,114 @@
         <v-text-field
             dense
             outlined
-            v-model="item.nama_sekolah"
-            name="nama_sekolah"
-            label="Nama Sekolah"
-            prefix="Sekolah Dasar"
-            :error-messages="errors.nama_sekolah"
-            @keyup="errors.nama_sekolah = null"/>
-        <v-spacer />
+            v-model="item.nama_guru"
+            name="nama_guru"
+            label="Nama Guru"
+            :error-messages="errors.nama_guru"
+            @keyup="errors.nama_guru = null"/>
         <v-text-field
             dense
             outlined
-            v-model="item.jenjang"
-            name="jenjang"
-            label="Jenjang"
-            :error-messages="errors.jenjang"
-            @keyup="errors.jenjang = null"/>
+            v-model="item.nip"
+            name="nip"
+            label="NIP"
+            :error-messages="errors.nip"
+            @keyup="errors.nip = null"/>
+        <input-jenis-kelamin-guru 
+            v-model="item.jenis_kelamin" 
+            :errors="errors" 
+            @change="errors.jenis_kelamin = null"/>
+        <v-spacer/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.jabatan"
+            name="jabatan"
+            label="Jabatan"
+            :error-messages="errors.jabatan"
+            @keyup="errors.jabatan = null"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.pangkat"
+            name="pangkat"
+            label="Pangkat"
+            :error-messages="errors.pangkat"
+            @keyup="errors.pangkat = null"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.golongan"
+            name="golongan"
+            label="Golongan"
+            :error-messages="errors.golongan"
+            @keyup="errors.golongan = null"/>
+        <v-spacer/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.pendidikan_terakhir"
+            name="pendidikan_terakhir"
+            label="Pendidikan Terakhir"
+            :error-messages="errors.pendidikan_terakhir"
+            @keyup="errors.pendidikan_terakhir = null"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.pendidikan_profesi"
+            name="pendidikan_profesi"
+            label="Pendidikan Profesi"
+            :error-messages="errors.pendidikan_profesi"
+            @keyup="errors.pendidikan_profesi = null"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.tempat_lahir"
+            name="tempat_lahir"
+            label="Tempat Lahir"
+            :error-messages="errors.tempat_lahir"
+            @keyup="errors.tempat_lahir = null"/>
+            
         <v-dialog
-            ref="tgl_berdiri"
-            v-model="modal_tanggal_berdiri"
-            :return-value.sync="item.tgl_berdiri"
+            ref="tanggal_lahir"
+            v-model="modal_tanggal_lahir"
+            :return-value.sync="item.tanggal_lahir"
             persistent
             width="300px"
-			content-class="shadow-sm"
+			content-class="shadow-sm rounded-xl"
 			overlay-opacity=".25"
             eager>
             <template v-slot:activator="{ on, attrs }">
 				<v-text-field
 					dense
 					outlined
-					v-model="item.tgl_berdiri"
-					name="tgl_berdiri"
-					label="Tanggal Berdiri"
+					v-model="item.tanggal_lahir"
+					name="tanggal_lahir"
+					label="Tanggal Lahir"
+                    append-icon="mdi-calendar"
                     readonly
                     v-bind="attrs"
                     v-on="on"
-					:error-messages="errors.tgl_berdiri"/>
+					:error-messages="errors.tanggal_lahir"/>
             </template>
-            <v-date-picker v-model="item.tgl_berdiri" scrollable locale="id-id" first-day-of-week="1">
+            <v-date-picker v-model="item.tanggal_lahir" scrollable locale="id-id" first-day-of-week="1">
                 <v-spacer></v-spacer>
                 <v-btn text color="primary" @click="modal_tanggal_berdiri = false">
                     Batal
                 </v-btn>
-                <v-btn text color="primary" @click="$refs.tgl_berdiri.save(item.tgl_berdiri); errors.tgl_berdiri = null">
+                <v-btn text color="primary" @click="$refs.tanggal_lahir.save(item.tanggal_lahir); errors.tanggal_lahir = null">
                     Pilih
                 </v-btn>
             </v-date-picker>
         </v-dialog>
-		<input-stuktur-organisasi-sekolah
-			v-model="item"
-			:errors="errors"
-            :foto="item.struktur_organisasi"/>
-		<input-visi-misi-sekolah
-			v-model="item.visi_misi"
-			:errors="errors"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.telepon"
+            name="telepon"
+            label="Telepon"
+            :error-messages="errors.telepon"
+            @keyup="errors.telepon = null"/>
         <v-text-field
             dense
             outlined
@@ -64,35 +119,21 @@
             label="Alamat"
             :error-messages="errors.alamat"
             @keyup="errors.alamat = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.npsn"
-            name="npsn"
-            label="NPSN"
-            :error-messages="errors.npsn"
-            @keyup="errors.npsn = null"/>
     </div>
 </template>
 <script>
-import InputStukturOrganisasiSekolah from './InputStukturOrganisasiSekolah.vue';
-import InputVisiMisiSekolah from './InputVisiMisiSekolah.vue';
+import InputJenisKelaminGuru from './InputJenisKelaminGuru.vue';
 export default {
-    components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah },
+    components: { InputJenisKelaminGuru },
     props: {
         errors: Object,
         value: {
             type: Object,
             default: ()=>{
                 return {
-                    id_profil: null,
-                    nama_sekolah: null,
-                    jenjang: null,
-                    tgl_berdiri: null,
-                    struktur_organisasi: null,
-                    visi_misi: null,
+                    nama_guru: null,
+                    nip: null,
                     alamat: null,
-                    npsn: null
                 }
             }
         }
@@ -109,7 +150,7 @@ export default {
     },
     data() {
         return {
-			modal_tanggal_berdiri: false,
+			modal_tanggal_lahir: false,
         };
     },
     methods: {}

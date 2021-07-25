@@ -2622,6 +2622,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruTambah_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruTambah.vue */ "./resources/js/pages/guru/GuruTambah.vue");
 //
 //
 //
@@ -2631,9 +2632,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 // import GuruHapus from './GuruHapus.vue'
-// import GuruTambah from './GuruTambah.vue'
-// import GuruUbah from './GuruUbah.vue'
-/* harmony default export */ __webpack_exports__["default"] = ({// components: { GuruTambah, GuruUbah, GuruHapus },
+ // import GuruUbah from './GuruUbah.vue'
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    GuruTambah: _GuruTambah_vue__WEBPACK_IMPORTED_MODULE_0__["default"] // GuruUbah, 
+    // GuruHapus 
+
+  }
 });
 
 /***/ }),
@@ -2790,55 +2796,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      loading: false
+      loading: false,
+      items: []
     };
   },
-  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
-    items: function items(state) {
-      return state.sekolah.items;
-    }
-  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
-    total_sekolah: 'sekolah/getTotal',
-    session: 'sekolah/getSession'
+  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({})), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    total_guru: 'guru/getTotal',
+    session: 'guru/getSession'
   })), {}, {
     exists: function exists() {
-      return this.total_sekolah > 0;
+      return this.total_guru > 0;
     }
   }),
   watch: {
@@ -2847,23 +2818,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
-    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH',
-    setItems: 'sekolah/SET_ITEMS'
+    showTambahDialog: 'guru/SET_MODAL_TAMBAH'
   })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    showUbahDialog: 'sekolah/setModalUbah',
-    showHapusDialog: 'sekolah/setModalHapus',
-    getItems: 'sekolah/get'
+    showUbahDialog: 'guru/setModalUbah',
+    showHapusDialog: 'guru/setModalHapus',
+    getItems: 'guru/get'
   })), {}, {
     openModalTambah: function openModalTambah() {
       this.showTambahDialog(true);
     },
-    ubahInfoSekolah: function ubahInfoSekolah(id) {
+    ubahInfoGuru: function ubahInfoGuru(id) {
       this.showUbahDialog({
         id: id,
         value: true
       });
     },
-    hapusInfoSekolah: function hapusInfoSekolah(id) {
+    hapusInfoGuru: function hapusInfoGuru(id) {
       this.showHapusDialog({
         id: id,
         value: true
@@ -2875,8 +2845,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
         var _res$data;
 
-        var res, _res$data2;
-
+        var res;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
@@ -2884,7 +2853,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = true;
                 _context.next = 3;
                 return _this.getItems({})["catch"](function (e) {
-                  console.log("loadItem@SekolahIndex.vue", e);
+                  console.log("loadItem@GuruIndex.vue", e);
                 });
 
               case 3:
@@ -2892,7 +2861,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = false;
 
                 if (res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data) {
-                  _this.setItems(res === null || res === void 0 ? void 0 : (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data);
+                  _this.items = res.data.data;
                 }
 
               case 6:
@@ -3274,6 +3243,372 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruTambah.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruTambah.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _form_FormTambahGuru_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form/FormTambahGuru.vue */ "./resources/js/pages/guru/form/FormTambahGuru.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    FormTambahGuru: _form_FormTambahGuru_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      loading: false,
+      errors: {},
+      alive: true
+    };
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    value_dialog: function value_dialog(state) {
+      return state.guru.modal.tambah;
+    }
+  })), {}, {
+    dialog: {
+      get: function get() {
+        return this.value_dialog;
+      },
+      set: function set(val) {
+        this.setDialog(val);
+      }
+    }
+  }),
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    setDialog: 'guru/SET_MODAL_TAMBAH'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    storeGuru: 'guru/store',
+    updateSession: 'guru/updateSession',
+    notif: 'notifikasi/show'
+  })), {}, {
+    submit: function submit(e) {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var data, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                data = new FormData(e.target);
+                _this.loading = true;
+                _context.next = 4;
+                return _this.storeGuru(data)["catch"](function (e) {
+                  console.log("storeGuru@GuruTambah.vue", e);
+                  e.response.status == 422 && _this.setErrorForm(e);
+
+                  _this.notif({
+                    message: e.message
+                  });
+                });
+
+              case 4:
+                res = _context.sent;
+                _this.loading = false;
+                console.log(res);
+
+                if (res) {
+                  _this.dialog = false;
+                  _this.alive = false;
+
+                  _this.updateSession();
+                }
+
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }),
+  watch: {
+    dialog: function dialog(val) {
+      if (val) this.alive = true;
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InputJenisKelaminGuru_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputJenisKelaminGuru.vue */ "./resources/js/pages/guru/form/InputJenisKelaminGuru.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    InputJenisKelaminGuru: _InputJenisKelaminGuru_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  props: {
+    errors: Object,
+    value: {
+      type: Object,
+      "default": function _default() {
+        return {
+          nama_guru: null,
+          nip: null,
+          alamat: null
+        };
+      }
+    }
+  },
+  computed: {
+    item: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(val) {
+        this.$emit('input', val);
+      }
+    }
+  },
+  data: function data() {
+    return {
+      modal_tanggal_lahir: false
+    };
+  },
+  methods: {}
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    value: {
+      required: true
+    },
+    errors: Object
+  },
+  computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
+    items: function items(state) {
+      return state.jenis_kelamin.items;
+    }
+  })), {}, {
+    jenis_kelamin: {
+      get: function get() {
+        return this.value;
+      },
+      set: function set(val) {
+        this.$emit('input', val);
+      }
+    }
+  })
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js&":
 /*!*******************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js& ***!
@@ -3296,7 +3631,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
-    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH'
+    showTambahDialog: 'guru/SET_MODAL_TAMBAH'
   })),
   created: function created() {
     this.showTambahDialog(true);
@@ -25853,7 +26188,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_c("router-view")], 1)
+  return _c("div", [_c("router-view"), _vm._v(" "), _c("guru-tambah")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -25886,7 +26221,7 @@ var render = function() {
         [
           _c("v-app-bar-nav-icon"),
           _vm._v(" "),
-          _c("v-toolbar-title", [_vm._v("\n            Sekolah\n        ")])
+          _c("v-toolbar-title", [_vm._v("\n            Guru\n        ")])
         ],
         1
       ),
@@ -25900,7 +26235,7 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "d-grid-sekolah" },
-                    _vm._l(_vm.total_sekolah || 4, function(i) {
+                    _vm._l(_vm.total_guru || 10, function(i) {
                       return _c(
                         "v-card",
                         {
@@ -25934,116 +26269,6 @@ var render = function() {
                     1
                   )
                 ])
-              : !_vm.exists && !_vm.loading
-              ? _c(
-                  "div",
-                  {
-                    staticClass: "mx-auto",
-                    staticStyle: { "max-width": "400px" }
-                  },
-                  [
-                    _c(
-                      "v-alert",
-                      {
-                        attrs: {
-                          prominent: "",
-                          text: "",
-                          type: "warning",
-                          rounded: "xl"
-                        }
-                      },
-                      [
-                        _c("span", [
-                          _vm._v(
-                            "\n                        Profil Sekolah Masih Kosong\n                    "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _c("small", [
-                            _vm._v(
-                              "\n                            Silahkan menambah profil sekolah\n                        "
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "v-card",
-                      {
-                        attrs: {
-                          color: "grey lighten-4 overflow-hidden",
-                          rounded: "xl",
-                          flat: "",
-                          link: ""
-                        },
-                        on: { click: _vm.openModalTambah }
-                      },
-                      [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "d-flex",
-                            staticStyle: { "min-height": "300px" }
-                          },
-                          [
-                            _c("div", { staticClass: "w-100" }, [
-                              _c(
-                                "div",
-                                { staticClass: "content-middle" },
-                                [
-                                  _c("v-card-text", [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass:
-                                          "d-flex flex-column align-center w-100"
-                                      },
-                                      [
-                                        _c(
-                                          "v-avatar",
-                                          {
-                                            attrs: { color: "grey lighten-2" }
-                                          },
-                                          [
-                                            _c("v-icon", {
-                                              attrs: { color: "grey" },
-                                              domProps: {
-                                                textContent: _vm._s("mdi-plus")
-                                              }
-                                            })
-                                          ],
-                                          1
-                                        ),
-                                        _vm._v(" "),
-                                        _c(
-                                          "div",
-                                          { staticClass: "grow-1 pl-4" },
-                                          [
-                                            _c("v-subheader", [
-                                              _vm._v(
-                                                "\n                                                Tambah Profil Sekolah\n                                            "
-                                              )
-                                            ])
-                                          ],
-                                          1
-                                        )
-                                      ],
-                                      1
-                                    )
-                                  ])
-                                ],
-                                1
-                              )
-                            ])
-                          ]
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
               : _c("div", [
                   _c(
                     "div",
@@ -26060,7 +26285,7 @@ var render = function() {
                               flat: "",
                               link: "",
                               to: {
-                                name: "sekolah.show",
+                                name: "guru.show",
                                 params: { id_profil: item.id_profil }
                               }
                             }
@@ -26154,7 +26379,7 @@ var render = function() {
                                                 dense: "",
                                                 link: "",
                                                 to: {
-                                                  name: "sekolah.show",
+                                                  name: "guru.show",
                                                   params: {
                                                     id_profil: item.id_profil
                                                   }
@@ -26193,7 +26418,7 @@ var render = function() {
                                               attrs: { dense: "", link: "" },
                                               on: {
                                                 click: function($event) {
-                                                  return _vm.ubahInfoSekolah(
+                                                  return _vm.ubahInfoGuru(
                                                     item.id_profil
                                                   )
                                                 }
@@ -26231,7 +26456,7 @@ var render = function() {
                                               attrs: { dense: "", link: "" },
                                               on: {
                                                 click: function($event) {
-                                                  return _vm.hapusInfoSekolah(
+                                                  return _vm.hapusInfoGuru(
                                                     item.id_profil
                                                   )
                                                 }
@@ -26410,7 +26635,7 @@ var render = function() {
                                             [
                                               _c("v-subheader", [
                                                 _vm._v(
-                                                  "\n                                                    Tambah Profil Sekolah\n                                                "
+                                                  "\n                                                    Tambah Profil Guru\n                                                "
                                                 )
                                               ])
                                             ],
@@ -27214,6 +27439,574 @@ var render = function() {
     ],
     1
   )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruTambah.vue?vue&type=template&id=1bfa365f&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruTambah.vue?vue&type=template&id=1bfa365f& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-dialog",
+        {
+          attrs: {
+            "max-width": "600",
+            "content-class": "shadow-sm",
+            "overlay-opacity": ".25",
+            eager: "",
+            scrollable: ""
+          },
+          model: {
+            value: _vm.dialog,
+            callback: function($$v) {
+              _vm.dialog = $$v
+            },
+            expression: "dialog"
+          }
+        },
+        [
+          _c(
+            "v-form",
+            {
+              attrs: { disabled: _vm.loading },
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.submit.apply(null, arguments)
+                }
+              }
+            },
+            [
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-toolbar",
+                    { attrs: { flat: "" } },
+                    [
+                      _c("v-subheader", [
+                        _vm._v(
+                          "\n                        Form Tambah Guru\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-avatar",
+                        { attrs: { color: "grey lighten-3" } },
+                        [_c("v-icon", [_vm._v("mdi-account-tie")])],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _vm.dialog || _vm.alive
+                    ? _c(
+                        "v-card-text",
+                        [
+                          _c("form-tambah-guru", {
+                            attrs: { errors: _vm.errors }
+                          })
+                        ],
+                        1
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _c("v-divider"),
+                  _vm._v(" "),
+                  _c(
+                    "v-card-actions",
+                    [
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c(
+                        "v-btn",
+                        {
+                          attrs: {
+                            text: "",
+                            color: "primary",
+                            type: "submit",
+                            loading: _vm.loading
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        Tambah\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=template&id=9a445818&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=template&id=9a445818& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "d-grid-form" },
+    [
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "nama_guru",
+          label: "Nama Guru",
+          "error-messages": _vm.errors.nama_guru
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.nama_guru = null
+          }
+        },
+        model: {
+          value: _vm.item.nama_guru,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "nama_guru", $$v)
+          },
+          expression: "item.nama_guru"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "nip",
+          label: "NIP",
+          "error-messages": _vm.errors.nip
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.nip = null
+          }
+        },
+        model: {
+          value: _vm.item.nip,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "nip", $$v)
+          },
+          expression: "item.nip"
+        }
+      }),
+      _vm._v(" "),
+      _c("input-jenis-kelamin-guru", {
+        attrs: { errors: _vm.errors },
+        on: {
+          change: function($event) {
+            _vm.errors.jenis_kelamin = null
+          }
+        },
+        model: {
+          value: _vm.item.jenis_kelamin,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "jenis_kelamin", $$v)
+          },
+          expression: "item.jenis_kelamin"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-spacer"),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "jabatan",
+          label: "Jabatan",
+          "error-messages": _vm.errors.jabatan
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.jabatan = null
+          }
+        },
+        model: {
+          value: _vm.item.jabatan,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "jabatan", $$v)
+          },
+          expression: "item.jabatan"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "pangkat",
+          label: "Pangkat",
+          "error-messages": _vm.errors.pangkat
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.pangkat = null
+          }
+        },
+        model: {
+          value: _vm.item.pangkat,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "pangkat", $$v)
+          },
+          expression: "item.pangkat"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "golongan",
+          label: "Golongan",
+          "error-messages": _vm.errors.golongan
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.golongan = null
+          }
+        },
+        model: {
+          value: _vm.item.golongan,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "golongan", $$v)
+          },
+          expression: "item.golongan"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-spacer"),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "pendidikan_terakhir",
+          label: "Pendidikan Terakhir",
+          "error-messages": _vm.errors.pendidikan_terakhir
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.pendidikan_terakhir = null
+          }
+        },
+        model: {
+          value: _vm.item.pendidikan_terakhir,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "pendidikan_terakhir", $$v)
+          },
+          expression: "item.pendidikan_terakhir"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "pendidikan_profesi",
+          label: "Pendidikan Profesi",
+          "error-messages": _vm.errors.pendidikan_profesi
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.pendidikan_profesi = null
+          }
+        },
+        model: {
+          value: _vm.item.pendidikan_profesi,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "pendidikan_profesi", $$v)
+          },
+          expression: "item.pendidikan_profesi"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "tempat_lahir",
+          label: "Tempat Lahir",
+          "error-messages": _vm.errors.tempat_lahir
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.tempat_lahir = null
+          }
+        },
+        model: {
+          value: _vm.item.tempat_lahir,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "tempat_lahir", $$v)
+          },
+          expression: "item.tempat_lahir"
+        }
+      }),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          ref: "tanggal_lahir",
+          attrs: {
+            "return-value": _vm.item.tanggal_lahir,
+            persistent: "",
+            width: "300px",
+            "content-class": "shadow-sm rounded-xl",
+            "overlay-opacity": ".25",
+            eager: ""
+          },
+          on: {
+            "update:returnValue": function($event) {
+              return _vm.$set(_vm.item, "tanggal_lahir", $event)
+            },
+            "update:return-value": function($event) {
+              return _vm.$set(_vm.item, "tanggal_lahir", $event)
+            }
+          },
+          scopedSlots: _vm._u([
+            {
+              key: "activator",
+              fn: function(ref) {
+                var on = ref.on
+                var attrs = ref.attrs
+                return [
+                  _c(
+                    "v-text-field",
+                    _vm._g(
+                      _vm._b(
+                        {
+                          attrs: {
+                            dense: "",
+                            outlined: "",
+                            name: "tanggal_lahir",
+                            label: "Tanggal Lahir",
+                            "append-icon": "mdi-calendar",
+                            readonly: "",
+                            "error-messages": _vm.errors.tanggal_lahir
+                          },
+                          model: {
+                            value: _vm.item.tanggal_lahir,
+                            callback: function($$v) {
+                              _vm.$set(_vm.item, "tanggal_lahir", $$v)
+                            },
+                            expression: "item.tanggal_lahir"
+                          }
+                        },
+                        "v-text-field",
+                        attrs,
+                        false
+                      ),
+                      on
+                    )
+                  )
+                ]
+              }
+            }
+          ]),
+          model: {
+            value: _vm.modal_tanggal_lahir,
+            callback: function($$v) {
+              _vm.modal_tanggal_lahir = $$v
+            },
+            expression: "modal_tanggal_lahir"
+          }
+        },
+        [
+          _vm._v(" "),
+          _c(
+            "v-date-picker",
+            {
+              attrs: {
+                scrollable: "",
+                locale: "id-id",
+                "first-day-of-week": "1"
+              },
+              model: {
+                value: _vm.item.tanggal_lahir,
+                callback: function($$v) {
+                  _vm.$set(_vm.item, "tanggal_lahir", $$v)
+                },
+                expression: "item.tanggal_lahir"
+              }
+            },
+            [
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { text: "", color: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.modal_tanggal_berdiri = false
+                    }
+                  }
+                },
+                [_vm._v("\n                    Batal\n                ")]
+              ),
+              _vm._v(" "),
+              _c(
+                "v-btn",
+                {
+                  attrs: { text: "", color: "primary" },
+                  on: {
+                    click: function($event) {
+                      _vm.$refs.tanggal_lahir.save(_vm.item.tanggal_lahir)
+                      _vm.errors.tanggal_lahir = null
+                    }
+                  }
+                },
+                [_vm._v("\n                    Pilih\n                ")]
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "telepon",
+          label: "Telepon",
+          "error-messages": _vm.errors.telepon
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.telepon = null
+          }
+        },
+        model: {
+          value: _vm.item.telepon,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "telepon", $$v)
+          },
+          expression: "item.telepon"
+        }
+      }),
+      _vm._v(" "),
+      _c("v-text-field", {
+        attrs: {
+          dense: "",
+          outlined: "",
+          name: "alamat",
+          label: "Alamat",
+          "error-messages": _vm.errors.alamat
+        },
+        on: {
+          keyup: function($event) {
+            _vm.errors.alamat = null
+          }
+        },
+        model: {
+          value: _vm.item.alamat,
+          callback: function($$v) {
+            _vm.$set(_vm.item, "alamat", $$v)
+          },
+          expression: "item.alamat"
+        }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("v-select", {
+    attrs: {
+      items: _vm.items,
+      label: "Jenis Kelamin",
+      "item-text": "text",
+      "item-value": "value",
+      clearable: "",
+      dense: "",
+      outlined: "",
+      "error-messages": _vm.errors.jenis_kelamin,
+      name: "jenis_kelamin"
+    },
+    model: {
+      value: _vm.jenis_kelamin,
+      callback: function($$v) {
+        _vm.jenis_kelamin = $$v
+      },
+      expression: "jenis_kelamin"
+    }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -93393,6 +94186,213 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/guru/GuruTambah.vue":
+/*!************************************************!*\
+  !*** ./resources/js/pages/guru/GuruTambah.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruTambah_vue_vue_type_template_id_1bfa365f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruTambah.vue?vue&type=template&id=1bfa365f& */ "./resources/js/pages/guru/GuruTambah.vue?vue&type=template&id=1bfa365f&");
+/* harmony import */ var _GuruTambah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruTambah.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/GuruTambah.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruTambah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruTambah_vue_vue_type_template_id_1bfa365f___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruTambah_vue_vue_type_template_id_1bfa365f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/GuruTambah.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruTambah.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruTambah.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruTambah.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruTambah.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambah_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruTambah.vue?vue&type=template&id=1bfa365f&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruTambah.vue?vue&type=template&id=1bfa365f& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambah_vue_vue_type_template_id_1bfa365f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruTambah.vue?vue&type=template&id=1bfa365f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruTambah.vue?vue&type=template&id=1bfa365f&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambah_vue_vue_type_template_id_1bfa365f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambah_vue_vue_type_template_id_1bfa365f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/form/FormTambahGuru.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/pages/guru/form/FormTambahGuru.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _FormTambahGuru_vue_vue_type_template_id_9a445818___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormTambahGuru.vue?vue&type=template&id=9a445818& */ "./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=template&id=9a445818&");
+/* harmony import */ var _FormTambahGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormTambahGuru.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _FormTambahGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _FormTambahGuru_vue_vue_type_template_id_9a445818___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _FormTambahGuru_vue_vue_type_template_id_9a445818___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/form/FormTambahGuru.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormTambahGuru.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=template&id=9a445818&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=template&id=9a445818& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahGuru_vue_vue_type_template_id_9a445818___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./FormTambahGuru.vue?vue&type=template&id=9a445818& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/FormTambahGuru.vue?vue&type=template&id=9a445818&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahGuru_vue_vue_type_template_id_9a445818___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_FormTambahGuru_vue_vue_type_template_id_9a445818___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/form/InputJenisKelaminGuru.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/pages/guru/form/InputJenisKelaminGuru.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _InputJenisKelaminGuru_vue_vue_type_template_id_6a54ea3b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b& */ "./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b&");
+/* harmony import */ var _InputJenisKelaminGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./InputJenisKelaminGuru.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _InputJenisKelaminGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _InputJenisKelaminGuru_vue_vue_type_template_id_6a54ea3b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _InputJenisKelaminGuru_vue_vue_type_template_id_6a54ea3b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/form/InputJenisKelaminGuru.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputJenisKelaminGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InputJenisKelaminGuru.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_InputJenisKelaminGuru_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputJenisKelaminGuru_vue_vue_type_template_id_6a54ea3b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/form/InputJenisKelaminGuru.vue?vue&type=template&id=6a54ea3b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputJenisKelaminGuru_vue_vue_type_template_id_6a54ea3b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_InputJenisKelaminGuru_vue_vue_type_template_id_6a54ea3b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/guru/page/GuruTambahIndex.vue":
 /*!**********************************************************!*\
   !*** ./resources/js/pages/guru/page/GuruTambahIndex.vue ***!
@@ -94777,19 +95777,25 @@ router.afterEach( /*#__PURE__*/function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "states", function() { return states; });
-/* harmony import */ var _v1_image__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./v1/image */ "./resources/js/states/v1/image.js");
-/* harmony import */ var _v1_login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v1/login */ "./resources/js/states/v1/login.js");
-/* harmony import */ var _v1_notifikasi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./v1/notifikasi */ "./resources/js/states/v1/notifikasi.js");
-/* harmony import */ var _v1_sekolah__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./v1/sekolah */ "./resources/js/states/v1/sekolah.js");
+/* harmony import */ var _v1_guru__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./v1/guru */ "./resources/js/states/v1/guru.js");
+/* harmony import */ var _v1_image__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./v1/image */ "./resources/js/states/v1/image.js");
+/* harmony import */ var _v1_jenis_kelamin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./v1/jenis_kelamin */ "./resources/js/states/v1/jenis_kelamin.js");
+/* harmony import */ var _v1_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./v1/login */ "./resources/js/states/v1/login.js");
+/* harmony import */ var _v1_notifikasi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./v1/notifikasi */ "./resources/js/states/v1/notifikasi.js");
+/* harmony import */ var _v1_sekolah__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./v1/sekolah */ "./resources/js/states/v1/sekolah.js");
+
+
 
 
 
 
 var states = {
-  login: _v1_login__WEBPACK_IMPORTED_MODULE_1__["default"],
-  sekolah: _v1_sekolah__WEBPACK_IMPORTED_MODULE_3__["default"],
-  image: _v1_image__WEBPACK_IMPORTED_MODULE_0__["default"],
-  notifikasi: _v1_notifikasi__WEBPACK_IMPORTED_MODULE_2__["default"]
+  login: _v1_login__WEBPACK_IMPORTED_MODULE_3__["default"],
+  sekolah: _v1_sekolah__WEBPACK_IMPORTED_MODULE_5__["default"],
+  image: _v1_image__WEBPACK_IMPORTED_MODULE_1__["default"],
+  notifikasi: _v1_notifikasi__WEBPACK_IMPORTED_MODULE_4__["default"],
+  guru: _v1_guru__WEBPACK_IMPORTED_MODULE_0__["default"],
+  jenis_kelamin: _v1_jenis_kelamin__WEBPACK_IMPORTED_MODULE_2__["default"]
 };
 /* harmony default export */ __webpack_exports__["default"] = (states);
 
@@ -94837,6 +95843,419 @@ var api = function api(url) {
 
 /***/ }),
 
+/***/ "./resources/js/states/v1/guru.js":
+/*!****************************************!*\
+  !*** ./resources/js/states/v1/guru.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config */ "./resources/js/states/v1/config.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: {
+    items: [],
+    user: {},
+    selected: {
+      id: null,
+      ids: [],
+      item: null,
+      items: []
+    },
+    modal: {
+      tambah: false,
+      ubah: false,
+      hapus: false,
+      info: false
+    },
+    errors: {},
+    session: {
+      code: 0
+    }
+  },
+  getters: {
+    getTotal: function getTotal(state) {
+      return state.items.length;
+    },
+    getSession: function getSession(state) {
+      return state.session.code;
+    }
+  },
+  actions: {
+    get: function get(context) {
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return new Promise( /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(resolve, reject) {
+          var res;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/guru'), {
+                    params: params
+                  })["catch"](function (e) {
+                    return reject(e);
+                  });
+
+                case 2:
+                  res = _context.sent;
+                  if (res) resolve(res);
+
+                case 4:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function (_x, _x2) {
+          return _ref.apply(this, arguments);
+        };
+      }());
+    },
+    count: function count(context) {
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return new Promise( /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(resolve, reject) {
+          var res;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/analytic/guru/count'), {
+                    params: params
+                  })["catch"](function (e) {
+                    return reject(e);
+                  });
+
+                case 2:
+                  res = _context2.sent;
+                  if (res) resolve(res);
+
+                case 4:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }));
+
+        return function (_x3, _x4) {
+          return _ref2.apply(this, arguments);
+        };
+      }());
+    },
+    show: function show(context, _ref3) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var _ref3$data, data, id;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _ref3$data = _ref3.data, data = _ref3$data === void 0 ? {} : _ref3$data, id = _ref3.id;
+
+                if (!id) {
+                  _context4.next = 5;
+                  break;
+                }
+
+                return _context4.abrupt("return", new Promise( /*#__PURE__*/function () {
+                  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(resolve, reject) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+                      while (1) {
+                        switch (_context3.prev = _context3.next) {
+                          case 0:
+                            _context3.next = 2;
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/guru/".concat(id)), {
+                              params: data
+                            })["catch"](function (e) {
+                              return reject(e);
+                            });
+
+                          case 2:
+                            res = _context3.sent;
+                            if (res) resolve(res);
+
+                          case 4:
+                          case "end":
+                            return _context3.stop();
+                        }
+                      }
+                    }, _callee3);
+                  }));
+
+                  return function (_x5, _x6) {
+                    return _ref4.apply(this, arguments);
+                  };
+                }()));
+
+              case 5:
+                console.warn("show@guru.js", "id kosong 🤦‍♂️");
+
+              case 6:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
+    },
+    store: function store(context, data) {
+      return new Promise( /*#__PURE__*/function () {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(resolve, reject) {
+          var res;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+            while (1) {
+              switch (_context5.prev = _context5.next) {
+                case 0:
+                  _context5.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/guru'), data)["catch"](function (e) {
+                    return reject(e);
+                  });
+
+                case 2:
+                  res = _context5.sent;
+                  if (res) resolve(res);
+
+                case 4:
+                case "end":
+                  return _context5.stop();
+              }
+            }
+          }, _callee5);
+        }));
+
+        return function (_x7, _x8) {
+          return _ref5.apply(this, arguments);
+        };
+      }());
+    },
+    update: function update(context, _ref6) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7() {
+        var data, id;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                data = _ref6.data, id = _ref6.id;
+
+                if (!id) {
+                  _context7.next = 6;
+                  break;
+                }
+
+                if (data instanceof FormData) data.append('_method', 'PUT');
+                return _context7.abrupt("return", new Promise( /*#__PURE__*/function () {
+                  var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(resolve, reject) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+                      while (1) {
+                        switch (_context6.prev = _context6.next) {
+                          case 0:
+                            _context6.next = 2;
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/guru/".concat(id)), data)["catch"](function (e) {
+                              return reject(e);
+                            });
+
+                          case 2:
+                            res = _context6.sent;
+                            if (res) resolve(res);
+
+                          case 4:
+                          case "end":
+                            return _context6.stop();
+                        }
+                      }
+                    }, _callee6);
+                  }));
+
+                  return function (_x9, _x10) {
+                    return _ref7.apply(this, arguments);
+                  };
+                }()));
+
+              case 6:
+                console.warn("update@guru.js", "id kosong 🤦‍♂️");
+
+              case 7:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7);
+      }))();
+    },
+    destroy: function destroy(context, _ref8) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee9() {
+        var data, id;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                data = _ref8.data, id = _ref8.id;
+
+                if (!id) {
+                  _context9.next = 6;
+                  break;
+                }
+
+                if (data instanceof FormData) data.append('_method', 'DELETE');
+                return _context9.abrupt("return", new Promise( /*#__PURE__*/function () {
+                  var _ref9 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(resolve, reject) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
+                      while (1) {
+                        switch (_context8.prev = _context8.next) {
+                          case 0:
+                            _context8.next = 2;
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                              method: 'post',
+                              url: Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/guru/".concat(id)),
+                              data: data,
+                              category: 'DELETE'
+                            })["catch"](function (e) {
+                              return reject(e);
+                            });
+
+                          case 2:
+                            res = _context8.sent;
+                            if (res) resolve(res);
+
+                          case 4:
+                          case "end":
+                            return _context8.stop();
+                        }
+                      }
+                    }, _callee8);
+                  }));
+
+                  return function (_x11, _x12) {
+                    return _ref9.apply(this, arguments);
+                  };
+                }()));
+
+              case 6:
+                console.warn("destroy@guru.js", "id kosong 🤦‍♂️");
+
+              case 7:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9);
+      }))();
+    },
+    updateSession: function updateSession(context, data) {
+      context.commit('SET_SESSION_CODE', data || new Date().getTime());
+    },
+
+    /**
+     * modal
+     * 
+     */
+    setModalUbah: function setModalUbah(context, payload) {
+      if (_typeof(payload) != "object") throw Error("setModalUbah butuh parameter object { [id: string], value: bool }");
+      var mvalue = payload.value;
+
+      if (mvalue) {
+        if (payload.id == null) throw Error("setModalHapus butuh key id jika valuenya true");
+        context.commit('PUSH_ID', payload.id);
+        context.commit('SET_MODAL_UBAH', true);
+      } else {
+        context.commit('POP_ID', payload.id);
+        context.commit('SET_MODAL_UBAH', false);
+      }
+    },
+    setModalHapus: function setModalHapus(context, payload) {
+      if (_typeof(payload) != "object") throw Error("setModalHapus butuh parameter object { [id: string], value: bool }");
+      var mvalue = payload.value;
+
+      if (mvalue) {
+        if (payload.id == null) throw Error("setModalHapus butuh key id jika valuenya true");
+        context.commit('PUSH_ID', payload.id);
+        context.commit('SET_MODAL_HAPUS', true);
+      } else {
+        context.commit('POP_ID', payload.id);
+        context.commit('SET_MODAL_HAPUS', false);
+      }
+    }
+  },
+  mutations: {
+    SET_MODAL_TAMBAH: function SET_MODAL_TAMBAH(state, payload) {
+      state.modal.tambah = payload;
+    },
+    SET_MODAL_UBAH: function SET_MODAL_UBAH(state, payload) {
+      state.modal.ubah = payload;
+    },
+    SET_MODAL_HAPUS: function SET_MODAL_HAPUS(state, payload) {
+      state.modal.hapus = payload;
+    },
+    SET_MODAL_INFO: function SET_MODAL_INFO(state, payload) {
+      state.modal.info = payload;
+    },
+    SET_ERRORS: function SET_ERRORS(state, payload) {
+      state.errors = payload;
+    },
+    CLEAR_ERROR: function CLEAR_ERROR(state, payload) {
+      state.errors[payload] = null;
+    },
+    CLEAR_ERRORS: function CLEAR_ERRORS(state, payload) {
+      state.errors = {};
+    },
+    SET_ID: function SET_ID(state, payload) {
+      state.selected.id = payload;
+    },
+    PUSH_ID: function PUSH_ID(state, payload) {
+      state.selected.id = payload;
+      state.selected.ids.push(payload);
+    },
+    POP_ID: function POP_ID(state, payload) {
+      /**
+       * push:    1
+       * id:      1
+       * push:    1, 2
+       * id:      2
+       * push:    1, 2, 3
+       * id:      3
+       * pop:     1, 2
+       * id:      2
+       *      
+       */
+      state.selected.ids.pop();
+      if (state.selected.ids.length) state.selected.id = state.selected.ids[state.selected.ids.length - 1];else state.selected.id = null;
+    },
+    SET_ITEMS: function SET_ITEMS(state, payload) {
+      state.items = payload;
+    },
+    SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
+      state.session.code = payload;
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./resources/js/states/v1/image.js":
 /*!*****************************************!*\
   !*** ./resources/js/states/v1/image.js ***!
@@ -94866,6 +96285,39 @@ __webpack_require__.r(__webpack_exports__);
       commit("SHOW_IMAGE", payload);
     }
   }
+});
+
+/***/ }),
+
+/***/ "./resources/js/states/v1/jenis_kelamin.js":
+/*!*************************************************!*\
+  !*** ./resources/js/states/v1/jenis_kelamin.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./config */ "./resources/js/states/v1/config.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: {
+    items: [{
+      text: 'Laki-Laki',
+      value: 'l'
+    }, {
+      text: 'Perempuan',
+      value: 'p'
+    }]
+  },
+  getters: {},
+  actions: {},
+  mutations: {},
+  modules: {}
 });
 
 /***/ }),

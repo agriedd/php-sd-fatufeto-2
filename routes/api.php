@@ -29,4 +29,5 @@ Route::prefix('v1')->group(function(){
     });
 
     Route::resource('sekolah', 'api\v1\SekolahController');
+    Route::resource('guru', 'api\v1\GuruController');
 });

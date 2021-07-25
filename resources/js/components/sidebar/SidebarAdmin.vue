@@ -89,7 +89,7 @@
 					</v-list>
 				</v-menu>
 			</v-list-item>
-			<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+			<v-list-item dense link color="primary" :to="{ name: 'guru' }" exact>
 				<v-list-item-icon>
 					<v-icon>mdi-account-tie</v-icon>
 				</v-list-item-icon>
@@ -103,8 +103,8 @@
 							<v-icon>mdi-plus</v-icon>
 						</v-list-item-action>
 					</template>
-					<v-list>
-						<v-list-item dense>
+					<v-list nav>
+						<v-list-item dense link :to="{ name: 'guru.insert' }">
 							<v-list-item-icon>
 								<v-icon>mdi-plus</v-icon>
 							</v-list-item-icon>
@@ -112,7 +112,7 @@
 								<v-list-item-title v-text="'Tambah Guru'"/>
 							</v-list-item-content>
 						</v-list-item>
-						<v-list-item dense>
+						<v-list-item dense link :to="{ name: 'guru' }">
 							<v-list-item-icon>
 								<v-icon>mdi-magnify</v-icon>
 							</v-list-item-icon>

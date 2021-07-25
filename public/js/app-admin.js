@@ -2613,6 +2613,748 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruBase.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruBase.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+// import GuruHapus from './GuruHapus.vue'
+// import GuruTambah from './GuruTambah.vue'
+// import GuruUbah from './GuruUbah.vue'
+/* harmony default export */ __webpack_exports__["default"] = ({// components: { GuruTambah, GuruUbah, GuruHapus },
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruIndex.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruIndex.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loading: false
+    };
+  },
+  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    items: function items(state) {
+      return state.sekolah.items;
+    }
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    total_sekolah: 'sekolah/getTotal',
+    session: 'sekolah/getSession'
+  })), {}, {
+    exists: function exists() {
+      return this.total_sekolah > 0;
+    }
+  }),
+  watch: {
+    session: function session() {
+      this.loadItems();
+    }
+  },
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
+    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH',
+    setItems: 'sekolah/SET_ITEMS'
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    showUbahDialog: 'sekolah/setModalUbah',
+    showHapusDialog: 'sekolah/setModalHapus',
+    getItems: 'sekolah/get'
+  })), {}, {
+    openModalTambah: function openModalTambah() {
+      this.showTambahDialog(true);
+    },
+    ubahInfoSekolah: function ubahInfoSekolah(id) {
+      this.showUbahDialog({
+        id: id,
+        value: true
+      });
+    },
+    hapusInfoSekolah: function hapusInfoSekolah(id) {
+      this.showHapusDialog({
+        id: id,
+        value: true
+      });
+    },
+    loadItems: function loadItems() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _res$data;
+
+        var res, _res$data2;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.loading = true;
+                _context.next = 3;
+                return _this.getItems({})["catch"](function (e) {
+                  console.log("loadItem@SekolahIndex.vue", e);
+                });
+
+              case 3:
+                res = _context.sent;
+                _this.loading = false;
+
+                if (res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data) {
+                  _this.setItems(res === null || res === void 0 ? void 0 : (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data);
+                }
+
+              case 6:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }),
+  created: function created() {
+    this.loadItems();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruInfo.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruInfo.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loading: false,
+      item: {},
+      ori: {},
+      exists: false,
+      breadcrumb: [{
+        text: 'Panel Admin',
+        disabled: false,
+        to: {
+          name: 'admin'
+        },
+        link: true,
+        exact: true
+      }, {
+        text: 'Sekolah',
+        disabled: false,
+        to: {
+          name: 'sekolah'
+        },
+        link: true,
+        exact: true
+      }, {
+        text: 'Info Sekolah',
+        disabled: true
+      }]
+    };
+  },
+  computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
+    items: function items(state) {
+      return state.sekolah.items;
+    }
+  })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
+    session: 'sekolah/getSession'
+  })), {}, {
+    id: function id() {
+      return this.$route.params.id_profil;
+    }
+  }),
+  watch: {
+    session: function session() {
+      this.loadItems();
+    }
+  },
+  methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({})), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
+    showUbahDialog: 'sekolah/setModalUbah',
+    showHapusDialog: 'sekolah/setModalHapus',
+    getItem: 'sekolah/show'
+  })), {}, {
+    openModalTambah: function openModalTambah() {},
+    ubahInfoSekolah: function ubahInfoSekolah(id) {
+      this.showUbahDialog({
+        id: id,
+        value: true
+      });
+    },
+    hapusInfoSekolah: function hapusInfoSekolah(id) {
+      this.showHapusDialog({
+        id: id,
+        value: true
+      });
+    },
+    loadItem: function loadItem() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _res$data;
+
+        var res, key;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.loading = true;
+                _this.exists = false;
+                _context.next = 4;
+                return _this.getItem({
+                  id: _this.id
+                })["catch"](function (e) {
+                  console.log("loadItem@SekolahIndex.vue", e);
+                });
+
+              case 4:
+                res = _context.sent;
+                _this.loading = false;
+
+                if (res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data) {
+                  _this.exists = true;
+
+                  for (key in res.data.data) {
+                    _this.$set(_this.item, key, res.data.data[key]);
+
+                    _this.$set(_this.ori, key, res.data.data[key]);
+                  }
+                }
+
+              case 7:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    }
+  }),
+  created: function created() {
+    this.loadItem();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  methods: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapMutations"])({
+    showTambahDialog: 'sekolah/SET_MODAL_TAMBAH'
+  })),
+  created: function created() {
+    this.showTambahDialog(true);
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    item: Object
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/sekolah/SekolahBase.vue?vue&type=script&lang=js&":
 /*!*************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/sekolah/SekolahBase.vue?vue&type=script&lang=js& ***!
@@ -24431,7 +25173,7 @@ var render = function() {
                 dense: "",
                 link: "",
                 color: "primary",
-                to: { name: "admin" },
+                to: { name: "guru" },
                 exact: ""
               }
             },
@@ -24494,10 +25236,17 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "v-list",
+                    { attrs: { nav: "" } },
                     [
                       _c(
                         "v-list-item",
-                        { attrs: { dense: "" } },
+                        {
+                          attrs: {
+                            dense: "",
+                            link: "",
+                            to: { name: "guru.insert" }
+                          }
+                        },
                         [
                           _c(
                             "v-list-item-icon",
@@ -24520,7 +25269,9 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "v-list-item",
-                        { attrs: { dense: "" } },
+                        {
+                          attrs: { dense: "", link: "", to: { name: "guru" } }
+                        },
                         [
                           _c(
                             "v-list-item-icon",
@@ -25076,6 +25827,1553 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("v-main")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruBase.vue?vue&type=template&id=452b1047&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruBase.vue?vue&type=template&id=452b1047& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [_c("router-view")], 1)
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruIndex.vue?vue&type=template&id=c20c3268&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruIndex.vue?vue&type=template&id=c20c3268& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-app-bar",
+        { attrs: { app: "", flat: "", absolute: "", "hide-on-scroll": "" } },
+        [
+          _c("v-app-bar-nav-icon"),
+          _vm._v(" "),
+          _c("v-toolbar-title", [_vm._v("\n            Sekolah\n        ")])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-main",
+        [
+          _c("v-container", [
+            _vm.loading
+              ? _c("div", [
+                  _c(
+                    "div",
+                    { staticClass: "d-grid-sekolah" },
+                    _vm._l(_vm.total_sekolah || 4, function(i) {
+                      return _c(
+                        "v-card",
+                        {
+                          key: i,
+                          attrs: {
+                            color: "grey lighten-4 overflow-hidden",
+                            flat: "",
+                            rounded: "xl"
+                          }
+                        },
+                        [
+                          _c(
+                            "div",
+                            { staticStyle: { "min-height": "300px" } },
+                            [
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c("v-skeleton-loader", {
+                                    attrs: { type: "avatar", loading: "" }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ]
+                      )
+                    }),
+                    1
+                  )
+                ])
+              : !_vm.exists && !_vm.loading
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "mx-auto",
+                    staticStyle: { "max-width": "400px" }
+                  },
+                  [
+                    _c(
+                      "v-alert",
+                      {
+                        attrs: {
+                          prominent: "",
+                          text: "",
+                          type: "warning",
+                          rounded: "xl"
+                        }
+                      },
+                      [
+                        _c("span", [
+                          _vm._v(
+                            "\n                        Profil Sekolah Masih Kosong\n                    "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c("small", [
+                            _vm._v(
+                              "\n                            Silahkan menambah profil sekolah\n                        "
+                            )
+                          ])
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-card",
+                      {
+                        attrs: {
+                          color: "grey lighten-4 overflow-hidden",
+                          rounded: "xl",
+                          flat: "",
+                          link: ""
+                        },
+                        on: { click: _vm.openModalTambah }
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "d-flex",
+                            staticStyle: { "min-height": "300px" }
+                          },
+                          [
+                            _c("div", { staticClass: "w-100" }, [
+                              _c(
+                                "div",
+                                { staticClass: "content-middle" },
+                                [
+                                  _c("v-card-text", [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "d-flex flex-column align-center w-100"
+                                      },
+                                      [
+                                        _c(
+                                          "v-avatar",
+                                          {
+                                            attrs: { color: "grey lighten-2" }
+                                          },
+                                          [
+                                            _c("v-icon", {
+                                              attrs: { color: "grey" },
+                                              domProps: {
+                                                textContent: _vm._s("mdi-plus")
+                                              }
+                                            })
+                                          ],
+                                          1
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "div",
+                                          { staticClass: "grow-1 pl-4" },
+                                          [
+                                            _c("v-subheader", [
+                                              _vm._v(
+                                                "\n                                                Tambah Profil Sekolah\n                                            "
+                                              )
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ])
+                                ],
+                                1
+                              )
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              : _c("div", [
+                  _c(
+                    "div",
+                    { staticClass: "d-grid-sekolah" },
+                    [
+                      _vm._l(_vm.items, function(item, i) {
+                        return _c(
+                          "v-card",
+                          {
+                            key: item.id_profil,
+                            attrs: {
+                              color: "grey lighten-4 overflow-hidden",
+                              rounded: "xl",
+                              flat: "",
+                              link: "",
+                              to: {
+                                name: "sekolah.show",
+                                params: { id_profil: item.id_profil }
+                              }
+                            }
+                          },
+                          [
+                            _c("v-card-text", [
+                              _c(
+                                "div",
+                                { staticClass: "d-flex w-100" },
+                                [
+                                  i == 0
+                                    ? _c(
+                                        "v-avatar",
+                                        { attrs: { color: "grey lighten-2" } },
+                                        [_c("v-icon", [_vm._v("mdi-pin")])],
+                                        1
+                                      )
+                                    : _vm._e(),
+                                  _vm._v(" "),
+                                  _c("v-spacer"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-menu",
+                                    {
+                                      attrs: {
+                                        "open-on-click": "",
+                                        "content-class": "shadow-sm rounded-lg",
+                                        "close-on-content-click": false
+                                      },
+                                      scopedSlots: _vm._u(
+                                        [
+                                          {
+                                            key: "activator",
+                                            fn: function(ref) {
+                                              var attrs = ref.attrs
+                                              var on = ref.on
+                                              return [
+                                                _c(
+                                                  "v-btn",
+                                                  _vm._g(
+                                                    _vm._b(
+                                                      {
+                                                        attrs: { icon: "" },
+                                                        on: {
+                                                          click: function(
+                                                            $event
+                                                          ) {
+                                                            $event.preventDefault()
+                                                          }
+                                                        }
+                                                      },
+                                                      "v-btn",
+                                                      attrs,
+                                                      false
+                                                    ),
+                                                    on
+                                                  ),
+                                                  [
+                                                    _c("v-icon", [
+                                                      _vm._v(
+                                                        "mdi-dots-vertical"
+                                                      )
+                                                    ])
+                                                  ],
+                                                  1
+                                                )
+                                              ]
+                                            }
+                                          }
+                                        ],
+                                        null,
+                                        true
+                                      )
+                                    },
+                                    [
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-list",
+                                        { attrs: { nav: "" } },
+                                        [
+                                          _c("v-subheader", {
+                                            domProps: {
+                                              textContent: _vm._s("Aksi")
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            {
+                                              attrs: {
+                                                dense: "",
+                                                link: "",
+                                                to: {
+                                                  name: "sekolah.show",
+                                                  params: {
+                                                    id_profil: item.id_profil
+                                                  }
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-school")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    Lihat Rincian\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            {
+                                              attrs: { dense: "", link: "" },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.ubahInfoSekolah(
+                                                    item.id_profil
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-pencil")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    Ubah\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            {
+                                              attrs: { dense: "", link: "" },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.hapusInfoSekolah(
+                                                    item.id_profil
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-delete")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    Hapus\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c("v-subheader", {
+                                            domProps: {
+                                              textContent: _vm._s("Rincian")
+                                            }
+                                          }),
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list-item",
+                                            { attrs: { dense: "" } },
+                                            [
+                                              _c(
+                                                "v-list-item-icon",
+                                                [
+                                                  _c("v-icon", [
+                                                    _vm._v("mdi-calendar")
+                                                  ])
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item-content",
+                                                [
+                                                  _c("v-list-item-title", [
+                                                    _vm._v(
+                                                      "\n                                                    " +
+                                                        _vm._s(
+                                                          _vm._f("datetime")(
+                                                            item.created_at
+                                                          )
+                                                        ) +
+                                                        "\n                                                "
+                                                    )
+                                                  ])
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("v-card-title", [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(item.nama_sekolah) +
+                                  "\n                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("v-card-subtitle", [
+                              _vm._v(
+                                "\n                            " +
+                                  _vm._s(item.tgl_berdiri) +
+                                  "\n                        "
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("v-spacer"),
+                            _vm._v(" "),
+                            _c("v-card-text", [
+                              _c("div", [
+                                _vm._v(
+                                  "\n                                " +
+                                    _vm._s(item.alamat) +
+                                    "\n                            "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", [
+                                _vm._v(
+                                  "\n                                NPSN. " +
+                                    _vm._s(item.npsn) +
+                                    "\n                            "
+                                )
+                              ])
+                            ])
+                          ],
+                          1
+                        )
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "v-card",
+                        {
+                          attrs: {
+                            color: "grey lighten-4 overflow-hidden",
+                            rounded: "xl",
+                            flat: "",
+                            link: ""
+                          },
+                          on: { click: _vm.openModalTambah }
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "d-flex",
+                              staticStyle: { "min-height": "300px" }
+                            },
+                            [
+                              _c("div", { staticClass: "w-100" }, [
+                                _c(
+                                  "div",
+                                  { staticClass: "content-middle" },
+                                  [
+                                    _c("v-card-text", [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass:
+                                            "d-flex flex-column align-center w-100"
+                                        },
+                                        [
+                                          _c(
+                                            "v-avatar",
+                                            {
+                                              attrs: { color: "grey lighten-2" }
+                                            },
+                                            [
+                                              _c("v-icon", {
+                                                attrs: { color: "grey" },
+                                                domProps: {
+                                                  textContent: _vm._s(
+                                                    "mdi-plus"
+                                                  )
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "div",
+                                            { staticClass: "grow-1 pl-4" },
+                                            [
+                                              _c("v-subheader", [
+                                                _vm._v(
+                                                  "\n                                                    Tambah Profil Sekolah\n                                                "
+                                                )
+                                              ])
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ])
+                                  ],
+                                  1
+                                )
+                              ])
+                            ]
+                          )
+                        ]
+                      )
+                    ],
+                    2
+                  )
+                ]),
+            _vm._v(" "),
+            _c("div", [_c("router-view")], 1)
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruInfo.vue?vue&type=template&id=933b90b8&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/GuruInfo.vue?vue&type=template&id=933b90b8& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "v-app-bar",
+        { attrs: { app: "", flat: "", floating: "", absolute: "" } },
+        [
+          _c("v-app-bar-nav-icon"),
+          _vm._v(" "),
+          _c("v-toolbar-title", [
+            _vm._v("\n            Sekolah Info\n        ")
+          ])
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-main",
+        [
+          _c("v-container", [
+            _vm.loading
+              ? _c("div", [
+                  _c("div", { staticClass: "d-grid-sekolah-info" }, [
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "v-card",
+                          {
+                            staticClass: "mb-3",
+                            attrs: {
+                              color: "grey lighten-4 overflow-hidden",
+                              flat: "",
+                              rounded: "xl"
+                            }
+                          },
+                          [
+                            _c("v-card-text", [
+                              _vm._v(
+                                "\n                                Memuat...\n                            "
+                              )
+                            ])
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _vm._l(1, function(i) {
+                          return _c(
+                            "v-card",
+                            {
+                              key: i,
+                              attrs: {
+                                color: "grey lighten-4 overflow-hidden",
+                                flat: "",
+                                rounded: "xl"
+                              }
+                            },
+                            [
+                              _c(
+                                "div",
+                                { staticStyle: { "min-height": "300px" } },
+                                [
+                                  _c(
+                                    "v-card-text",
+                                    [
+                                      _c("v-skeleton-loader", {
+                                        attrs: { type: "avatar", loading: "" }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ])
+                ])
+              : !_vm.exists && !_vm.loading
+              ? _c(
+                  "div",
+                  {
+                    staticClass: "mx-auto",
+                    staticStyle: { "max-width": "400px" }
+                  },
+                  [
+                    _c(
+                      "v-alert",
+                      {
+                        attrs: {
+                          prominent: "",
+                          text: "",
+                          type: "warning",
+                          rounded: "xl"
+                        }
+                      },
+                      [
+                        _c("span", [
+                          _vm._v(
+                            "\n                        Profil Sekolah Tidak Ditemukan\n                    "
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "v-card",
+                      {
+                        attrs: {
+                          color: "grey lighten-4 overflow-hidden",
+                          rounded: "xl",
+                          flat: "",
+                          link: "",
+                          to: { name: "sekolah" }
+                        }
+                      },
+                      [
+                        _c(
+                          "v-list-item",
+                          [
+                            _c(
+                              "v-list-item-avatar",
+                              { attrs: { color: "grey lighten-2" } },
+                              [_c("v-icon", [_vm._v("mdi-school")])],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "v-list-item-content",
+                              [
+                                _c("v-list-item-title", [
+                                  _vm._v(
+                                    "\n                                Kembali ke daftar Sekolah\n                            "
+                                  )
+                                ])
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              : _c("div", [
+                  _c("div", { staticClass: "d-grid-sekolah-info" }, [
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "v-card",
+                          {
+                            staticClass: "mb-3",
+                            attrs: {
+                              color: "grey lighten-4 overflow-hidden",
+                              rounded: "xl",
+                              flat: ""
+                            }
+                          },
+                          [
+                            _c("v-breadcrumbs", {
+                              attrs: { items: _vm.breadcrumb }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "sticky-top" },
+                          [
+                            _c(
+                              "v-card",
+                              {
+                                attrs: {
+                                  color: "grey lighten-4 overflow-hidden",
+                                  rounded: "xl",
+                                  flat: ""
+                                }
+                              },
+                              [
+                                _c("v-card-text", [
+                                  _c(
+                                    "div",
+                                    { staticClass: "d-flex w-100" },
+                                    [
+                                      _c(
+                                        "v-avatar",
+                                        { attrs: { color: "grey lighten-2" } },
+                                        [_c("v-icon", [_vm._v("mdi-school")])],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c("v-spacer"),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-menu",
+                                        {
+                                          attrs: {
+                                            "open-on-click": "",
+                                            "content-class":
+                                              "shadow-sm rounded-lg",
+                                            "close-on-content-click": false
+                                          },
+                                          scopedSlots: _vm._u([
+                                            {
+                                              key: "activator",
+                                              fn: function(ref) {
+                                                var attrs = ref.attrs
+                                                var on = ref.on
+                                                return [
+                                                  _c(
+                                                    "v-btn",
+                                                    _vm._g(
+                                                      _vm._b(
+                                                        { attrs: { icon: "" } },
+                                                        "v-btn",
+                                                        attrs,
+                                                        false
+                                                      ),
+                                                      on
+                                                    ),
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v(
+                                                          "mdi-dots-vertical"
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ]
+                                              }
+                                            }
+                                          ])
+                                        },
+                                        [
+                                          _vm._v(" "),
+                                          _c(
+                                            "v-list",
+                                            { attrs: { nav: "" } },
+                                            [
+                                              _c("v-subheader", {
+                                                domProps: {
+                                                  textContent: _vm._s("Aksi")
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item",
+                                                {
+                                                  attrs: {
+                                                    dense: "",
+                                                    link: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.ubahInfoSekolah(
+                                                        _vm.item.id_profil
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-list-item-icon",
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-pencil")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-content",
+                                                    [
+                                                      _c("v-list-item-title", [
+                                                        _vm._v(
+                                                          "\n                                                            Ubah\n                                                        "
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item",
+                                                {
+                                                  attrs: {
+                                                    dense: "",
+                                                    link: ""
+                                                  },
+                                                  on: {
+                                                    click: function($event) {
+                                                      return _vm.hapusInfoSekolah(
+                                                        _vm.item.id_profil
+                                                      )
+                                                    }
+                                                  }
+                                                },
+                                                [
+                                                  _c(
+                                                    "v-list-item-icon",
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-delete")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-content",
+                                                    [
+                                                      _c("v-list-item-title", [
+                                                        _vm._v(
+                                                          "\n                                                            Hapus\n                                                        "
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              ),
+                                              _vm._v(" "),
+                                              _c("v-subheader", {
+                                                domProps: {
+                                                  textContent: _vm._s("Rincian")
+                                                }
+                                              }),
+                                              _vm._v(" "),
+                                              _c(
+                                                "v-list-item",
+                                                { attrs: { dense: "" } },
+                                                [
+                                                  _c(
+                                                    "v-list-item-icon",
+                                                    [
+                                                      _c("v-icon", [
+                                                        _vm._v("mdi-calendar")
+                                                      ])
+                                                    ],
+                                                    1
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c(
+                                                    "v-list-item-content",
+                                                    [
+                                                      _c("v-list-item-title", [
+                                                        _vm._v(
+                                                          "\n                                                            " +
+                                                            _vm._s(
+                                                              _vm._f(
+                                                                "datetime"
+                                                              )(
+                                                                _vm.item
+                                                                  .created_at
+                                                              )
+                                                            ) +
+                                                            "\n                                                        "
+                                                        )
+                                                      ])
+                                                    ],
+                                                    1
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c(
+                                          "v-list-item-subtitle",
+                                          { staticClass: "text--disabled" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            Nama Profil Sekolah\n                                        "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item-title",
+                                          { staticClass: "text-h5" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            " +
+                                                _vm._s(_vm.item.nama_sekolah) +
+                                                "\n                                        "
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c(
+                                          "v-list-item-subtitle",
+                                          { staticClass: "text--disabled" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            Jenjang\n                                        "
+                                            )
+                                          ]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "v-list-item-title",
+                                          { staticClass: "text-h6" },
+                                          [
+                                            _vm._v(
+                                              "\n                                            " +
+                                                _vm._s(_vm.item.jenjang) +
+                                                "\n                                        "
+                                            )
+                                          ]
+                                        )
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-calendar")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            Tanggal Berdiri\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(
+                                                _vm._f("date")(
+                                                  _vm.item.tgl_berdiri
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [_vm._v("mdi-map-marker")])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            Alamat\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(_vm.item.alamat) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-tag")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            NPSN\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(_vm.item.npsn) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  { attrs: { link: "" } },
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-bookmark")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            Visi Misi\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-chevron-right")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  { attrs: { link: "" } },
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-family-tree")
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            Struktur Organisasi\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v("mdi-chevron-right")
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [_c("v-icon", [_vm._v("mdi-calendar")])],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", {}, [
+                                          _vm._v(
+                                            "\n                                            dibuat pada\n                                        "
+                                          )
+                                        ]),
+                                        _vm._v(" "),
+                                        _c("v-list-item-title", {}, [
+                                          _vm._v(
+                                            "\n                                            " +
+                                              _vm._s(
+                                                _vm._f("datetime")(
+                                                  _vm.item.created_at
+                                                )
+                                              ) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass: "sticky-top",
+                            staticStyle: { "z-index": "1" }
+                          },
+                          [
+                            _c(
+                              "v-toolbar",
+                              {
+                                staticClass: "shadow-sm",
+                                attrs: { rounded: "xl" }
+                              },
+                              [
+                                _c(
+                                  "v-tabs",
+                                  { attrs: { "align-with-title": "" } },
+                                  [
+                                    _c(
+                                      "v-tab",
+                                      {
+                                        attrs: {
+                                          to: { name: "sekolah.show" },
+                                          exact: ""
+                                        }
+                                      },
+                                      [_vm._v("Informasi")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-tab",
+                                      {
+                                        attrs: {
+                                          to: { name: "sekolah.show.berita" }
+                                        }
+                                      },
+                                      [_vm._v("Berita")]
+                                    ),
+                                    _vm._v(" "),
+                                    _c("v-tab", [_vm._v("Laporan")])
+                                  ],
+                                  1
+                                )
+                              ],
+                              1
+                            )
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "v-container",
+                          [_c("router-view", { attrs: { item: _vm.item } })],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ])
+                ])
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=template&id=10c1bd5d&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=template&id=10c1bd5d& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=template&id=300d5b44&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=template&id=300d5b44& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-card",
+    { attrs: { flat: "" } },
+    [
+      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
+        _vm._v("\n        Visi Misi\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-card-text",
+        [
+          _c(
+            "v-list",
+            [
+              _c("v-subheader", [
+                _vm._v("\n                # Visi\n            ")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.item.visi_misi.visi, function(visi, i) {
+                return _c(
+                  "v-card",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: visi.trim().length,
+                        expression: "visi.trim().length"
+                      }
+                    ],
+                    key: "visi-" + i,
+                    staticClass: "mb-3",
+                    attrs: {
+                      color: "grey lighten-4 overflow-hidden",
+                      rounded: "xl",
+                      flat: ""
+                    }
+                  },
+                  [
+                    _c("v-card-text", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(visi) +
+                          "\n                "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              }),
+              _vm._v(" "),
+              _c("v-subheader", [
+                _vm._v("\n                # Misi\n            ")
+              ]),
+              _vm._v(" "),
+              _vm._l(_vm.item.visi_misi.misi, function(misi, i) {
+                return _c(
+                  "v-card",
+                  {
+                    directives: [
+                      {
+                        name: "show",
+                        rawName: "v-show",
+                        value: misi.trim().length,
+                        expression: "misi.trim().length"
+                      }
+                    ],
+                    key: "misi-" + i,
+                    staticClass: "mb-3",
+                    attrs: {
+                      color: "grey lighten-4 overflow-hidden",
+                      rounded: "xl",
+                      flat: ""
+                    }
+                  },
+                  [
+                    _c("v-card-text", [
+                      _vm._v(
+                        "\n                    " +
+                          _vm._s(misi) +
+                          "\n                "
+                      )
+                    ])
+                  ],
+                  1
+                )
+              })
+            ],
+            2
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
+        _vm._v("\n        Struktur Organisasi\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-card-text",
+        [
+          _c("v-img", {
+            staticClass: "rounded-xl",
+            attrs: { src: _vm.item.struktur_organisasi },
+            on: {
+              click: function($event) {
+                return _vm.previewImage(_vm.item.struktur_organisasi)
+              }
+            }
+          })
+        ],
+        1
+      )
     ],
     1
   )
@@ -90888,6 +93186,351 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/guru/GuruBase.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/pages/guru/GuruBase.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruBase_vue_vue_type_template_id_452b1047___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruBase.vue?vue&type=template&id=452b1047& */ "./resources/js/pages/guru/GuruBase.vue?vue&type=template&id=452b1047&");
+/* harmony import */ var _GuruBase_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruBase.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/GuruBase.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruBase_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruBase_vue_vue_type_template_id_452b1047___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruBase_vue_vue_type_template_id_452b1047___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/GuruBase.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruBase.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruBase.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruBase_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruBase.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruBase.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruBase_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruBase.vue?vue&type=template&id=452b1047&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruBase.vue?vue&type=template&id=452b1047& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruBase_vue_vue_type_template_id_452b1047___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruBase.vue?vue&type=template&id=452b1047& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruBase.vue?vue&type=template&id=452b1047&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruBase_vue_vue_type_template_id_452b1047___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruBase_vue_vue_type_template_id_452b1047___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruIndex.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/pages/guru/GuruIndex.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruIndex_vue_vue_type_template_id_c20c3268___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruIndex.vue?vue&type=template&id=c20c3268& */ "./resources/js/pages/guru/GuruIndex.vue?vue&type=template&id=c20c3268&");
+/* harmony import */ var _GuruIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruIndex.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/GuruIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruIndex_vue_vue_type_template_id_c20c3268___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruIndex_vue_vue_type_template_id_c20c3268___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/GuruIndex.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruIndex.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruIndex.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruIndex.vue?vue&type=template&id=c20c3268&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruIndex.vue?vue&type=template&id=c20c3268& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruIndex_vue_vue_type_template_id_c20c3268___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruIndex.vue?vue&type=template&id=c20c3268& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruIndex.vue?vue&type=template&id=c20c3268&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruIndex_vue_vue_type_template_id_c20c3268___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruIndex_vue_vue_type_template_id_c20c3268___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruInfo.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/pages/guru/GuruInfo.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruInfo_vue_vue_type_template_id_933b90b8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruInfo.vue?vue&type=template&id=933b90b8& */ "./resources/js/pages/guru/GuruInfo.vue?vue&type=template&id=933b90b8&");
+/* harmony import */ var _GuruInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruInfo.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/GuruInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruInfo_vue_vue_type_template_id_933b90b8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruInfo_vue_vue_type_template_id_933b90b8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/GuruInfo.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruInfo.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruInfo.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruInfo.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruInfo.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfo_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/GuruInfo.vue?vue&type=template&id=933b90b8&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/pages/guru/GuruInfo.vue?vue&type=template&id=933b90b8& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfo_vue_vue_type_template_id_933b90b8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruInfo.vue?vue&type=template&id=933b90b8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/GuruInfo.vue?vue&type=template&id=933b90b8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfo_vue_vue_type_template_id_933b90b8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfo_vue_vue_type_template_id_933b90b8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/page/GuruTambahIndex.vue":
+/*!**********************************************************!*\
+  !*** ./resources/js/pages/guru/page/GuruTambahIndex.vue ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruTambahIndex_vue_vue_type_template_id_10c1bd5d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruTambahIndex.vue?vue&type=template&id=10c1bd5d& */ "./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=template&id=10c1bd5d&");
+/* harmony import */ var _GuruTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruTambahIndex.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruTambahIndex_vue_vue_type_template_id_10c1bd5d___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruTambahIndex_vue_vue_type_template_id_10c1bd5d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/page/GuruTambahIndex.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************!*\
+  !*** ./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruTambahIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambahIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=template&id=10c1bd5d&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=template&id=10c1bd5d& ***!
+  \*****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambahIndex_vue_vue_type_template_id_10c1bd5d___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruTambahIndex.vue?vue&type=template&id=10c1bd5d& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruTambahIndex.vue?vue&type=template&id=10c1bd5d&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambahIndex_vue_vue_type_template_id_10c1bd5d___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruTambahIndex_vue_vue_type_template_id_10c1bd5d___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/tab/GuruInfoIndex.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/pages/guru/tab/GuruInfoIndex.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruInfoIndex_vue_vue_type_template_id_300d5b44___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruInfoIndex.vue?vue&type=template&id=300d5b44& */ "./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=template&id=300d5b44&");
+/* harmony import */ var _GuruInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruInfoIndex.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruInfoIndex_vue_vue_type_template_id_300d5b44___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruInfoIndex_vue_vue_type_template_id_300d5b44___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/guru/tab/GuruInfoIndex.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=script&lang=js&":
+/*!********************************************************************************!*\
+  !*** ./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruInfoIndex.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfoIndex_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=template&id=300d5b44&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=template&id=300d5b44& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfoIndex_vue_vue_type_template_id_300d5b44___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruInfoIndex.vue?vue&type=template&id=300d5b44& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/tab/GuruInfoIndex.vue?vue&type=template&id=300d5b44&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfoIndex_vue_vue_type_template_id_300d5b44___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruInfoIndex_vue_vue_type_template_id_300d5b44___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/sekolah/SekolahBase.vue":
 /*!****************************************************!*\
   !*** ./resources/js/pages/sekolah/SekolahBase.vue ***!
@@ -91803,6 +94446,110 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/routes/admin/guru.js":
+/*!*******************************************!*\
+  !*** ./resources/js/routes/admin/guru.js ***!
+  \*******************************************/
+/*! exports provided: guru, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "guru", function() { return guru; });
+/* harmony import */ var _pages_guru_GuruBase_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pages/guru/GuruBase.vue */ "./resources/js/pages/guru/GuruBase.vue");
+/* harmony import */ var _pages_guru_GuruIndex_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pages/guru/GuruIndex.vue */ "./resources/js/pages/guru/GuruIndex.vue");
+/* harmony import */ var _pages_guru_GuruInfo_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/guru/GuruInfo.vue */ "./resources/js/pages/guru/GuruInfo.vue");
+/* harmony import */ var _pages_guru_tab_GuruInfoIndex_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/guru/tab/GuruInfoIndex.vue */ "./resources/js/pages/guru/tab/GuruInfoIndex.vue");
+/* harmony import */ var _pages_guru_page_GuruTambahIndex_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/guru/page/GuruTambahIndex.vue */ "./resources/js/pages/guru/page/GuruTambahIndex.vue");
+
+
+
+
+
+var guru = [{
+  path: '/admin/guru',
+  component: _pages_guru_GuruBase_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+  children: [{
+    path: 'tambah',
+    component: _pages_guru_GuruIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    children: [{
+      path: '/',
+      component: _pages_guru_page_GuruTambahIndex_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      name: 'guru.insert'
+    }]
+  }, {
+    path: ':id_guru',
+    component: _pages_guru_GuruInfo_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    children: [{
+      path: '/',
+      component: _pages_guru_tab_GuruInfoIndex_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      name: 'guru.show'
+    }]
+  }, {
+    path: '/',
+    component: _pages_guru_GuruIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    name: 'guru'
+  }]
+}];
+/* harmony default export */ __webpack_exports__["default"] = (guru);
+
+/***/ }),
+
+/***/ "./resources/js/routes/admin/sekolah.js":
+/*!**********************************************!*\
+  !*** ./resources/js/routes/admin/sekolah.js ***!
+  \**********************************************/
+/*! exports provided: sekolah, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sekolah", function() { return sekolah; });
+/* harmony import */ var _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pages/sekolah/SekolahBase.vue */ "./resources/js/pages/sekolah/SekolahBase.vue");
+/* harmony import */ var _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../pages/sekolah/SekolahIndex.vue */ "./resources/js/pages/sekolah/SekolahIndex.vue");
+/* harmony import */ var _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../pages/sekolah/SekolahInfo.vue */ "./resources/js/pages/sekolah/SekolahInfo.vue");
+/* harmony import */ var _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/sekolah/tab/SekolahInfoIndex.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue");
+/* harmony import */ var _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/sekolah/tab/SekolahInfoBerita.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue");
+/* harmony import */ var _pages_sekolah_page_SekolahTambahIndex_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../pages/sekolah/page/SekolahTambahIndex.vue */ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue");
+
+
+
+
+
+
+var sekolah = [{
+  path: '/admin/sekolah',
+  component: _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+  children: [{
+    path: 'tambah',
+    component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    children: [{
+      path: '/',
+      component: _pages_sekolah_page_SekolahTambahIndex_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+      name: 'sekolah.insert'
+    }]
+  }, {
+    path: ':id_profil',
+    component: _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    children: [{
+      path: 'berita',
+      component: _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+      name: 'sekolah.show.berita'
+    }, {
+      path: '/',
+      component: _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+      name: 'sekolah.show'
+    }]
+  }, {
+    path: '/',
+    component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    name: 'sekolah'
+  }]
+}];
+/* harmony default export */ __webpack_exports__["default"] = (sekolah);
+
+/***/ }),
+
 /***/ "./resources/js/routes/routes.js":
 /*!***************************************!*\
   !*** ./resources/js/routes/routes.js ***!
@@ -91813,15 +94560,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/Index.vue */ "./resources/js/pages/Index.vue");
-/* harmony import */ var _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/sekolah/SekolahBase.vue */ "./resources/js/pages/sekolah/SekolahBase.vue");
-/* harmony import */ var _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../pages/sekolah/SekolahIndex.vue */ "./resources/js/pages/sekolah/SekolahIndex.vue");
-/* harmony import */ var _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../pages/sekolah/SekolahInfo.vue */ "./resources/js/pages/sekolah/SekolahInfo.vue");
-/* harmony import */ var _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../pages/sekolah/tab/SekolahInfoIndex.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoIndex.vue");
-/* harmony import */ var _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../pages/sekolah/tab/SekolahInfoBerita.vue */ "./resources/js/pages/sekolah/tab/SekolahInfoBerita.vue");
-/* harmony import */ var _pages_sekolah_page_SekolahTambahIndex_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../pages/sekolah/page/SekolahTambahIndex.vue */ "./resources/js/pages/sekolah/page/SekolahTambahIndex.vue");
+/* harmony import */ var _admin_guru__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin/guru */ "./resources/js/routes/admin/guru.js");
+/* harmony import */ var _admin_sekolah__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./admin/sekolah */ "./resources/js/routes/admin/sekolah.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 
 
@@ -91830,38 +94581,7 @@ __webpack_require__.r(__webpack_exports__);
   path: '/admin',
   component: _pages_Index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
   name: 'admin'
-}, {
-  path: '/admin/sekolah',
-  component: _pages_sekolah_SekolahBase_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-  children: [{
-    path: 'tambah',
-    component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    children: [{
-      path: '/',
-      component: _pages_sekolah_page_SekolahTambahIndex_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-      name: 'sekolah.insert'
-    }]
-  }, {
-    path: ':id_profil',
-    component: _pages_sekolah_SekolahInfo_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    children: [{
-      path: 'berita',
-      component: _pages_sekolah_tab_SekolahInfoBerita_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-      name: 'sekolah.show.berita'
-    }, {
-      path: '/',
-      component: _pages_sekolah_tab_SekolahInfoIndex_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-      name: 'sekolah.show'
-    }]
-  }, {
-    path: '/',
-    component: _pages_sekolah_SekolahIndex_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    name: 'sekolah'
-  }]
-} // { path: '/admin/jemaat/kk', component: KK, name: 'admin.kk' },
-// { path: '/admin/jemaat', component: Jemaat },
-//     { path: '/admin/jemaat/:id', component: InfoJemaat, name: 'jemaat.info' },
-]);
+}].concat(_toConsumableArray(_admin_sekolah__WEBPACK_IMPORTED_MODULE_2__["default"]), _toConsumableArray(_admin_guru__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 

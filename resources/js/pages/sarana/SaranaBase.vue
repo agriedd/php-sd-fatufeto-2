@@ -1,20 +1,16 @@
 <template>
     <div>
         <router-view/>
-        <!-- <prasarana-tambah/>
-        <prasarana-ubah/>
+        <sarana-tambah/>
+        <!-- <prasarana-ubah/>
         <prasarana-hapus/> -->
     </div>
 </template>
 <script>
-// import PrasaranaHapus from './PrasaranaHapus.vue'
-// import PrasaranaTambah from './PrasaranaTambah.vue'
-// import PrasaranaUbah from './PrasaranaUbah.vue'
+import SaranaTambah from './SaranaTambah.vue'
 export default {
     components: {
-        // PrasaranaTambah,
-        // PrasaranaUbah,
-        // PrasaranaHapus 
+        SaranaTambah
     },
 }
 </script>

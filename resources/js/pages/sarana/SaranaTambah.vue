@@ -5,7 +5,7 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Tambah Prasarana
+                            Form Tambah Sarana
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
@@ -14,7 +14,7 @@
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog || alive">
-                        <form-tambah-prasarana :errors="errors"/>
+                        <form-tambah-sarana :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -30,9 +30,9 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahPrasarana from './form/FormTambahSsarana.vue'
+import FormTambahSarana from './form/FormTambahSarana.vue'
 export default {
-    components: { FormTambahPrasarana },
+    components: { FormTambahSarana },
     data(){
         return {
             loading: false,
@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.prasarana.modal.tambah
+            value_dialog: state => state.sarana.modal.tambah
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -51,18 +51,18 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setDialog: 'prasarana/SET_MODAL_TAMBAH'
+            setDialog: 'sarana/SET_MODAL_TAMBAH'
         }),
         ...mapActions({
-            storeGuru: 'prasarana/store',
-            updateSession: 'prasarana/updateSession',
+            storeSarana: 'sarana/store',
+            updateSession: 'sarana/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.storeGuru(data).catch(e => {
-                console.log("storeGuru@GuruTambah.vue", e);
+            let res = await this.storeSarana(data).catch(e => {
+                console.log("storeSarana@SaranaTambah.vue", e);
                 e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message

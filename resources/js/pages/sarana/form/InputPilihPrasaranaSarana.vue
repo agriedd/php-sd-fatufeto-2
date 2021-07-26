@@ -6,7 +6,7 @@
         :loading="loading"
         :search-input.sync="search"
         :item-text="itemText"
-        item-value="id_profil"
+        item-value="id_prasarana"
         :label="label"
         required
 		dense
@@ -22,9 +22,9 @@ export default {
     props: {
         value: String|Number,
         errors: { required: true },
-        label: { default: "Pilih Sekolah" },
-        itemText: { default: 'nama_sekolah' },
-        name: { default: 'id_sekolah' },
+        label: { default: "Pilih Prasarana" },
+        itemText: { default: 'nama' },
+        name: { default: 'id_prasarana' },
     },
     computed: {
         album: {
@@ -33,16 +33,16 @@ export default {
                 this.$emit('input', val)
             },
         },
-        data_album(){
+        data_prasarana(){
             const r = RegExp(this.search)
-            return this.items.filter(it => r.test(it.nama_sekolah) )
+            return this.items.filter(it => r.test(it.nama) )
         },
         search: {
             get(){ return this.query },
             set(value, old){
                 this.query = value
                 if(!value) return
-                if(this.data_album.length > 0) return
+                if(this.data_prasarana.length > 0) return
                 if(this.loading) return
                 this.loadItems()
             }
@@ -58,7 +58,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItem: 'sekolah/get',
+            getItem: 'prasarana/get',
         }),
         async loadItems(){
             this.loading = true

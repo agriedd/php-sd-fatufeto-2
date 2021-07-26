@@ -45,7 +45,7 @@
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.sarana" :to="{ name: 'sarana.show', params: { sarana: item.sarana } }">
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_sarana" :to="{ name: 'sarana.show', params: { id_sarana: item.id_sarana } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>

@@ -14,7 +14,7 @@ export const sarana = [
         { path: 'tambah', component: SaranaIndex, children: [
             { path: '/', component: SaranaTambah, name: 'sarana.insert' },
         ]},
-        { path: ':sarana', component: SaranaInfo, children: [
+        { path: ':id_sarana', component: SaranaInfo, children: [
             { path: '/', component: SaranaInfoIndex, name: 'sarana.show' },
         ] },
         { path: '/', component: SaranaIndex, children: [

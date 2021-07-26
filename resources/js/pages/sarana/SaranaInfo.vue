@@ -3,13 +3,13 @@
         <v-app-bar app flat floating absolute>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Info Prasarana
+                Info Sarana
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
             <v-container>
                 <div v-if="loading">
-                    <div class="d-grid-prasarana-info">
+                    <div class="d-grid-sarana-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" flat rounded="xl" class="mb-3">
                                 <v-card-text>
@@ -29,24 +29,24 @@
                 <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
-                            Info Prasarana Tidak Ditemukan
+                            Info Sarana Tidak Ditemukan
                         </span>
                     </v-alert>
-                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'prasarana' }">
+                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'sarana' }">
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-2">
                                 <v-icon>mdi-package-variant</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    Kembali ke daftar prasarana
+                                    Kembali ke daftar sarana
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
                 </div>
                 <div v-else>
-                    <div class="d-grid-prasarana-info">
+                    <div class="d-grid-sarana-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat class="mb-3">
                                 <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
@@ -62,12 +62,12 @@
                                             <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
                                                 <template #activator="{ attrs, on }">
                                                     <v-btn icon v-on.prevent="on" v-bind="attrs">
-                                                        <v-icon>mdi-dots-vertical</v-icon>
+                                                        <v-icon>mdi-dots-grid</v-icon>
                                                     </v-btn>
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoPrasarana(item.id_prasarana)">
+                                                    <v-list-item dense link @click="ubahInfoSarana(item.id_prasarana)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoPrasarana(item.id_prasarana)">
+                                                    <v-list-item dense link @click="hapusInfoSarana(item.id_prasarana)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,7 +105,7 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Prasarana
+                                                Nama Sarana
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
                                                 {{ item.nama }}
@@ -119,10 +119,10 @@
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Spesifikasi
+                                                Kondisi
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.spesifikasi }}
+                                                {{ item.kondisi }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -138,16 +138,16 @@
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item link :to="{ name: 'sekolah.show', params: { id_profil: item.id_sekolah } }">
+                                    <v-list-item link :to="{ name: 'prasarana.show', params: { id_prasarana: item.id_prasarana } }">
                                         <v-list-item-icon>
-                                            <v-icon>mdi-school</v-icon>
+                                            <v-icon>mdi-package-variant</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Sekolah
+                                                Prasarana
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.sekolah.nama_sekolah }}
+                                                {{ item.prasarana.nama }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                         <v-list-item-action>
@@ -175,8 +175,8 @@
                             <div class="sticky-top" style="z-index: 1;">
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
-                                        <v-tab :to="{name: 'prasarana.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'prasarana.show'}" exact>Kelas</v-tab>
+                                        <v-tab :to="{name: 'sarana.show'}" exact>Informasi</v-tab>
+                                        <v-tab :to="{name: 'sarana.show'}" exact>Kelas</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -208,14 +208,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Prasarana',
+                    text: 'Sarana',
                     disabled: false,
-                    to: {name: 'prasarana'},
+                    to: {name: 'sarana'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'Info Prasarana',
+                    text: 'Info Sarana',
                     disabled: true,
                 },
             ]
@@ -223,13 +223,13 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.prasarana.items,
+            items: state => state.sarana.items,
         }),
         ...mapGetters({
-            session: 'prasarana/getSession',
+            session: 'sarana/getSession',
         }),
         id(){
-            return this.$route.params.id_prasarana
+            return this.$route.params.id_sarana
         }
     },
     watch: {
@@ -240,15 +240,15 @@ export default {
     methods: {
         ...mapMutations({  }),
         ...mapActions({
-            showUbahDialog: 'prasarana/setModalUbah',
-            showHapusDialog: 'prasarana/setModalHapus',
-            getItem: 'prasarana/show',
+            showUbahDialog: 'sarana/setModalUbah',
+            showHapusDialog: 'sarana/setModalHapus',
+            getItem: 'sarana/show',
         }),
         openModalTambah(){},
-        ubahInfoPrasarana(id){
+        ubahInfoSarana(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoPrasarana(id){
+        hapusInfoSarana(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItem(){
@@ -256,7 +256,7 @@ export default {
             this.exists = false
 
             let res = await this.getItem({id: this.id}).catch(e => {
-                console.log("loadItem@PrasaranaIndex.vue", e);
+                console.log("loadItem@SaranaIndex.vue", e);
             });
             this.loading = false
 

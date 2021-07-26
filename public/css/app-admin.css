@@ -508,6 +508,60 @@ tbody tr:nth-of-type(odd) {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
+.d-grid-sarana {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, 1fr);
+}
+
+.d-grid-sarana.mini {
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  grid-auto-rows: minmax(125px, 1fr);
+}
+
+.d-grid-sarana > .rowspan-1 {
+  grid-row-end: span 1;
+}
+
+.d-grid-sarana > .rowspan-2 {
+  grid-row-end: span 2;
+}
+
+.d-grid-sarana > .rowspan-3 {
+  grid-row-end: span 3;
+}
+
+.d-grid-sarana > .rowspan-4 {
+  grid-row-end: span 4;
+}
+
+.d-grid-sarana > .rowspan-5 {
+  grid-row-end: span 5;
+}
+
+.d-grid-sarana > .rowspan-6 {
+  grid-row-end: span 6;
+}
+
+.d-grid-sarana > .rowspan-7 {
+  grid-row-end: span 7;
+}
+
+.d-grid-sarana > .rowspan-8 {
+  grid-row-end: span 8;
+}
+
+.d-grid-sarana > .rowspan-9 {
+  grid-row-end: span 9;
+}
+
+.d-grid-sarana-info {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
 .sticky-top {
   position: sticky !important;
   top: 1rem;

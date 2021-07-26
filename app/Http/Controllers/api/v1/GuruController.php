@@ -23,7 +23,7 @@ class GuruController extends Controller{
                             : 'ASC' );
                 }
             })
-            ->paginate(request('itemPerpage') ?? 10);
+            ->paginate(request('itemsPerPage') ?? 10);
         return GuruCollection::collection($data);
     }
 

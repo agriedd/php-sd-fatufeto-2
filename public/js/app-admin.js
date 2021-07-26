@@ -4798,6 +4798,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -4830,7 +4835,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
     showUbahDialog: 'prasarana/setModalUbah',
     showHapusDialog: 'prasarana/setModalHapus',
-    getItems: 'prasarana/get'
+    getItems: 'prasarana/get',
+    updateSession: 'prasarana/updateSession'
   })), {}, {
     openModalTambah: function openModalTambah() {
       this.showTambahDialog(true);
@@ -4862,7 +4868,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = true;
                 _context.next = 3;
                 return _this.getItems({
-                  itemsPerPage: 3,
+                  itemsPerPage: 2,
                   sortBy: ['created_at'],
                   sortDesc: [true]
                 })["catch"](function (e) {
@@ -5434,34 +5440,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -5582,7 +5560,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     noSelect: Boolean
   },
   components: {
-    GuruTable: _datatable_PrasaranaTable_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    PrasaranaTable: _datatable_PrasaranaTable_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
@@ -5595,15 +5573,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         link: true,
         exact: true
       }, {
-        text: 'Guru',
+        text: 'Prasarana',
         disabled: false,
         to: {
-          name: 'guru'
+          name: 'prasarana'
         },
         link: true,
         exact: true
       }, {
-        text: 'List Guru',
+        text: 'List Prasarana',
         disabled: true
       }],
       items: [],
@@ -5618,25 +5596,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         sortable: true,
         value: 'nama'
       }, {
-        text: 'Jenis Kelamin',
+        text: 'Sekolah',
         align: 'start d-none d-sm-table-cell',
         sortable: true,
-        value: 'jenis_kelamin'
+        value: 'id_sekolah'
       }, {
-        text: 'Pangkat',
+        text: 'Jumlah',
         align: 'start d-none d-sm-table-cell',
         sortable: true,
-        value: 'pangkat'
+        value: 'jumlah'
       }, {
-        text: 'Golongan',
+        text: 'Spesifikasi',
         align: 'start d-none d-sm-table-cell',
         sortable: true,
-        value: 'golongan'
-      }, {
-        text: 'TTL',
-        align: 'end d-none d-sm-table-cell',
-        sortable: true,
-        value: 'tanggal_lahir'
+        value: 'spesifikasi'
       }, {
         text: null,
         align: '',
@@ -5667,10 +5640,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   computed: {},
   methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    getItems: 'guru/get',
+    getItems: 'prasarana/get',
     notif: 'notifikasi/show',
-    showUbahDialog: 'guru/setModalUbah',
-    showHapusDialog: 'guru/setModalHapus'
+    showUbahDialog: 'prasarana/setModalUbah',
+    showHapusDialog: 'prasarana/setModalHapus'
   })), {}, {
     loadItems: function loadItems() {
       var _this = this;
@@ -5724,32 +5697,32 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }, 800);
     },
     rowClick: function rowClick(e) {
-      this.$emit('open:guru:info', e);
+      this.$emit('open:prasarana:info', e);
     },
     editRow: function editRow(e) {},
     clickEvent: function clickEvent(t, d) {
       this.$emit(t, d);
     },
-    ubahInfoGuru: function ubahInfoGuru(_ref) {
-      var id = _ref.id_guru;
+    ubahInfoPrasarana: function ubahInfoPrasarana(_ref) {
+      var id = _ref.id_prasarana;
       this.showUbahDialog({
         id: id,
         value: true
       });
     },
-    hapusInfoGuru: function hapusInfoGuru(_ref2) {
-      var id = _ref2.id_guru;
+    hapusInfoPrasarana: function hapusInfoPrasarana(_ref2) {
+      var id = _ref2.id_prasarana;
       this.showHapusDialog({
         id: id,
         value: true
       });
     },
-    toInfoGuru: function toInfoGuru(_ref3) {
-      var id_guru = _ref3.id_guru;
+    toInfoPrasarana: function toInfoPrasarana(_ref3) {
+      var id_prasarana = _ref3.id_prasarana;
       this.$router.push({
-        name: 'guru.show',
+        name: 'prasarana.show',
         params: {
-          id_guru: id_guru
+          id_prasarana: id_prasarana
         }
       });
     }
@@ -31615,7 +31588,10 @@ var render = function() {
                               _c("div", { staticClass: "d-lg-block d-none" }, [
                                 _c(
                                   "div",
-                                  { staticClass: "d-grid-sekolah mini" },
+                                  {
+                                    staticClass:
+                                      "d-grid-sekolah mini fill-height"
+                                  },
                                   [
                                     _c(
                                       "div",
@@ -31956,7 +31932,37 @@ var render = function() {
                                         ],
                                         1
                                       )
-                                    })
+                                    }),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-card",
+                                      {
+                                        attrs: {
+                                          color:
+                                            "grey lighten-4 overflow-hidden",
+                                          rounded: "xl",
+                                          flat: "",
+                                          link: ""
+                                        },
+                                        on: {
+                                          click: function($event) {
+                                            return _vm.updateSession()
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "div",
+                                          { staticClass: "content-middle" },
+                                          [
+                                            _c("v-icon", [
+                                              _vm._v("mdi-refresh")
+                                            ])
+                                          ],
+                                          1
+                                        )
+                                      ]
+                                    )
                                   ],
                                   2
                                 )
@@ -33033,123 +33039,15 @@ var render = function() {
     },
     scopedSlots: _vm._u([
       {
-        key: "item.foto",
-        fn: function(ref) {
-          var item = ref.item
-          return [
-            item.foto
-              ? _c(
-                  "div",
-                  {
-                    staticClass: "py-2 d-flex justify-center",
-                    on: {
-                      click: function($event) {
-                        return _vm.rowClick(item)
-                      }
-                    }
-                  },
-                  [
-                    _c(
-                      "v-badge",
-                      {
-                        attrs: {
-                          content: item.album_galeri_count || null,
-                          color: "black",
-                          "offset-x": "15",
-                          "offset-y": "15",
-                          value: item.album_galeri_count > 0,
-                          dark: ""
-                        }
-                      },
-                      [
-                        _c("v-img", {
-                          staticClass: "rounded",
-                          attrs: {
-                            src: item.foto.src_xs,
-                            "aspect-ratio": 3 / 4,
-                            height: !_vm.small ? "5rem" : "2.5rem",
-                            width: !_vm.small ? "5rem" : "2.5rem"
-                          }
-                        })
-                      ],
-                      1
-                    )
-                  ],
-                  1
-                )
-              : _vm._e()
-          ]
-        }
-      },
-      {
-        key: "item.nama",
-        fn: function(ref) {
-          var item = ref.item
-          return [
-            _c(
-              "div",
-              {
-                staticClass: "d-block py-1",
-                on: {
-                  click: function($event) {
-                    return _vm.rowClick(item)
-                  }
-                }
-              },
-              [
-                _c("div", { staticClass: "mb-1" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(item.nama) +
-                      "\n                "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text--disabled" }, [
-                  _vm._v(
-                    "\n                    NIP." +
-                      _vm._s(item.nip) +
-                      "\n                "
-                  )
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "text--disabled" }, [
-                  _vm._v(
-                    "\n                    " +
-                      _vm._s(_vm._f("sub")(item.alamat, 250)) +
-                      "\n                "
-                  )
-                ])
-              ]
-            )
-          ]
-        }
-      },
-      {
-        key: "item.tanggal_lahir",
+        key: "item.id_sekolah",
         fn: function(ref) {
           var item = ref.item
           return [
             _vm._v(
-              "\n\t\t\t" +
-                _vm._s(item.tempat_lahir ? item.tempat_lahir + "," : null) +
-                " " +
-                _vm._s(_vm._f("date")(item.tanggal_lahir)) +
+              "\n            " +
+                _vm._s(item.sekolah.nama_sekolah) +
                 "\n        "
             )
-          ]
-        }
-      },
-      {
-        key: "item.jenis_kelamin",
-        fn: function(ref) {
-          var item = ref.item
-          return [
-            item.jenis_kelamin == "l"
-              ? [_vm._v("\n\t\t\t\tLaki-laki\n\t\t\t")]
-              : item.jenis_kelamin == "p"
-              ? [_vm._v("\n\t\t\t\tPerempuan\n\t\t\t")]
-              : _vm._e()
           ]
         }
       },
@@ -33317,7 +33215,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("guru-table", {
+          _c("prasarana-table", {
             attrs: {
               headers: _vm.headers,
               items: _vm.items,
@@ -33332,9 +33230,9 @@ var render = function() {
                 _vm.options = $event
               },
               update: _vm.update,
-              rowClick: _vm.toInfoGuru,
-              editRow: _vm.ubahInfoGuru,
-              deleteRow: _vm.hapusInfoGuru
+              rowClick: _vm.toInfoPrasarana,
+              editRow: _vm.ubahInfoPrasarana,
+              deleteRow: _vm.hapusInfoPrasarana
             },
             model: {
               value: _vm.selected,

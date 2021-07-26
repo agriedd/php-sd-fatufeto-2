@@ -7,7 +7,7 @@
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <guru-table
+            <prasarana-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoGuru"
-                @editRow="ubahInfoGuru"
-                @deleteRow="hapusInfoGuru"
+                @rowClick="toInfoPrasarana"
+                @editRow="ubahInfoPrasarana"
+                @deleteRow="hapusInfoPrasarana"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import GuruTable from '../datatable/PrasaranaTable.vue'
+import PrasaranaTable from '../datatable/PrasaranaTable.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +36,7 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        GuruTable
+        PrasaranaTable
     },
     data(){
         return {
@@ -49,14 +49,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Prasarana',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'prasarana'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Guru',
+                    text: 'List Prasarana',
                     disabled: true,
                 },
             ],
@@ -64,10 +64,9 @@ export default {
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Jenis Kelamin', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis_kelamin' },
-                { text: 'Pangkat', align: 'start d-none d-sm-table-cell', sortable: true, value: 'pangkat' },
-                { text: 'Golongan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'golongan' },
-                { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
+                { text: 'Sekolah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_sekolah' },
+                { text: 'Jumlah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jumlah' },
+                { text: 'Spesifikasi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'spesifikasi' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
@@ -96,10 +95,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'guru/get',
+            getItems: 'prasarana/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
+            showUbahDialog: 'prasarana/setModalUbah',
+            showHapusDialog: 'prasarana/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -130,7 +129,7 @@ export default {
             }, 800);
         },
         rowClick(e){
-            this.$emit('open:guru:info', e)
+            this.$emit('open:prasarana:info', e)
         },
         editRow(e){
 
@@ -138,14 +137,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoGuru({id_guru: id}){
+        ubahInfoPrasarana({id_prasarana: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru({id_guru: id}){
+        hapusInfoPrasarana({id_prasarana: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoGuru({id_guru}){
-            this.$router.push({ name: 'guru.show', params: { id_guru } })
+        toInfoPrasarana({id_prasarana}){
+            this.$router.push({ name: 'prasarana.show', params: { id_prasarana } })
         },
     },
     watch: {

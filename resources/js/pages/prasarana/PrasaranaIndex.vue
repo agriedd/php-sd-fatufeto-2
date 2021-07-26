@@ -39,7 +39,7 @@
                                 </v-card-text>
                             </v-card>
                             <div class="d-lg-block d-none">
-                                <div class="d-grid-sekolah mini">
+                                <div class="d-grid-sekolah mini fill-height">
                                     <div class="content-middle">
                                         <v-subheader>
                                             Terbaru
@@ -110,6 +110,11 @@
                                                 </small>
                                             </div>
                                         </v-card-text>
+                                    </v-card>
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="updateSession()">
+                                        <div class="content-middle">
+                                            <v-icon>mdi-refresh</v-icon>
+                                        </div>
                                     </v-card>
                                 </div>
                             </div>
@@ -188,6 +193,7 @@ export default {
             showUbahDialog: 'prasarana/setModalUbah',
             showHapusDialog: 'prasarana/setModalHapus',
             getItems: 'prasarana/get',
+            updateSession: 'prasarana/updateSession'
         }),
         openModalTambah(){
             this.showTambahDialog(true)
@@ -201,7 +207,7 @@ export default {
         async loadItems(){
             this.loading = true
             let res = await this.getItems({
-                itemsPerPage: 3,
+                itemsPerPage: 2,
                 sortBy: ['created_at'],
                 sortDesc: [true],
             }).catch(e => {

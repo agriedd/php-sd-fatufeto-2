@@ -32,15 +32,8 @@ class PrasaranaController extends Controller{
         return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+    public function show(Prasarana $prasarana){
+        return new PrasaranaCollection($prasarana);
     }
 
     /**

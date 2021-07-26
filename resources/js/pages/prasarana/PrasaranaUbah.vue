@@ -1,23 +1,23 @@
 <template>
     <div>
-        <v-dialog v-model="dialog" max-width="600" content-class="shadow-sm" overlay-opacity=".25" eager scrollable persistent>
+        <v-dialog v-model="dialog" max-width="400" content-class="shadow-sm" overlay-opacity=".25" eager scrollable persistent>
             <v-form @submit.prevent="submit" :disabled="loading">
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Ubah Data Guru > {{ item.nama }}
+                            Form Ubah Data Prasarana > {{ item.nama }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
-                            <v-icon>mdi-school</v-icon>
+                            <v-icon>mdi-package-variant</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog && exists">
-                        <form-tambah-guru v-model="item" :errors="errors"/>
+                        <form-tambah-prasarana v-model="item" :errors="errors"/>
                     </v-card-text>
                     <v-card-text v-else-if="dialog && loading">
-                        <form-tambah-guru-placeholder/>
+                        <form-tambah-prasarana-placeholder/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -36,10 +36,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahGuru from './form/FormTambahGuru.vue'
-import FormTambahGuruPlaceholder from './form/FormTambahGuruPlaceholder.vue'
+import FormTambahPrasarana from '../prasarana/form/FormTambahPrasarana.vue'
+import FormTambahPrasaranaPlaceholder from '../prasarana/form/FormTambahPrasaranaPlaceholder.vue'
 export default {
-    components: { FormTambahGuru, FormTambahGuruPlaceholder },
+    components: { FormTambahPrasarana, FormTambahPrasaranaPlaceholder },
     data(){
         return {
             loading: false,
@@ -51,8 +51,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.ubah,
-            id: state => state.guru.selected.id
+            value_dialog: state => state.prasarana.modal.ubah,
+            id: state => state.prasarana.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -61,17 +61,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'guru/setModalUbah',
-            updateGuru: 'guru/update',
-            findGuru: 'guru/show',
-            updateSession: 'guru/updateSession',
+            setDialog: 'prasarana/setModalUbah',
+            updatePrasarana: 'prasarana/update',
+            findPrasarana: 'prasarana/show',
+            updateSession: 'prasarana/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.updateGuru({ data, id: this.id }).catch(e => {
-                console.log("updateGuru@GuruUbah.vue", e)
+            let res = await this.updatePrasarana({ data, id: this.id }).catch(e => {
+                console.log("updatePrasarana@PrasaranaUbah.vue", e)
                 e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message
@@ -86,8 +86,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findGuru({ id: this.id }).catch(e => {
-                console.log("loadItem@GuruUbah.vue", e);
+            let res = await this.findPrasarana({ id: this.id }).catch(e => {
+                console.log("loadItem@PrasaranaUbah.vue", e);
                 this.notif({
                     message: e.message
                 })

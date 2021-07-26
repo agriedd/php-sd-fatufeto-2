@@ -27260,7 +27260,7 @@ var render = function() {
                                                                 $event
                                                               ) {
                                                                 return _vm.ubahInfoGuru(
-                                                                  item.id_profil
+                                                                  item.id_guru
                                                                 )
                                                               }
                                                             }
@@ -27566,7 +27566,11 @@ var render = function() {
             [
               _c(
                 "v-container",
-                [_c("router-view", { attrs: { "no-select": "" } })],
+                [
+                  _c("router-view", {
+                    attrs: { "no-select": "", "data-session": _vm.session }
+                  })
+                ],
                 1
               )
             ],
@@ -94897,8 +94901,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.mixin({
     setErrorForm: function setErrorForm(e) {
       var _e$response, _e$response$data;
 
-      if (e !== null && e !== void 0 && (_e$response = e.response) !== null && _e$response !== void 0 && (_e$response$data = _e$response.data) !== null && _e$response$data !== void 0 && _e$response$data.errors) for (var key in e.response.data.errors) {
-        this.$set(this.errors, key, e.response.data.errors[key]);
+      if (e !== null && e !== void 0 && (_e$response = e.response) !== null && _e$response !== void 0 && (_e$response$data = _e$response.data) !== null && _e$response$data !== void 0 && _e$response$data.errors) {
+        for (var key in e.response.data.errors) {
+          this.$set(this.errors, key, e.response.data.errors[key]);
+        }
+
+        this.errors = e.response.data.errors;
       }
     },
     previewImage: function previewImage(img) {

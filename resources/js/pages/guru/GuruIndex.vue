@@ -67,7 +67,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="ubahInfoGuru(item.id_profil)">
+                                                        <v-list-item dense link @click="ubahInfoGuru(item.id_guru)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-pencil</v-icon>
                                                             </v-list-item-icon>
@@ -144,7 +144,7 @@
             </v-container>
             <div class="grey lighten-5">
                 <v-container>
-                    <router-view no-select/>
+                    <router-view no-select :data-session="session"/>
                 </v-container>
             </div>
         </v-main>

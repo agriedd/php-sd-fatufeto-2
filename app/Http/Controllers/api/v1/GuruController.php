@@ -5,7 +5,9 @@ namespace App\Http\Controllers\api\v1;
 use App\Guru;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestGuruStore;
+use App\Http\Requests\RequestGuruUpdate;
 use App\Http\Resources\GuruCollection;
+use App\Http\Resources\SekolahCollection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -36,9 +38,11 @@ class GuruController extends Controller{
         return new GuruCollection($guru);
     }
 
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(RequestGuruUpdate $request, Guru $guru){
+        $data = collect($request->validated());
+        $result = $guru->update($data->all());
+        $collection = new SekolahCollection($guru);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

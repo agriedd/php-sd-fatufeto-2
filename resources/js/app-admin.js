@@ -31,10 +31,12 @@ Vue.mixin({
     },
     methods: {
         setErrorForm(e){
-            if(e?.response?.data?.errors)
+            if(e?.response?.data?.errors){
                 for(let key in e.response.data.errors){
                     this.$set(this.errors, key, e.response.data.errors[key])
                 }
+                this.errors = e.response.data.errors
+            }
         },
         previewImage(img){
             this.$store.dispatch('image/show', {src: img})

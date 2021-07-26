@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestSaranaStore;
 use App\Http\Resources\SaranaCollection;
 use App\Sarana;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SaranaController extends Controller{
 
@@ -23,15 +25,11 @@ class SaranaController extends Controller{
         return SaranaCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestSaranaStore $request){
+        $data = collect($request->validated());
+        $guru = Sarana::create($data->all());
+        $collection = new SaranaCollection($guru);
+        return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

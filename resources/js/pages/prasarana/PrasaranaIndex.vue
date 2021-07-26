@@ -22,7 +22,7 @@
                 <div v-else style="position: relative">
                     <v-expand-transition>
                         <div class="d-grid-sekolah" v-if="show">
-                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'guru.list' }">
+                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'prasarana.list' }">
                                 <v-card-text>
                                     <div class="d-flex w-100">
                                         <v-avatar color="indigo lighten-4">
@@ -45,7 +45,7 @@
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to="{ name: 'guru.show', params: { id_guru: item.id_guru } }">
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_prasarana" :to="{ name: 'prasarana.show', params: { id_prasarana: item.id_prasarana } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
@@ -57,7 +57,7 @@
                                                     </template>
                                                     <v-list nav>
                                                         <v-subheader v-text="'Aksi'"/>
-                                                        <v-list-item dense link :to="{ name: 'guru.show', params: { id_guru: item.id_guru }}">
+                                                        <v-list-item dense link :to="{ name: 'prasarana.show', params: { id_prasarana: item.id_prasarana }}">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-package-variant</v-icon>
                                                             </v-list-item-icon>
@@ -67,7 +67,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="ubahInfoGuru(item.id_guru)">
+                                                        <v-list-item dense link @click="ubahInfoPrasarana(item.id_prasarana)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-pencil</v-icon>
                                                             </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="hapusInfoGuru(item.id_guru)">
+                                                        <v-list-item dense link @click="hapusInfoPrasarana(item.id_prasarana)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-delete</v-icon>
                                                             </v-list-item-icon>
@@ -124,7 +124,7 @@
                                                     </v-avatar>
                                                     <div class="grow-1 pl-4">
                                                         <v-subheader>
-                                                            Tambah Guru
+                                                            Tambah Prasarana
                                                         </v-subheader>
                                                     </div>
                                                 </div>
@@ -164,7 +164,7 @@ export default {
     computed: {
         ...mapState({}),
         ...mapGetters({
-            session: 'guru/getSession',
+            session: 'prasarana/getSession',
         }),
         exists(){
             return this.total > 0
@@ -172,7 +172,7 @@ export default {
     },
     watch: {
         '$route.name': function(val){
-            if(val == 'guru'){
+            if(val == 'prasarana'){
                 this.show = true
             }
         },
@@ -182,20 +182,20 @@ export default {
     },
     methods: {
         ...mapMutations({
-            showTambahDialog: 'guru/SET_MODAL_TAMBAH',
+            showTambahDialog: 'prasarana/SET_MODAL_TAMBAH',
         }),
         ...mapActions({
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
-            getItems: 'guru/get',
+            showUbahDialog: 'prasarana/setModalUbah',
+            showHapusDialog: 'prasarana/setModalHapus',
+            getItems: 'prasarana/get',
         }),
         openModalTambah(){
             this.showTambahDialog(true)
         },
-        ubahInfoGuru(id){
+        ubahInfoPrasarana(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru(id){
+        hapusInfoPrasarana(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItems(){
@@ -205,7 +205,7 @@ export default {
                 sortBy: ['created_at'],
                 sortDesc: [true],
             }).catch(e => {
-                console.log("loadItem@GuruIndex.vue", e);
+                console.log("loadItem@PrasaranaIndex.vue", e);
             });
             this.loading = false
             if(res?.data?.data){

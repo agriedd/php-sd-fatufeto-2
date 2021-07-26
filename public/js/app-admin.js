@@ -4809,7 +4809,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     };
   },
   computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({})), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
-    session: 'guru/getSession'
+    session: 'prasarana/getSession'
   })), {}, {
     exists: function exists() {
       return this.total > 0;
@@ -4817,7 +4817,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   }),
   watch: {
     '$route.name': function $routeName(val) {
-      if (val == 'guru') {
+      if (val == 'prasarana') {
         this.show = true;
       }
     },
@@ -4826,22 +4826,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({
-    showTambahDialog: 'guru/SET_MODAL_TAMBAH'
+    showTambahDialog: 'prasarana/SET_MODAL_TAMBAH'
   })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    showUbahDialog: 'guru/setModalUbah',
-    showHapusDialog: 'guru/setModalHapus',
-    getItems: 'guru/get'
+    showUbahDialog: 'prasarana/setModalUbah',
+    showHapusDialog: 'prasarana/setModalHapus',
+    getItems: 'prasarana/get'
   })), {}, {
     openModalTambah: function openModalTambah() {
       this.showTambahDialog(true);
     },
-    ubahInfoGuru: function ubahInfoGuru(id) {
+    ubahInfoPrasarana: function ubahInfoPrasarana(id) {
       this.showUbahDialog({
         id: id,
         value: true
       });
     },
-    hapusInfoGuru: function hapusInfoGuru(id) {
+    hapusInfoPrasarana: function hapusInfoPrasarana(id) {
       this.showHapusDialog({
         id: id,
         value: true
@@ -4866,7 +4866,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   sortBy: ['created_at'],
                   sortDesc: [true]
                 })["catch"](function (e) {
-                  console.log("loadItem@GuruIndex.vue", e);
+                  console.log("loadItem@PrasaranaIndex.vue", e);
                 });
 
               case 3:
@@ -31563,7 +31563,7 @@ var render = function() {
                                     rounded: "xl",
                                     flat: "",
                                     link: "",
-                                    to: { name: "guru.list" }
+                                    to: { name: "prasarana.list" }
                                   }
                                 },
                                 [
@@ -31634,7 +31634,7 @@ var render = function() {
                                       return _c(
                                         "v-card",
                                         {
-                                          key: item.id_guru,
+                                          key: item.id_prasarana,
                                           attrs: {
                                             color:
                                               "grey lighten-4 overflow-hidden",
@@ -31642,8 +31642,10 @@ var render = function() {
                                             flat: "",
                                             link: "",
                                             to: {
-                                              name: "guru.show",
-                                              params: { id_guru: item.id_guru }
+                                              name: "prasarana.show",
+                                              params: {
+                                                id_prasarana: item.id_prasarana
+                                              }
                                             }
                                           }
                                         },
@@ -31734,10 +31736,10 @@ var render = function() {
                                                               link: "",
                                                               to: {
                                                                 name:
-                                                                  "guru.show",
+                                                                  "prasarana.show",
                                                                 params: {
-                                                                  id_guru:
-                                                                    item.id_guru
+                                                                  id_prasarana:
+                                                                    item.id_prasarana
                                                                 }
                                                               }
                                                             }
@@ -31784,8 +31786,8 @@ var render = function() {
                                                               click: function(
                                                                 $event
                                                               ) {
-                                                                return _vm.ubahInfoGuru(
-                                                                  item.id_guru
+                                                                return _vm.ubahInfoPrasarana(
+                                                                  item.id_prasarana
                                                                 )
                                                               }
                                                             }
@@ -31832,8 +31834,8 @@ var render = function() {
                                                               click: function(
                                                                 $event
                                                               ) {
-                                                                return _vm.hapusInfoGuru(
-                                                                  item.id_guru
+                                                                return _vm.hapusInfoPrasarana(
+                                                                  item.id_prasarana
                                                                 )
                                                               }
                                                             }
@@ -32022,7 +32024,7 @@ var render = function() {
                                                     [
                                                       _c("v-subheader", [
                                                         _vm._v(
-                                                          "\n                                                        Tambah Guru\n                                                    "
+                                                          "\n                                                        Tambah Prasarana\n                                                    "
                                                         )
                                                       ])
                                                     ],
@@ -102207,7 +102209,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _v1_jenis_kelamin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./v1/jenis_kelamin */ "./resources/js/states/v1/jenis_kelamin.js");
 /* harmony import */ var _v1_login__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./v1/login */ "./resources/js/states/v1/login.js");
 /* harmony import */ var _v1_notifikasi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./v1/notifikasi */ "./resources/js/states/v1/notifikasi.js");
-/* harmony import */ var _v1_sekolah__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./v1/sekolah */ "./resources/js/states/v1/sekolah.js");
+/* harmony import */ var _v1_prasarana__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./v1/prasarana */ "./resources/js/states/v1/prasarana.js");
+/* harmony import */ var _v1_sekolah__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./v1/sekolah */ "./resources/js/states/v1/sekolah.js");
+
 
 
 
@@ -102216,11 +102220,12 @@ __webpack_require__.r(__webpack_exports__);
 
 var states = {
   login: _v1_login__WEBPACK_IMPORTED_MODULE_3__["default"],
-  sekolah: _v1_sekolah__WEBPACK_IMPORTED_MODULE_5__["default"],
+  sekolah: _v1_sekolah__WEBPACK_IMPORTED_MODULE_6__["default"],
   image: _v1_image__WEBPACK_IMPORTED_MODULE_1__["default"],
   notifikasi: _v1_notifikasi__WEBPACK_IMPORTED_MODULE_4__["default"],
   guru: _v1_guru__WEBPACK_IMPORTED_MODULE_0__["default"],
-  jenis_kelamin: _v1_jenis_kelamin__WEBPACK_IMPORTED_MODULE_2__["default"]
+  jenis_kelamin: _v1_jenis_kelamin__WEBPACK_IMPORTED_MODULE_2__["default"],
+  prasarana: _v1_prasarana__WEBPACK_IMPORTED_MODULE_5__["default"]
 };
 /* harmony default export */ __webpack_exports__["default"] = (states);
 
@@ -102972,6 +102977,419 @@ __webpack_require__.r(__webpack_exports__);
     show: function show(_ref4, payload) {
       var commit = _ref4.commit;
       commit("SHOW_MESSAGE", payload);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/states/v1/prasarana.js":
+/*!*********************************************!*\
+  !*** ./resources/js/states/v1/prasarana.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./config */ "./resources/js/states/v1/config.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: {
+    items: [],
+    user: {},
+    selected: {
+      id: null,
+      ids: [],
+      item: null,
+      items: []
+    },
+    modal: {
+      tambah: false,
+      ubah: false,
+      hapus: false,
+      info: false
+    },
+    errors: {},
+    session: {
+      code: 0
+    }
+  },
+  getters: {
+    getTotal: function getTotal(state) {
+      return state.items.length;
+    },
+    getSession: function getSession(state) {
+      return state.session.code;
+    }
+  },
+  actions: {
+    get: function get(context) {
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return new Promise( /*#__PURE__*/function () {
+        var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(resolve, reject) {
+          var res;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+            while (1) {
+              switch (_context.prev = _context.next) {
+                case 0:
+                  _context.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/prasarana'), {
+                    params: params
+                  })["catch"](function (e) {
+                    return reject(e);
+                  });
+
+                case 2:
+                  res = _context.sent;
+                  if (res) resolve(res);
+
+                case 4:
+                case "end":
+                  return _context.stop();
+              }
+            }
+          }, _callee);
+        }));
+
+        return function (_x, _x2) {
+          return _ref.apply(this, arguments);
+        };
+      }());
+    },
+    count: function count(context) {
+      var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      return new Promise( /*#__PURE__*/function () {
+        var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(resolve, reject) {
+          var res;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+            while (1) {
+              switch (_context2.prev = _context2.next) {
+                case 0:
+                  _context2.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/analytic/prasarana/count'), {
+                    params: params
+                  })["catch"](function (e) {
+                    return reject(e);
+                  });
+
+                case 2:
+                  res = _context2.sent;
+                  if (res) resolve(res);
+
+                case 4:
+                case "end":
+                  return _context2.stop();
+              }
+            }
+          }, _callee2);
+        }));
+
+        return function (_x3, _x4) {
+          return _ref2.apply(this, arguments);
+        };
+      }());
+    },
+    show: function show(context, _ref3) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var _ref3$data, data, id;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _ref3$data = _ref3.data, data = _ref3$data === void 0 ? {} : _ref3$data, id = _ref3.id;
+
+                if (!id) {
+                  _context4.next = 5;
+                  break;
+                }
+
+                return _context4.abrupt("return", new Promise( /*#__PURE__*/function () {
+                  var _ref4 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(resolve, reject) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+                      while (1) {
+                        switch (_context3.prev = _context3.next) {
+                          case 0:
+                            _context3.next = 2;
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/prasarana/".concat(id)), {
+                              params: data
+                            })["catch"](function (e) {
+                              return reject(e);
+                            });
+
+                          case 2:
+                            res = _context3.sent;
+                            if (res) resolve(res);
+
+                          case 4:
+                          case "end":
+                            return _context3.stop();
+                        }
+                      }
+                    }, _callee3);
+                  }));
+
+                  return function (_x5, _x6) {
+                    return _ref4.apply(this, arguments);
+                  };
+                }()));
+
+              case 5:
+                console.warn("show@prasarana.js", "id kosong 🤦‍♂️");
+
+              case 6:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4);
+      }))();
+    },
+    store: function store(context, data) {
+      return new Promise( /*#__PURE__*/function () {
+        var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(resolve, reject) {
+          var res;
+          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+            while (1) {
+              switch (_context5.prev = _context5.next) {
+                case 0:
+                  _context5.next = 2;
+                  return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/prasarana'), data)["catch"](function (e) {
+                    return reject(e);
+                  });
+
+                case 2:
+                  res = _context5.sent;
+                  if (res) resolve(res);
+
+                case 4:
+                case "end":
+                  return _context5.stop();
+              }
+            }
+          }, _callee5);
+        }));
+
+        return function (_x7, _x8) {
+          return _ref5.apply(this, arguments);
+        };
+      }());
+    },
+    update: function update(context, _ref6) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee7() {
+        var data, id;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                data = _ref6.data, id = _ref6.id;
+
+                if (!id) {
+                  _context7.next = 6;
+                  break;
+                }
+
+                if (data instanceof FormData) data.append('_method', 'PUT');
+                return _context7.abrupt("return", new Promise( /*#__PURE__*/function () {
+                  var _ref7 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(resolve, reject) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+                      while (1) {
+                        switch (_context6.prev = _context6.next) {
+                          case 0:
+                            _context6.next = 2;
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/prasarana/".concat(id)), data)["catch"](function (e) {
+                              return reject(e);
+                            });
+
+                          case 2:
+                            res = _context6.sent;
+                            if (res) resolve(res);
+
+                          case 4:
+                          case "end":
+                            return _context6.stop();
+                        }
+                      }
+                    }, _callee6);
+                  }));
+
+                  return function (_x9, _x10) {
+                    return _ref7.apply(this, arguments);
+                  };
+                }()));
+
+              case 6:
+                console.warn("update@prasarana.js", "id kosong 🤦‍♂️");
+
+              case 7:
+              case "end":
+                return _context7.stop();
+            }
+          }
+        }, _callee7);
+      }))();
+    },
+    destroy: function destroy(context, _ref8) {
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee9() {
+        var data, id;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee9$(_context9) {
+          while (1) {
+            switch (_context9.prev = _context9.next) {
+              case 0:
+                data = _ref8.data, id = _ref8.id;
+
+                if (!id) {
+                  _context9.next = 6;
+                  break;
+                }
+
+                if (data instanceof FormData) data.append('_method', 'DELETE');
+                return _context9.abrupt("return", new Promise( /*#__PURE__*/function () {
+                  var _ref9 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee8(resolve, reject) {
+                    var res;
+                    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee8$(_context8) {
+                      while (1) {
+                        switch (_context8.prev = _context8.next) {
+                          case 0:
+                            _context8.next = 2;
+                            return axios__WEBPACK_IMPORTED_MODULE_1___default()({
+                              method: 'post',
+                              url: Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/prasarana/".concat(id)),
+                              data: data,
+                              category: 'DELETE'
+                            })["catch"](function (e) {
+                              return reject(e);
+                            });
+
+                          case 2:
+                            res = _context8.sent;
+                            if (res) resolve(res);
+
+                          case 4:
+                          case "end":
+                            return _context8.stop();
+                        }
+                      }
+                    }, _callee8);
+                  }));
+
+                  return function (_x11, _x12) {
+                    return _ref9.apply(this, arguments);
+                  };
+                }()));
+
+              case 6:
+                console.warn("destroy@prasarana.js", "id kosong 🤦‍♂️");
+
+              case 7:
+              case "end":
+                return _context9.stop();
+            }
+          }
+        }, _callee9);
+      }))();
+    },
+    updateSession: function updateSession(context, data) {
+      context.commit('SET_SESSION_CODE', data || new Date().getTime());
+    },
+
+    /**
+     * modal
+     * 
+     */
+    setModalUbah: function setModalUbah(context, payload) {
+      if (_typeof(payload) != "object") throw Error("setModalUbah butuh parameter object { [id: string], value: bool }");
+      var mvalue = payload.value;
+
+      if (mvalue) {
+        if (payload.id == null) throw Error("setModalHapus butuh key id jika valuenya true");
+        context.commit('PUSH_ID', payload.id);
+        context.commit('SET_MODAL_UBAH', true);
+      } else {
+        context.commit('POP_ID', payload.id);
+        context.commit('SET_MODAL_UBAH', false);
+      }
+    },
+    setModalHapus: function setModalHapus(context, payload) {
+      if (_typeof(payload) != "object") throw Error("setModalHapus butuh parameter object { [id: string], value: bool }");
+      var mvalue = payload.value;
+
+      if (mvalue) {
+        if (payload.id == null) throw Error("setModalHapus butuh key id jika valuenya true");
+        context.commit('PUSH_ID', payload.id);
+        context.commit('SET_MODAL_HAPUS', true);
+      } else {
+        context.commit('POP_ID', payload.id);
+        context.commit('SET_MODAL_HAPUS', false);
+      }
+    }
+  },
+  mutations: {
+    SET_MODAL_TAMBAH: function SET_MODAL_TAMBAH(state, payload) {
+      state.modal.tambah = payload;
+    },
+    SET_MODAL_UBAH: function SET_MODAL_UBAH(state, payload) {
+      state.modal.ubah = payload;
+    },
+    SET_MODAL_HAPUS: function SET_MODAL_HAPUS(state, payload) {
+      state.modal.hapus = payload;
+    },
+    SET_MODAL_INFO: function SET_MODAL_INFO(state, payload) {
+      state.modal.info = payload;
+    },
+    SET_ERRORS: function SET_ERRORS(state, payload) {
+      state.errors = payload;
+    },
+    CLEAR_ERROR: function CLEAR_ERROR(state, payload) {
+      state.errors[payload] = null;
+    },
+    CLEAR_ERRORS: function CLEAR_ERRORS(state, payload) {
+      state.errors = {};
+    },
+    SET_ID: function SET_ID(state, payload) {
+      state.selected.id = payload;
+    },
+    PUSH_ID: function PUSH_ID(state, payload) {
+      state.selected.id = payload;
+      state.selected.ids.push(payload);
+    },
+    POP_ID: function POP_ID(state, payload) {
+      /**
+       * push:    1
+       * id:      1
+       * push:    1, 2
+       * id:      2
+       * push:    1, 2, 3
+       * id:      3
+       * pop:     1, 2
+       * id:      2
+       *      
+       */
+      state.selected.ids.pop();
+      if (state.selected.ids.length) state.selected.id = state.selected.ids[state.selected.ids.length - 1];else state.selected.id = null;
+    },
+    SET_ITEMS: function SET_ITEMS(state, payload) {
+      state.items = payload;
+    },
+    SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
+      state.session.code = payload;
     }
   }
 });

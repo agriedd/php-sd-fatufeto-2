@@ -123,13 +123,13 @@
 					</v-list>
 				</v-menu>
 			</v-list-item>
-			<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+			<v-list-item dense link color="primary" :to="{ name: 'prasarana' }" exact>
 				<v-list-item-icon>
 					<v-icon>mdi-package-variant</v-icon>
 				</v-list-item-icon>
 				<v-list-item-content>
-					<v-list-item-title v-text="'Sarana /Prasarana'" />
-					<v-list-item-subtitle v-text="'Kelola data Sarana dan Prasarana'" />
+					<v-list-item-title v-text="'Prasarana'" />
+					<v-list-item-subtitle v-text="'Kelola data Prasarana'" />
 				</v-list-item-content>
 			</v-list-item>
 		</v-list>

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-dialog v-model="dialog" max-width="600" content-class="shadow-sm" overlay-opacity=".25" eager scrollable>
+        <v-dialog v-model="dialog" max-width="400" content-class="shadow-sm" overlay-opacity=".25" eager scrollable>
             <v-form @submit.prevent="submit" :disabled="loading">
                 <v-card>
                     <v-toolbar flat>
@@ -14,7 +14,7 @@
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog || alive">
-
+                        <form-tambah-prasarana :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -30,7 +30,9 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
+import FormTambahPrasarana from './form/FormTambahPrasarana.vue'
 export default {
+    components: { FormTambahPrasarana },
     data(){
         return {
             loading: false,

@@ -128,12 +128,6 @@ export default {
                 this.lazyTransition = null;
             }, 800);
         },
-        rowClick(e){
-            this.$emit('open:prasarana:info', e)
-        },
-        editRow(e){
-
-        },
         clickEvent(t, d){
             this.$emit(t, d)
         },

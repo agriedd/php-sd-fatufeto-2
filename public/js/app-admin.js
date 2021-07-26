@@ -2575,11 +2575,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   computed: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapState"])({
     user: function user(state) {
       return state.login.admin.user;
+    },
+    loading: function loading(state) {
+      return state.login.admin.loading;
     }
   })), {}, {
     exists: function exists() {
@@ -26085,46 +26090,56 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-list",
+    "div",
     [
       _vm.exists
         ? _c(
-            "v-list-item",
+            "v-list",
             [
               _c(
-                "v-list-item-avatar",
+                "v-list-item",
                 [
-                  _c("v-img", {
-                    attrs: {
-                      src:
-                        "http://localhost/img/mitchell-orr-_0qSYr-IRbg-unsplash.jpg"
-                    }
-                  })
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item-content",
-                [
-                  _c("v-list-item-title", [
-                    _vm._v(" " + _vm._s(_vm.user.nama) + " ")
-                  ]),
+                  _c(
+                    "v-list-item-avatar",
+                    [
+                      _c("v-img", {
+                        attrs: {
+                          src:
+                            "http://localhost/img/mitchell-orr-_0qSYr-IRbg-unsplash.jpg"
+                        }
+                      })
+                    ],
+                    1
+                  ),
                   _vm._v(" "),
-                  _c("v-list-item-subtitle", [_vm._v(_vm._s(_vm.user.email))])
+                  _c(
+                    "v-list-item-content",
+                    [
+                      _c("v-list-item-title", [
+                        _vm._v(" " + _vm._s(_vm.user.nama) + " ")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-list-item-subtitle", [
+                        _vm._v(_vm._s(_vm.user.email))
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-list-item-action",
+                    [_c("v-icon", [_vm._v("mdi-menu-down")])],
+                    1
+                  )
                 ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "v-list-item-action",
-                [_c("v-icon", [_vm._v("mdi-menu-down")])],
                 1
               )
             ],
             1
           )
-        : _vm._e()
+        : _c("v-skeleton-loader", {
+            attrs: { type: "list-item-avatar-two-line" }
+          })
     ],
     1
   )
@@ -96356,6 +96371,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       state: {
         data: [],
         user: {},
+        loading: false,
         selected: {
           id: null,
           ids: [],
@@ -97006,8 +97022,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\js\app-admin.js */"./resources/js/app-admin.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-admin.scss */"./resources/sass/app-admin.scss");
+__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/js/app-admin.js */"./resources/js/app-admin.js");
+module.exports = __webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-admin.scss */"./resources/sass/app-admin.scss");
 
 
 /***/ })

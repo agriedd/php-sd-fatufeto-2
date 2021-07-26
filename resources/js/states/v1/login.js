@@ -16,6 +16,7 @@ export default {
 			state: {
 				data		: [],
 				user		: {},
+				loading		: false,
 				selected	: {
 					id		: null,
 					ids		: [],

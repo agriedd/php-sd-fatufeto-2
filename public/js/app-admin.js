@@ -3358,16 +3358,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -3385,48 +3375,48 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         link: true,
         exact: true
       }, {
-        text: 'Sekolah',
+        text: 'Guru',
         disabled: false,
         to: {
-          name: 'sekolah'
+          name: 'guru'
         },
         link: true,
         exact: true
       }, {
-        text: 'Info Sekolah',
+        text: 'Info Guru',
         disabled: true
       }]
     };
   },
   computed: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapState"])({
     items: function items(state) {
-      return state.sekolah.items;
+      return state.guru.items;
     }
   })), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapGetters"])({
-    session: 'sekolah/getSession'
+    session: 'guru/getSession'
   })), {}, {
     id: function id() {
-      return this.$route.params.id_profil;
+      return this.$route.params.id_guru;
     }
   }),
   watch: {
     session: function session() {
-      this.loadItems();
+      this.loadItem();
     }
   },
   methods: _objectSpread(_objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapMutations"])({})), Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    showUbahDialog: 'sekolah/setModalUbah',
-    showHapusDialog: 'sekolah/setModalHapus',
-    getItem: 'sekolah/show'
+    showUbahDialog: 'guru/setModalUbah',
+    showHapusDialog: 'guru/setModalHapus',
+    getItem: 'guru/show'
   })), {}, {
     openModalTambah: function openModalTambah() {},
-    ubahInfoSekolah: function ubahInfoSekolah(id) {
+    ubahInfoGuru: function ubahInfoGuru(id) {
       this.showUbahDialog({
         id: id,
         value: true
       });
     },
-    hapusInfoSekolah: function hapusInfoSekolah(id) {
+    hapusInfoGuru: function hapusInfoGuru(id) {
       this.showHapusDialog({
         id: id,
         value: true
@@ -3449,7 +3439,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 return _this.getItem({
                   id: _this.id
                 })["catch"](function (e) {
-                  console.log("loadItem@SekolahIndex.vue", e);
+                  console.log("loadItem@GuruIndex.vue", e);
                 });
 
               case 4:
@@ -4217,33 +4207,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  methods: {},
-  created: function created() {}
-});
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruListIndex.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruListIndex.vue?vue&type=script&lang=js& ***!
@@ -4454,18 +4417,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     clickEvent: function clickEvent(t, d) {
       this.$emit(t, d);
     },
-    ubahInfoSekolah: function ubahInfoSekolah(_ref) {
+    ubahInfoGuru: function ubahInfoGuru(_ref) {
       var id = _ref.id_guru;
       this.showUbahDialog({
         id: id,
         value: true
       });
     },
-    hapusInfoSekolah: function hapusInfoSekolah(_ref2) {
+    hapusInfoGuru: function hapusInfoGuru(_ref2) {
       var id = _ref2.id_guru;
       this.showHapusDialog({
         id: id,
         value: true
+      });
+    },
+    toInfoGuru: function toInfoGuru(_ref3) {
+      var id_guru = _ref3.id_guru;
+      this.$router.push({
+        name: 'guru.show',
+        params: {
+          id_guru: id_guru
+        }
       });
     }
   }),
@@ -4526,6 +4498,58 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -27477,7 +27501,7 @@ var render = function() {
                                       return _c(
                                         "v-card",
                                         {
-                                          key: item.id_profil,
+                                          key: item.id_guru,
                                           attrs: {
                                             color:
                                               "grey lighten-4 overflow-hidden",
@@ -27486,9 +27510,7 @@ var render = function() {
                                             link: "",
                                             to: {
                                               name: "guru.show",
-                                              params: {
-                                                id_profil: item.id_profil
-                                              }
+                                              params: { id_guru: item.id_guru }
                                             }
                                           }
                                         },
@@ -27581,8 +27603,8 @@ var render = function() {
                                                                 name:
                                                                   "guru.show",
                                                                 params: {
-                                                                  id_profil:
-                                                                    item.id_profil
+                                                                  id_guru:
+                                                                    item.id_guru
                                                                 }
                                                               }
                                                             }
@@ -27678,7 +27700,7 @@ var render = function() {
                                                                 $event
                                                               ) {
                                                                 return _vm.hapusInfoGuru(
-                                                                  item.id_profil
+                                                                  item.id_guru
                                                                 )
                                                               }
                                                             }
@@ -27984,9 +28006,7 @@ var render = function() {
         [
           _c("v-app-bar-nav-icon"),
           _vm._v(" "),
-          _c("v-toolbar-title", [
-            _vm._v("\n            Sekolah Info\n        ")
-          ])
+          _c("v-toolbar-title", [_vm._v("\n            Info Guru\n        ")])
         ],
         1
       ),
@@ -27997,7 +28017,7 @@ var render = function() {
           _c("v-container", [
             _vm.loading
               ? _c("div", [
-                  _c("div", { staticClass: "d-grid-sekolah-info" }, [
+                  _c("div", { staticClass: "d-grid-guru-info" }, [
                     _c(
                       "div",
                       [
@@ -28078,7 +28098,7 @@ var render = function() {
                       [
                         _c("span", [
                           _vm._v(
-                            "\n                        Profil Sekolah Tidak Ditemukan\n                    "
+                            "\n                        Info Guru Tidak Ditemukan\n                    "
                           )
                         ])
                       ]
@@ -28092,7 +28112,7 @@ var render = function() {
                           rounded: "xl",
                           flat: "",
                           link: "",
-                          to: { name: "sekolah" }
+                          to: { name: "guru" }
                         }
                       },
                       [
@@ -28102,7 +28122,7 @@ var render = function() {
                             _c(
                               "v-list-item-avatar",
                               { attrs: { color: "grey lighten-2" } },
-                              [_c("v-icon", [_vm._v("mdi-school")])],
+                              [_c("v-icon", [_vm._v("mdi-account-tie")])],
                               1
                             ),
                             _vm._v(" "),
@@ -28111,7 +28131,7 @@ var render = function() {
                               [
                                 _c("v-list-item-title", [
                                   _vm._v(
-                                    "\n                                Kembali ke daftar Sekolah\n                            "
+                                    "\n                                Kembali ke daftar guru\n                            "
                                   )
                                 ])
                               ],
@@ -28127,7 +28147,7 @@ var render = function() {
                   1
                 )
               : _c("div", [
-                  _c("div", { staticClass: "d-grid-sekolah-info" }, [
+                  _c("div", { staticClass: "d-grid-guru-info" }, [
                     _c(
                       "div",
                       [
@@ -28157,7 +28177,7 @@ var render = function() {
                               "v-card",
                               {
                                 attrs: {
-                                  color: "grey lighten-4 overflow-hidden",
+                                  color: "grey lighten-5 overflow-hidden",
                                   rounded: "xl",
                                   flat: ""
                                 }
@@ -28171,7 +28191,11 @@ var render = function() {
                                       _c(
                                         "v-avatar",
                                         { attrs: { color: "grey lighten-2" } },
-                                        [_c("v-icon", [_vm._v("mdi-school")])],
+                                        [
+                                          _c("v-icon", [
+                                            _vm._v("mdi-account-tie")
+                                          ])
+                                        ],
                                         1
                                       ),
                                       _vm._v(" "),
@@ -28239,8 +28263,8 @@ var render = function() {
                                                   },
                                                   on: {
                                                     click: function($event) {
-                                                      return _vm.ubahInfoSekolah(
-                                                        _vm.item.id_profil
+                                                      return _vm.ubahInfoGuru(
+                                                        _vm.item.id_guru
                                                       )
                                                     }
                                                   }
@@ -28280,8 +28304,8 @@ var render = function() {
                                                   },
                                                   on: {
                                                     click: function($event) {
-                                                      return _vm.hapusInfoSekolah(
-                                                        _vm.item.id_profil
+                                                      return _vm.hapusInfoGuru(
+                                                        _vm.item.id_guru
                                                       )
                                                     }
                                                   }
@@ -28377,7 +28401,7 @@ var render = function() {
                                           { staticClass: "text--disabled" },
                                           [
                                             _vm._v(
-                                              "\n                                            Nama Profil Sekolah\n                                        "
+                                              "\n                                            Nama Guru\n                                        "
                                             )
                                           ]
                                         ),
@@ -28388,7 +28412,7 @@ var render = function() {
                                           [
                                             _vm._v(
                                               "\n                                            " +
-                                                _vm._s(_vm.item.nama_sekolah) +
+                                                _vm._s(_vm.item.nama) +
                                                 "\n                                        "
                                             )
                                           ]
@@ -28406,26 +28430,70 @@ var render = function() {
                                     _c(
                                       "v-list-item-content",
                                       [
-                                        _c(
-                                          "v-list-item-subtitle",
-                                          { staticClass: "text--disabled" },
-                                          [
-                                            _vm._v(
-                                              "\n                                            Jenjang\n                                        "
-                                            )
-                                          ]
-                                        ),
+                                        _c("v-list-item-title", [
+                                          _vm._v(
+                                            "\n                                            NIP." +
+                                              _vm._s(_vm.item.nip) +
+                                              "\n                                        "
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    )
+                                  ],
+                                  1
+                                ),
+                                _vm._v(" "),
+                                _c("v-divider"),
+                                _vm._v(" "),
+                                _c(
+                                  "v-list-item",
+                                  [
+                                    _c(
+                                      "v-list-item-icon",
+                                      [
+                                        _c("v-icon", [
+                                          _vm._v(
+                                            "mdi-gender-" +
+                                              _vm._s(
+                                                _vm.item.jenis_kelamin == "l"
+                                                  ? "male"
+                                                  : "female"
+                                              )
+                                          )
+                                        ])
+                                      ],
+                                      1
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "v-list-item-content",
+                                      [
+                                        _c("v-list-item-subtitle", [
+                                          _vm._v(
+                                            "\n                                            Jenis Kelamin\n                                        "
+                                          )
+                                        ]),
                                         _vm._v(" "),
                                         _c(
                                           "v-list-item-title",
-                                          { staticClass: "text-h6" },
+                                          {},
                                           [
-                                            _vm._v(
-                                              "\n                                            " +
-                                                _vm._s(_vm.item.jenjang) +
-                                                "\n                                        "
-                                            )
-                                          ]
+                                            _vm.item.jenis_kelamin == "l"
+                                              ? [
+                                                  _vm._v(
+                                                    "\n                                                Laki-laki\n                                            "
+                                                  )
+                                                ]
+                                              : _vm.item.jenis_kelamin == "p"
+                                              ? [
+                                                  _vm._v(
+                                                    "\n                                                Perempuan\n                                            "
+                                                  )
+                                                ]
+                                              : _vm._e()
+                                          ],
+                                          2
                                         )
                                       ],
                                       1
@@ -28448,7 +28516,7 @@ var render = function() {
                                       [
                                         _c("v-list-item-subtitle", [
                                           _vm._v(
-                                            "\n                                            Tanggal Berdiri\n                                        "
+                                            "\n                                            Tempat Tanggal Lahir\n                                        "
                                           )
                                         ]),
                                         _vm._v(" "),
@@ -28456,8 +28524,14 @@ var render = function() {
                                           _vm._v(
                                             "\n                                            " +
                                               _vm._s(
+                                                _vm.item.tanggal_lahir
+                                                  ? _vm.item.tanggal_lahir + ","
+                                                  : null
+                                              ) +
+                                              " " +
+                                              _vm._s(
                                                 _vm._f("date")(
-                                                  _vm.item.tgl_berdiri
+                                                  _vm.item.tanggal_lahir
                                                 )
                                               ) +
                                               "\n                                        "
@@ -28509,7 +28583,7 @@ var render = function() {
                                   [
                                     _c(
                                       "v-list-item-icon",
-                                      [_c("v-icon", [_vm._v("mdi-tag")])],
+                                      [_c("v-icon", [_vm._v("mdi-phone")])],
                                       1
                                     ),
                                     _vm._v(" "),
@@ -28518,14 +28592,14 @@ var render = function() {
                                       [
                                         _c("v-list-item-subtitle", [
                                           _vm._v(
-                                            "\n                                            NPSN\n                                        "
+                                            "\n                                            Telepon\n                                        "
                                           )
                                         ]),
                                         _vm._v(" "),
                                         _c("v-list-item-title", {}, [
                                           _vm._v(
                                             "\n                                            " +
-                                              _vm._s(_vm.item.npsn) +
+                                              _vm._s(_vm.item.telepon) +
                                               "\n                                        "
                                           )
                                         ])
@@ -28536,79 +28610,7 @@ var render = function() {
                                   1
                                 ),
                                 _vm._v(" "),
-                                _c(
-                                  "v-list-item",
-                                  { attrs: { link: "" } },
-                                  [
-                                    _c(
-                                      "v-list-item-icon",
-                                      [_c("v-icon", [_vm._v("mdi-bookmark")])],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-list-item-content",
-                                      [
-                                        _c("v-list-item-title", {}, [
-                                          _vm._v(
-                                            "\n                                            Visi Misi\n                                        "
-                                          )
-                                        ])
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-list-item-icon",
-                                      [
-                                        _c("v-icon", [
-                                          _vm._v("mdi-chevron-right")
-                                        ])
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "v-list-item",
-                                  { attrs: { link: "" } },
-                                  [
-                                    _c(
-                                      "v-list-item-icon",
-                                      [
-                                        _c("v-icon", [
-                                          _vm._v("mdi-family-tree")
-                                        ])
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-list-item-content",
-                                      [
-                                        _c("v-list-item-title", {}, [
-                                          _vm._v(
-                                            "\n                                            Struktur Organisasi\n                                        "
-                                          )
-                                        ])
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "v-list-item-icon",
-                                      [
-                                        _c("v-icon", [
-                                          _vm._v("mdi-chevron-right")
-                                        ])
-                                      ],
-                                      1
-                                    )
-                                  ],
-                                  1
-                                ),
+                                _c("v-divider", { attrs: { inset: "" } }),
                                 _vm._v(" "),
                                 _c(
                                   "v-list-item",
@@ -28667,10 +28669,7 @@ var render = function() {
                           [
                             _c(
                               "v-toolbar",
-                              {
-                                staticClass: "shadow-sm",
-                                attrs: { rounded: "xl" }
-                              },
+                              { attrs: { flat: "", rounded: "xl" } },
                               [
                                 _c(
                                   "v-tabs",
@@ -28680,7 +28679,7 @@ var render = function() {
                                       "v-tab",
                                       {
                                         attrs: {
-                                          to: { name: "sekolah.show" },
+                                          to: { name: "guru.show" },
                                           exact: ""
                                         }
                                       },
@@ -28691,13 +28690,12 @@ var render = function() {
                                       "v-tab",
                                       {
                                         attrs: {
-                                          to: { name: "sekolah.show.berita" }
+                                          to: { name: "guru.show" },
+                                          exact: ""
                                         }
                                       },
-                                      [_vm._v("Berita")]
-                                    ),
-                                    _vm._v(" "),
-                                    _c("v-tab", [_vm._v("Laporan")])
+                                      [_vm._v("Kelas")]
+                                    )
                                   ],
                                   1
                                 )
@@ -29762,43 +29760,6 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152& ***!
-  \**************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "justify-center d-flex" }, [
-    _c(
-      "div",
-      { staticClass: "w-100", staticStyle: { "max-width": "400px" } },
-      [
-        _c(
-          "v-alert",
-          { attrs: { prominent: "", type: "info", text: "", rounded: "xl" } },
-          [_vm._v("\n            Buka list guru\n        ")]
-        )
-      ],
-      1
-    )
-  ])
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruListIndex.vue?vue&type=template&id=31ce37c8&":
 /*!*********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/guru/page/GuruListIndex.vue?vue&type=template&id=31ce37c8& ***!
@@ -29871,9 +29832,9 @@ var render = function() {
                 _vm.options = $event
               },
               update: _vm.update,
-              rowClick: function($event) {},
-              editRow: _vm.ubahInfoSekolah,
-              deleteRow: _vm.hapusInfoSekolah
+              rowClick: _vm.toInfoGuru,
+              editRow: _vm.ubahInfoGuru,
+              deleteRow: _vm.hapusInfoGuru
             },
             model: {
               value: _vm.selected,
@@ -29940,114 +29901,180 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "v-card",
-    { attrs: { flat: "" } },
+    {
+      attrs: {
+        color: "grey lighten-5 overflow-hidden mt-3",
+        rounded: "xl",
+        flat: ""
+      }
+    },
     [
-      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
-        _vm._v("\n        Visi Misi\n    ")
-      ]),
-      _vm._v(" "),
       _c(
         "v-card-text",
         [
           _c(
-            "v-list",
+            "v-list-item",
             [
-              _c("v-subheader", [
-                _vm._v("\n                # Visi\n            ")
-              ]),
+              _c("v-list-item-icon", [_c("v-icon")], 1),
               _vm._v(" "),
-              _vm._l(_vm.item.visi_misi.visi, function(visi, i) {
-                return _c(
-                  "v-card",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: visi.trim().length,
-                        expression: "visi.trim().length"
-                      }
-                    ],
-                    key: "visi-" + i,
-                    staticClass: "mb-3",
-                    attrs: {
-                      color: "grey lighten-4 overflow-hidden",
-                      rounded: "xl",
-                      flat: ""
-                    }
-                  },
-                  [
-                    _c("v-card-text", [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(visi) +
-                          "\n                "
-                      )
-                    ])
-                  ],
-                  1
-                )
-              }),
-              _vm._v(" "),
-              _c("v-subheader", [
-                _vm._v("\n                # Misi\n            ")
-              ]),
-              _vm._v(" "),
-              _vm._l(_vm.item.visi_misi.misi, function(misi, i) {
-                return _c(
-                  "v-card",
-                  {
-                    directives: [
-                      {
-                        name: "show",
-                        rawName: "v-show",
-                        value: misi.trim().length,
-                        expression: "misi.trim().length"
-                      }
-                    ],
-                    key: "misi-" + i,
-                    staticClass: "mb-3",
-                    attrs: {
-                      color: "grey lighten-4 overflow-hidden",
-                      rounded: "xl",
-                      flat: ""
-                    }
-                  },
-                  [
-                    _c("v-card-text", [
-                      _vm._v(
-                        "\n                    " +
-                          _vm._s(misi) +
-                          "\n                "
-                      )
-                    ])
-                  ],
-                  1
-                )
-              })
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-subtitle", [
+                    _vm._v("\n                    Jabatan\n                ")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-title", {}, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.item.jabatan) +
+                        "\n                "
+                    )
+                  ])
+                ],
+                1
+              )
             ],
-            2
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            [
+              _c("v-list-item-icon", [_c("v-icon")], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-subtitle", [
+                    _vm._v("\n                    Pangkat\n                ")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-title", {}, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.item.pangkat) +
+                        "\n                "
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            [
+              _c("v-list-item-icon", [_c("v-icon")], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-subtitle", [
+                    _vm._v("\n                    Golongan\n                ")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-title", {}, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.item.golongan) +
+                        "\n                "
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            [
+              _c("v-list-item-icon", [_c("v-icon")], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-subtitle", [
+                    _vm._v("\n                    Status\n                ")
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-title", {}, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.item.status) +
+                        "\n                "
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("v-divider", { attrs: { inset: "" } }),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            { attrs: { link: "" } },
+            [
+              _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-school")])], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-subtitle", [
+                    _vm._v(
+                      "\n                    Pendidikan Terakhir\n                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-title", {}, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.item.pendidikan_terakhir) +
+                        "\n                "
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-list-item",
+            { attrs: { link: "" } },
+            [
+              _c("v-list-item-icon", [_c("v-icon", [_vm._v("mdi-school")])], 1),
+              _vm._v(" "),
+              _c(
+                "v-list-item-content",
+                [
+                  _c("v-list-item-subtitle", [
+                    _vm._v(
+                      "\n                    Pendidikan Profesi\n                "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("v-list-item-title", {}, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.item.pendidikan_profesi) +
+                        "\n                "
+                    )
+                  ])
+                ],
+                1
+              )
+            ],
+            1
           )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("v-card-title", { attrs: { id: "visi-misi" } }, [
-        _vm._v("\n        Struktur Organisasi\n    ")
-      ]),
-      _vm._v(" "),
-      _c(
-        "v-card-text",
-        [
-          _c("v-img", {
-            staticClass: "rounded-xl",
-            attrs: { src: _vm.item.struktur_organisasi },
-            on: {
-              click: function($event) {
-                return _vm.previewImage(_vm.item.struktur_organisasi)
-              }
-            }
-          })
         ],
         1
       )
@@ -96575,75 +96602,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/guru/page/GuruDashboardAdmin.vue":
-/*!*************************************************************!*\
-  !*** ./resources/js/pages/guru/page/GuruDashboardAdmin.vue ***!
-  \*************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GuruDashboardAdmin_vue_vue_type_template_id_f0ca5152___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152& */ "./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152&");
-/* harmony import */ var _GuruDashboardAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruDashboardAdmin.vue?vue&type=script&lang=js& */ "./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _GuruDashboardAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _GuruDashboardAdmin_vue_vue_type_template_id_f0ca5152___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GuruDashboardAdmin_vue_vue_type_template_id_f0ca5152___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/pages/guru/page/GuruDashboardAdmin.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruDashboardAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruDashboardAdmin.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruDashboardAdmin_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152&":
-/*!********************************************************************************************!*\
-  !*** ./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152& ***!
-  \********************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruDashboardAdmin_vue_vue_type_template_id_f0ca5152___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/guru/page/GuruDashboardAdmin.vue?vue&type=template&id=f0ca5152&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruDashboardAdmin_vue_vue_type_template_id_f0ca5152___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruDashboardAdmin_vue_vue_type_template_id_f0ca5152___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
 /***/ "./resources/js/pages/guru/page/GuruListIndex.vue":
 /*!********************************************************!*\
   !*** ./resources/js/pages/guru/page/GuruListIndex.vue ***!
@@ -97782,8 +97740,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_guru_tab_GuruInfoIndex_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../pages/guru/tab/GuruInfoIndex.vue */ "./resources/js/pages/guru/tab/GuruInfoIndex.vue");
 /* harmony import */ var _pages_guru_page_GuruTambahIndex_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../pages/guru/page/GuruTambahIndex.vue */ "./resources/js/pages/guru/page/GuruTambahIndex.vue");
 /* harmony import */ var _pages_guru_page_GuruListIndex_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../pages/guru/page/GuruListIndex.vue */ "./resources/js/pages/guru/page/GuruListIndex.vue");
-/* harmony import */ var _pages_guru_page_GuruDashboardAdmin_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../pages/guru/page/GuruDashboardAdmin.vue */ "./resources/js/pages/guru/page/GuruDashboardAdmin.vue");
-
 
 
 

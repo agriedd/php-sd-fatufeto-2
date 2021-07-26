@@ -45,7 +45,7 @@
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_profil" :to="{ name: 'guru.show', params: { id_profil: item.id_profil } }">
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to="{ name: 'guru.show', params: { id_guru: item.id_guru } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
@@ -57,7 +57,7 @@
                                                     </template>
                                                     <v-list nav>
                                                         <v-subheader v-text="'Aksi'"/>
-                                                        <v-list-item dense link :to="{ name: 'guru.show', params: { id_profil: item.id_profil }}">
+                                                        <v-list-item dense link :to="{ name: 'guru.show', params: { id_guru: item.id_guru }}">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-account-tie</v-icon>
                                                             </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="hapusInfoGuru(item.id_profil)">
+                                                        <v-list-item dense link @click="hapusInfoGuru(item.id_guru)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-delete</v-icon>
                                                             </v-list-item-icon>

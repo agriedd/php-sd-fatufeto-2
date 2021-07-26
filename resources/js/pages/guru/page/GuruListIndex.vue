@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick=""
-                @editRow="ubahInfoSekolah"
-                @deleteRow="hapusInfoSekolah"
+                @rowClick="toInfoGuru"
+                @editRow="ubahInfoGuru"
+                @deleteRow="hapusInfoGuru"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -138,11 +138,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoSekolah({id_guru: id}){
+        ubahInfoGuru({id_guru: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSekolah({id_guru: id}){
+        hapusInfoGuru({id_guru: id}){
             this.showHapusDialog({id, value: true})
+        },
+        toInfoGuru({id_guru}){
+            this.$router.push({ name: 'guru.show', params: { id_guru } })
         },
     },
     watch: {

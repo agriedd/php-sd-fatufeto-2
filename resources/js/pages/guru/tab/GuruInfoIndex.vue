@@ -1,33 +1,85 @@
 <template>
-    <v-card flat>
-        <v-card-title id="visi-misi">
-            Visi Misi
-        </v-card-title>
+    <v-card color="grey lighten-5 overflow-hidden mt-3" rounded="xl" flat>
         <v-card-text>
-            <v-list>
-                <v-subheader>
-                    # Visi
-                </v-subheader>
-                <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat v-for="(visi, i) in item.visi_misi.visi" :key="`visi-${i}`" v-show="visi.trim().length" class="mb-3">
-                    <v-card-text>
-                        {{ visi }}
-                    </v-card-text>
-                </v-card>
-                <v-subheader>
-                    # Misi
-                </v-subheader>
-                <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat v-for="(misi, i) in item.visi_misi.misi" :key="`misi-${i}`" v-show="misi.trim().length" class="mb-3">
-                    <v-card-text>
-                        {{ misi }}
-                    </v-card-text>
-                </v-card>
-            </v-list>
-        </v-card-text>
-        <v-card-title id="visi-misi">
-            Struktur Organisasi
-        </v-card-title>
-        <v-card-text>
-            <v-img :src="item.struktur_organisasi" class="rounded-xl" @click="previewImage(item.struktur_organisasi)"></v-img>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Jabatan
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.jabatan }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Pangkat
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.pangkat }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Golongan
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.golongan }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+                <v-list-item-icon>
+                    <v-icon></v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Status
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.status }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-divider inset/>
+            <v-list-item link>
+                <v-list-item-icon>
+                    <v-icon>mdi-school</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Pendidikan Terakhir
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.pendidikan_terakhir }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item link>
+                <v-list-item-icon>
+                    <v-icon>mdi-school</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Pendidikan Profesi
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.pendidikan_profesi }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
         </v-card-text>
     </v-card>
 </template>

@@ -5,7 +5,6 @@ import GuruInfo from '../../pages/guru/GuruInfo.vue'
 import GuruInfoIndex from '../../pages/guru/tab/GuruInfoIndex.vue'
 import GuruTambah from '../../pages/guru/page/GuruTambahIndex.vue'
 import GuruList from '../../pages/guru/page/GuruListIndex.vue'
-import GuruDashboardAdmin from '../../pages/guru/page/GuruDashboardAdmin.vue'
 
 export const guru = [
     { path: '/admin/guru', component: GuruBase, children: [

@@ -3,13 +3,13 @@
         <v-app-bar app flat floating absolute>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Sekolah Info
+                Info Guru
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
             <v-container>
                 <div v-if="loading">
-                    <div class="d-grid-sekolah-info">
+                    <div class="d-grid-guru-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" flat rounded="xl" class="mb-3">
                                 <v-card-text>
@@ -29,34 +29,34 @@
                 <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
-                            Profil Sekolah Tidak Ditemukan
+                            Info Guru Tidak Ditemukan
                         </span>
                     </v-alert>
-                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'sekolah' }">
+                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'guru' }">
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-2">
-                                <v-icon>mdi-school</v-icon>
+                                <v-icon>mdi-account-tie</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    Kembali ke daftar Sekolah
+                                    Kembali ke daftar guru
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
                 </div>
                 <div v-else>
-                    <div class="d-grid-sekolah-info">
+                    <div class="d-grid-guru-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat class="mb-3">
                                 <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
                             </v-card>
                             <div class="sticky-top">
-                                <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat>
+                                <v-card color="grey lighten-5 overflow-hidden" rounded="xl" flat>
                                     <v-card-text>
                                         <div class="d-flex w-100">
                                             <v-avatar color="grey lighten-2">
-                                                <v-icon>mdi-school</v-icon>
+                                                <v-icon>mdi-account-tie</v-icon>
                                             </v-avatar>
                                             <v-spacer/>
                                             <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
@@ -67,7 +67,7 @@
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoSekolah(item.id_profil)">
+                                                    <v-list-item dense link @click="ubahInfoGuru(item.id_guru)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoSekolah(item.id_profil)">
+                                                    <v-list-item dense link @click="hapusInfoGuru(item.id_guru)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,20 +105,36 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Profil Sekolah
+                                                Nama Guru
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
-                                                {{ item.nama_sekolah }}
+                                                {{ item.nama }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
                                     <v-list-item>
                                         <v-list-item-content>
-                                            <v-list-item-subtitle class="text--disabled">
-                                                Jenjang
+                                            <v-list-item-title>
+                                                NIP.{{ item.nip }}
+                                            </v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                    <v-divider/>
+                                    <v-list-item>
+                                        <v-list-item-icon>
+                                            <v-icon>mdi-gender-{{ item.jenis_kelamin == 'l' ? 'male' : 'female' }}</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-content>
+                                            <v-list-item-subtitle>
+                                                Jenis Kelamin
                                             </v-list-item-subtitle>
-                                            <v-list-item-title class="text-h6">
-                                                {{ item.jenjang }}
+                                            <v-list-item-title class="">
+                                                <template v-if="item.jenis_kelamin == 'l'">
+                                                    Laki-laki
+                                                </template>
+                                                <template v-else-if="item.jenis_kelamin == 'p'">
+                                                    Perempuan
+                                                </template>
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -128,10 +144,10 @@
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Tanggal Berdiri
+                                                Tempat Tanggal Lahir
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.tgl_berdiri | date }}
+                                                {{  item.tanggal_lahir ? `${item.tanggal_lahir},` : null }} {{ item.tanggal_lahir | date }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -150,43 +166,18 @@
                                     </v-list-item>
                                     <v-list-item>
                                         <v-list-item-icon>
-                                            <v-icon>mdi-tag</v-icon>
+                                            <v-icon>mdi-phone</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                NPSN
+                                                Telepon
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.npsn }}
+                                                {{ item.telepon }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item link>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-bookmark</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-title class="">
-                                                Visi Misi
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-chevron-right</v-icon>
-                                        </v-list-item-icon>
-                                    </v-list-item>
-                                    <v-list-item link>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-family-tree</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-title class="">
-                                                Struktur Organisasi
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-chevron-right</v-icon>
-                                        </v-list-item-icon>
-                                    </v-list-item>
+                                    <v-divider inset/>
                                     <v-list-item>
                                         <v-list-item-icon>
                                             <v-icon>mdi-calendar</v-icon>
@@ -205,11 +196,10 @@
                         </div>
                         <div>
                             <div class="sticky-top" style="z-index: 1;">
-                                <v-toolbar class="shadow-sm" rounded="xl">
+                                <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
-                                        <v-tab :to="{name: 'sekolah.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'sekolah.show.berita'}">Berita</v-tab>
-                                        <v-tab>Laporan</v-tab>
+                                        <v-tab :to="{name: 'guru.show'}" exact>Informasi</v-tab>
+                                        <v-tab :to="{name: 'guru.show'}" exact>Kelas</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -241,14 +231,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Sekolah',
+                    text: 'Guru',
                     disabled: false,
-                    to: {name: 'sekolah'},
+                    to: {name: 'guru'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'Info Sekolah',
+                    text: 'Info Guru',
                     disabled: true,
                 },
             ]
@@ -256,32 +246,32 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.sekolah.items,
+            items: state => state.guru.items,
         }),
         ...mapGetters({
-            session: 'sekolah/getSession',
+            session: 'guru/getSession',
         }),
         id(){
-            return this.$route.params.id_profil
+            return this.$route.params.id_guru
         }
     },
     watch: {
         session(){
-            this.loadItems()
+            this.loadItem()
         }
     },
     methods: {
         ...mapMutations({  }),
         ...mapActions({
-            showUbahDialog: 'sekolah/setModalUbah',
-            showHapusDialog: 'sekolah/setModalHapus',
-            getItem: 'sekolah/show',
+            showUbahDialog: 'guru/setModalUbah',
+            showHapusDialog: 'guru/setModalHapus',
+            getItem: 'guru/show',
         }),
         openModalTambah(){},
-        ubahInfoSekolah(id){
+        ubahInfoGuru(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSekolah(id){
+        hapusInfoGuru(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItem(){
@@ -289,7 +279,7 @@ export default {
             this.exists = false
 
             let res = await this.getItem({id: this.id}).catch(e => {
-                console.log("loadItem@SekolahIndex.vue", e);
+                console.log("loadItem@GuruIndex.vue", e);
             });
             this.loading = false
 

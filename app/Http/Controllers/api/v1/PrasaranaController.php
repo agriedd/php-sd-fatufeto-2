@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestPrasaranaStore;
 use App\Http\Resources\PrasaranaCollection;
 use App\Prasarana;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PrasaranaController extends Controller{
 
@@ -23,8 +25,11 @@ class PrasaranaController extends Controller{
         return PrasaranaCollection::collection($data);
     }
 
-    public function store(Request $request){
-        
+    public function store(RequestPrasaranaStore $request){
+        $data = collect($request->validated());
+        $guru = Prasarana::create($data->all());
+        $collection = new PrasaranaCollection($guru);
+        return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

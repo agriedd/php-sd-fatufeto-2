@@ -5,7 +5,7 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Ubah Data Prasarana > {{ item.nama }}
+                            Form Ubah Data Sarana > {{ item.nama }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
@@ -14,10 +14,10 @@
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog && exists">
-                        <form-tambah-prasarana v-model="item" :errors="errors"/>
+                        <form-tambah-sarana v-model="item" :errors="errors"/>
                     </v-card-text>
                     <v-card-text v-else-if="dialog && loading">
-                        <form-tambah-prasarana-placeholder/>
+                        <form-tambah-sarana-placeholder/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -36,10 +36,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahPrasarana from '../prasarana/form/FormTambahPrasarana.vue'
-import FormTambahPrasaranaPlaceholder from '../prasarana/form/FormTambahPrasaranaPlaceholder.vue'
+import FormTambahSarana from './form/FormTambahSarana.vue'
+import FormTambahSaranaPlaceholder from './form/FormTambahSaranaPlaceholder.vue'
 export default {
-    components: { FormTambahPrasarana, FormTambahPrasaranaPlaceholder },
+    components: { FormTambahSarana, FormTambahSaranaPlaceholder },
     data(){
         return {
             loading: false,
@@ -51,8 +51,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.prasarana.modal.ubah,
-            id: state => state.prasarana.selected.id
+            value_dialog: state => state.sarana.modal.ubah,
+            id: state => state.sarana.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -61,17 +61,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'prasarana/setModalUbah',
-            updatePrasarana: 'prasarana/update',
-            findPrasarana: 'prasarana/show',
-            updateSession: 'prasarana/updateSession',
+            setDialog: 'sarana/setModalUbah',
+            updateSarana: 'sarana/update',
+            findSarana: 'sarana/show',
+            updateSession: 'sarana/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.updatePrasarana({ data, id: this.id }).catch(e => {
-                console.log("updatePrasarana@PrasaranaUbah.vue", e)
+            let res = await this.updateSarana({ data, id: this.id }).catch(e => {
+                console.log("updateSarana@SaranaUbah.vue", e)
                 e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message
@@ -86,8 +86,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findPrasarana({ id: this.id }).catch(e => {
-                console.log("loadItem@PrasaranaUbah.vue", e);
+            let res = await this.findSarana({ id: this.id }).catch(e => {
+                console.log("loadItem@SaranaUbah.vue", e);
                 this.notif({
                     message: e.message
                 })

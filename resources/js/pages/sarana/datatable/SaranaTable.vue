@@ -21,6 +21,9 @@
                 {{ item.prasarana.sekolah.nama_sekolah }}
             </div>
         </template>
+        <template #item.jumlah="{item}">
+            {{ item.jumlah | number }}
+        </template>
         <template #item.action="{item}">
 			<div>
 				<v-slide-x-transition mode="out-in">

@@ -27,6 +27,9 @@ Vue.mixin({
         date(val, local = 'id-ID'){
             let date = new Date(val);
             return new Intl.DateTimeFormat(local, { year: 'numeric', month: 'long', day: 'numeric' }).format(date)
+        },
+        number(val, local = 'id-ID'){
+            return new Intl.NumberFormat(local, {}).format(val)
         }
     },
     methods: {

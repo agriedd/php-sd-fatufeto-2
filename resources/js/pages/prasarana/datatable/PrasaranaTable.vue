@@ -16,6 +16,9 @@
         <template #item.id_sekolah="{item}">
             {{ item.sekolah.nama_sekolah }}
         </template>
+        <template #item.jumlah="{item}">
+            {{ item.jumlah | number }}
+        </template>
         <template #item.action="{item}">
 			<div>
 				<v-slide-x-transition mode="out-in">

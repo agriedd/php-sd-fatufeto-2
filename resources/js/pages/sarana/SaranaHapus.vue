@@ -5,11 +5,11 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Konfirmasi Hapus data Prasarana > {{ item.nama }}
+                            Konfirmasi Hapus data Sarana > {{ item.nama }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="error lighten-5">
-                            <v-icon color="error">mdi-school</v-icon>
+                            <v-icon color="error">mdi-package-variant</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
@@ -47,8 +47,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.prasarana.modal.hapus,
-            id: state => state.prasarana.selected.id
+            value_dialog: state => state.sarana.modal.hapus,
+            id: state => state.sarana.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -57,17 +57,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'prasarana/setModalHapus',
-            deletePrasarana: 'prasarana/destroy',
-            findPrasarana: 'prasarana/show',
-            updateSession: 'prasarana/updateSession',
+            setDialog: 'sarana/setModalHapus',
+            deleteSarana: 'sarana/destroy',
+            findSarana: 'sarana/show',
+            updateSession: 'sarana/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.deletePrasarana({ data, id: this.id }).catch(e => {
-                console.log("deletePrasarana@PrasaranaTambah.vue", e);
+            let res = await this.deleteSarana({ data, id: this.id }).catch(e => {
+                console.log("deleteSarana@SaranaTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 this.notif({
@@ -83,8 +83,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findPrasarana({ id: this.id }).catch(e => {
-                console.log("loadItem@PrasaranaTambah.vue", e);
+            let res = await this.findSarana({ id: this.id }).catch(e => {
+                console.log("loadItem@SaranaTambah.vue", e);
                 this.notif({
                     message: e.message
                 })

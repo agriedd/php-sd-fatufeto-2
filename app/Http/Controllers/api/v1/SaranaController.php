@@ -44,14 +44,8 @@ class SaranaController extends Controller{
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Sarana  $sarana
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Sarana $sarana)
-    {
-        //
+    public function destroy(Sarana $sarana){
+        $result = $sarana->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

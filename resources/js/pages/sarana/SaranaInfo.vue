@@ -113,7 +113,7 @@
                                         </v-list-item-content>
                                     </v-list-item>
                                     <v-divider inset/>
-                                    <v-list-item three-line>
+                                    <v-list-item>
                                         <v-list-item-icon>
                                             <v-icon>mdi-tag</v-icon>
                                         </v-list-item-icon>
@@ -134,7 +134,7 @@
                                                 Jumlah
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.jumlah }}
+                                                {{ item.jumlah | number }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -176,7 +176,6 @@
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
                                         <v-tab :to="{name: 'sarana.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'sarana.show'}" exact>Kelas</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>

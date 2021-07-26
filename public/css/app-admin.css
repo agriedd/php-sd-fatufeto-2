@@ -454,6 +454,60 @@ tbody tr:nth-of-type(odd) {
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 }
 
+.d-grid-prasarana {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-auto-rows: minmax(250px, 1fr);
+}
+
+.d-grid-prasarana.mini {
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  grid-auto-rows: minmax(125px, 1fr);
+}
+
+.d-grid-prasarana > .rowspan-1 {
+  grid-row-end: span 1;
+}
+
+.d-grid-prasarana > .rowspan-2 {
+  grid-row-end: span 2;
+}
+
+.d-grid-prasarana > .rowspan-3 {
+  grid-row-end: span 3;
+}
+
+.d-grid-prasarana > .rowspan-4 {
+  grid-row-end: span 4;
+}
+
+.d-grid-prasarana > .rowspan-5 {
+  grid-row-end: span 5;
+}
+
+.d-grid-prasarana > .rowspan-6 {
+  grid-row-end: span 6;
+}
+
+.d-grid-prasarana > .rowspan-7 {
+  grid-row-end: span 7;
+}
+
+.d-grid-prasarana > .rowspan-8 {
+  grid-row-end: span 8;
+}
+
+.d-grid-prasarana > .rowspan-9 {
+  grid-row-end: span 9;
+}
+
+.d-grid-prasarana-info {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
 .sticky-top {
   position: sticky !important;
   top: 1rem;

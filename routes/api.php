@@ -31,4 +31,5 @@ Route::prefix('v1')->group(function(){
     Route::resource('sekolah', 'api\v1\SekolahController');
     Route::resource('guru', 'api\v1\GuruController');
     Route::resource('prasarana', 'api\v1\PrasaranaController');
+    Route::resource('sarana', 'api\v1\SaranaController');
 });

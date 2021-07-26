@@ -13,8 +13,13 @@
         single-select
         v-model="selected"
         :mobile-breakpoint="0">
-        <template #item.id_sekolah="{item}">
-            {{ item.sekolah.nama_sekolah }}
+        <template #item.id_prasarana="{item}">
+            <div>
+                {{ item.prasarana.nama }}
+            </div>
+            <div class="text--disabled">
+                {{ item.prasarana.sekolah.nama_sekolah }}
+            </div>
         </template>
         <template #item.action="{item}">
 			<div>

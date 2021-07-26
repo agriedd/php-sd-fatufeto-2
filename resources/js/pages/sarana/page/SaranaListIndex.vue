@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoPrasarana"
-                @editRow="ubahInfoPrasarana"
-                @deleteRow="hapusInfoPrasarana"
+                @rowClick="toInfoSarana"
+                @editRow="ubahInfoSarana"
+                @deleteRow="hapusInfoSarana"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -49,14 +49,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Prasarana',
+                    text: 'Sarana',
                     disabled: false,
-                    to: {name: 'prasarana'},
+                    to: {name: 'sarana'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Prasarana',
+                    text: 'List Sarana',
                     disabled: true,
                 },
             ],
@@ -64,9 +64,9 @@ export default {
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Sekolah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_sekolah' },
+                { text: 'Prasarana', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_prasarana' },
                 { text: 'Jumlah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jumlah' },
-                { text: 'Spesifikasi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'spesifikasi' },
+                { text: 'Kondisi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'kondisi' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
@@ -95,10 +95,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'prasarana/get',
+            getItems: 'sarana/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'prasarana/setModalUbah',
-            showHapusDialog: 'prasarana/setModalHapus',
+            showUbahDialog: 'sarana/setModalUbah',
+            showHapusDialog: 'sarana/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -131,14 +131,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoPrasarana({id_prasarana: id}){
+        ubahInfoSarana({id_sarana: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoPrasarana({id_prasarana: id}){
+        hapusInfoSarana({id_sarana: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoPrasarana({id_prasarana}){
-            this.$router.push({ name: 'prasarana.show', params: { id_prasarana } })
+        toInfoSarana({id_sarana}){
+            this.$router.push({ name: 'sarana.show', params: { id_sarana } })
         },
     },
     watch: {

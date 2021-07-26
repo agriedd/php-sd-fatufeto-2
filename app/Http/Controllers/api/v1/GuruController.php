@@ -45,14 +45,8 @@ class GuruController extends Controller{
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Guru $guru){
+        $result = $guru->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

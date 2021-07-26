@@ -5,7 +5,7 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Konfirmasi Hapus Profil Sekolah > {{ item.nama_sekolah }}
+                            Konfirmasi Hapus data Guru > {{ item.nama }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="error lighten-5">
@@ -47,8 +47,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.sekolah.modal.hapus,
-            id: state => state.sekolah.selected.id
+            value_dialog: state => state.guru.modal.hapus,
+            id: state => state.guru.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -57,17 +57,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'sekolah/setModalHapus',
-            deleteSekolah: 'sekolah/destroy',
-            findSekolah: 'sekolah/show',
-            updateSession: 'sekolah/updateSession',
+            setDialog: 'guru/setModalHapus',
+            deleteGuru: 'guru/destroy',
+            findGuru: 'guru/show',
+            updateSession: 'guru/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.deleteSekolah({ data, id: this.id }).catch(e => {
-                console.log("deleteSekolah@SekolahTambah.vue", e);
+            let res = await this.deleteGuru({ data, id: this.id }).catch(e => {
+                console.log("deleteGuru@GuruTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 this.notif({
@@ -83,8 +83,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findSekolah({ id: this.id }).catch(e => {
-                console.log("loadItem@SekolahTambah.vue", e);
+            let res = await this.findGuru({ id: this.id }).catch(e => {
+                console.log("loadItem@GuruTambah.vue", e);
                 this.notif({
                     message: e.message
                 })

@@ -17,6 +17,10 @@ export default {
 	getters: {
 	},
 	actions: {
+		getText(context, payload){
+			let text = context.state.items.find(e => e.value == payload) || "-"
+			return text
+		}
 	},
 	mutations: {
 	},

@@ -353,6 +353,11 @@ tbody tr:nth-of-type(odd) {
   grid-auto-rows: minmax(250px, 1fr);
 }
 
+.d-grid-sekolah.mini {
+  grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+  grid-auto-rows: minmax(125px, 1fr);
+}
+
 .d-grid-sekolah > .rowspan-1 {
   grid-row-end: span 1;
 }

@@ -3,11 +3,11 @@
         <v-text-field
             dense
             outlined
-            v-model="item.nama_guru"
-            name="nama_guru"
+            v-model="item.nama"
+            name="nama"
             label="Nama Guru"
-            :error-messages="errors.nama_guru"
-            @keyup="errors.nama_guru = null"/>
+            :error-messages="errors.nama"
+            @keyup="errors.nama = null"/>
         <v-text-field
             dense
             outlined

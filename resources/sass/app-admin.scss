@@ -326,6 +326,10 @@ tbody tr:nth-of-type(odd) {
     gap: 1rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-auto-rows: minmax(250px, 1fr);
+    &.mini{
+      grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
+      grid-auto-rows: minmax(125px, 1fr);
+    }
     @for $i from 1 to 10 {
       & > .rowspan-#{$i}{
         grid-row-end: span #{$i};

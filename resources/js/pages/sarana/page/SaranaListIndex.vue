@@ -7,7 +7,7 @@
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <prasarana-table
+            <sarana-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -27,7 +27,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import PrasaranaTable from '../datatable/PrasaranaTable.vue'
+import SaranaTable from '../datatable/SaranaTable.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +36,7 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        PrasaranaTable
+        SaranaTable
     },
     data(){
         return {

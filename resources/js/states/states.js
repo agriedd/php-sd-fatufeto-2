@@ -4,6 +4,7 @@ import jenis_kelamin from "./v1/jenis_kelamin"
 import login from "./v1/login"
 import notifikasi from "./v1/notifikasi"
 import prasarana from "./v1/prasarana"
+import sarana from "./v1/sarana"
 import sekolah from "./v1/sekolah"
 
 export const states = {
@@ -14,5 +15,6 @@ export const states = {
     guru,
     jenis_kelamin,
     prasarana,
+    sarana,
 }
 export default states

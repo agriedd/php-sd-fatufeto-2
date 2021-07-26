@@ -132,6 +132,15 @@
 					<v-list-item-subtitle v-text="'Kelola data Prasarana'" />
 				</v-list-item-content>
 			</v-list-item>
+			<v-list-item dense link color="primary" :to="{ name: 'sarana' }" exact>
+				<v-list-item-icon>
+					<v-icon>mdi-package-variant</v-icon>
+				</v-list-item-icon>
+				<v-list-item-content>
+					<v-list-item-title v-text="'Sarana'" />
+					<v-list-item-subtitle v-text="'Kelola data Sarana'" />
+				</v-list-item-content>
+			</v-list-item>
 		</v-list>
 		<v-subheader v-text="'Pimpinan dan Laporan'" inset/>
 		<v-list dense flat nav>

@@ -52,7 +52,7 @@
                                                 <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
                                                     <template #activator="{ attrs, on }">
                                                         <v-btn icon v-on="on" v-bind="attrs" @click.prevent="">
-                                                            <v-icon>mdi-dots-vertical</v-icon>
+                                                            <v-icon>mdi-dots-grid</v-icon>
                                                         </v-btn>
                                                     </template>
                                                     <v-list nav>

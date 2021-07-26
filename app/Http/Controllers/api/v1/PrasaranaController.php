@@ -31,9 +31,9 @@ class PrasaranaController extends Controller{
 
     public function store(RequestPrasaranaStore $request){
         $data = collect($request->validated());
-        $guru = Prasarana::create($data->all());
-        $collection = new PrasaranaCollection($guru);
-        return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
+        $prasarana = Prasarana::create($data->all());
+        $collection = new PrasaranaCollection($prasarana);
+        return new Response($collection, $prasarana ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     public function show(Prasarana $prasarana){

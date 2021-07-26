@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestSaranaStore;
+use App\Http\Requests\RequestSaranaUpdate;
 use App\Http\Resources\SaranaCollection;
 use App\Sarana;
 use Illuminate\Http\Request;
@@ -27,32 +28,20 @@ class SaranaController extends Controller{
 
     public function store(RequestSaranaStore $request){
         $data = collect($request->validated());
-        $guru = Sarana::create($data->all());
-        $collection = new SaranaCollection($guru);
-        return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
+        $sarana = Sarana::create($data->all());
+        $collection = new SaranaCollection($sarana);
+        return new Response($collection, $sarana ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Sarana  $sarana
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Sarana $sarana)
-    {
-        //
+    public function show(Sarana $sarana){
+        return new SaranaCollection($sarana);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sarana  $sarana
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Sarana $sarana)
-    {
-        //
+    public function update(RequestSaranaUpdate $request, Sarana $sarana){
+        $data = collect($request->validated());
+        $result = $sarana->update($data->all());
+        $collection = new SaranaCollection($sarana);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

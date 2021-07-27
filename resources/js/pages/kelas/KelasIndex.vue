@@ -3,7 +3,7 @@
         <v-app-bar app flat absolute class="white">
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Sarana
+                Kelas
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
@@ -22,7 +22,7 @@
                 <div v-else style="position: relative">
                     <v-expand-transition>
                         <div class="d-grid-sekolah" v-if="show">
-                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'sarana.list' }">
+                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'kelas.list' }">
                                 <v-card-text>
                                     <div class="d-flex w-100">
                                         <v-avatar color="indigo lighten-4">
@@ -35,7 +35,7 @@
                                     {{ total }}
                                 </v-card-text>
                                 <v-card-text class="text-right pt-0">
-                                    Total Sarana
+                                    Total Kelas
                                 </v-card-text>
                             </v-card>
                             <div class="d-lg-block d-none">
@@ -45,7 +45,7 @@
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_sarana" :to="{ name: 'sarana.show', params: { id_sarana: item.id_sarana } }">
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_sarana" :to="{ name: 'kelas.show', params: { id_sarana: item.id_sarana } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
@@ -57,7 +57,7 @@
                                                     </template>
                                                     <v-list nav>
                                                         <v-subheader v-text="'Aksi'"/>
-                                                        <v-list-item dense link :to="{ name: 'sarana.show', params: { sarana: item.sarana }}">
+                                                        <v-list-item dense link :to="{ name: 'kelas.show', params: { kelas: item.kelas }}">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-package-variant</v-icon>
                                                             </v-list-item-icon>
@@ -67,7 +67,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="ubahInfoSarana(item.sarana)">
+                                                        <v-list-item dense link @click="ubahInfoKelas(item.kelas)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-pencil</v-icon>
                                                             </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="hapusInfoSarana(item.sarana)">
+                                                        <v-list-item dense link @click="hapusInfoKelas(item.kelas)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-delete</v-icon>
                                                             </v-list-item-icon>
@@ -129,7 +129,7 @@
                                                     </v-avatar>
                                                     <div class="grow-1 pl-4">
                                                         <v-subheader>
-                                                            Tambah Sarana
+                                                            Tambah Kelas
                                                         </v-subheader>
                                                     </div>
                                                 </div>
@@ -169,7 +169,7 @@ export default {
     computed: {
         ...mapState({}),
         ...mapGetters({
-            session: 'sarana/getSession',
+            session: 'kelas/getSession',
         }),
         exists(){
             return this.total > 0
@@ -177,7 +177,7 @@ export default {
     },
     watch: {
         '$route.name': function(val){
-            if(val == 'sarana'){
+            if(val == 'kelas'){
                 this.show = true
             }
         },
@@ -187,21 +187,21 @@ export default {
     },
     methods: {
         ...mapMutations({
-            showTambahDialog: 'sarana/SET_MODAL_TAMBAH',
+            showTambahDialog: 'kelas/SET_MODAL_TAMBAH',
         }),
         ...mapActions({
-            showUbahDialog: 'sarana/setModalUbah',
-            showHapusDialog: 'sarana/setModalHapus',
-            getItems: 'sarana/get',
-            updateSession: 'sarana/updateSession'
+            showUbahDialog: 'kelas/setModalUbah',
+            showHapusDialog: 'kelas/setModalHapus',
+            getItems: 'kelas/get',
+            updateSession: 'kelas/updateSession'
         }),
         openModalTambah(){
             this.showTambahDialog(true)
         },
-        ubahInfoSarana(id){
+        ubahInfoKelas(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSarana(id){
+        hapusInfoKelas(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItems(){
@@ -211,7 +211,7 @@ export default {
                 sortBy: ['created_at'],
                 sortDesc: [true],
             }).catch(e => {
-                console.log("loadItem@SaranaIndex.vue", e);
+                console.log("loadItem@KelasIndex.vue", e);
             });
             this.loading = false
             if(res?.data?.data){

@@ -1,6 +1,6 @@
 import Index from '../pages/Index.vue'
-import kelas from '../states/v1/kelas'
 import guru from './admin/guru'
+import kelas from './admin/kelas'
 import jadwal from './admin/jadwal'
 import prasarana from './admin/prasarana'
 import sarana from './admin/sarana'

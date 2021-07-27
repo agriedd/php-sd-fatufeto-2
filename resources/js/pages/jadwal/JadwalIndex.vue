@@ -103,10 +103,10 @@
                                             </div>
                                         </v-card-text>
                                         <v-card-text>
-                                            {{ item.nama }}
+                                            {{ item.mata_pelajaran }}
                                             <div class="text-truncate">
                                                 <small>
-                                                    {{ item.nip }}
+                                                    {{ item.prasarana.nama }}
                                                 </small>
                                             </div>
                                         </v-card-text>
@@ -147,6 +147,19 @@
                     </v-fab-transition>
                 </div>
             </v-container>
+            <v-container>
+                <v-card flat rounded="xl" color="blue lighten-5" class="mb-6">
+                    <v-card-text class="content-middle">
+                        <div class="mb-3">
+                            <v-icon color="blue lighten-3" x-large>mdi-information</v-icon>
+                        </div>
+                        <div>
+                            Silahkan memilih Kelas di bawah terlebih dahulu 
+                        </div>
+                    </v-card-text>
+                </v-card>
+                <input-pilih-prasarana-jadwal-grid/>
+            </v-container>
             <div class="grey lighten-5">
                 <v-container>
                     <router-view no-select :data-session="session"/>
@@ -157,7 +170,9 @@
 </template>
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
+import InputPilihPrasaranaJadwalGrid from './form/InputPilihPrasaranaJadwalGrid.vue'
 export default {
+  components: { InputPilihPrasaranaJadwalGrid },
     data(){
         return {
             loading: false,
@@ -222,6 +237,11 @@ export default {
     },
     created(){
         this.loadItems()
+    },
+    mounted(){
+        setTimeout(()=>{
+            this.show = false
+        }, 3000)
     }
 }
 </script>

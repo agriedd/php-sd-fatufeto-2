@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoSarana"
-                @editRow="ubahInfoSarana"
-                @deleteRow="hapusInfoSarana"
+                @rowClick="toInfoKelas"
+                @editRow="ubahInfoKelas"
+                @deleteRow="hapusInfoKelas"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -49,14 +49,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Sarana',
+                    text: 'Kelas',
                     disabled: false,
-                    to: {name: 'sarana'},
+                    to: {name: 'kelas'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Sarana',
+                    text: 'List Kelas',
                     disabled: true,
                 },
             ],
@@ -95,10 +95,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'sarana/get',
+            getItems: 'kelas/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'sarana/setModalUbah',
-            showHapusDialog: 'sarana/setModalHapus',
+            showUbahDialog: 'kelas/setModalUbah',
+            showHapusDialog: 'kelas/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -131,14 +131,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoSarana({id_sarana: id}){
+        ubahInfoKelas({id_sarana: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSarana({id_sarana: id}){
+        hapusInfoKelas({id_sarana: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoSarana({id_sarana}){
-            this.$router.push({ name: 'sarana.show', params: { id_sarana } })
+        toInfoKelas({id_sarana}){
+            this.$router.push({ name: 'kelas.show', params: { id_sarana } })
         },
     },
     watch: {

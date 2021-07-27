@@ -32,4 +32,5 @@ Route::prefix('v1')->group(function(){
     Route::resource('guru', 'api\v1\GuruController');
     Route::resource('prasarana', 'api\v1\PrasaranaController');
     Route::resource('sarana', 'api\v1\SaranaController');
+    Route::resource('jadwal', 'api\v1\JadwalController');
 });

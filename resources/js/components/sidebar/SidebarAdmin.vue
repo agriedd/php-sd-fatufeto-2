@@ -28,7 +28,7 @@
 						<v-list-item-subtitle v-text="'Halaman awal panel admin'" />
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+				<v-list-item dense link color="primary" :to="{ name: 'jadwal' }" exact>
 					<v-list-item-icon>
 						<v-icon>mdi-calendar</v-icon>
 					</v-list-item-icon>

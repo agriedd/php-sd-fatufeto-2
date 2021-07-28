@@ -5,34 +5,24 @@
             outlined
             v-model="item.nama"
             name="nama"
-            label="Nama Sarana"
+            label="Nama Kelas"
             :error-messages="errors.nama"
             @keyup="errors.nama = null"/>
-        <input-pilih-prasarana-sarana v-model="item.id_prasarana" :errors="errors"/>
         <v-text-field
             dense
             outlined
-            v-model="item.kondisi"
-            name="kondisi"
-            label="Kondisi"
-            :error-messages="errors.kondisi"
-            @keyup="errors.kondisi = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.jumlah"
-            name="jumlah"
-            label="Jumlah"
-            type="number"
-            min="0"
-            :error-messages="errors.jumlah"
-            @keyup="errors.jumlah = null"/>
+            v-model="item.keterangan"
+            name="keterangan"
+            label="Keterangan"
+            :error-messages="errors.keterangan"
+            @keyup="errors.keterangan = null"/>
+        <input-pilih-wali-kelas v-model="item.id_guru" :errors="errors"/>
     </div>
 </template>
 <script>
-import InputPilihPrasaranaSarana from './InputPilihPrasaranaSarana.vue';
+import InputPilihWaliKelas from './InputPilihWaliKelas.vue';
 export default {
-    components: { InputPilihPrasaranaSarana },
+    components: { InputPilihWaliKelas },
     props: {
         errors: Object,
         value: {
@@ -40,7 +30,6 @@ export default {
             default: ()=>{
                 return {
                     nama: null,
-                    id_prasarana: null,
                 }
             }
         }

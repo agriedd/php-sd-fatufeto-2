@@ -1,12 +1,12 @@
 <template>
     <v-autocomplete
-        v-model="album"
+        v-model="guru"
         :name="name"
         :items="items"
         :loading="loading"
         :search-input.sync="search"
         :item-text="itemText"
-        item-value="id_prasarana"
+        item-value="id_guru"
         :label="label"
         required
 		dense
@@ -22,18 +22,18 @@ export default {
     props: {
         value: String|Number,
         errors: { required: true },
-        label: { default: "Pilih Prasarana" },
+        label: { default: "Pilih Wali Kelas" },
         itemText: { default: 'nama' },
-        name: { default: 'id_prasarana' },
+        name: { default: 'id_guru' },
     },
     computed: {
-        album: {
+        guru: {
             get(){ return this.value },
             set(val){ 
                 this.$emit('input', val)
             },
         },
-        data_prasarana(){
+        data_guru(){
             const r = RegExp(this.search)
             return this.items.filter(it => r.test(it.nama) )
         },
@@ -42,7 +42,7 @@ export default {
             set(value, old){
                 this.query = value
                 if(!value) return
-                if(this.data_prasarana.length > 0) return
+                if(this.data_guru.length > 0) return
                 if(this.loading) return
                 this.loadItems()
             }
@@ -58,7 +58,7 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItem: 'prasarana/get',
+            getItem: 'guru/get',
         }),
         async loadItems(){
             this.loading = true

@@ -31,15 +31,8 @@ class KelasController extends Controller{
         return new Response($collection, $kelas ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Kelas  $kelas
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Kelas $kelas)
-    {
-        //
+    public function show(Kelas $kela){
+        return new KelasCollection($kela);
     }
 
     /**

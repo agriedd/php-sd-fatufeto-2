@@ -3,18 +3,18 @@
         <router-view/>
         <kelas-tambah/>
         <kelas-ubah/>
-        <!-- <sarana-tambah/>
-        <sarana-ubah/>
-        <sarana-hapus/> -->
+        <kelas-hapus/>
     </div>
 </template>
 <script>
+import KelasHapus from './KelasHapus.vue'
 import KelasTambah from './KelasTambah.vue'
 import KelasUbah from './KelasUbah.vue'
 export default {
     components: {
         KelasTambah,
-        KelasUbah
+        KelasUbah,
+        KelasHapus
         
     },
 }

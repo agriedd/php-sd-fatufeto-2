@@ -15,6 +15,7 @@
         persistent-hint
         :error-messages="errors[name]"
         @change="errors[name] = []"/>
+    
 </template>
 <script>
 import { mapState, mapGetters, mapActions, mapMutations } from 'vuex'

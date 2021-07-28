@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestKelasStore;
 use App\Http\Resources\KelasCollection;
 use App\Kelas;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class KelasController extends Controller{
     public function index(){
@@ -22,15 +24,11 @@ class KelasController extends Controller{
         return KelasCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestKelasStore $request){
+        $data = collect($request->validated());
+        $kelas = Kelas::create($data->all());
+        $collection = new KelasCollection($kelas);
+        return new Response($collection, $kelas ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

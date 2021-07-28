@@ -42,15 +42,8 @@ class KelasController extends Controller{
         $collection = new KelasCollection($kela);
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Kelas  $kelas
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Kelas $kelas)
-    {
-        //
+    public function destroy(Kelas $kela){
+        $result = $kela->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

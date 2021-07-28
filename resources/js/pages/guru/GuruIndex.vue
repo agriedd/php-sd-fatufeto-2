@@ -111,6 +111,7 @@
                                             </div>
                                         </v-card-text>
                                     </v-card>
+                                    <div v-for="i in (2 - total)" :key="`placeholder${i}`"></div>
                                 </div>
                             </div>
                             <v-card color="pink lighten-5 overflow-hidden" rounded="xl" flat link @click="openModalTambah">

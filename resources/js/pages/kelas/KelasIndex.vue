@@ -111,6 +111,7 @@
                                             </div>
                                         </v-card-text>
                                     </v-card>
+                                    <div v-for="i in (2 - total)" :key="`placeholder${i}`"></div>
                                     <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="updateSession()">
                                         <div class="content-middle">
                                             <v-icon>mdi-refresh</v-icon>

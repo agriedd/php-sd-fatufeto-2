@@ -3,13 +3,13 @@
         <v-app-bar app flat floating absolute>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Info Sarana
+                Info Kelas
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
             <v-container>
                 <div v-if="loading">
-                    <div class="d-grid-sarana-info">
+                    <div class="d-grid-kelas-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" flat rounded="xl" class="mb-3">
                                 <v-card-text>
@@ -29,24 +29,24 @@
                 <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
-                            Info Sarana Tidak Ditemukan
+                            Info Kelas Tidak Ditemukan
                         </span>
                     </v-alert>
-                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'sarana' }">
+                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'kelas' }">
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-2">
                                 <v-icon>mdi-package-variant</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    Kembali ke daftar sarana
+                                    Kembali ke daftar kelas
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
                 </div>
                 <div v-else>
-                    <div class="d-grid-sarana-info">
+                    <div class="d-grid-kelas-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat class="mb-3">
                                 <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
@@ -67,7 +67,7 @@
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoSarana(item.id_prasarana)">
+                                                    <v-list-item dense link @click="ubahInfoKelas(item.id_prasarana)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoSarana(item.id_prasarana)">
+                                                    <v-list-item dense link @click="hapusInfoKelas(item.id_prasarana)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,7 +105,7 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Sarana
+                                                Nama Kelas
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
                                                 {{ item.nama }}
@@ -115,39 +115,40 @@
                                     <v-divider inset/>
                                     <v-list-item>
                                         <v-list-item-icon>
-                                            <v-icon>mdi-tag</v-icon>
+                                            <v-icon>mdi-informatuib</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Kondisi
+                                                Keterangan
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.kondisi }}
+                                                {{ item.keterangan }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
                                     <v-list-item>
                                         <v-list-item-icon>
+                                            <v-icon>mdi-account-group</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Jumlah
+                                                Jumlah Siswa
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.jumlah | number }}
+                                                {{ (item.jumlah || 0) | number }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item link :to="{ name: 'prasarana.show', params: { id_prasarana: item.id_prasarana } }">
+                                    <v-list-item link :to="{ name: 'guru.show', params: { id_guru: item.id_guru } }">
                                         <v-list-item-icon>
-                                            <v-icon>mdi-package-variant</v-icon>
+                                            <v-icon>mdi-account-tie</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Prasarana
+                                                Wali Kelas
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.prasarana.nama }}
+                                                {{ item.guru.nama }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                         <v-list-item-action>
@@ -175,7 +176,7 @@
                             <div class="sticky-top" style="z-index: 1;">
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
-                                        <v-tab :to="{name: 'sarana.show'}" exact>Informasi</v-tab>
+                                        <v-tab :to="{name: 'kelas.show'}" exact>Informasi</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -207,14 +208,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Sarana',
+                    text: 'Kelas',
                     disabled: false,
-                    to: {name: 'sarana'},
+                    to: {name: 'kelas'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'Info Sarana',
+                    text: 'Info Kelas',
                     disabled: true,
                 },
             ]
@@ -222,13 +223,13 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.sarana.items,
+            items: state => state.kelas.items,
         }),
         ...mapGetters({
-            session: 'sarana/getSession',
+            session: 'kelas/getSession',
         }),
         id(){
-            return this.$route.params.id_sarana
+            return this.$route.params.id_kelas
         }
     },
     watch: {
@@ -239,15 +240,15 @@ export default {
     methods: {
         ...mapMutations({  }),
         ...mapActions({
-            showUbahDialog: 'sarana/setModalUbah',
-            showHapusDialog: 'sarana/setModalHapus',
-            getItem: 'sarana/show',
+            showUbahDialog: 'kelas/setModalUbah',
+            showHapusDialog: 'kelas/setModalHapus',
+            getItem: 'kelas/show',
         }),
         openModalTambah(){},
-        ubahInfoSarana(id){
+        ubahInfoKelas(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSarana(id){
+        hapusInfoKelas(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItem(){
@@ -255,7 +256,7 @@ export default {
             this.exists = false
 
             let res = await this.getItem({id: this.id}).catch(e => {
-                console.log("loadItem@SaranaIndex.vue", e);
+                console.log("loadItem@KelasIndex.vue", e);
             });
             this.loading = false
 

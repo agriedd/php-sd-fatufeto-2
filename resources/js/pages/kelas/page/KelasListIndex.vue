@@ -130,14 +130,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoKelas({id_sarana: id}){
+        ubahInfoKelas({id_kelas: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoKelas({id_sarana: id}){
+        hapusInfoKelas({id_kelas: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoKelas({id_sarana}){
-            this.$router.push({ name: 'kelas.show', params: { id_sarana } })
+        toInfoKelas({id_kelas}){
+            this.$router.push({ name: 'kelas.show', params: { id_kelas } })
         },
     },
     watch: {

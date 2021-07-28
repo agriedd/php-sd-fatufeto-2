@@ -2,6 +2,7 @@
     <div>
         <router-view/>
         <kelas-tambah/>
+        <kelas-ubah/>
         <!-- <sarana-tambah/>
         <sarana-ubah/>
         <sarana-hapus/> -->
@@ -9,9 +10,11 @@
 </template>
 <script>
 import KelasTambah from './KelasTambah.vue'
+import KelasUbah from './KelasUbah.vue'
 export default {
     components: {
-        KelasTambah
+        KelasTambah,
+        KelasUbah
         
     },
 }

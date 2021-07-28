@@ -5,10 +5,12 @@ import JadwalInfo from '../../pages/jadwal/JadwalInfo.vue'
 import JadwalInfoIndex from '../../pages/jadwal/tab/JadwalInfoIndex.vue'
 import JadwalTambah from '../../pages/jadwal/page/JadwalTambahIndex.vue'
 import JadwalList from '../../pages/jadwal/page/JadwalListIndex.vue'
+import JadwalKelasList from '../../pages/jadwal/page/JadwalListKelasIndex.vue'
 
 export const jadwal = [
     { path: '/admin/jadwal', component: JadwalBase, children: [
         { path: 'list', component: JadwalIndex, children: [
+            { path: ':id_kelas', component: JadwalList, name: 'jadwal.list.kelas' },
             { path: '/', component: JadwalList, name: 'jadwal.list' },
         ]},
         { path: 'tambah', component: JadwalIndex, children: [
@@ -18,7 +20,7 @@ export const jadwal = [
             { path: '/', component: JadwalInfoIndex, name: 'jadwal.show' },
         ] },
         { path: '/', component: JadwalIndex, children: [
-            { path: '/', component: JadwalList, name: 'jadwal' },
+            { path: '/', component: JadwalKelasList, name: 'jadwal' },
         ] },
     ] },
 ]

@@ -19,7 +19,7 @@
                         </v-card>
                     </div>
                 </div>
-                <div v-else style="position: relative">
+                <div v-else style="position: relative" :class="{ 'mb-5 pt-3': !show }">
                     <v-expand-transition>
                         <div class="d-grid-sekolah" v-if="show">
                             <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'jadwal.list' }">
@@ -111,7 +111,9 @@
                                             </div>
                                         </v-card-text>
                                     </v-card>
-                                    <div v-for="i in (2 - total)" :key="`placeholder${i}`"></div>
+                                    <div v-if="total < 2">
+                                        <div v-for="i in (2 - total)" :key="`placeholder${i}`"></div>
+                                    </div>
                                     <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="updateSession()">
                                         <div class="content-middle">
                                             <v-icon>mdi-refresh</v-icon>
@@ -142,26 +144,18 @@
                         </div>
                     </v-expand-transition>
                     <v-fab-transition>
+                        <v-btn fab class="elevation-0" bottom absolute left :key="show" @click="show = !show" v-if="!show" color="indigo lighten-5">
+                            {{ total }}
+                        </v-btn>
+                    </v-fab-transition>
+                    <v-fab-transition>
                         <v-btn fab class="shadow" bottom absolute right dark :key="show" @click="show = !show">
                             <v-icon>mdi-chevron-{{ show ? 'up' : 'down' }}</v-icon>
                         </v-btn>
                     </v-fab-transition>
                 </div>
             </v-container>
-            <v-container>
-                <v-card flat rounded="xl" color="blue lighten-5" class="mb-6">
-                    <v-card-text class="content-middle">
-                        <div class="mb-3">
-                            <v-icon color="blue lighten-3" x-large>mdi-information</v-icon>
-                        </div>
-                        <div>
-                            Silahkan memilih Kelas di bawah terlebih dahulu 
-                        </div>
-                    </v-card-text>
-                </v-card>
-                <input-pilih-prasarana-jadwal-grid/>
-            </v-container>
-            <div class="grey lighten-5">
+            <div :class="{'grey lighten-5' : $route.name != 'jadwal'}">
                 <v-container>
                     <router-view no-select :data-session="session"/>
                 </v-container>
@@ -171,9 +165,7 @@
 </template>
 <script>
 import { mapActions, mapGetters, mapMutations, mapState } from 'vuex'
-import InputPilihPrasaranaJadwalGrid from './form/InputPilihPrasaranaJadwalGrid.vue'
 export default {
-  components: { InputPilihPrasaranaJadwalGrid },
     data(){
         return {
             loading: false,
@@ -242,7 +234,7 @@ export default {
     mounted(){
         setTimeout(()=>{
             this.show = false
-        }, 3000)
+        }, 2000)
     }
 }
 </script>

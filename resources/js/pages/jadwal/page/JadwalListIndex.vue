@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoSarana"
-                @editRow="ubahInfoSarana"
-                @deleteRow="hapusInfoSarana"
+                @rowClick="toInfoJadwal"
+                @editRow="ubahInfoJadwal"
+                @deleteRow="hapusInfoJadwal"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -49,15 +49,11 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Sarana',
+                    text: 'Jadwal',
                     disabled: false,
-                    to: {name: 'sarana'},
+                    to: {name: 'jadwal'},
                     link: true,
                     exact: true,
-                },
-                {
-                    text: 'List Sarana',
-                    disabled: true,
                 },
             ],
             items: [],
@@ -89,16 +85,20 @@ export default {
                 message: "Error!",
             },
             lazyTransition: null,
+            exists: false,
+            item: {},
+            ori: {},
         }
     },
     computed: {
     },
     methods: {
         ...mapActions({
-            getItems: 'sarana/get',
+            getItems: 'jadwal/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'sarana/setModalUbah',
-            showHapusDialog: 'sarana/setModalHapus',
+            showUbahDialog: 'jadwal/setModalUbah',
+            showHapusDialog: 'jadwal/setModalHapus',
+            getItem: 'kelas/show',
         }),
         async loadItems(){
             this.loading = true
@@ -117,6 +117,26 @@ export default {
                 this.total = parseInt(meta.total)
             }
         },
+        async loadItem(){
+            this.exists = false
+            let res = await this.getItem({ id: this.$route.params.id_kelas }).catch(e => {
+                console.log("loadItem@JadwalListIndex.vue", e);
+                this.notif({
+                    message: e.message
+                })
+            })
+            if(res){
+                this.exists = true
+                for(let key in res.data.data){
+                    this.$set(this.item, key, res.data.data[key])
+                    this.$set(this.ori, key, res.data.data[key])
+                }
+                this.breadcrumb.push({
+                    text: `List Jadwal ${this.item.nama}`,
+                    disabled: true,
+                })
+            }
+        },
         update(){
             this.loadItems()
         },
@@ -131,14 +151,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoSarana({id_sarana: id}){
+        ubahInfoJadwal({id_sarana: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSarana({id_sarana: id}){
+        hapusInfoJadwal({id_sarana: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoSarana({id_sarana}){
-            this.$router.push({ name: 'sarana.show', params: { id_sarana } })
+        toInfoJadwal({id_sarana}){
+            this.$router.push({ name: 'jadwal.show', params: { id_sarana } })
         },
     },
     watch: {
@@ -150,6 +170,8 @@ export default {
             this.update()
         }
     },
-    created(){}
+    created(){
+        this.loadItem()
+    }
 }
 </script>

@@ -64,9 +64,8 @@ export default {
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Prasarana', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_prasarana' },
-                { text: 'Jumlah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jumlah' },
-                { text: 'Kondisi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'kondisi' },
+                { text: 'Wali Kelas', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_guru' },
+                { text: 'Keterangan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'keterangan' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {

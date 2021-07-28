@@ -13,16 +13,15 @@
         single-select
         v-model="selected"
         :mobile-breakpoint="0">
-        <template #item.id_prasarana="{item}">
-            <div>
-                {{ item.prasarana.nama }}
+        <template #item.id_guru="{item}">
+            <div v-if="item.guru">
+                <div>
+                    {{ item.guru.nama }}
+                </div>
+                <div class="text--disabled">
+                    NIP.{{ item.guru.nip }}
+                </div>
             </div>
-            <div class="text--disabled">
-                {{ item.prasarana.sekolah.nama_sekolah }}
-            </div>
-        </template>
-        <template #item.jumlah="{item}">
-            {{ item.jumlah | number }}
         </template>
         <template #item.action="{item}">
 			<div>

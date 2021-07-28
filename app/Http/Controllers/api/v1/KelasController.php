@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestKelasStore;
+use App\Http\Requests\RequestKelasUpdate;
 use App\Http\Resources\KelasCollection;
 use App\Kelas;
 use Illuminate\Http\Request;
@@ -35,16 +36,11 @@ class KelasController extends Controller{
         return new KelasCollection($kela);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kelas  $kelas
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Kelas $kelas)
-    {
-        //
+    public function update(RequestKelasUpdate $request, Kelas $kela){
+        $data = collect($request->validated());
+        $result = $kela->update($data->all());
+        $collection = new KelasCollection($kela);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

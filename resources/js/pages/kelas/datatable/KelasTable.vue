@@ -29,16 +29,17 @@
 					<v-card
 						:key="item.id == currentId"
 						flat
+                        dark
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 my-2 d-flex shadow flex-no-wrap justify-center"
+						color="">
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>
 						<v-btn icon @click="editRow(item)">
 							<v-icon small>mdi-pencil</v-icon>
 						</v-btn>
-						<v-btn icon color="primary" @click="rowClick(item)">
+						<v-btn icon @click="rowClick(item)">
 							<v-icon small>mdi-chevron-right</v-icon>
 						</v-btn>
 					</v-card>

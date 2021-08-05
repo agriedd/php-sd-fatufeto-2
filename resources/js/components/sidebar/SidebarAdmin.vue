@@ -43,7 +43,7 @@
 							</v-list-item-action>
 						</template>
 						<v-list>
-							<v-list-item dense>
+							<v-list-item dense link :to="{ name: 'kelas.insert' }">
 								<v-list-item-icon>
 									<v-icon>mdi-bookmark-plus</v-icon>
 								</v-list-item-icon>

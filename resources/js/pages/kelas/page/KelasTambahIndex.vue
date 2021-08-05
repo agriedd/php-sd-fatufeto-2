@@ -6,7 +6,7 @@ import { mapMutations } from 'vuex'
 export default {
     methods: {
         ...mapMutations({
-            showTambahDialog: 'sarana/SET_MODAL_TAMBAH',
+            showTambahDialog: 'kelas/SET_MODAL_TAMBAH',
         })
     },
     created(){

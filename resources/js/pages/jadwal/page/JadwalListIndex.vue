@@ -59,10 +59,11 @@ export default {
             items: [],
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Prasarana', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_prasarana' },
-                { text: 'Jumlah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jumlah' },
-                { text: 'Kondisi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'kondisi' },
+                { text: 'Mata Pelajaran', align: 'start', sortable: true, value: 'mata_pelajaran' },
+                { text: 'Kelas', align: 'start', sortable: true, value: 'id_kelas' },
+                { text: 'Hari', align: 'start d-none d-sm-table-cell', sortable: true, value: 'hari' },
+                { text: 'Mulai', align: 'start d-none d-sm-table-cell', sortable: true, value: 'start' },
+                { text: 'Berakhir', align: 'start d-none d-sm-table-cell', sortable: true, value: 'end' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {

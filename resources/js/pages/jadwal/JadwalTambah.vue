@@ -1,6 +1,6 @@
 <template>
     <div>
-        <v-dialog v-model="dialog" max-width="400" content-class="shadow-sm" overlay-opacity=".25" eager scrollable>
+        <v-dialog v-model="dialog" max-width="400" content-class="shadow-sm" overlay-opacity=".25" eager scrollable persistent>
             <v-form @submit.prevent="submit" :disabled="loading">
                 <v-card>
                     <v-toolbar flat>
@@ -18,6 +18,9 @@
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
+                        <v-btn text @click="dialog = false">
+                            Batal
+                        </v-btn>
                         <v-spacer/>
                         <v-btn text color="primary" type="submit" :loading="loading">
                             Tambah

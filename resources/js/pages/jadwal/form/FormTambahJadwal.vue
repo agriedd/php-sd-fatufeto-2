@@ -1,16 +1,16 @@
 <template>
     <div class="d-grid-form">
-        <v-list outlined rounded class="mb-3">
+        <v-list outlined rounded class="mb-3" v-if="item.id_kelas">
             <v-list-item>
                 <v-list-item-avatar color="grey lighten-4">
-                    <v-img></v-img>
+                    <v-icon>mdi-bookmark</v-icon>
                 </v-list-item-avatar>
                 <v-list-item-content>
                     <v-list-item-title>
-                        Nama Kelas
+                        {{ item.nama }}
                     </v-list-item-title>
                     <v-list-item-subtitle>
-                        Nama Wali Kelas
+                        {{ item.guru.nama }}
                     </v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
@@ -46,7 +46,7 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
 import InputWaktuBerakhirJadwal from './InputWaktuBerakhirJadwal.vue';
 import InputWaktuMulaiJadwal from './InputWaktuMulaiJadwal.vue';
 export default {
@@ -83,9 +83,25 @@ export default {
     data() {
         return {
 			// modal_tanggal_lahir: false,
+            item: {},
+            loading: false
         };
     },
-    methods: {}
+    methods: {
+        ...mapActions({
+            showKelas: 'kelas/show'
+        }),
+        async loadItem(){
+            this.loading = true
+            let res = await this.showKelas({ id: this.$route.params.id_kelas }).catch(e => e)
+            this.loading = false
+            if(res)
+                this.item = res.data?.data
+        }
+    },
+    created(){
+        this.loadItem()
+    }
 };
 </script>
 <style lang="scss" scoped>

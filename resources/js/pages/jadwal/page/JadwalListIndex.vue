@@ -162,14 +162,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoJadwal({id_sarana: id}){
+        ubahInfoJadwal({id_jadwal: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoJadwal({id_sarana: id}){
+        hapusInfoJadwal({id_jadwal: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoJadwal({id_sarana}){
-            this.$router.push({ name: 'jadwal.show', params: { id_sarana } })
+        toInfoJadwal({id_jadwal}){
+            this.$router.push({ name: 'jadwal.show', params: { id_jadwal } })
         },
         filterByDay(val){
             this.options.hari = val.toLowerCase()

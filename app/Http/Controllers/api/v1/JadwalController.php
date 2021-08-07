@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestJadwalStore;
+use App\Http\Requests\RequestJadwalUpdate;
 use App\Http\Resources\JadwalCollection;
 use App\Jadwal;
 use Illuminate\Http\Request;
@@ -41,27 +42,15 @@ class JadwalController extends Controller{
         return new Response($collection, $jadwal ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Jadwal  $jadwal
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Jadwal $jadwal)
-    {
-        //
+    public function show(Jadwal $jadwal){
+        return new JadwalCollection($jadwal);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Jadwal  $jadwal
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Jadwal $jadwal)
-    {
-        //
+    public function update(RequestJadwalUpdate $request, Jadwal $jadwal){
+        $data = collect($request->validated());
+        $result = $jadwal->update($data->all());
+        $collection = new JadwalCollection($jadwal);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

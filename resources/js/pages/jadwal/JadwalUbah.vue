@@ -5,19 +5,19 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Ubah Data Sarana > {{ item.nama }}
+                            Form Ubah Data Jadwal > {{ ori.mata_pelajaran }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
-                            <v-icon>mdi-package-variant</v-icon>
+                            <v-icon>mdi-book</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog && exists">
-                        <form-tambah-sarana v-model="item" :errors="errors"/>
+                        <form-tambah-jadwal v-model="item" :errors="errors"/>
                     </v-card-text>
                     <v-card-text v-else-if="dialog && loading">
-                        <form-tambah-sarana-placeholder/>
+                        <form-tambah-jadwal-placeholder/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -36,10 +36,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahSarana from './form/FormTambahSarana.vue'
-import FormTambahSaranaPlaceholder from './form/FormTambahSaranaPlaceholder.vue'
+import FormTambahJadwal from './form/FormTambahJadwal.vue'
+import FormTambahJadwalPlaceholder from './form/FormTambahJadwalPlaceholder.vue'
 export default {
-    components: { FormTambahSarana, FormTambahSaranaPlaceholder },
+  components: { FormTambahJadwalPlaceholder, FormTambahJadwal },
     data(){
         return {
             loading: false,
@@ -51,8 +51,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.sarana.modal.ubah,
-            id: state => state.sarana.selected.id
+            value_dialog: state => state.jadwal.modal.ubah,
+            id: state => state.jadwal.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -61,17 +61,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'sarana/setModalUbah',
-            updateSarana: 'sarana/update',
-            findSarana: 'sarana/show',
-            updateSession: 'sarana/updateSession',
+            setDialog: 'jadwal/setModalUbah',
+            updateJadwal: 'jadwal/update',
+            findJadwal: 'jadwal/show',
+            updateSession: 'jadwal/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.updateSarana({ data, id: this.id }).catch(e => {
-                console.log("updateSarana@SaranaUbah.vue", e)
+            let res = await this.updateJadwal({ data, id: this.id }).catch(e => {
+                console.log("updateJadwal@JadwalUbah.vue", e)
                 e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message
@@ -86,8 +86,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findSarana({ id: this.id }).catch(e => {
-                console.log("loadItem@SaranaUbah.vue", e);
+            let res = await this.findJadwal({ id: this.id }).catch(e => {
+                console.log("loadItem@JadwalUbah.vue", e);
                 this.notif({
                     message: e.message
                 })

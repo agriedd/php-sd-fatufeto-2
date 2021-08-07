@@ -1,16 +1,16 @@
 <template>
     <div class="d-grid-form">
-        <v-list outlined rounded class="mb-3" v-if="item.id_kelas">
+        <v-list outlined rounded class="mb-3" v-if="kelas.id_kelas">
             <v-list-item>
                 <v-list-item-avatar color="grey lighten-4">
                     <v-icon>mdi-bookmark</v-icon>
                 </v-list-item-avatar>
                 <v-list-item-content>
                     <v-list-item-title>
-                        {{ item.nama }}
+                        {{ kelas.nama }}
                     </v-list-item-title>
                     <v-list-item-subtitle>
-                        {{ item.guru.nama }}
+                        {{ kelas.guru.nama }}
                     </v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
@@ -83,7 +83,7 @@ export default {
     data() {
         return {
 			// modal_tanggal_lahir: false,
-            item: {},
+            kelas: {},
             loading: false
         };
     },
@@ -96,7 +96,7 @@ export default {
             let res = await this.showKelas({ id: this.$route.params.id_kelas }).catch(e => e)
             this.loading = false
             if(res)
-                this.item = res.data?.data
+                this.kelas = res.data?.data
         }
     },
     created(){

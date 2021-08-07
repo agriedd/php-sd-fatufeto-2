@@ -53,14 +53,8 @@ class JadwalController extends Controller{
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Jadwal  $jadwal
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Jadwal $jadwal)
-    {
-        //
+    public function destroy(Jadwal $jadwal){
+        $result = $jadwal->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

@@ -1,11 +1,11 @@
 <template>
     <div class="pa-md-3">
-        <v-card color="white" rounded="xl" class="mb-3 shadow-sm">
+        <v-card color="white" rounded="xl" class="mb-3 shadow-sm" v-if="!noBreadcrumbs">
             <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
         </v-card>
         <v-card class="shadow-sm" rounded="xl">
             <v-card-text class="d-flex">
-                <input-pilih-hari-jadwal-grid @selected="filterByDay"/>
+                <input-pilih-hari-jadwal-grid @selected="filterByDay" :range="dayRange"/>
                 <!-- <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/> -->
             </v-card-text>
             <jadwal-table
@@ -39,6 +39,21 @@ export default {
         params: Object,
         small: Boolean,
         noSelect: Boolean,
+        noBreadcrumbs: Boolean,
+        dayRange: Number,
+        headers: {
+            default(){
+                return [
+                    { text: 'Mulai', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu_mulai' },
+                    { text: 'Berakhir', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu_berakhir' },
+                    // { text: null, align: 'center', sortable: false, value: 'foto' },
+                    { text: 'Mata Pelajaran', align: 'start', sortable: true, value: 'mata_pelajaran' },
+                    { text: 'Kelas', align: 'start', sortable: true, value: 'id_kelas' },
+                    { text: 'Hari', align: 'start d-none d-sm-table-cell', sortable: true, value: 'hari' },
+                    { text: null, align: '', sortable: true, value: 'action' },
+                ]
+            }
+        }
     },
     components: {
         JadwalTable,
@@ -63,15 +78,6 @@ export default {
                 },
             ],
             items: [],
-            headers: [
-                { text: 'Mulai', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu_mulai' },
-                { text: 'Berakhir', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu_berakhir' },
-                // { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Mata Pelajaran', align: 'start', sortable: true, value: 'mata_pelajaran' },
-                { text: 'Kelas', align: 'start', sortable: true, value: 'id_kelas' },
-                { text: 'Hari', align: 'start d-none d-sm-table-cell', sortable: true, value: 'hari' },
-                { text: null, align: '', sortable: true, value: 'action' },
-            ],
             options: {
                 page: 1,
                 itemsPerPage: 10,

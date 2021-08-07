@@ -37,6 +37,12 @@
 import moment from 'moment'
 import { mapMutations } from 'vuex'
 export default {
+	props: {
+		range: {
+			type: Number,
+			default: 7
+		}
+	},
 	data(){
 		return {
 			items_temp: [
@@ -49,7 +55,6 @@ export default {
 				{ value: 'minggu', label: 'Minggu', mingguan: true, weekday: 1, month: 'Agu', date: '08', libur: true},
 			],
 			selected: 0,
-			range: 7,
 			handler: null
 		}
 	},

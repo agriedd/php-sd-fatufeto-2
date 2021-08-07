@@ -4,8 +4,6 @@
         <jadwal-tambah/>
         <jadwal-ubah/>
         <jadwal-hapus/>
-        <!-- <sarana-ubah/>
-        <sarana-hapus/> -->
     </div>
 </template>
 <script>

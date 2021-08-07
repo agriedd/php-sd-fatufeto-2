@@ -22,7 +22,7 @@
                 <div v-else style="position: relative" :class="{ 'mb-5 pt-3': !show }">
                     <v-expand-transition>
                         <div class="d-grid-sekolah" v-if="show">
-                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'jadwal.list' }">
+                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat>
                                 <v-card-text>
                                     <div class="d-flex w-100">
                                         <v-avatar color="indigo lighten-4">

@@ -5,16 +5,16 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Tambah Sarana
+                            Form Tambah Jadwal
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
-                            <v-icon>mdi-package-variant</v-icon>
+                            <v-icon>mdi-book</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog || alive">
-                        <form-tambah-sarana :errors="errors"/>
+                        <form-tambah-jadwal :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -30,9 +30,9 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahSarana from './form/FormTambahSarana.vue'
+import FormTambahJadwal from './form/FormTambahJadwal.vue'
 export default {
-    components: { FormTambahSarana },
+  components: { FormTambahJadwal },
     data(){
         return {
             loading: false,
@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.sarana.modal.tambah
+            value_dialog: state => state.jadwal.modal.tambah
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -51,11 +51,11 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setDialog: 'sarana/SET_MODAL_TAMBAH'
+            setDialog: 'jadwal/SET_MODAL_TAMBAH'
         }),
         ...mapActions({
-            storeSarana: 'sarana/store',
-            updateSession: 'sarana/updateSession',
+            storeSarana: 'jadwal/store',
+            updateSession: 'jadwal/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
@@ -75,7 +75,8 @@ export default {
                 this.alive = false
                 this.updateSession()
             }
-        }
+        },
+        
     },
     watch: {
         dialog(val){

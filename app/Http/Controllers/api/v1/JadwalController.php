@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestJadwalStore;
 use App\Http\Resources\JadwalCollection;
 use App\Jadwal;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class JadwalController extends Controller{
 
@@ -19,6 +21,12 @@ class JadwalController extends Controller{
                         : 'ASC' );
             }
         })
+        ->when(request('hari'), function($query, $search){
+            $query->where('hari', '=', "{$search}");
+        })
+        ->when(request('id_kelas'), function($query, $search){
+            $query->where('id_kelas', '=', "{$search}");
+        })
         ->when(request('search'), function($query, $search){
             $query->where('mata_pelajaran', 'like', "%{$search}%");
         })
@@ -26,15 +34,11 @@ class JadwalController extends Controller{
         return JadwalCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestJadwalStore $request){
+        $data = collect($request->validated());
+        $jadwal = Jadwal::create($data->all());
+        $collection = new JadwalCollection($jadwal);
+        return new Response($collection, $jadwal ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

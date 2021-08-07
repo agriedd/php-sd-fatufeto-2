@@ -24,6 +24,10 @@ Vue.mixin({
             let date = new Date(val);
             return new Intl.DateTimeFormat(local, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' }).format(date)
         },
+        time(val, local = 'id-ID'){
+            let date = new Date(`2020-01-01 ${val}`);
+            return new Intl.DateTimeFormat(local, { hour: '2-digit', minute: '2-digit' }).format(date)
+        },
         date(val, local = 'id-ID'){
             let date = new Date(val);
             return new Intl.DateTimeFormat(local, { year: 'numeric', month: 'long', day: 'numeric' }).format(date)

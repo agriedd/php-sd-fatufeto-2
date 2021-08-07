@@ -104,9 +104,9 @@
                                         </v-card-text>
                                         <v-card-text>
                                             {{ item.mata_pelajaran }}
-                                            <div class="text-truncate">
+                                            <div class="text-truncate" v-if="item.kelas">
                                                 <small>
-                                                    {{ item.prasarana.nama }}
+                                                    {{ item.kelas.nama }}
                                                 </small>
                                             </div>
                                         </v-card-text>
@@ -121,7 +121,7 @@
                                     </v-card>
                                 </div>
                             </div>
-                            <v-card color="pink lighten-5 overflow-hidden" rounded="xl" flat link @click="openModalTambah">
+                            <v-card color="pink lighten-5 overflow-hidden" rounded="xl" flat link @click="openModalTambah" v-if="$route.params.id_kelas">
                                 <div style="min-height: 300px" class="d-flex">
                                     <div class="w-100">
                                         <div class="content-middle">

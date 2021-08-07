@@ -13,16 +13,19 @@
         single-select
         v-model="selected"
         :mobile-breakpoint="0">
-        <template #item.id_prasarana="{item}">
-            <div>
-                {{ item.prasarana.nama }}
-            </div>
-            <div class="text--disabled">
-                {{ item.prasarana.sekolah.nama_sekolah }}
+        <template #item.id_kelas="{item}">
+            <div v-if="item.kelas">
+                {{ item.kelas.nama }}
             </div>
         </template>
         <template #item.jumlah="{item}">
             {{ item.jumlah | number }}
+        </template>
+        <template #item.waktu_mulai="{item}">
+            {{ item.waktu_mulai | time }}
+        </template>
+        <template #item.waktu_berakhir="{item}">
+            {{ item.waktu_berakhir | time }}
         </template>
         <template #item.action="{item}">
 			<div>
@@ -31,16 +34,13 @@
 						:key="item.id == currentId"
 						flat
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 my-2 d-flex shadow flex-no-wrap justify-center"
+                        dark>
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>
 						<v-btn icon @click="editRow(item)">
 							<v-icon small>mdi-pencil</v-icon>
-						</v-btn>
-						<v-btn icon color="primary" @click="rowClick(item)">
-							<v-icon small>mdi-chevron-right</v-icon>
 						</v-btn>
 					</v-card>
 				</v-slide-x-transition>

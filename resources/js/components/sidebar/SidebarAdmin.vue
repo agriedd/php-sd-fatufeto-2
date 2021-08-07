@@ -62,23 +62,6 @@
 						<v-list-item-title v-text="'Jadwal'" />
 						<v-list-item-subtitle v-text="'Kelola Jadwal Mingguan Kelas'" />
 					</v-list-item-content>
-					<v-menu content-class="shadow-lg rounded-lg" open-on-hover right min-width="250" :close-on-content-click="false" :close-on-click="false" open-delay=".5" transition="slide-x-transition">
-						<template #activator="{ attrs, on }">
-							<v-list-item-action v-on="on" v-bind="attrs">
-								<v-icon>mdi-plus</v-icon>
-							</v-list-item-action>
-						</template>
-						<v-list>
-							<v-list-item dense>
-								<v-list-item-icon>
-									<v-icon>mdi-bookmark-plus</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Tambah Jadwal'"/>
-								</v-list-item-content>
-							</v-list-item>
-						</v-list>
-					</v-menu>
 				</v-list-item>
 				<v-list-item dense link color="primary" :to="{ path: './admin/hei' }">
 					<v-list-item-icon>

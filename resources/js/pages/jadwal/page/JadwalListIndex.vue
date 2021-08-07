@@ -5,7 +5,8 @@
         </v-card>
         <v-card class="shadow-sm" rounded="xl">
             <v-card-text class="d-flex">
-                <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
+                <input-pilih-hari-jadwal-grid @selected="filterByDay"/>
+                <!-- <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/> -->
             </v-card-text>
             <jadwal-table
                 :headers="headers"
@@ -23,11 +24,15 @@
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
         </v-card>
+        <v-btn fab bottom fixed right color="indigo" class="mr-4" dark @click="openModalTambah">
+            <v-icon>mdi-plus</v-icon>
+        </v-btn>
     </div>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapMutations } from 'vuex'
 import JadwalTable from '../datatable/JadwalTable.vue'
+import InputPilihHariJadwalGrid from '../form/InputPilihHariJadwalGrid.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +41,8 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        JadwalTable
+        JadwalTable,
+        InputPilihHariJadwalGrid
     },
     data(){
         return {
@@ -58,23 +64,24 @@ export default {
             ],
             items: [],
             headers: [
-                { text: null, align: 'center', sortable: false, value: 'foto' },
+                { text: 'Mulai', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu_mulai' },
+                { text: 'Berakhir', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu_berakhir' },
+                // { text: null, align: 'center', sortable: false, value: 'foto' },
                 { text: 'Mata Pelajaran', align: 'start', sortable: true, value: 'mata_pelajaran' },
                 { text: 'Kelas', align: 'start', sortable: true, value: 'id_kelas' },
                 { text: 'Hari', align: 'start d-none d-sm-table-cell', sortable: true, value: 'hari' },
-                { text: 'Mulai', align: 'start d-none d-sm-table-cell', sortable: true, value: 'start' },
-                { text: 'Berakhir', align: 'start d-none d-sm-table-cell', sortable: true, value: 'end' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
                 page: 1,
                 itemsPerPage: 10,
-                sortBy: ['created_at'],
-                sortDesc: [true],
+                sortBy: ['waktu_mulai'],
+                sortDesc: [false],
                 groupBy: [],
                 groupDesc: [],
                 mustSort: false,
                 multiSort: false,
+                hari: null,
             },
             selected: [],
             total: 0,
@@ -94,6 +101,9 @@ export default {
     computed: {
     },
     methods: {
+        ...mapMutations({
+            showTambahDialog: 'jadwal/SET_MODAL_TAMBAH',
+        }),
         ...mapActions({
             getItems: 'jadwal/get',
             notif: 'notifikasi/show',
@@ -103,7 +113,7 @@ export default {
         }),
         async loadItems(){
             this.loading = true
-            let res = await this.getItems({...this.options, search: this.search, ...this.params }).catch(e => {});
+            let res = await this.getItems({...this.options, search: this.search, ...this.params, id_kelas: this.$route.params.id_kelas }).catch(e => {});
             this.loading = false
             if(res){
                 this.items = res.data.data
@@ -160,6 +170,12 @@ export default {
         },
         toInfoJadwal({id_sarana}){
             this.$router.push({ name: 'jadwal.show', params: { id_sarana } })
+        },
+        filterByDay(val){
+            this.options.hari = val.toLowerCase()
+        },        
+        openModalTambah(){
+            this.showTambahDialog(true)
         },
     },
     watch: {

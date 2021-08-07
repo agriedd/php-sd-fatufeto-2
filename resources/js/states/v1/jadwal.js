@@ -182,4 +182,17 @@ export default {
             state.session.code = payload
         }
     },
+    modules: {
+        options: {
+            namespaced: true,
+            state: {
+                hari: null
+            },
+            mutations: {
+                SET_HARI(state, payload){
+                    state.hari = payload
+                }
+            }
+        }
+    }
 }

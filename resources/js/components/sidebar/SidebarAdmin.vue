@@ -63,7 +63,7 @@
 						<v-list-item-subtitle v-text="'Kelola Jadwal Mingguan Kelas'" />
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item dense link color="primary" :to="{ path: './admin/hei' }">
+				<v-list-item dense link color="primary" :to="{ name: 'siswa' }">
 					<v-list-item-icon>
 						<v-icon>mdi-account-group</v-icon>
 					</v-list-item-icon>

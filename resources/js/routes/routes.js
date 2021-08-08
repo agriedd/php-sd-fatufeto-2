@@ -5,6 +5,7 @@ import jadwal from './admin/jadwal'
 import prasarana from './admin/prasarana'
 import sarana from './admin/sarana'
 import sekolah from './admin/sekolah'
+import siswa from './admin/siswa'
 export default [
     { path: '/admin', component: Index, name: 'admin' },
     ...sekolah,
@@ -13,6 +14,7 @@ export default [
     ...sarana,
     ...jadwal,
     ...kelas,
+    ...siswa,
     // { path: '/admin/jemaat/kk', component: KK, name: 'admin.kk' },
     // { path: '/admin/jemaat', component: Jemaat },
     //     { path: '/admin/jemaat/:id', component: InfoJemaat, name: 'jemaat.info' },

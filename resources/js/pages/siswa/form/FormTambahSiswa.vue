@@ -3,65 +3,36 @@
         <v-text-field
             dense
             outlined
-            v-model="item.nama"
-            name="nama"
-            label="Nama Guru"
-            :error-messages="errors.nama"
-            @keyup="errors.nama = null"/>
+            v-model="item.nama_siswa"
+            name="nama_siswa"
+            label="Nama Siswa"
+            :error-messages="errors.nama_siswa"
+            @keyup="errors.nama_siswa = null"/>
+        <v-spacer></v-spacer>
         <v-text-field
             dense
             outlined
-            v-model="item.nip"
-            name="nip"
-            label="NIP"
-            :error-messages="errors.nip"
-            @keyup="errors.nip = null"/>
-        <input-jenis-kelamin-guru 
+            v-model="item.nis"
+            name="nis"
+            label="NIS"
+            :error-messages="errors.nis"
+            @keyup="errors.nis = null"/>
+        <v-text-field
+            dense
+            outlined
+            v-model="item.nisn"
+            name="nisn"
+            label="NISN"
+            :error-messages="errors.nisn"
+            @keyup="errors.nisn = null"/>
+        <input-jenis-kelamin-siswa
             v-model="item.jenis_kelamin" 
             :errors="errors" 
             @change="errors.jenis_kelamin = null"/>
-        <v-spacer/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.jabatan"
-            name="jabatan"
-            label="Jabatan"
-            :error-messages="errors.jabatan"
-            @keyup="errors.jabatan = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.pangkat"
-            name="pangkat"
-            label="Pangkat"
-            :error-messages="errors.pangkat"
-            @keyup="errors.pangkat = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.golongan"
-            name="golongan"
-            label="Golongan"
-            :error-messages="errors.golongan"
-            @keyup="errors.golongan = null"/>
-        <v-spacer/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.pendidikan_terakhir"
-            name="pendidikan_terakhir"
-            label="Pendidikan Terakhir"
-            :error-messages="errors.pendidikan_terakhir"
-            @keyup="errors.pendidikan_terakhir = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.pendidikan_profesi"
-            name="pendidikan_profesi"
-            label="Pendidikan Profesi"
-            :error-messages="errors.pendidikan_profesi"
-            @keyup="errors.pendidikan_profesi = null"/>
+        <input-agama-siswa
+            v-model="item.jenis_kelamin" 
+            :errors="errors" 
+            @change="errors.jenis_kelamin = null"/>
         <v-text-field
             dense
             outlined
@@ -70,7 +41,6 @@
             label="Tempat Lahir"
             :error-messages="errors.tempat_lahir"
             @keyup="errors.tempat_lahir = null"/>
-            
         <v-dialog
             ref="tanggal_lahir"
             v-model="modal_tanggal_lahir"
@@ -106,11 +76,11 @@
         <v-text-field
             dense
             outlined
-            v-model="item.telepon"
-            name="telepon"
-            label="Telepon"
-            :error-messages="errors.telepon"
-            @keyup="errors.telepon = null"/>
+            v-model="item.kip"
+            name="kip"
+            label="KIP"
+            :error-messages="errors.kip"
+            @keyup="errors.kip = null"/>
         <v-text-field
             dense
             outlined
@@ -119,20 +89,30 @@
             label="Alamat"
             :error-messages="errors.alamat"
             @keyup="errors.alamat = null"/>
+        <input-kelas-siswa
+            v-model="item.jenis_kelamin" 
+            :errors="errors" 
+            @change="errors.jenis_kelamin = null"/>
     </div>
 </template>
 <script>
-import InputJenisKelaminGuru from './InputJenisKelaminGuru.vue';
+import InputAgamaSiswa from './InputAgamaSiswa.vue';
+import InputJenisKelaminSiswa from './InputJenisKelaminSiswa.vue';
+import InputKelasSiswa from './InputKelasSiswa.vue';
 export default {
-    components: { InputJenisKelaminGuru },
+    components: {
+        InputJenisKelaminSiswa,
+        InputAgamaSiswa,
+        InputKelasSiswa
+    },
     props: {
         errors: Object,
         value: {
             type: Object,
             default: ()=>{
                 return {
-                    nama_guru: null,
-                    nip: null,
+                    nama_siswa: null,
+                    nis: null,
                     alamat: null,
                 }
             }

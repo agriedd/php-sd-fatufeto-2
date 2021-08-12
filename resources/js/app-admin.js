@@ -34,7 +34,26 @@ Vue.mixin({
         },
         number(val, local = 'id-ID'){
             return new Intl.NumberFormat(local, {}).format(val)
-        }
+        },
+        agama(val){
+            switch(val){
+                case '0':
+                    return 'Islam';
+                case '1':
+                    return 'Kristen';
+                case '2':
+                    return 'Katholik';
+                case '3':
+                    return 'Hindu';
+                case '4':
+                    return 'Budha';
+                case '5':
+                    return 'Konghuchu';
+                case '6':
+                default:
+                    return '-'
+            }
+        },
     },
     methods: {
         setErrorForm(e){

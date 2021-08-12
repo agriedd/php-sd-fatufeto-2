@@ -3,13 +3,13 @@
         <v-app-bar app flat floating absolute>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Info Guru
+                Info Siswa
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
             <v-container>
                 <div v-if="loading">
-                    <div class="d-grid-guru-info">
+                    <div class="d-grid-siswa-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" flat rounded="xl" class="mb-3">
                                 <v-card-text>
@@ -29,24 +29,24 @@
                 <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
-                            Info Guru Tidak Ditemukan
+                            Info Siswa Tidak Ditemukan
                         </span>
                     </v-alert>
-                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'guru' }">
+                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'siswa' }">
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-2">
                                 <v-icon>mdi-account-tie</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    Kembali ke daftar guru
+                                    Kembali ke daftar siswa
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
                 </div>
                 <div v-else>
-                    <div class="d-grid-guru-info">
+                    <div class="d-grid-siswa-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat class="mb-3">
                                 <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
@@ -56,7 +56,7 @@
                                     <v-card-text>
                                         <div class="d-flex w-100">
                                             <v-avatar color="grey lighten-2">
-                                                <v-icon>mdi-account-tie</v-icon>
+                                                <v-icon>mdi-account</v-icon>
                                             </v-avatar>
                                             <v-spacer/>
                                             <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
@@ -67,7 +67,7 @@
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoGuru(item.id_guru)">
+                                                    <v-list-item dense link @click="ubahInfoSiswa(item.id)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoGuru(item.id_guru)">
+                                                    <v-list-item dense link @click="hapusInfoSiswa(item.id)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,17 +105,17 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Guru
+                                                Nama Siswa
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
-                                                {{ item.nama }}
+                                                {{ item.nama_siswa }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-title>
-                                                NIP.{{ item.nip }}
+                                                NIS.{{ item.nis }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -147,7 +147,7 @@
                                                 Tempat Tanggal Lahir
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{  item.tanggal_lahir ? `${item.tanggal_lahir},` : null }} {{ item.tanggal_lahir | date }}
+                                                {{  item.tempat_lahir ? `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -161,19 +161,6 @@
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
                                                 {{ item.alamat }}
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-phone</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-subtitle>
-                                                Telepon
-                                            </v-list-item-subtitle>
-                                            <v-list-item-title class="">
-                                                {{ item.telepon }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -198,8 +185,8 @@
                             <div class="sticky-top" style="z-index: 1;">
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
-                                        <v-tab :to="{name: 'guru.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'guru.kelas'}" exact>Kelas</v-tab>
+                                        <v-tab :to="{name: 'siswa.show'}" exact>Informasi</v-tab>
+                                        <v-tab :to="{name: 'siswa.kelas'}" exact>Kelas</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -231,14 +218,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Siswa',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'siswa'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'Info Guru',
+                    text: 'Info Siswa',
                     disabled: true,
                 },
             ]
@@ -246,13 +233,13 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.guru.items,
+            items: state => state.siswa.items,
         }),
         ...mapGetters({
-            session: 'guru/getSession',
+            session: 'siswa/getSession',
         }),
         id(){
-            return this.$route.params.id_guru
+            return this.$route.params.id
         }
     },
     watch: {
@@ -263,15 +250,15 @@ export default {
     methods: {
         ...mapMutations({  }),
         ...mapActions({
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
-            getItem: 'guru/show',
+            showUbahDialog: 'siswa/setModalUbah',
+            showHapusDialog: 'siswa/setModalHapus',
+            getItem: 'siswa/show',
         }),
         openModalTambah(){},
-        ubahInfoGuru(id){
+        ubahInfoSiswa(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru(id){
+        hapusInfoSiswa(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItem(){
@@ -279,7 +266,7 @@ export default {
             this.exists = false
 
             let res = await this.getItem({id: this.id}).catch(e => {
-                console.log("loadItem@GuruIndex.vue", e);
+                console.log("loadItem@SiswaIndex.vue", e);
             });
             this.loading = false
 

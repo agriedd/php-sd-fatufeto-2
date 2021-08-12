@@ -15,7 +15,7 @@ export const siswa = [
         { path: 'tambah', component: SiswaIndex, children: [
             { path: '/', component: SiswaTambah, name: 'siswa.insert' },
         ]},
-        { path: ':id_siswa', component: SiswaInfo, children: [
+        { path: ':id', component: SiswaInfo, children: [
             { path: 'kelas', component: SiswaKelasIndex, name: 'siswa.kelas' },
             { path: '/', component: SiswaInfoIndex, name: 'siswa.show' },
         ] },

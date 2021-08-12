@@ -36,6 +36,7 @@ class SiswaController extends Controller{
     }
 
     public function show(Siswa $siswa){
+        $siswa->kelas->loadCount('siswa');
         return new SiswaCollection($siswa);
     }
 

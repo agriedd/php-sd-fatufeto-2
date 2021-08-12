@@ -5,19 +5,19 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Ubah Data Guru > {{ item.nama }}
+                            Form Ubah Data Siswa > {{ ori.nama_siswa }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
-                            <v-icon>mdi-school</v-icon>
+                            <v-icon>mdi-account</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog && exists">
-                        <form-tambah-guru v-model="item" :errors="errors"/>
+                        <form-tambah-siswa v-model="item" :errors="errors"/>
                     </v-card-text>
                     <v-card-text v-else-if="dialog && loading">
-                        <form-tambah-guru-placeholder/>
+                        <form-tambah-siswa-placeholder/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -36,10 +36,10 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahGuru from './form/FormTambahGuru.vue'
-import FormTambahGuruPlaceholder from './form/FormTambahGuruPlaceholder.vue'
+import FormTambahSiswa from './form/FormTambahSiswa.vue'
+import FormTambahSiswaPlaceholder from './form/FormTambahSiswaPlaceholder.vue'
 export default {
-    components: { FormTambahGuru, FormTambahGuruPlaceholder },
+    components: { FormTambahSiswa, FormTambahSiswaPlaceholder },
     data(){
         return {
             loading: false,
@@ -51,8 +51,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.ubah,
-            id: state => state.guru.selected.id
+            value_dialog: state => state.siswa.modal.ubah,
+            id: state => state.siswa.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -61,17 +61,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'guru/setModalUbah',
-            updateGuru: 'guru/update',
-            findGuru: 'guru/show',
-            updateSession: 'guru/updateSession',
+            setDialog: 'siswa/setModalUbah',
+            updateSiswa: 'siswa/update',
+            findSiswa: 'siswa/show',
+            updateSession: 'siswa/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.updateGuru({ data, id: this.id }).catch(e => {
-                console.log("updateGuru@GuruUbah.vue", e)
+            let res = await this.updateSiswa({ data, id: this.id }).catch(e => {
+                console.log("updateSiswa@SiswaUbah.vue", e)
                 e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message
@@ -86,8 +86,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findGuru({ id: this.id }).catch(e => {
-                console.log("loadItem@GuruUbah.vue", e);
+            let res = await this.findSiswa({ id: this.id }).catch(e => {
+                console.log("loadItem@SiswaUbah.vue", e);
                 this.notif({
                     message: e.message
                 })

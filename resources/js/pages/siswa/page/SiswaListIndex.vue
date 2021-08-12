@@ -138,14 +138,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoSiswa({id_guru: id}){
+        ubahInfoSiswa({id: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoSiswa({id_guru: id}){
+        hapusInfoSiswa({id: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoSiswa({id_guru}){
-            this.$router.push({ name: 'siswa.show', params: { id_guru } })
+        toInfoSiswa({id}){
+            this.$router.push({ name: 'siswa.show', params: { id } })
         },
     },
     watch: {

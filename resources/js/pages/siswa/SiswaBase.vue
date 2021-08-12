@@ -2,15 +2,16 @@
     <div>
         <router-view/>
         <siswa-tambah/>
-        <!-- <guru-ubah/>
-        <guru-hapus/> -->
+        <siswa-ubah/>
     </div>
 </template>
 <script>
 import SiswaTambah from './SiswaTambah.vue'
+import SiswaUbah from './SiswaUbah.vue'
 export default {
     components: {
-        SiswaTambah 
+        SiswaTambah,
+        SiswaUbah,
     },
 }
 </script>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestSiswaStore;
+use App\Http\Requests\RequestSiswaUpdate;
 use App\Http\Resources\SiswaCollection;
 use App\Siswa;
 use Illuminate\Http\Request;
@@ -31,27 +32,15 @@ class SiswaController extends Controller{
         return new Response($collection, $siswa ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Siswa  $siswa
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Siswa $siswa)
-    {
-        //
+    public function show(Siswa $siswa){
+        return new SiswaCollection($siswa);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Siswa  $siswa
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Siswa $siswa)
-    {
-        //
+    public function update(RequestSiswaUpdate $request, Siswa $siswa){
+        $data = collect($request->validated());
+        $result = $siswa->update($data->all());
+        $collection = new SiswaCollection($siswa);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

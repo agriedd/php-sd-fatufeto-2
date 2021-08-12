@@ -78,7 +78,7 @@
 							</v-list-item-action>
 						</template>
 						<v-list>
-							<v-list-item dense>
+							<v-list-item dense link :to="{ name: 'siswa.insert' }">
 								<v-list-item-icon>
 									<v-icon>mdi-account-plus</v-icon>
 								</v-list-item-icon>
@@ -86,7 +86,7 @@
 									<v-list-item-title v-text="'Tambah Siswa'"/>
 								</v-list-item-content>
 							</v-list-item>
-							<v-list-item dense>
+							<v-list-item dense link :to="{ name: 'siswa.list' }">
 								<v-list-item-icon>
 									<v-icon>mdi-account-search</v-icon>
 								</v-list-item-icon>

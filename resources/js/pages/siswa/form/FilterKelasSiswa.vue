@@ -19,7 +19,7 @@
 				<v-card rounded="xl" class="shadow-sm item-hari" :color="item.id_kelas == selected.id ? 'indigo' : null" :dark="item.id_kelas == selected.id" @click="selectClass(item)">
 					<div class="d-flex flex-column justify-center fill-height">
 						<v-card-text class="py-0 text-center" :class="[ item.id_kelas != selected.id ? 'text--disabled' : null ]">
-							{{ item.nama }}
+							{{ item.nama }} ({{ item.siswa_count | number }})
 						</v-card-text>
 						<v-card-text class="text-center py-0">
 							{{ item.guru.nama }}

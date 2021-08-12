@@ -5,11 +5,11 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Konfirmasi Hapus data Guru > {{ item.nama }}
+                            Konfirmasi Hapus data Siswa > {{ item.nama_siswa }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="error lighten-5">
-                            <v-icon color="error">mdi-school</v-icon>
+                            <v-icon color="error">mdi-account</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
@@ -47,8 +47,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.hapus,
-            id: state => state.guru.selected.id
+            value_dialog: state => state.siswa.modal.hapus,
+            id: state => state.siswa.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -57,17 +57,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'guru/setModalHapus',
-            deleteGuru: 'guru/destroy',
-            findGuru: 'guru/show',
-            updateSession: 'guru/updateSession',
+            setDialog: 'siswa/setModalHapus',
+            deleteSiswa: 'siswa/destroy',
+            findSiswa: 'siswa/show',
+            updateSession: 'siswa/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.deleteGuru({ data, id: this.id }).catch(e => {
-                console.log("deleteGuru@GuruTambah.vue", e);
+            let res = await this.deleteSiswa({ data, id: this.id }).catch(e => {
+                console.log("deleteSiswa@SiswaTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 this.notif({
@@ -83,8 +83,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findGuru({ id: this.id }).catch(e => {
-                console.log("loadItem@GuruTambah.vue", e);
+            let res = await this.findSiswa({ id: this.id }).catch(e => {
+                console.log("loadItem@SiswaTambah.vue", e);
                 this.notif({
                     message: e.message
                 })

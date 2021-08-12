@@ -4,6 +4,9 @@
             <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
         </v-card>
         <v-card class="shadow-sm" rounded="xl">
+            <v-card-text>
+                <filter-kelas-siswa class="elevation-0" @selected="options.id_kelas = $event"/>
+            </v-card-text>
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
@@ -28,6 +31,7 @@
 <script>
 import { mapActions } from 'vuex'
 import SiswaTable from '../datatable/SiswaTable.vue'
+import FilterKelasSiswa from '../form/FilterKelasSiswa.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +40,8 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        SiswaTable
+        SiswaTable,
+        FilterKelasSiswa
     },
     data(){
         return {
@@ -79,6 +84,10 @@ export default {
                 groupDesc: [],
                 mustSort: false,
                 multiSort: false,
+                id_kelas: null,
+            },
+            filters: {
+                id_kelas: null,
             },
             selected: [],
             total: 0,

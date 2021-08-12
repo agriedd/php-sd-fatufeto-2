@@ -21,6 +21,9 @@ class SiswaController extends Controller{
                             : 'ASC' );
                 }
             })
+            ->when(request('id_kelas'), function($query, $search){
+                $query->where('id_kelas', $search);
+            })
             ->paginate(request('itemsPerPage') ?? 10);
         return SiswaCollection::collection($data);
     }
@@ -43,14 +46,8 @@ class SiswaController extends Controller{
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Siswa  $siswa
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Siswa $siswa)
-    {
-        //
+    public function destroy(Siswa $siswa){
+        $result = $siswa->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

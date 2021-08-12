@@ -24,6 +24,7 @@ class KelasController extends Controller{
         ->when(request('search'), function($query, $search){
             $query->where('nama', 'like', "%{$search}%");
         })
+        ->withCount([ 'siswa' ])
         ->paginate(request('itemsPerPage') ?? 10);
         return KelasCollection::collection($data);
     }

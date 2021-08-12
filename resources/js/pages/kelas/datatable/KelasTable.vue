@@ -23,6 +23,11 @@
                 </div>
             </div>
         </template>
+        <template #item.siswa_count="{item}">
+            <div>
+                {{ item.siswa_count | number }}
+            </div>
+        </template>
         <template #item.action="{item}">
 			<div>
 				<v-slide-x-transition mode="out-in">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Kelas;
 use Illuminate\Database\Seeder;
 
 class SiswaSeeder extends Seeder
@@ -9,8 +10,11 @@ class SiswaSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        //
+    public function run(){
+        Kelas::all()->each(function($kelas){
+            factory(App\Siswa::class, rand(10,20))->create([
+                'id_kelas' => $kelas->id_kelas
+            ]);
+        });
     }
 }

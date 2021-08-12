@@ -17,6 +17,8 @@ class CreateSiswasTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nama_siswa');
+            $table->string('tempat_lahir')->nullable();
+            $table->date('tanggal_lahir')->nullable();
             $table->enum('jenis_kelamin', ['l', 'p'])->nullable();
             $table->string('nis')->nullable();
             $table->string('nisn')->nullable();

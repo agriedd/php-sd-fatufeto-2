@@ -36,6 +36,21 @@
         <template #item.tanggal_lahir="{item}">
 			{{ item.tempat_lahir ?  `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
         </template>
+        <template #item.id_kelas="{item}">
+            <div v-if="item.id_kelas && item.kelas">
+                <div>
+                    {{ item.kelas.nama }} 
+                </div>
+                <div>
+                    <small>
+                        {{ item.kelas.guru.nama }}
+                    </small>
+                </div>
+            </div>
+            <div v-else class="error--text">
+                Siswa belum memiliki kelas
+            </div>
+        </template>
         <template #item.jenis_kelamin="{item}">
 			<template v-if="item.jenis_kelamin == 'l'">
 				Laki-laki
@@ -51,8 +66,8 @@
 						:key="item.id == currentId"
 						flat
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 my-2 d-flex shadow flex-no-wrap justify-center"
+                        dark>
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>

@@ -66,6 +66,7 @@ export default {
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
                 { text: 'Wali Kelas', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_guru' },
                 { text: 'Keterangan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'keterangan' },
+                { text: 'Jumlah Siswa', align: 'end d-none d-sm-table-cell', sortable: false, value: 'siswa_count' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {

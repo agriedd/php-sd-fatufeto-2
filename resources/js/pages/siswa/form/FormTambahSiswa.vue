@@ -30,9 +30,9 @@
             :errors="errors" 
             @change="errors.jenis_kelamin = null"/>
         <input-agama-siswa
-            v-model="item.jenis_kelamin" 
+            v-model="item.agama" 
             :errors="errors" 
-            @change="errors.jenis_kelamin = null"/>
+            @change="errors.agama = null"/>
         <v-text-field
             dense
             outlined
@@ -90,9 +90,9 @@
             :error-messages="errors.alamat"
             @keyup="errors.alamat = null"/>
         <input-kelas-siswa
-            v-model="item.jenis_kelamin" 
+            v-model="item.id_kelas" 
             :errors="errors" 
-            @change="errors.jenis_kelamin = null"/>
+            @change="errors.id_kelas = null"/>
     </div>
 </template>
 <script>

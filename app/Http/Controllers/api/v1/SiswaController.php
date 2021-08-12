@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestSiswaStore;
 use App\Http\Resources\SiswaCollection;
 use App\Siswa;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class SiswaController extends Controller{
     public function index(){
@@ -22,15 +24,11 @@ class SiswaController extends Controller{
         return SiswaCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestSiswaStore $request){
+        $data = collect($request->validated());
+        $siswa = Siswa::create($data->all());
+        $collection = new SiswaCollection($siswa);
+        return new Response($collection, $siswa ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

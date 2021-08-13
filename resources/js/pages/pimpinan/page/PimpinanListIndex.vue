@@ -68,6 +68,7 @@ export default {
                 { text: 'Pangkat', align: 'start d-none d-sm-table-cell', sortable: true, value: 'pangkat' },
                 { text: 'Golongan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'golongan' },
                 { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
+                { text: 'Sekolah', align: 'd-none d-sm-table-cell', sortable: true, value: 'id_profil' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {

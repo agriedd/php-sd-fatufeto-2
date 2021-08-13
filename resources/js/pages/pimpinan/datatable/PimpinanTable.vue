@@ -36,6 +36,11 @@
         <template #item.tanggal_lahir="{item}">
 			{{ item.tempat_lahir ?  `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
         </template>
+        <template #item.id_profil="{item}">
+            <div v-if="item.id_profil && item.sekolah">
+                {{ item.sekolah.nama_sekolah }}
+            </div>
+        </template>
         <template #item.jenis_kelamin="{item}">
 			<template v-if="item.jenis_kelamin == 'l'">
 				Laki-laki
@@ -50,9 +55,9 @@
 					<v-card
 						:key="item.id == currentId"
 						flat
+                        dark
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 d-flex shadow flex-no-wrap justify-center my-2">
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>

@@ -14,7 +14,7 @@
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog || alive">
-                        <!-- <form-tambah-pimpinan :errors="errors"/> -->
+                        <form-tambah-pimpinan :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -30,7 +30,9 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
+import FormTambahPimpinan from './form/FormTambahPimpinan.vue'
 export default {
+  components: { FormTambahPimpinan },
     data(){
         return {
             loading: false,

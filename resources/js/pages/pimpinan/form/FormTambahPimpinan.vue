@@ -5,7 +5,7 @@
             outlined
             v-model="item.nama"
             name="nama"
-            label="Nama Guru"
+            label="Nama Pimpinan"
             :error-messages="errors.nama"
             @keyup="errors.nama = null"/>
         <v-text-field
@@ -16,7 +16,7 @@
             label="NIP"
             :error-messages="errors.nip"
             @keyup="errors.nip = null"/>
-        <input-jenis-kelamin-guru 
+        <input-jenis-kelamin-pimpinan
             v-model="item.jenis_kelamin" 
             :errors="errors" 
             @change="errors.jenis_kelamin = null"/>
@@ -122,16 +122,16 @@
     </div>
 </template>
 <script>
-import InputJenisKelaminGuru from './InputJenisKelaminGuru.vue';
+import InputJenisKelaminPimpinan from './InputJenisKelaminPimpinan.vue';
 export default {
-    components: { InputJenisKelaminGuru },
+  components: { InputJenisKelaminPimpinan },
     props: {
         errors: Object,
         value: {
             type: Object,
             default: ()=>{
                 return {
-                    nama_guru: null,
+                    nama_pimpinan: null,
                     nip: null,
                     alamat: null,
                 }

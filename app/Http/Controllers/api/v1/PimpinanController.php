@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestPimpinanStore;
 use App\Http\Resources\PimpinanCollection;
 use App\Pimpinan;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class PimpinanController extends Controller{
     public function index(){
@@ -22,15 +24,11 @@ class PimpinanController extends Controller{
         return PimpinanCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestPimpinanStore $request){
+        $data = collect($request->validated());
+        $pimpinan = Pimpinan::create($data->all());
+        $collection = new PimpinanCollection($pimpinan);
+        return new Response($collection, $pimpinan ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

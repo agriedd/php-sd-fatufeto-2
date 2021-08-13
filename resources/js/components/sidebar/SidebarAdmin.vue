@@ -152,7 +152,7 @@
 			</v-list-item-group>
 			<v-subheader v-text="'Pimpinan dan Laporan'" inset/>
 			<v-list-item-group dense flat nav>
-				<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+				<v-list-item dense link color="primary" :to="{ name: 'pimpinan' }" exact>
 					<v-list-item-icon>
 						<v-icon>mdi-shield-account</v-icon>
 					</v-list-item-icon>

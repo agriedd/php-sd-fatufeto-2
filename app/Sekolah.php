@@ -14,4 +14,8 @@ class Sekolah extends Model{
         'struktur_organisasi' => StrukturOrganisasi::class,
         'visi_misi' => VisiMisiCast::class,
     ];
+
+    public function pimpinan(){
+        return $this->hasOne(Pimpinan::class, 'id_profil', 'id_profil')->latest();
+    }
 }

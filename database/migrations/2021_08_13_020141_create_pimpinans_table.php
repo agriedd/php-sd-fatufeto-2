@@ -14,8 +14,8 @@ class CreatePimpinansTable extends Migration
     public function up()
     {
         Schema::create('tbl_pimpinan', function (Blueprint $table) {
-            $table->id('id_pimpinan');
             $table->timestamps();
+            $table->id('id_pimpinan');
             $table->unsignedBigInteger('id_profil')->nullable();
             $table->foreign('id_profil')->references('id_profil')->on('tbl_sekolah')
                 ->onUpdate('cascade')->onDelete('set null');

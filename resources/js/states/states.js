@@ -10,6 +10,7 @@ import sarana from "./v1/sarana"
 import sekolah from "./v1/sekolah"
 import siswa from "./v1/siswa"
 import agama from "./v1/agama"
+import pimpinan from "./v1/pimpinan"
 
 export const states = {
     login,
@@ -24,5 +25,6 @@ export const states = {
     kelas,
     siswa,
     agama,
+    pimpinan,
 }
 export default states

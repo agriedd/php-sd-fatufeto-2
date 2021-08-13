@@ -35,4 +35,5 @@ Route::prefix('v1')->group(function(){
     Route::resource('jadwal', 'api\v1\JadwalController');
     Route::resource('kelas', 'api\v1\KelasController');
     Route::resource('siswa', 'api\v1\SiswaController');
+    Route::resource('pimpinan', 'api\v1\PimpinanController');
 });

@@ -7,7 +7,7 @@
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <guru-table
+            <pimpinan-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoGuru"
-                @editRow="ubahInfoGuru"
-                @deleteRow="hapusInfoGuru"
+                @rowClick="toInfoPimpinan"
+                @editRow="ubahInfoPimpinan"
+                @deleteRow="hapusInfoPimpinan"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import GuruTable from '../datatable/PimpinanTable.vue'
+import PimpinanTable from '../datatable/PimpinanTable.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +36,7 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        GuruTable
+        PimpinanTable
     },
     data(){
         return {
@@ -49,14 +49,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Pimpinan',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'pimpinan'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Guru',
+                    text: 'List Pimpinan',
                     disabled: true,
                 },
             ],
@@ -96,10 +96,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'guru/get',
+            getItems: 'pimpinan/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
+            showUbahDialog: 'pimpinan/setModalUbah',
+            showHapusDialog: 'pimpinan/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -130,7 +130,7 @@ export default {
             }, 800);
         },
         rowClick(e){
-            this.$emit('open:guru:info', e)
+            this.$emit('open:pimpinan:info', e)
         },
         editRow(e){
 
@@ -138,14 +138,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoGuru({id_guru: id}){
+        ubahInfoPimpinan({id_pimpinan: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru({id_guru: id}){
+        hapusInfoPimpinan({id_pimpinan: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoGuru({id_guru}){
-            this.$router.push({ name: 'guru.show', params: { id_guru } })
+        toInfoPimpinan({id_pimpinan}){
+            this.$router.push({ name: 'pimpinan.show', params: { id_pimpinan } })
         },
     },
     watch: {

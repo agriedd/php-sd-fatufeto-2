@@ -45,7 +45,7 @@
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to="{ name: 'pimpinan.show', params: { id_guru: item.id_guru } }">
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to2="{ name: 'pimpinan.show', params: { id_guru: item.id_guru } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
@@ -57,7 +57,7 @@
                                                     </template>
                                                     <v-list nav>
                                                         <v-subheader v-text="'Aksi'"/>
-                                                        <v-list-item dense link :to="{ name: 'pimpinan.show', params: { id_guru: item.id_guru }}">
+                                                        <v-list-item dense link to2="{ name: 'pimpinan.show', params: { id_guru: item.id_guru }}">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-account-tie</v-icon>
                                                             </v-list-item-icon>

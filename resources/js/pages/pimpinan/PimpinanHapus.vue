@@ -5,11 +5,11 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Konfirmasi Hapus data Guru > {{ item.nama }}
+                            Konfirmasi Hapus data Pimpinan > {{ ori.nama }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="error lighten-5">
-                            <v-icon color="error">mdi-school</v-icon>
+                            <v-icon color="error">mdi-account-tie</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
@@ -47,8 +47,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.hapus,
-            id: state => state.guru.selected.id
+            value_dialog: state => state.pimpinan.modal.hapus,
+            id: state => state.pimpinan.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -57,17 +57,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'guru/setModalHapus',
-            deleteGuru: 'guru/destroy',
-            findGuru: 'guru/show',
-            updateSession: 'guru/updateSession',
+            setDialog: 'pimpinan/setModalHapus',
+            deletePimpinan: 'pimpinan/destroy',
+            findPimpinan: 'pimpinan/show',
+            updateSession: 'pimpinan/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.deleteGuru({ data, id: this.id }).catch(e => {
-                console.log("deleteGuru@GuruTambah.vue", e);
+            let res = await this.deletePimpinan({ data, id: this.id }).catch(e => {
+                console.log("deletePimpinan@PimpinanTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 this.notif({
@@ -83,8 +83,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findGuru({ id: this.id }).catch(e => {
-                console.log("loadItem@GuruTambah.vue", e);
+            let res = await this.findPimpinan({ id: this.id }).catch(e => {
+                console.log("loadItem@PimpinanTambah.vue", e);
                 this.notif({
                     message: e.message
                 })

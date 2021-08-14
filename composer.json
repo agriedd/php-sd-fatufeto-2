@@ -15,7 +15,8 @@
         "laravel/framework": "^7.29",
         "laravel/passport": "^9.4",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^2.5"
+        "laravel/ui": "^2.5",
+        "mpdf/mpdf": "^8.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

@@ -3,18 +3,18 @@
         <router-view/>
         <pimpinan-tambah/>
         <pimpinan-ubah/>
-        <!-- <guru-tambah/>
-        <guru-ubah/>
-        <guru-hapus/> -->
+        <pimpinan-hapus/>
     </div>
 </template>
 <script>
+import PimpinanHapus from './PimpinanHapus.vue'
 import PimpinanTambah from './PimpinanTambah.vue'
 import PimpinanUbah from './PimpinanUbah.vue'
 export default {
     components: {
         PimpinanTambah,
-        PimpinanUbah 
+        PimpinanUbah,
+        PimpinanHapus 
     },
 }
 </script>

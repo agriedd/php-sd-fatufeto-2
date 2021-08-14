@@ -2,27 +2,21 @@
 
 namespace App\View\Components;
 
+use App\Sekolah;
 use Illuminate\View\Component;
 
-class VisiProfil extends Component
-{
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+class VisiProfil extends Component{
+
+    private $visi;
+
+    public function __construct(){
+        $visi_misi = optional(Sekolah::first())->visi_misi;
+        $this->visi = $visi_misi->visi;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
-    public function render()
-    {
-        return view('components.visi-profil');
+    public function render(){
+        return view('components.visi-profil', [
+            'list_visi' => $this->visi
+        ]);
     }
 }

@@ -1,6 +1,6 @@
 <div class="p-3 w-100" style="position: sticky; top: 55px; bottom: 0px; max-height: 100vh">
     <div class="p-3 bg-light w-100" style=" border-radius: 1.5rem;  background-size: 200%; background-position: bottom; background-repeat: no-repeat; background-image: url('{{ asset('img/wave.svg') }}');">
-        <a href="#sejarah" class="card p-3 mb-3 text-dark border-0" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
+        {{-- <a href="#sejarah" class="card p-3 mb-3 text-dark border-0" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
             <div class="card-body">
                 <div class="d-flex">
                     <div class="pe-3">
@@ -21,7 +21,7 @@
                     </div>
                 </div>
             </div>
-        </a>
+        </a> --}}
         <a href="#visi" class="card p-3 mb-3 text-dark border-0" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
             <div class="card-body">
                 <div class="d-flex">

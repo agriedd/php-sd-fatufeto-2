@@ -2,18 +2,15 @@
 
 namespace App\View\Components;
 
+use App\Sekolah;
 use Illuminate\View\Component;
 
 class MisiProfil extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+    private $misi;
+    public function __construct(){
+        $visi_misi = optional(Sekolah::first())->visi_misi;
+        $this->misi = $visi_misi->misi;
     }
 
     /**
@@ -23,6 +20,8 @@ class MisiProfil extends Component
      */
     public function render()
     {
-        return view('components.misi-profil');
+        return view('components.misi-profil', [
+            'list_misi' => $this->misi
+        ]);
     }
 }

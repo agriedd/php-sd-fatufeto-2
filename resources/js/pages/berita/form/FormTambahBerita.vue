@@ -3,128 +3,80 @@
         <v-text-field
             dense
             outlined
-            v-model="item.nama"
-            name="nama"
-            label="Nama Guru"
-            :error-messages="errors.nama"
-            @keyup="errors.nama = null"/>
+            v-model="item.judul"
+            name="judul"
+            label="Judul Berita"
+            :error-messages="errors.judul"
+            @keyup="errors.judul = null"/>
         <v-text-field
             dense
             outlined
-            v-model="item.nip"
-            name="nip"
-            label="NIP"
-            :error-messages="errors.nip"
-            @keyup="errors.nip = null"/>
-        <input-jenis-kelamin-guru 
-            v-model="item.jenis_kelamin" 
+            v-model="item.deskripsi"
+            name="deskripsi"
+            label="Deskripsi Berita"
+            :error-messages="errors.deskripsi"
+            @keyup="errors.deskripsi = null"
+            counter="191"/>
+        <v-textarea
+            dense
+            outlined
+            v-model="item.isi"
+            name="isi"
+            label="Isi Berita"
+            :error-messages="errors.isi"
+            @keyup="errors.isi = null"/>
+        <input-jenis-berita
+            v-model="item.jenis" 
             :errors="errors" 
-            @change="errors.jenis_kelamin = null"/>
-        <v-spacer/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.jabatan"
-            name="jabatan"
-            label="Jabatan"
-            :error-messages="errors.jabatan"
-            @keyup="errors.jabatan = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.pangkat"
-            name="pangkat"
-            label="Pangkat"
-            :error-messages="errors.pangkat"
-            @keyup="errors.pangkat = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.golongan"
-            name="golongan"
-            label="Golongan"
-            :error-messages="errors.golongan"
-            @keyup="errors.golongan = null"/>
-        <v-spacer/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.pendidikan_terakhir"
-            name="pendidikan_terakhir"
-            label="Pendidikan Terakhir"
-            :error-messages="errors.pendidikan_terakhir"
-            @keyup="errors.pendidikan_terakhir = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.pendidikan_profesi"
-            name="pendidikan_profesi"
-            label="Pendidikan Profesi"
-            :error-messages="errors.pendidikan_profesi"
-            @keyup="errors.pendidikan_profesi = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.tempat_lahir"
-            name="tempat_lahir"
-            label="Tempat Lahir"
-            :error-messages="errors.tempat_lahir"
-            @keyup="errors.tempat_lahir = null"/>
-            
-        <v-dialog
-            ref="tanggal_lahir"
-            v-model="modal_tanggal_lahir"
-            :return-value.sync="item.tanggal_lahir"
-            persistent
-            width="300px"
-			content-class="shadow-sm rounded-xl"
-			overlay-opacity=".25"
-            eager>
-            <template v-slot:activator="{ on, attrs }">
-				<v-text-field
-					dense
-					outlined
-					v-model="item.tanggal_lahir"
-					name="tanggal_lahir"
-					label="Tanggal Lahir"
-                    append-icon="mdi-calendar"
-                    readonly
-                    v-bind="attrs"
-                    v-on="on"
-					:error-messages="errors.tanggal_lahir"/>
-            </template>
-            <v-date-picker v-model="item.tanggal_lahir" scrollable locale="id-id" first-day-of-week="1">
-                <v-spacer></v-spacer>
-                <v-btn text color="primary" @click="modal_tanggal_berdiri = false">
-                    Batal
-                </v-btn>
-                <v-btn text color="primary" @click="$refs.tanggal_lahir.save(item.tanggal_lahir); errors.tanggal_lahir = null">
-                    Pilih
-                </v-btn>
-            </v-date-picker>
-        </v-dialog>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.telepon"
-            name="telepon"
-            label="Telepon"
-            :error-messages="errors.telepon"
-            @keyup="errors.telepon = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.alamat"
-            name="alamat"
-            label="Alamat"
-            :error-messages="errors.alamat"
-            @keyup="errors.alamat = null"/>
+            @change="errors.jenis = null"/>
+
+        <div v-if="item.jenis == 'pengumuman'">
+            <v-dialog
+                ref="expired_at"
+                v-model="modal_tanggal_lahir"
+                :return-value.sync="item.expired_at"
+                persistent
+                width="300px"
+                content-class="shadow-sm rounded-xl"
+                overlay-opacity=".25"
+                eager>
+                <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                        dense
+                        outlined
+                        v-model="item.expired_at"
+                        name="expired_at"
+                        label="Tanggal Pengumuman Berakhir"
+                        append-icon="mdi-calendar"
+                        readonly
+                        v-bind="attrs"
+                        v-on="on"
+                        :error-messages="errors.expired_at"/>
+                </template>
+                <v-date-picker v-model="item.expired_at" scrollable locale="id-id" first-day-of-week="1">
+                    <v-spacer></v-spacer>
+                    <v-btn text color="primary" @click="modal_tanggal_berdiri = false">
+                        Batal
+                    </v-btn>
+                    <v-btn text color="primary" @click="$refs.expired_at.save(item.expired_at); errors.expired_at = null">
+                        Pilih
+                    </v-btn>
+                </v-date-picker>
+            </v-dialog>
+        </div>
+
+        <input-terbit-berita
+            v-model="item.terbit" 
+            :errors="errors" 
+            @change="errors.terbit = null"/>
+
     </div>
 </template>
 <script>
-import InputJenisKelaminGuru from './InputJenisKelaminGuru.vue';
+import InputJenisBerita from './InputJenisBerita.vue';
+import InputTerbitBerita from './InputTerbitBerita.vue';
 export default {
-    components: { InputJenisKelaminGuru },
+    components: { InputJenisBerita, InputTerbitBerita },
     props: {
         errors: Object,
         value: {

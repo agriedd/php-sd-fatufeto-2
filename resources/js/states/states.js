@@ -12,6 +12,8 @@ import siswa from "./v1/siswa"
 import agama from "./v1/agama"
 import pimpinan from "./v1/pimpinan"
 import berita from "./v1/berita"
+import jenis_berita from "./v1/jenis_berita"
+import terbit from "./v1/terbit"
 
 export const states = {
     login,
@@ -28,5 +30,7 @@ export const states = {
     agama,
     pimpinan,
     berita,
+    jenis_berita,
+    terbit,
 }
 export default states

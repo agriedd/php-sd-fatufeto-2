@@ -1,15 +1,15 @@
 <template>
     <v-select
         :items="items"
-        label="Jenis Kelamin"
-        v-model="jenis_kelamin"
+        label="Jenis Berita"
+        v-model="jenis"
         item-text="text"
         item-value="value"
         clearable
         dense
         outlined
-        :error-messages="errors.jenis_kelamin"
-        name="jenis_kelamin"/>
+        :error-messages="errors.jenis"
+        name="jenis"/>
 </template>
 <script>
 import { mapState } from 'vuex'
@@ -20,9 +20,9 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.jenis_kelamin.items
+            items: state => state.jenis_berita.items
         }),
-        jenis_kelamin: {
+        jenis: {
             get(){
                 return this.value
             },

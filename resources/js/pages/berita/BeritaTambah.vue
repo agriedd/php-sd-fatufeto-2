@@ -5,16 +5,16 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Tambah Guru
+                            Form Tambah Berita
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
-                            <v-icon>mdi-account-tie</v-icon>
+                            <v-icon>mdi-newspaper</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog || alive">
-                        <form-tambah-guru :errors="errors"/>
+                        <form-tambah-berita :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -30,9 +30,9 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahGuru from './form/FormTambahBerita.vue'
+import FormTambahBerita from './form/FormTambahBerita.vue'
 export default {
-    components: { FormTambahGuru },
+  components: { FormTambahBerita },
     data(){
         return {
             loading: false,
@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.tambah
+            value_dialog: state => state.berita.modal.tambah
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -51,11 +51,11 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setDialog: 'guru/SET_MODAL_TAMBAH'
+            setDialog: 'berita/SET_MODAL_TAMBAH'
         }),
         ...mapActions({
-            storeGuru: 'guru/store',
-            updateSession: 'guru/updateSession',
+            storeGuru: 'berita/store',
+            updateSession: 'berita/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){

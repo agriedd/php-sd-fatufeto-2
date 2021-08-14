@@ -63,11 +63,11 @@ export default {
             items: [],
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Jenis Kelamin', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis_kelamin' },
-                { text: 'Pangkat', align: 'start d-none d-sm-table-cell', sortable: true, value: 'pangkat' },
-                { text: 'Golongan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'golongan' },
-                { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
+                { text: 'Judul', align: 'start', sortable: true, value: 'judul' },
+                { text: 'jenis', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis' },
+                { text: 'Kategori', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_kategori' },
+                { text: 'Publikasi', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_terbit' },
+                { text: 'Expired', align: 'end d-none d-sm-table-cell', sortable: true, value: 'expired_at' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {

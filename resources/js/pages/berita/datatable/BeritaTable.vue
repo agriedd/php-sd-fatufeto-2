@@ -20,21 +20,31 @@
                 </v-badge>
             </div>
         </template>
-        <template #item.nama="{item}">
+        <template #item.judul="{item}">
             <div class="d-block py-1" @click="rowClick(item)">
                 <div class="mb-1">
-                    {{ item.nama }}
+                    {{ item.judul }}
                 </div>
                 <div class="text--disabled">
-                    NIP.{{ item.nip }}
-                </div>
-                <div class="text--disabled">
-                    {{ item.alamat | sub(250) }}
+                    {{ item.deskripsi }}
                 </div>
             </div>
         </template>
-        <template #item.tanggal_lahir="{item}">
-			{{ item.tempat_lahir ?  `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
+        <template #item.tanggal_terbit="{item}">
+            <div v-if="item.tanggal_terbit">
+                {{ item.tanggal_terbit | datetime }}
+            </div>
+            <div v-else>
+                -
+            </div>
+        </template>
+        <template #item.expired_at="{item}">
+            <div v-if="item.expired_at">
+                {{ item.expired_at | date }}
+            </div>
+            <div v-else>
+                -
+            </div>
         </template>
         <template #item.jenis_kelamin="{item}">
 			<template v-if="item.jenis_kelamin == 'l'">
@@ -50,9 +60,9 @@
 					<v-card
 						:key="item.id == currentId"
 						flat
+                        dark
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 d-flex shadow flex-no-wrap justify-center">
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>

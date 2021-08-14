@@ -35,6 +35,9 @@ Vue.mixin({
         number(val, local = 'id-ID'){
             return new Intl.NumberFormat(local, {}).format(val)
         },
+        sub(val, end){
+            return val.substring(0, end)
+        },
         agama(val){
             switch(val){
                 case '0':

@@ -103,12 +103,7 @@
                                             </div>
                                         </v-card-text>
                                         <v-card-text>
-                                            {{ item.nama }}
-                                            <div class="text-truncate">
-                                                <small>
-                                                    {{ item.nip }}
-                                                </small>
-                                            </div>
+                                            {{ item.judul | sub(20) }}
                                         </v-card-text>
                                     </v-card>
                                     

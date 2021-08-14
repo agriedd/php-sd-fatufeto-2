@@ -4,8 +4,10 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Berita;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestBeritaStore;
 use App\Http\Resources\BeritaCollection;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class BeritaController extends Controller
 {
@@ -23,15 +25,15 @@ class BeritaController extends Controller
         return BeritaCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestBeritaStore $request){
+        $data = collect($request->validated())->except([
+            'terbit'
+        ]);
+        if(request('terbit'))
+            $data->put('tanggal_terbit', now());
+        $berita = Berita::create($data->all());
+        $collection = new BeritaCollection($berita);
+        return new Response($collection, $berita ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

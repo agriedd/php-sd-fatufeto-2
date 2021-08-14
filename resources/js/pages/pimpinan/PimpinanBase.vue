@@ -2,6 +2,7 @@
     <div>
         <router-view/>
         <pimpinan-tambah/>
+        <pimpinan-ubah/>
         <!-- <guru-tambah/>
         <guru-ubah/>
         <guru-hapus/> -->
@@ -9,9 +10,11 @@
 </template>
 <script>
 import PimpinanTambah from './PimpinanTambah.vue'
+import PimpinanUbah from './PimpinanUbah.vue'
 export default {
     components: {
-        PimpinanTambah 
+        PimpinanTambah,
+        PimpinanUbah 
     },
 }
 </script>

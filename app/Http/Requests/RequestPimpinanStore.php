@@ -24,6 +24,7 @@ class RequestPimpinanStore extends FormRequest{
             'tanggal_lahir'   => 'nullable',
             'telepon'   => 'nullable',
             'alamat'   => 'nullable',
+            'id_profil' => 'nullable,exists:tbl_pimpinan,id_profil'
         ];
     }
 }

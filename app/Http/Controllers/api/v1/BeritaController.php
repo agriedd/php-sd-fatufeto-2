@@ -5,9 +5,11 @@ namespace App\Http\Controllers\api\v1;
 use App\Berita;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestBeritaStore;
+use App\Http\Requests\RequestBeritaUpdate;
 use App\Http\Resources\BeritaCollection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class BeritaController extends Controller
 {
@@ -29,7 +31,7 @@ class BeritaController extends Controller
         $data = collect($request->validated())->except([
             'terbit'
         ]);
-        if(request('terbit'))
+        if(request('terbit') && request('terbit') == '1')
             $data->put('tanggal_terbit', now());
         $berita = Berita::create($data->all());
         $collection = new BeritaCollection($berita);
@@ -40,26 +42,21 @@ class BeritaController extends Controller
         return new BeritaCollection($beritum);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Berita  $berita
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Berita $berita)
-    {
-        //
+    public function update(RequestBeritaUpdate $request, Berita $beritum){
+        $data = collect($request->validated())->except([
+            'terbit'
+        ]);
+        if(request('terbit') && request('terbit') == '1')
+            $data->put('tanggal_terbit', now());
+        else
+            $data->put('tanggal_terbit', DB::raw("NULL"));
+        $result = $beritum->update($data->all());
+        $collection = new BeritaCollection($beritum);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Berita  $berita
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Berita $berita)
-    {
-        //
+    public function destroy(Berita $beritum){
+        $beritum->delete();
+        return new Response('', Response::HTTP_NO_CONTENT);
     }
 }

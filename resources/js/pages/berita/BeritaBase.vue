@@ -3,18 +3,18 @@
         <router-view/>
         <berita-tambah/>
         <berita-ubah/>
-        <!-- <guru-tambah/>
-        <guru-ubah/>
-        <guru-hapus/> -->
+        <berita-hapus/>
     </div>
 </template>
 <script>
+import BeritaHapus from './BeritaHapus.vue'
 import BeritaTambah from './BeritaTambah.vue'
 import BeritaUbah from './BeritaUbah.vue'
 export default {
     components: {
         BeritaTambah,
-        BeritaUbah 
+        BeritaUbah,
+        BeritaHapus 
     },
 }
 </script>

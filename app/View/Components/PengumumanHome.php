@@ -2,27 +2,20 @@
 
 namespace App\View\Components;
 
+use App\Berita;
 use Illuminate\View\Component;
 
 class PengumumanHome extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+    private $list_pengumuman;
+
+    public function __construct(){
+        $this->list_pengumuman = Berita::where('jenis', 'pengumuman')->whereRaw("expired_at >= NOW()")->orderBy('tanggal_terbit', 'desc')->paginate(5);
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
-    public function render()
-    {
-        return view('components.pengumuman-home');
+    public function render(){
+        return view('components.pengumuman-home', [
+            'list_pengumuman' => $this->list_pengumuman
+        ]);
     }
 }

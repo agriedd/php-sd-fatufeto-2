@@ -2,18 +2,14 @@
 
 namespace App\View\Components;
 
+use App\Siswa;
 use Illuminate\View\Component;
 
 class ListSiswa extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+    private $list_siswa;
+    public function __construct(){
+        $this->list_siswa = Siswa::all();
     }
 
     /**
@@ -21,8 +17,7 @@ class ListSiswa extends Component
      *
      * @return \Illuminate\View\View|string
      */
-    public function render()
-    {
-        return view('components.list-siswa');
+    public function render(){
+        return view('components.list-siswa', ['list_siswa' => $this->list_siswa]);
     }
 }

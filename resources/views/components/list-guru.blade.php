@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    @for($i = 0; $i < 10; $i++)
+    @foreach ($list_guru as $guru)
     <div class="card mb-2 bg-light border-0" style="border-radius: 1rem;">
         <div class="card-body">
             <div class="row g-0">
@@ -43,31 +43,33 @@
                 <div class="col">
                     <div class="content-middle align-items-start">
                         <div class="text-uppercase small fw-bold">
-                            Lorem Ipsum
+                            {{ $guru->nama }}
                         </div>
                         <div class="text-muted small">
-                            319239192392112313
+                            {{ $guru->nip }}
                         </div>
                     </div>
                 </div>
                 <div class="col-3">
                     <div class="content-middle align-items-start">
                         <small>
-                            Laki-Laki
+                            {{ $guru->jenis_kelamin == 'l' ? 'Laki-laki' : 'Perempuan' }}
                         </small>
                     </div>
                 </div>
                 <div class="col-3 d-none d-sm-block">
                     <div class="content-middle align-items-start">
-                        <small>
-                            Lorem ipsum dolor
-                        </small>
+                        @if($guru->kelas)
+                            <small>
+                                Walikelas {{ $guru->kelas->nama }}
+                            </small>
+                        @endif
                     </div>
                 </div>
             </div class="row g-0">
         </div>
     </div>
-    @endfor
+    @endforeach
 </div>
 @else
 <div class="mb-3">

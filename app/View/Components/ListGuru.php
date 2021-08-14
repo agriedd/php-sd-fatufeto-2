@@ -2,18 +2,15 @@
 
 namespace App\View\Components;
 
+use App\Guru;
 use Illuminate\View\Component;
 
 class ListGuru extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+    private $list_guru;
+
+    public function __construct(){
+        $this->list_guru = Guru::all();
     }
 
     /**
@@ -21,8 +18,9 @@ class ListGuru extends Component
      *
      * @return \Illuminate\View\View|string
      */
-    public function render()
-    {
-        return view('components.list-guru');
+    public function render(){
+        return view('components.list-guru', [
+            'list_guru' => $this->list_guru
+        ]);
     }
 }

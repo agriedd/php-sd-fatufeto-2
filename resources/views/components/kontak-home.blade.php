@@ -7,7 +7,7 @@
     <div class="card border-0 p-3" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
         <div class="card-body">
             <li>
-                Telepon:
+                Telepon: {{ env('TELEPON', '') }}
             </li>
         </div>
     </div>

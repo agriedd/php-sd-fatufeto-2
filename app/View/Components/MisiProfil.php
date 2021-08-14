@@ -13,13 +13,7 @@ class MisiProfil extends Component
         $this->misi = $visi_misi->misi;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
-    public function render()
-    {
+    public function render(){
         return view('components.misi-profil', [
             'list_misi' => $this->misi
         ]);

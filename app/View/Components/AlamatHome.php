@@ -2,27 +2,20 @@
 
 namespace App\View\Components;
 
+use App\Sekolah;
 use Illuminate\View\Component;
 
 class AlamatHome extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+
+    private $alamat;
+    public function __construct(){
+        $this->alamat = optional(Sekolah::first())->alamat;
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
-    public function render()
-    {
-        return view('components.alamat-home');
+    public function render(){
+        return view('components.alamat-home', [
+            'alamat' => $this->alamat
+        ]);
     }
 }

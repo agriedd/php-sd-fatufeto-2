@@ -14,7 +14,7 @@
                     </svg>
                 </div>
                 <div>
-                    {{ env('ALAMAT', '') }}
+                    {{ env('ALAMAT', $alamat ?? '') }}
                 </div>
             </div>
         </div>

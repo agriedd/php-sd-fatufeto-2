@@ -36,15 +36,8 @@ class BeritaController extends Controller
         return new Response($collection, $berita ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Berita  $berita
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Berita $berita)
-    {
-        //
+    public function show(Berita $beritum){
+        return new BeritaCollection($beritum);
     }
 
     /**

@@ -7,6 +7,7 @@ import sarana from './admin/sarana'
 import sekolah from './admin/sekolah'
 import siswa from './admin/siswa'
 import pimpinan from './admin/pimpinan'
+import berita from './admin/berita'
 export default [
     { path: '/admin', component: Index, name: 'admin' },
     ...sekolah,
@@ -17,6 +18,7 @@ export default [
     ...kelas,
     ...siswa,
     ...pimpinan,
+    ...berita,
     // { path: '/admin/jemaat/kk', component: KK, name: 'admin.kk' },
     // { path: '/admin/jemaat', component: Jemaat },
     //     { path: '/admin/jemaat/:id', component: InfoJemaat, name: 'jemaat.info' },

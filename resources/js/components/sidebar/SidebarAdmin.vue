@@ -199,7 +199,7 @@
 			</v-list-item-group>
 			<v-subheader v-text="'Berita dan Kegiatan'" inset/>
 			<v-list-item-group dense flat nav>
-				<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+				<v-list-item dense link color="primary" :to="{ name: 'berita' }" exact>
 					<v-list-item-icon>
 						<v-icon>mdi-newspaper</v-icon>
 					</v-list-item-icon>
@@ -213,7 +213,7 @@
 							</v-list-item-action>
 						</template>
 						<v-list>
-							<v-list-item dense>
+							<v-list-item dense link :to="{ name: 'berita.insert' }">
 								<v-list-item-icon>
 									<v-icon>mdi-newspaper-plus</v-icon>
 								</v-list-item-icon>
@@ -221,7 +221,7 @@
 									<v-list-item-title v-text="'Tambah Berita'"/>
 								</v-list-item-content>
 							</v-list-item>
-							<v-list-item dense>
+							<v-list-item dense :to="{ name: 'berita.list' }">
 								<v-list-item-icon>
 									<v-icon>mdi-magnify</v-icon>
 								</v-list-item-icon>

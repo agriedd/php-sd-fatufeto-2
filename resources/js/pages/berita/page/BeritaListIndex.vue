@@ -7,7 +7,7 @@
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <guru-table
+            <berita-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoGuru"
-                @editRow="ubahInfoGuru"
-                @deleteRow="hapusInfoGuru"
+                @rowClick="toInfoBerita"
+                @editRow="ubahInfoBerita"
+                @deleteRow="hapusInfoBerita"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import GuruTable from '../datatable/GuruTable.vue'
+import BeritaTable from '../datatable/BeritaTable.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +36,7 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        GuruTable
+        BeritaTable
     },
     data(){
         return {
@@ -49,14 +49,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Berita',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'berita'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Guru',
+                    text: 'List Berita',
                     disabled: true,
                 },
             ],
@@ -96,10 +96,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'guru/get',
+            getItems: 'berita/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
+            showUbahDialog: 'berita/setModalUbah',
+            showHapusDialog: 'berita/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -130,7 +130,7 @@ export default {
             }, 800);
         },
         rowClick(e){
-            this.$emit('open:guru:info', e)
+            this.$emit('open:berita:info', e)
         },
         editRow(e){
 
@@ -138,14 +138,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoGuru({id_guru: id}){
+        ubahInfoBerita({id_berita: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru({id_guru: id}){
+        hapusInfoBerita({id_berita: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoGuru({id_guru}){
-            this.$router.push({ name: 'guru.show', params: { id_guru } })
+        toInfoBerita({id_berita}){
+            this.$router.push({ name: 'berita.show', params: { id_berita } })
         },
     },
     watch: {

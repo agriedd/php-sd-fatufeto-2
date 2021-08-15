@@ -24,6 +24,9 @@
                             <div class="text--disabled">
                                 NIP. {{ item.guru.nip }}
                             </div>
+                            <div class="pt-3 text-center text--disabled">
+                                [{{ item.siswa_count }} Siswa]
+                            </div>
                         </div>
                     </v-card-text>
                 </v-card>

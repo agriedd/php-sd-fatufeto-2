@@ -254,7 +254,6 @@
 		</v-list>
 		<template #append>
 			<v-divider/>
-			<v-subheader v-text="'Akun dan Pengaturan'" inset/>
 			<v-list dense flat nav>
 			<v-menu content-class="shadow-lg rounded-lg" open-on-hover offset-x min-width="250" :close-on-content-click="false" :close-on-click="false" open-delay=".5" transition="slide-x-transition">
 				<template #activator="{ attrs, on }">

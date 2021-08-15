@@ -10,7 +10,7 @@
             <v-container>
                 <div v-if="loading">
                     <div class="d-grid-sekolah">
-                        <v-card v-for="i in total_sekolah || 4" :key="i" color="grey lighten-4 overflow-hidden" flat rounded="xl">
+                        <v-card v-for="i in total_sekolah || 1" :key="i" color="grey lighten-4 overflow-hidden" flat rounded="xl">
                             <div style="min-height: 300px">
                                 <v-card-text>
                                     <v-skeleton-loader type="avatar" loading/>
@@ -129,7 +129,7 @@
                                 </div>
                             </v-card-text>
                         </v-card>
-                        <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="openModalTambah">
+                        <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="openModalTambah" v-if="!exists">
                             <div style="min-height: 300px" class="d-flex">
                                 <div class="w-100">
                                     <div class="content-middle">

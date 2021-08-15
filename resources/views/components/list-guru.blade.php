@@ -2,7 +2,7 @@
     <div class="card border-0 bg-white shadow-sm mx-auto" style="border-radius: .5rem; max-width: 400px">
         <div class="card-body">
             <div class="d-flex">
-                <input type="search" class="form-control w-100 outline-none shadow-none border-0" placeholder="Temukan..">
+                <input type="search" class="form-control w-100 outline-none shadow-none border-0" placeholder="Temukan.." v-model="search">
                 <div class="ps-3 text-muted">
                     <div class="content-middle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -15,62 +15,7 @@
     </div>
 </div>
 @if($table = true)
-<div class="mb-3">
-    <div class="card mb-2 bg-dark text-light border-0" style="border-radius: 1rem;">
-        <div class="card-body">
-            <div class="row g-0">
-                <div class="col" style="max-width: 4rem;">
-                </div>
-                <div class="col">
-                    Nama
-                </div>
-                <div class="col-3">
-                    Jenis Kelamin
-                </div>
-                <div class="col-3 d-none d-sm-block">
-                    Keterangan
-                </div>
-            </div>
-        </div>
-    </div>
-    @foreach ($list_guru as $guru)
-    <div class="card mb-2 bg-light border-0" style="border-radius: 1rem;">
-        <div class="card-body">
-            <div class="row g-0">
-                <div class="col" style="max-width: 4rem;">
-                    <div class="foto-profil flex-grow-1 shadow-sm" style="height: 3rem; width: 3rem; background-image: url('{{ asset('img/mihai-moisa-CaVEetK-bIY-unsplash.jpg') }}');"></div>
-                </div>
-                <div class="col">
-                    <div class="content-middle align-items-start">
-                        <div class="text-uppercase small fw-bold">
-                            {{ $guru->nama }}
-                        </div>
-                        <div class="text-muted small">
-                            {{ $guru->nip }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="content-middle align-items-start">
-                        <small>
-                            {{ $guru->jenis_kelamin == 'l' ? 'Laki-laki' : 'Perempuan' }}
-                        </small>
-                    </div>
-                </div>
-                <div class="col-3 d-none d-sm-block">
-                    <div class="content-middle align-items-start">
-                        @if($guru->kelas)
-                            <small>
-                                Walikelas {{ $guru->kelas->nama }}
-                            </small>
-                        @endif
-                    </div>
-                </div>
-            </div class="row g-0">
-        </div>
-    </div>
-    @endforeach
-</div>
+    <list-guru v-model="search"/>
 @else
 <div class="mb-3">
     <div class="grid-guru">

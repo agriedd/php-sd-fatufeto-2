@@ -15,11 +15,12 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @endif
 </head>
-<body>
+<body class="position-relative">
     <div id="app">
-        <main>
+        <main class="position-relative">
             @yield('content')
         </main>
     </div>
+    @stack('footer')
 </body>
 </html>

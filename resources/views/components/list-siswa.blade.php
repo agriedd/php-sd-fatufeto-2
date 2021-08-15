@@ -2,7 +2,7 @@
     <div class="card border-0 bg-white shadow-sm mx-auto" style="border-radius: .5rem; max-width: 400px">
         <div class="card-body">
             <div class="d-flex">
-                <input type="search" class="form-control w-100 outline-none shadow-none border-0" placeholder="Temukan..">
+                <input type="search" class="form-control w-100 outline-none shadow-none border-0" placeholder="Temukan.." v-model="search">
                 <div class="ps-3 text-muted">
                     <div class="content-middle">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
@@ -15,64 +15,7 @@
     </div>
 </div>
 @if($table = true)
-<div class="mb-3">
-    <div class="card mb-2 bg-dark text-light border-0" style="border-radius: 1rem;">
-        <div class="card-body">
-            <div class="row g-0">
-                <div class="col" style="max-width: 4rem;">
-                </div>
-                <div class="col">
-                    Nama
-                </div>
-                <div class="col-3">
-                    Jenis Kelamin
-                </div>
-                <div class="col-3 d-none d-sm-block">
-                    Keterangan
-                </div>
-            </div>
-        </div>
-    </div>
-    @foreach($list_siswa as $siswa)
-    <div class="card mb-2 bg-light border-0" style="border-radius: 1rem;">
-        <div class="card-body">
-            <div class="row g-0">
-                <div class="col" style="max-width: 4rem;">
-                    <div class="foto-profil flex-grow-1 shadow-sm d-flex flex-column justify-content-center align-items-center" style="height: 3rem; width: 3rem; background: #0003">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
-                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                        </svg>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="content-middle align-items-start">
-                        <div class="text-uppercase small fw-bold">
-                            {{ $siswa->nama_siswa }}
-                        </div>
-                        <div class="text-muted small">
-                            {{ $siswa->nis }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="content-middle align-items-start">
-                        <small>
-                            {{ $siswa->jenis_kelamin == 'l' ? 'Laki-laki' : 'Perempuan' }}
-                        </small>
-                    </div>
-                </div>
-                <div class="col-3 d-none d-sm-block">
-                    <div class="content-middle align-items-start">
-                        <small>
-                            {{ $siswa->kelas->nama }}
-                        </small>
-                    </div>
-                </div>
-            </div class="row g-0">
-        </div>
-    </div>
-    @endforeach
-</div>
+    <list-siswa v-model="search"/>
 @else
 <div class="mb-3">
     <div class="grid-guru">

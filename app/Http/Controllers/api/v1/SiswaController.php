@@ -24,6 +24,9 @@ class SiswaController extends Controller{
             ->when(request('id_kelas'), function($query, $search){
                 $query->where('id_kelas', $search);
             })
+            ->when(request('search'), function($query, $search){
+                $query->where('nama_siswa', 'LIKE', '%'.$search.'%');
+            })
             ->paginate(request('itemsPerPage') ?? 10);
         return SiswaCollection::collection($data);
     }

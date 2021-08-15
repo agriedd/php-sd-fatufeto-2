@@ -56,7 +56,7 @@
                                     <v-card-text>
                                         <div class="d-flex w-100">
                                             <v-avatar color="grey lighten-2">
-                                                <v-icon>mdi-account-tie</v-icon>
+                                                <v-icon>mdi-newspaper</v-icon>
                                             </v-avatar>
                                             <v-spacer/>
                                             <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
@@ -67,7 +67,7 @@
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoBerita(item.id_guru)">
+                                                    <v-list-item dense link @click="ubahInfoBerita(item.id_berita)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoBerita(item.id_guru)">
+                                                    <v-list-item dense link @click="hapusInfoBerita(item.id_berita)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,35 +105,35 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Berita
+                                                Judul Berita
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
-                                                {{ item.nama }}
+                                                {{ item.judul }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item>
+                                    <v-list-item three-line>
                                         <v-list-item-content>
-                                            <v-list-item-title>
-                                                NIP.{{ item.nip }}
-                                            </v-list-item-title>
+                                            <v-list-item-subtitle>
+                                                {{ item.deskripsi }}
+                                            </v-list-item-subtitle>
                                         </v-list-item-content>
                                     </v-list-item>
                                     <v-divider/>
                                     <v-list-item>
                                         <v-list-item-icon>
-                                            <v-icon>mdi-gender-{{ item.jenis_kelamin == 'l' ? 'male' : 'female' }}</v-icon>
+                                            <v-icon>mdi-{{ item.jenis == 'berita' ? 'newspaper' : 'bell' }}</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Jenis Kelamin
+                                                Jenis Berita
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                <template v-if="item.jenis_kelamin == 'l'">
-                                                    Laki-laki
+                                                <template v-if="item.jenis == 'berita'">
+                                                    Berita
                                                 </template>
-                                                <template v-else-if="item.jenis_kelamin == 'p'">
-                                                    Perempuan
+                                                <template v-else-if="item.jenis == 'pengumuman'">
+                                                    Pengumuman
                                                 </template>
                                             </v-list-item-title>
                                         </v-list-item-content>
@@ -144,36 +144,23 @@
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Tempat Tanggal Lahir
+                                                Tanggal Terbit
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{  item.tanggal_lahir ? `${item.tanggal_lahir},` : null }} {{ item.tanggal_lahir | date }}
+                                                {{ item.tanggal_terbit | datetime }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item>
+                                    <v-list-item v-if="item.jenis == 'pengumuman'">
                                         <v-list-item-icon>
-                                            <v-icon>mdi-map-marker</v-icon>
+                                            <v-icon>mdi-calendar</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Alamat
+                                                Berlaku Hingga
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.alamat }}
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-phone</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-subtitle>
-                                                Telepon
-                                            </v-list-item-subtitle>
-                                            <v-list-item-title class="">
-                                                {{ item.telepon }}
+                                                {{ item.expired_at | date }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -199,7 +186,6 @@
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
                                         <v-tab :to="{name: 'berita.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'berita.kelas'}" exact>Kelas</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -252,7 +238,7 @@ export default {
             session: 'berita/getSession',
         }),
         id(){
-            return this.$route.params.id_guru
+            return this.$route.params.id_berita
         }
     },
     watch: {

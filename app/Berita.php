@@ -9,6 +9,11 @@ class Berita extends Model{
     protected $primaryKey = "id_berita";
     protected $guarded = [];
     protected $appends = ['terbit'];
+    protected $with = ['kategori'];
+
+    public function kategori(){
+        return $this->belongsTo(Kategori::class,'id_kategori','id_kategori');
+    }
 
     public function getTerbitAttribute(){
         return $this->attributes['tanggal_terbit'] ? '1' : '0';

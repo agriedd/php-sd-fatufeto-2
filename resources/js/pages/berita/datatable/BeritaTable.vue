@@ -46,12 +46,11 @@
                 -
             </div>
         </template>
-        <template #item.jenis_kelamin="{item}">
-			<template v-if="item.jenis_kelamin == 'l'">
-				Laki-laki
-			</template>
-			<template v-else-if="item.jenis_kelamin == 'p'">
-				Perempuan
+        <template #item.id_kategori="{item}">
+			<template v-if="item.id_kategori && item.kategori">
+                <v-chip color="teal" dark>
+    				{{ item.kategori.nama_kategori }}
+                </v-chip>
 			</template>
         </template>
         <template #item.action="{item}">

@@ -30,6 +30,7 @@ class RequestBeritaUpdate extends FormRequest
             'jenis'   => 'required|in:berita,pengumuman',
             'expired_at'   => 'nullable',
             'terbit'   => 'in:0,1',
+            'id_kategori'   => 'exists:tbl_kategori,id_kategori',
         ];
     }
 }

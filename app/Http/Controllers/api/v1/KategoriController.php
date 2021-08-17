@@ -22,6 +22,12 @@ class KategoriController extends Controller{
                             : 'ASC' );
                 }
             })
+            ->when(request('search'), function($query, $search){
+                $query->where('nama_kategori', 'like', '%'.$search.'%');
+            })
+            ->when(request('id'), function($query, $search){
+                $query->orWhere('id_kategori', '=', $search);
+            })
             ->paginate(request('itemsPerPage') ?? 10);
         return KategoriCollection::collection($data);
     }

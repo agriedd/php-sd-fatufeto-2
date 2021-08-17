@@ -17,6 +17,9 @@
             :error-messages="errors.deskripsi"
             @keyup="errors.deskripsi = null"
             counter="191"/>
+        <input-pilih-kategori
+            v-model="item.id_kategori"
+            :errors="errors"/>
         <v-textarea
             dense
             outlined
@@ -74,9 +77,10 @@
 </template>
 <script>
 import InputJenisBerita from './InputJenisBerita.vue';
+import InputPilihKategori from './InputPilihKategori.vue';
 import InputTerbitBerita from './InputTerbitBerita.vue';
 export default {
-    components: { InputJenisBerita, InputTerbitBerita },
+    components: { InputJenisBerita, InputTerbitBerita, InputPilihKategori },
     props: {
         errors: Object,
         value: {

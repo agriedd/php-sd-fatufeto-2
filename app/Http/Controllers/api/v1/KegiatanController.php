@@ -59,15 +59,8 @@ class KegiatanController extends Controller{
         return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Kegiatan $kegiatan)
-    {
-        //
+    public function show(Kegiatan $kegiatan){
+        return new KegiatanCollection($kegiatan);
     }
 
     /**

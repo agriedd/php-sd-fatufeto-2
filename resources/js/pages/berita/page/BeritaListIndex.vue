@@ -1,6 +1,6 @@
 <template>
     <div class="pa-md-3">
-        <v-card color="white" rounded="xl" class="mb-3 shadow-sm">
+        <v-card color="white" rounded="xl" class="mb-3 shadow-sm" v-if="!noBreadcrumb">
             <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
         </v-card>
         <v-card class="shadow-sm" rounded="xl">
@@ -34,6 +34,21 @@ export default {
         params: Object,
         small: Boolean,
         noSelect: Boolean,
+        noBreadcrumb: Boolean,
+        headers: {
+            type: Array,
+            default: () => {
+                return [
+                    { text: null, align: 'center', sortable: false, value: 'foto' },
+                    { text: 'Judul', align: 'start', sortable: true, value: 'judul' },
+                    { text: 'jenis', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis' },
+                    { text: 'Kategori', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_kategori' },
+                    { text: 'Publikasi', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_terbit' },
+                    { text: 'Expired', align: 'end d-none d-sm-table-cell', sortable: true, value: 'expired_at' },
+                    { text: null, align: '', sortable: true, value: 'action' },
+                ]
+            }
+        }
     },
     components: {
         BeritaTable
@@ -61,15 +76,6 @@ export default {
                 },
             ],
             items: [],
-            headers: [
-                { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Judul', align: 'start', sortable: true, value: 'judul' },
-                { text: 'jenis', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis' },
-                { text: 'Kategori', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_kategori' },
-                { text: 'Publikasi', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_terbit' },
-                { text: 'Expired', align: 'end d-none d-sm-table-cell', sortable: true, value: 'expired_at' },
-                { text: null, align: '', sortable: true, value: 'action' },
-            ],
             options: {
                 page: 1,
                 itemsPerPage: 10,

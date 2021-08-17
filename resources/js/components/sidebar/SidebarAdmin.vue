@@ -257,7 +257,7 @@
 			<v-list dense flat nav>
 			<v-menu content-class="shadow-lg rounded-lg" open-on-hover offset-x min-width="250" :close-on-content-click="false" :close-on-click="false" open-delay=".5" transition="slide-x-transition">
 				<template #activator="{ attrs, on }">
-					<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact v-on="on" v-bind="attrs">
+					<v-list-item dense link color="primary" exact v-on="on" v-bind="attrs">
 						<v-list-item-icon>
 							<v-icon>mdi-cogs</v-icon>
 						</v-list-item-icon>
@@ -270,7 +270,7 @@
 					</v-list-item>
 				</template>
 				<v-list nav>
-					<v-list-item dense>
+					<v-list-item dense link target="_blank" :href="host">
 						<v-list-item-icon>
 							<v-icon>mdi-link</v-icon>
 						</v-list-item-icon>
@@ -293,7 +293,7 @@
 	</v-navigation-drawer>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapState } from 'vuex'
 import SidebarAdminHeader from './SidebarAdminHeader.vue'
 export default {
     components: { 
@@ -315,5 +315,13 @@ export default {
 			this.showLogoutConfirm(true)
 		}
 	},
+	data(){
+		return {
+			host: ''
+		}
+	},
+	created(){
+		this.host = `http://${window.location.host}`
+	}
 }
 </script>

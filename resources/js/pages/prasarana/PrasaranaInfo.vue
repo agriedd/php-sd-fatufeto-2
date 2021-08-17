@@ -119,10 +119,10 @@
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Spesifikasi
+                                                Kondisi
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.spesifikasi }}
+                                                {{ item.kondisi }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>

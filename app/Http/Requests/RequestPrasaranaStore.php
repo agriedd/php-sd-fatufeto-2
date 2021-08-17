@@ -12,7 +12,7 @@ class RequestPrasaranaStore extends FormRequest{
     public function rules(){
         return [
             'nama'          => 'required|unique:tbl_prasarana,nama',
-            'spesifikasi'   => 'nullable',
+            'kondisi'   => 'nullable',
             'id_sekolah'    => 'exists:tbl_sekolah,id_profil',
             'jumlah'        => 'numeric'
         ];

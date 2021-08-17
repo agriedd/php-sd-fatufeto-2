@@ -12,11 +12,11 @@
         <v-text-field
             dense
             outlined
-            v-model="item.spesifikasi"
-            name="spesifikasi"
-            label="Spesifikasi"
-            :error-messages="errors.spesifikasi"
-            @keyup="errors.spesifikasi = null"/>
+            v-model="item.kondisi"
+            name="kondisi"
+            label="Kondisi"
+            :error-messages="errors.kondisi"
+            @keyup="errors.kondisi = null"/>
         <v-text-field
             dense
             outlined

@@ -17,7 +17,8 @@ class RequestPrasaranaUpdate extends FormRequest{
                 'required',
                 Rule::unique('tbl_prasarana', 'nama')->ignore($id, 'id_prasarana')
             ],
-            'spesifikasi'   => 'nullable',
+            'kondisi'   => 'nullable',
+            // 'spesifikasi'   => 'nullable',
             'id_sekolah'    => 'exists:tbl_sekolah,id_profil',
             'jumlah'        => 'numeric'
         ];

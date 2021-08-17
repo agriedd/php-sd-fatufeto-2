@@ -66,7 +66,7 @@ export default {
                 { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
                 { text: 'Sekolah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_sekolah' },
                 { text: 'Jumlah', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jumlah' },
-                { text: 'Spesifikasi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'spesifikasi' },
+                { text: 'Kondisi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'kondisi' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {

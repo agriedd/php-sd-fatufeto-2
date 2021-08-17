@@ -19,6 +19,11 @@
         <template #item.jumlah="{item}">
             {{ item.jumlah | number }}
         </template>
+        <template #item.kondisi="{item}">
+            <v-chip color="teal" v-if="item.kondisi" dark>
+                {{ item.kondisi }}
+            </v-chip>
+        </template>
         <template #item.action="{item}">
 			<div>
 				<v-slide-x-transition mode="out-in">

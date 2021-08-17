@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\api\v1;
 
+use App\Gambar;
 use App\Guru;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestGuruStore;
@@ -10,6 +11,7 @@ use App\Http\Resources\GuruCollection;
 use App\Http\Resources\SekolahCollection;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class GuruController extends Controller{
 
@@ -39,8 +41,26 @@ class GuruController extends Controller{
     }
 
     public function update(RequestGuruUpdate $request, Guru $guru){
-        $data = collect($request->validated());
+        $data = collect($request->validated())->except(['foto']);
         $result = $guru->update($data->all());
+
+        /**
+         * update foto guru
+         * 
+         */
+        if($request->file('foto') != null){
+            /**
+             * hapus foto guru lama
+             * 
+             */
+            if($guru->foto && Storage::exists($guru->foto->src)){
+                Storage::delete($guru->foto->src);
+                $guru->foto->delete();
+            }
+            $foto = $request->file('foto')->store('guru');
+            $foto = $guru->foto()->create(['src' => $foto]);
+        }
+
         $collection = new SekolahCollection($guru);
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }

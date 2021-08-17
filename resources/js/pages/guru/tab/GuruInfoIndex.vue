@@ -1,5 +1,8 @@
 <template>
     <v-card color="grey lighten-5 overflow-hidden mt-3" rounded="xl" flat>
+        <div class="content-middle pa-5 align-start">
+            <v-img :src="item.foto.url" :aspect-ratio="1/1" class="rounded-xl shadow" max-height="200" max-width="200" width="100%" height="100%"/>
+        </div>
         <v-card-text>
             <v-list-item>
                 <v-list-item-icon>

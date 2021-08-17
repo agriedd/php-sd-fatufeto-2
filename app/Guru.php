@@ -15,6 +15,6 @@ class Guru extends Model{
     }
 
     public function foto(){
-        return $this->morphOne(Gambar::class, 'gambarable');
+        return $this->morphOne(Gambar::class, 'gambarable')->latest();
     }
 }

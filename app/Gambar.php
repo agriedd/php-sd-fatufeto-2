@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 
 class Gambar extends Model{
-    protected $table = "gambar";
+    protected $table = "tbl_gambar";
     protected $guarded = [];
     protected $appends = ['url'];
     

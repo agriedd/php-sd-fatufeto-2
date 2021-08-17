@@ -20,7 +20,10 @@
             v-model="item.jenis_kelamin" 
             :errors="errors" 
             @change="errors.jenis_kelamin = null"/>
-        <v-spacer/>
+        <input-foto-guru
+            v-model="item"
+            :errors="errors"
+            :foto="item.foto ? item.foto : {}"/>
         <v-text-field
             dense
             outlined
@@ -29,22 +32,6 @@
             label="Jabatan"
             :error-messages="errors.jabatan"
             @keyup="errors.jabatan = null"/>
-        <!-- <v-text-field
-            dense
-            outlined
-            v-model="item.pangkat"
-            name="pangkat"
-            label="Pangkat"
-            :error-messages="errors.pangkat"
-            @keyup="errors.pangkat = null"/>
-        <v-text-field
-            dense
-            outlined
-            v-model="item.golongan"
-            name="golongan"
-            label="Golongan"
-            :error-messages="errors.golongan"
-            @keyup="errors.golongan = null"/> -->
         <v-spacer/>
         <v-text-field
             dense
@@ -122,9 +109,10 @@
     </div>
 </template>
 <script>
+import InputFotoGuru from './InputFotoGuru.vue';
 import InputJenisKelaminGuru from './InputJenisKelaminGuru.vue';
 export default {
-    components: { InputJenisKelaminGuru },
+    components: { InputJenisKelaminGuru, InputFotoGuru },
     props: {
         errors: Object,
         value: {
@@ -134,6 +122,7 @@ export default {
                     nama_guru: null,
                     nip: null,
                     alamat: null,
+                    input_foto: null,
                 }
             }
         }

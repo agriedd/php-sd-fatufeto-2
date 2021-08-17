@@ -29,6 +29,7 @@ class RequestGuruUpdate extends FormRequest{
             'tanggal_lahir'   => 'nullable',
             'telepon'   => 'nullable',
             'alamat'   => 'nullable',
+            'foto'   => 'nullable|image|max:2048',
         ];
     }
 }

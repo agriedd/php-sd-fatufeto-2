@@ -14,7 +14,7 @@
                     </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
-            <v-list-item>
+            <!-- <v-list-item>
                 <v-list-item-icon>
                     <v-icon></v-icon>
                 </v-list-item-icon>
@@ -39,7 +39,7 @@
                         {{ item.golongan }}
                     </v-list-item-title>
                 </v-list-item-content>
-            </v-list-item>
+            </v-list-item> -->
             <v-list-item>
                 <v-list-item-icon>
                     <v-icon></v-icon>
@@ -49,7 +49,7 @@
                         Status
                     </v-list-item-subtitle>
                     <v-list-item-title class="">
-                        {{ item.status }}
+                        {{ item.status == '1' ? 'Aktif' : 'Tidak Aktif' }}
                     </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>

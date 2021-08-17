@@ -29,7 +29,7 @@
             label="Jabatan"
             :error-messages="errors.jabatan"
             @keyup="errors.jabatan = null"/>
-        <v-text-field
+        <!-- <v-text-field
             dense
             outlined
             v-model="item.pangkat"
@@ -44,7 +44,7 @@
             name="golongan"
             label="Golongan"
             :error-messages="errors.golongan"
-            @keyup="errors.golongan = null"/>
+            @keyup="errors.golongan = null"/> -->
         <v-spacer/>
         <v-text-field
             dense

@@ -36,6 +36,11 @@
         <template #item.waktu="{item}">
             {{ item.waktu | time }}
         </template>
+        <template #item.nama_kegiatan="{item}">
+            <div @click="rowClick(item)">
+                {{ item.nama_kegiatan }}
+            </div>
+        </template>
         <template #item.action="{item}">
 			<div>
 				<v-slide-x-transition mode="out-in">

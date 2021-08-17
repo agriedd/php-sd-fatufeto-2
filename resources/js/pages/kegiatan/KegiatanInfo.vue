@@ -3,13 +3,13 @@
         <v-app-bar app flat floating absolute>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Info Guru
+                Info Kegiatan
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
             <v-container>
                 <div v-if="loading">
-                    <div class="d-grid-guru-info">
+                    <div class="d-grid-kegiatan-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" flat rounded="xl" class="mb-3">
                                 <v-card-text>
@@ -29,24 +29,24 @@
                 <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
-                            Info Guru Tidak Ditemukan
+                            Info Kegiatan Tidak Ditemukan
                         </span>
                     </v-alert>
-                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'guru' }">
+                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'kegiatan' }">
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-2">
-                                <v-icon>mdi-account-tie</v-icon>
+                                <v-icon>mdi-flag</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    Kembali ke daftar guru
+                                    Kembali ke daftar kegiatan
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
                 </div>
                 <div v-else>
-                    <div class="d-grid-guru-info">
+                    <div class="d-grid-kegiatan-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat class="mb-3">
                                 <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
@@ -67,7 +67,7 @@
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoGuru(item.id_guru)">
+                                                    <v-list-item dense link @click="ubahInfoGuru(item.id_kegiatan)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoGuru(item.id_guru)">
+                                                    <v-list-item dense link @click="hapusInfoGuru(item.id_kegiatan)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,49 +105,10 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Guru
+                                                Nama Kegiatan
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
-                                                {{ item.nama }}
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-list-item-content>
-                                            <v-list-item-title>
-                                                NIP.{{ item.nip }}
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-divider/>
-                                    <v-list-item>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-gender-{{ item.jenis_kelamin == 'l' ? 'male' : 'female' }}</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-subtitle>
-                                                Jenis Kelamin
-                                            </v-list-item-subtitle>
-                                            <v-list-item-title class="">
-                                                <template v-if="item.jenis_kelamin == 'l'">
-                                                    Laki-laki
-                                                </template>
-                                                <template v-else-if="item.jenis_kelamin == 'p'">
-                                                    Perempuan
-                                                </template>
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-list-item>
-                                        <v-list-item-icon>
-                                            <v-icon>mdi-calendar</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-subtitle>
-                                                Tempat Tanggal Lahir
-                                            </v-list-item-subtitle>
-                                            <v-list-item-title class="">
-                                                {{  item.tanggal_lahir ? `${item.tanggal_lahir},` : null }} {{ item.tanggal_lahir | date }}
+                                                {{ item.nama_kegiatan }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
@@ -157,25 +118,54 @@
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Alamat
+                                                Lokasi
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.alamat }}
+                                                {{ item.lokasi }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
                                     <v-list-item>
                                         <v-list-item-icon>
-                                            <v-icon>mdi-phone</v-icon>
+                                            <v-icon>mdi-calendar</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Telepon
+                                                Tanggal
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ item.telepon }}
+                                                {{ item.tanggal | date }}
                                             </v-list-item-title>
                                         </v-list-item-content>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-icon>
+                                            <v-icon>mdi-clock</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-content>
+                                            <v-list-item-subtitle>
+                                                Waktu
+                                            </v-list-item-subtitle>
+                                            <v-list-item-title class="">
+                                                {{ item.waktu | time }}
+                                            </v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
+                                    <v-list-item>
+                                        <v-list-item-icon>
+                                            <v-icon>mdi-calendar</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-content>
+                                            <v-list-item-subtitle>
+                                                Mingguan
+                                            </v-list-item-subtitle>
+                                            <v-list-item-title class="">
+                                                {{ item.hari }}
+                                            </v-list-item-title>
+                                        </v-list-item-content>
+                                        <v-list-item-avatar color="teal lighten-5" class="" v-if="item.hari != null">
+                                            <v-icon color="teal">mdi-check</v-icon>
+                                        </v-list-item-avatar>
                                     </v-list-item>
                                     <v-divider inset/>
                                     <v-list-item>
@@ -198,8 +188,7 @@
                             <div class="sticky-top" style="z-index: 1;">
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
-                                        <v-tab :to="{name: 'guru.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'guru.kelas'}" exact>Kelas</v-tab>
+                                        <v-tab :to="{name: 'kegiatan.show'}" exact>Informasi</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -231,14 +220,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Kegiatan',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'kegiatan'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'Info Guru',
+                    text: 'Info Kegiatan',
                     disabled: true,
                 },
             ]
@@ -246,13 +235,13 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.guru.items,
+            items: state => state.kegiatan.items,
         }),
         ...mapGetters({
-            session: 'guru/getSession',
+            session: 'kegiatan/getSession',
         }),
         id(){
-            return this.$route.params.id_guru
+            return this.$route.params.id_kegiatan
         }
     },
     watch: {
@@ -263,9 +252,9 @@ export default {
     methods: {
         ...mapMutations({  }),
         ...mapActions({
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
-            getItem: 'guru/show',
+            showUbahDialog: 'kegiatan/setModalUbah',
+            showHapusDialog: 'kegiatan/setModalHapus',
+            getItem: 'kegiatan/show',
         }),
         openModalTambah(){},
         ubahInfoGuru(id){

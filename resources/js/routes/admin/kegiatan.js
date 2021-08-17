@@ -15,8 +15,7 @@ export const kegiatan = [
         { path: 'tambah', component: KegiatanIndex, children: [
             { path: '/', component: KegiatanTambah, name: 'kegiatan.insert' },
         ]},
-        { path: ':id_guru', component: KegiatanInfo, children: [
-            { path: 'kelas', component: KegiatanKelasIndex, name: 'kegiatan.kelas' },
+        { path: ':id_kegiatan', component: KegiatanInfo, children: [
             { path: '/', component: KegiatanInfoIndex, name: 'kegiatan.show' },
         ] },
         { path: '/', component: KegiatanIndex, children: [

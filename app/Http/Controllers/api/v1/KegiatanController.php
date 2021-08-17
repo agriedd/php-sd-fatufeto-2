@@ -5,7 +5,9 @@ namespace App\Http\Controllers\api\v1;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\KegiatanCollection;
 use App\Kegiatan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class KegiatanController extends Controller{
     public function index(){
@@ -18,8 +20,25 @@ class KegiatanController extends Controller{
                         : 'ASC' );
             }
         })
-        ->when(request('hari'), function($query, $search){
-            $query->where('hari', '=', "{$search}");
+        ->when(request('hari') || request('date'), function($query){
+            /**
+             * jika hari tidak kosong dan sama dengan inputan
+             * 
+             * atau
+             * 
+             * jika hari kosong dan tanggal sama dengan inputan
+             * 
+             */
+            $query->where(function($query){
+                $query->where(function($query){
+                    $query->whereNotNull('hari');
+                    $query->where('hari', '=', request('hari'));
+                });
+                $query->orWhere(function($query){
+                    $query->whereNull('hari');
+                    $query->whereDate("tanggal", "=", request('date'));
+                });
+            });
         })
         ->when(request('search'), function($query, $search){
             $query->where('nama_kegiatan', 'like', "%{$search}%");

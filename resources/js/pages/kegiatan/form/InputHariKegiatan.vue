@@ -99,7 +99,7 @@ export default {
 				clearTimeout(this.handler)
 			this.handler = setTimeout(e => {
 				let day = moment(val).locale('id-ID').format('dddd')
-				this.$emit('selected', day)
+				this.$emit('selected', {day, date: val})
 				this.selectDay(day)
 			}, 800)
 		}

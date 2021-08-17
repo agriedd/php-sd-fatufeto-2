@@ -12,7 +12,9 @@
         :show-select="!noSelect"
         single-select
         v-model="selected"
-        :mobile-breakpoint="0">
+        :mobile-breakpoint="0"
+        :multi-sort="true"
+        must-sort>
         <template #item.foto="{item}">
             <div v-if="item.foto" @click="rowClick(item)" class="py-2 d-flex justify-center">
                 <v-badge :content="item.album_galeri_count || null" color="black" offset-x="15" offset-y="15" :value="item.album_galeri_count > 0" dark>
@@ -23,29 +25,16 @@
                 <v-avatar color="grey lighten-4"></v-avatar>
             </div>
         </template>
-        <template #item.nama="{item}">
-            <div class="d-block py-1" @click="rowClick(item)">
-                <div class="mb-1">
-                    {{ item.nama }}
-                </div>
-                <div class="text--disabled">
-                    NIP.{{ item.nip }}
-                </div>
-                <div class="text--disabled">
-                    {{ item.alamat | sub(250) }}
-                </div>
+        <template #item.tanggal="{item}">
+            <div v-if="item.hari" class="text--disabled">
+                Harian
+            </div>
+            <div v-else class="teal--text">
+                {{ item.tanggal | date }}
             </div>
         </template>
-        <template #item.tanggal_lahir="{item}">
-			{{ item.tempat_lahir ?  `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
-        </template>
-        <template #item.jenis_kelamin="{item}">
-			<template v-if="item.jenis_kelamin == 'l'">
-				Laki-laki
-			</template>
-			<template v-else-if="item.jenis_kelamin == 'p'">
-				Perempuan
-			</template>
+        <template #item.waktu="{item}">
+            {{ item.waktu | time }}
         </template>
         <template #item.action="{item}">
 			<div>

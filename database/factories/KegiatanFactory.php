@@ -7,7 +7,7 @@ use Carbon\Carbon;
 use Faker\Generator as Faker;
 
 $factory->define(Kegiatan::class, function (Faker $faker) {
-    $date = $faker->dateTime();
+    $date = $faker->dateTimeBetween('-1days', '+1 days');
     $date = Carbon::make($date);
     $tanggal = $date->format('Y-m-d');
     $waktu = $date->format('H:i:s');

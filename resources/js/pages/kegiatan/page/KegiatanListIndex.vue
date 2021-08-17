@@ -29,6 +29,7 @@
     </div>
 </template>
 <script>
+import moment from 'moment'
 import { mapActions } from 'vuex'
 import KegiatanTable from '../datatable/KegiatanTable.vue'
 import InputHariKegiatan from '../form/InputHariKegiatan.vue'
@@ -39,6 +40,19 @@ export default {
         small: Boolean,
         noSelect: Boolean,
         dayRange: Number,
+        hari_default: {
+            type: String,
+            default: ()=>{
+                return moment().locale('id-ID').format('dddd').toLowerCase()
+            }
+        },
+        date_default: {
+            type: String,
+            default: ()=>{
+                return Date.now()
+            }
+        }
+
     },
     components: {
         KegiatanTable,
@@ -72,8 +86,8 @@ export default {
                 { text: 'Nama Kegiatan', align: 'start', sortable: true, value: 'nama_kegiatan' },
                 { text: 'Lokasi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'lokasi' },
                 { text: 'Tanggal', align: 'start d-none d-sm-table-cell', sortable: true, value: 'tanggal' },
-                { text: 'Waktu', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu' },
-                { text: 'Hari', align: 'start d-none d-sm-table-cell', sortable: true, value: 'hari' },
+                { text: 'Waktu', align: 'end d-none d-sm-table-cell', sortable: true, value: 'waktu' },
+                { text: 'Hari', align: 'end d-none d-sm-table-cell', sortable: true, value: 'hari' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
@@ -85,7 +99,8 @@ export default {
                 groupDesc: [],
                 mustSort: false,
                 multiSort: false,
-                hari: null,
+                hari: this.hari_default,
+                date: this.date_default,
             },
             selected: [],
             total: 0,
@@ -154,8 +169,9 @@ export default {
         toInfoKegiatan({id_kegiatan}){
             this.$router.push({ name: 'kegiatan.show', params: { id_kegiatan } })
         },
-        filterByDay(val){
-            this.options.hari = val.toLowerCase()
+        filterByDay({ day, date }){
+            this.options.hari = day.toLowerCase()
+            this.options.date = moment(date).format('YYYY-MM-DD')
         },
     },
     watch: {

@@ -27,7 +27,7 @@
         </template>
         <template #item.tanggal="{item}">
             <div v-if="item.hari" class="text--disabled">
-                Harian
+                Mingguan
             </div>
             <div v-else class="teal--text">
                 {{ item.tanggal | date }}

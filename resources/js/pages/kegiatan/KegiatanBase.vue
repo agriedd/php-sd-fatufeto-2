@@ -1,20 +1,17 @@
 <template>
     <div>
         <router-view/>
+        <kegiatan-tambah/>
         <!-- <guru-tambah/>
         <guru-ubah/>
         <guru-hapus/> -->
     </div>
 </template>
 <script>
-// import GuruHapus from './KegiatanHapus.vue'
-// import GuruTambah from './KegiatanTambah.vue'
-// import GuruUbah from './KegiatanUbah.vue'
+import KegiatanTambah from './KegiatanTambah.vue'
 export default {
     components: { 
-        // GuruTambah, 
-        // GuruUbah, 
-        // GuruHapus 
+        KegiatanTambah
     },
 }
 </script>

@@ -5,16 +5,16 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Form Tambah Guru
+                            Form Tambah Kegiatan
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="grey lighten-3">
-                            <v-icon>mdi-account-tie</v-icon>
+                            <v-icon>mdi-flag</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog || alive">
-                        <form-tambah-guru :errors="errors"/>
+                        <form-tambah-kegiatan :errors="errors"/>
                     </v-card-text>
                     <v-divider/>
                     <v-card-actions>
@@ -30,9 +30,9 @@
 </template>
 <script>
 import { mapActions, mapMutations, mapState } from 'vuex'
-import FormTambahGuru from './form/FormTambahGuru.vue'
+import FormTambahKegiatan from './form/FormTambahKegiatan.vue'
 export default {
-    components: { FormTambahGuru },
+  components: { FormTambahKegiatan },
     data(){
         return {
             loading: false,
@@ -42,7 +42,7 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.tambah
+            value_dialog: state => state.kegiatan.modal.tambah
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -51,18 +51,18 @@ export default {
     },
     methods: {
         ...mapMutations({
-            setDialog: 'guru/SET_MODAL_TAMBAH'
+            setDialog: 'kegiatan/SET_MODAL_TAMBAH'
         }),
         ...mapActions({
-            storeGuru: 'guru/store',
-            updateSession: 'guru/updateSession',
+            storeKegiatan: 'kegiatan/store',
+            updateSession: 'kegiatan/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.storeGuru(data).catch(e => {
-                console.log("storeGuru@GuruTambah.vue", e);
+            let res = await this.storeKegiatan(data).catch(e => {
+                console.log("storeKegiatan@KegiatanTambah.vue", e);
                 e.response.status == 422 && this.setErrorForm(e)
                 this.notif({
                     message: e.message

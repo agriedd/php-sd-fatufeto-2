@@ -138,6 +138,21 @@
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
+                                    <v-list-item color="teal">
+                                        <v-list-item-icon>
+                                            <v-icon color="teal">mdi-tag</v-icon>
+                                        </v-list-item-icon>
+                                        <v-list-item-content>
+                                            <v-list-item-subtitle>
+                                                Kategori
+                                            </v-list-item-subtitle>
+                                            <v-list-item-title class="">
+                                                <template v-if="item.id_kategori && item.kategori">
+                                                    {{ item.kategori.nama_kategori }}
+                                                </template>
+                                            </v-list-item-title>
+                                        </v-list-item-content>
+                                    </v-list-item>
                                     <v-list-item>
                                         <v-list-item-icon>
                                             <v-icon>mdi-calendar</v-icon>

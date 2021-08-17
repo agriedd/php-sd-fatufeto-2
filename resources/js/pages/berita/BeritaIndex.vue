@@ -106,9 +106,16 @@
                                             {{ item.judul | sub(20) }}
                                         </v-card-text>
                                     </v-card>
+                                    <v-card link :to="{ name: 'kategori' }" rounded="xl" color="teal lighten-5" flat>
+                                        <v-card-text class="content-middle">
+                                            <v-subheader class="teal--text">
+                                                Kategori
+                                            </v-subheader>
+                                        </v-card-text>
+                                    </v-card>
                                     
-                                    <div v-if="total < 2">
-                                        <div v-for="i in (2 - total)" :key="`placeholder${i}`"></div>
+                                    <div v-if="total < 3">
+                                        <div v-for="i in (3 - total)" :key="`placeholder${i}`"></div>
                                     </div>
                                 </div>
                             </div>
@@ -200,7 +207,7 @@ export default {
         async loadItems(){
             this.loading = true
             let res = await this.getItems({
-                itemsPerPage: 3,
+                itemsPerPage: 2,
                 sortBy: ['created_at'],
                 sortDesc: [true],
             }).catch(e => {

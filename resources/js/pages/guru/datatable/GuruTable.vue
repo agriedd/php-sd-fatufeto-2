@@ -45,14 +45,14 @@
 			</template>
         </template>
         <template #item.action="{item}">
-			<div>
+			<div class="d-flex justify-end">
 				<v-slide-x-transition mode="out-in">
 					<v-card
 						:key="item.id == currentId"
 						flat
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 d-flex shadow flex-no-wrap justify-center my-2"
+						dark>
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>

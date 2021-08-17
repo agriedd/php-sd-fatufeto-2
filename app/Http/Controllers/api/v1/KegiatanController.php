@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestKegiatanStore;
 use App\Http\Resources\KegiatanCollection;
 use App\Kegiatan;
+use App\Sekolah;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 class KegiatanController extends Controller{
@@ -47,15 +50,13 @@ class KegiatanController extends Controller{
         return KegiatanCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestKegiatanStore $request){
+        $data = collect($request->validated());
+        $sekolah = Sekolah::first();
+        $data->put('id_profil', $sekolah->id_profil);
+        $guru = Kegiatan::create($data->all());
+        $collection = new KegiatanCollection($guru);
+        return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

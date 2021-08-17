@@ -100,13 +100,26 @@ export default {
         hari() {
             return moment(this.item.tanggal).locale('id').format('dddd').toLowerCase();
         },
+        mingguan: {
+            set(val) {
+                this.is_mingguan = val;
+            },
+            get() {
+                return this.is_mingguan;
+            }
+        }
     },
     data() {
         return {
 			modal_tanggal: false,
-            mingguan: false,
+            is_mingguan: false,
         };
     },
-    methods: {}
+    methods: {
+        
+    },
+    mounted() {
+        this.is_mingguan = this.item.hari != null;
+    }
 };
 </script>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Kategori;
 use Illuminate\Database\Seeder;
 
 class KategoriSeeder extends Seeder
@@ -9,8 +10,7 @@ class KategoriSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
-    {
-        //
+    public function run(){
+        factory(Kategori::class, 10)->create();
     }
 }

@@ -45,7 +45,7 @@
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to="{ name: 'kegiatan.show', params: { id_guru: item.id_guru } }">
+                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_kegiatan" :to="{ name: 'kegiatan.show', params: { id_kegiatan: item.id_kegiatan } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
@@ -57,7 +57,7 @@
                                                     </template>
                                                     <v-list nav>
                                                         <v-subheader v-text="'Aksi'"/>
-                                                        <v-list-item dense link :to="{ name: 'kegiatan.show', params: { id_guru: item.id_guru }}">
+                                                        <v-list-item dense link :to="{ name: 'kegiatan.show', params: { id_kegiatan: item.id_kegiatan }}">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-account-tie</v-icon>
                                                             </v-list-item-icon>
@@ -67,7 +67,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="ubahInfoKegiatan(item.id_guru)">
+                                                        <v-list-item dense link @click="ubahInfoKegiatan(item.id_kegiatan)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-pencil</v-icon>
                                                             </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="hapusInfoKegiatan(item.id_guru)">
+                                                        <v-list-item dense link @click="hapusInfoKegiatan(item.id_kegiatan)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-delete</v-icon>
                                                             </v-list-item-icon>
@@ -103,10 +103,12 @@
                                             </div>
                                         </v-card-text>
                                         <v-card-text>
-                                            {{ item.nama }}
+                                            <div class="text-truncate">
+                                                {{ item.nama_kegiatan }}
+                                            </div>
                                             <div class="text-truncate">
                                                 <small>
-                                                    {{ item.nip }}
+                                                    {{ item.tanggal | date }}
                                                 </small>
                                             </div>
                                         </v-card-text>

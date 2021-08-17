@@ -44,14 +44,8 @@ class KategoriController extends Controller{
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Kategori $kategori)
-    {
-        //
+    public function destroy(Kategori $kategori){
+        $result = $kategori->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

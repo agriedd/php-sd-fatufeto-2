@@ -30,8 +30,17 @@ class GuruController extends Controller{
     }
 
     public function store(RequestGuruStore $request){
-        $data = collect($request->validated());
+        $data = collect($request->validated())->except(['foto']);
         $guru = Guru::create($data->all());
+        /**
+         * update foto guru
+         * 
+         */
+        if($request->file('foto') != null){
+            $foto = $request->file('foto')->store('guru');
+            $foto = $guru->foto()->create(['src' => $foto]);
+        }
+
         $collection = new GuruCollection($guru);
         return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }

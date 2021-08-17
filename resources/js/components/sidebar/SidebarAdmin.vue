@@ -230,7 +230,15 @@
 								</v-list-item-content>
 							</v-list-item>
 							<v-subheader v-text="'Kategori Berita'" inset/>
-							<v-list-item dense>
+							<v-list-item dense link :to="{ name: 'kategori' }">
+								<v-list-item-icon>
+									<v-icon>mdi-tag</v-icon>
+								</v-list-item-icon>
+								<v-list-item-content>
+									<v-list-item-title v-text="'Kategori Berita'"/>
+								</v-list-item-content>
+							</v-list-item>
+							<v-list-item dense link :to="{ name: 'kategori.insert' }">
 								<v-list-item-icon>
 									<v-icon>mdi-tag-plus</v-icon>
 								</v-list-item-icon>

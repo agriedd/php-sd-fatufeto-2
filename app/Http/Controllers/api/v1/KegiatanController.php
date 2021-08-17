@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestKegiatanStore;
+use App\Http\Requests\RequestKegiatanUpdate;
 use App\Http\Resources\KegiatanCollection;
 use App\Kegiatan;
 use App\Sekolah;
@@ -54,35 +55,26 @@ class KegiatanController extends Controller{
         $data = collect($request->validated());
         $sekolah = Sekolah::first();
         $data->put('id_profil', $sekolah->id_profil);
-        $guru = Kegiatan::create($data->all());
-        $collection = new KegiatanCollection($guru);
-        return new Response($collection, $guru ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
+        $kegiatan = Kegiatan::create($data->all());
+        $collection = new KegiatanCollection($kegiatan);
+        return new Response($collection, $kegiatan ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     public function show(Kegiatan $kegiatan){
         return new KegiatanCollection($kegiatan);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Kegiatan $kegiatan)
-    {
-        //
+    public function update(RequestKegiatanUpdate $request, Kegiatan $kegiatan){
+        $data = collect($request->validated());
+        if(request('hari') == null)
+            $data->put('hari', DB::raw("NULL"));
+        $result = $kegiatan->update($data->all());
+        $collection = new KegiatanCollection($kegiatan);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Kegiatan  $kegiatan
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Kegiatan $kegiatan)
-    {
-        //
+    public function destroy(Kegiatan $kegiatan){
+        $result = $kegiatan->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

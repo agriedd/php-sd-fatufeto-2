@@ -5,11 +5,11 @@
                 <v-card>
                     <v-toolbar flat>
                         <v-subheader>
-                            Konfirmasi Hapus data Guru > {{ item.nama }}
+                            Konfirmasi Hapus data Kegaitan > {{ ori.nama_kegiatan }}
                         </v-subheader>
                         <v-spacer/>
                         <v-avatar color="error lighten-5">
-                            <v-icon color="error">mdi-school</v-icon>
+                            <v-icon color="error">mdi-flag</v-icon>
                         </v-avatar>
                     </v-toolbar>
                     <v-divider/>
@@ -47,8 +47,8 @@ export default {
     },
     computed: {
         ...mapState({
-            value_dialog: state => state.guru.modal.hapus,
-            id: state => state.guru.selected.id
+            value_dialog: state => state.kegiatan.modal.hapus,
+            id: state => state.kegiatan.selected.id
         }),
         dialog: {
             get(){ return this.value_dialog },
@@ -57,17 +57,17 @@ export default {
     },
     methods: {
         ...mapActions({
-            setDialog: 'guru/setModalHapus',
-            deleteGuru: 'guru/destroy',
-            findGuru: 'guru/show',
-            updateSession: 'guru/updateSession',
+            setDialog: 'kegiatan/setModalHapus',
+            deleteKegiatan: 'kegiatan/destroy',
+            findKegiatan: 'kegiatan/show',
+            updateSession: 'kegiatan/updateSession',
             notif: 'notifikasi/show'
         }),
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.deleteGuru({ data, id: this.id }).catch(e => {
-                console.log("deleteGuru@GuruTambah.vue", e);
+            let res = await this.deleteKegiatan({ data, id: this.id }).catch(e => {
+                console.log("deleteKegiatan@KegiatanTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 this.notif({
@@ -83,8 +83,8 @@ export default {
         async loadItem(){
             this.exists = false
             this.loading = true
-            let res = await this.findGuru({ id: this.id }).catch(e => {
-                console.log("loadItem@GuruTambah.vue", e);
+            let res = await this.findKegiatan({ id: this.id }).catch(e => {
+                console.log("loadItem@KegiatanTambah.vue", e);
                 this.notif({
                     message: e.message
                 })

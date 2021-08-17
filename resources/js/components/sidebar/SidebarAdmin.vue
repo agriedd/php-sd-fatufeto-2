@@ -175,7 +175,7 @@
 							</v-list-item-action>
 						</template>
 						<v-list nav>
-							<v-list-item dense>
+							<v-list-item dense link href="/print/rekap/siswa" target="blank">
 								<v-list-item-icon>
 									<v-icon>mdi-printer</v-icon>
 								</v-list-item-icon>
@@ -184,7 +184,7 @@
 									<v-list-item-subtitle v-text="'Rekap Siswa Tahunan'"/>
 								</v-list-item-content>
 							</v-list-item>
-							<v-list-item dense>
+							<v-list-item dense link href="/print/rekap/guru" target="blank">
 								<v-list-item-icon>
 									<v-icon>mdi-printer</v-icon>
 								</v-list-item-icon>

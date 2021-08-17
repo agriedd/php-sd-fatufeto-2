@@ -6,7 +6,7 @@
         <v-card class="shadow-sm" rounded="xl">
             <v-card-text>
                 <div class="d-grid-sekolah w-100">
-                    <v-card link color="indigo" dark class="shadow-sm" rounded="xl">
+                    <v-card link color="indigo" dark class="shadow-sm" rounded="xl" :href="rekap_siswa" target="blank">
                         <v-card-text class="content-middle">
                             <v-icon x-large>mdi-download</v-icon>
                             <div class="text-center px-10 pt-4">
@@ -14,7 +14,7 @@
                             </div>
                         </v-card-text>
                     </v-card>
-                    <v-card link color="teal" dark class="shadow-sm" rounded="xl">
+                    <v-card link color="teal" dark class="shadow-sm" rounded="xl" :href="rekap_guru" target="blank">
                         <v-card-text class="content-middle">
                             <v-icon x-large>mdi-download</v-icon>
                             <div class="text-center px-10 pt-4">
@@ -76,6 +76,12 @@ export default {
         }
     },
     computed: {
+        rekap_siswa(){
+            return `/print/rekap/siswa`
+        },
+        rekap_guru(){
+            return `/print/rekap/guru`
+        },
     },
     methods: {
         ...mapActions({

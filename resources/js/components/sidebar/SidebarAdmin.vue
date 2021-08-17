@@ -160,7 +160,7 @@
 						<v-list-item-title v-text="'Pimpinan'" />
 					</v-list-item-content>
 				</v-list-item>
-				<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+				<v-list-item dense link color="primary" :to="{ name: 'laporan' }" exact>
 					<v-list-item-icon>
 						<v-icon>mdi-printer</v-icon>
 					</v-list-item-icon>

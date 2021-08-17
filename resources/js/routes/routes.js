@@ -10,6 +10,7 @@ import pimpinan from './admin/pimpinan'
 import berita from './admin/berita'
 import kegiatan from './admin/kegiatan'
 import kategori from './admin/kategori'
+import laporan from './admin/laporan'
 export default [
     { path: '/admin', component: Index, name: 'admin' },
     ...sekolah,
@@ -23,4 +24,5 @@ export default [
     ...berita,
     ...kegiatan,
     ...kategori,
+    ...laporan,
 ]

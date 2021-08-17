@@ -15,6 +15,7 @@ import berita from "./v1/berita"
 import jenis_berita from "./v1/jenis_berita"
 import terbit from "./v1/terbit"
 import kegiatan from "./v1/kegiatan"
+import kategori from "./v1/kategori"
 
 export const states = {
     login,
@@ -34,5 +35,6 @@ export const states = {
     jenis_berita,
     terbit,
     kegiatan,
+    kategori,
 }
 export default states

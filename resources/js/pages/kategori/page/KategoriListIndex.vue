@@ -7,7 +7,7 @@
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <guru-table
+            <kategori-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoGuru"
-                @editRow="ubahInfoGuru"
-                @deleteRow="hapusInfoGuru"
+                @rowClick="toInfoKategori"
+                @editRow="ubahInfoKategori"
+                @deleteRow="hapusInfoKategori"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import GuruTable from '../datatable/GuruTable.vue'
+import KategoriTable from '../datatable/KategoriTable.vue'
 export default {
     props: {
         dataSession: String|Number,
@@ -36,7 +36,7 @@ export default {
         noSelect: Boolean,
     },
     components: {
-        GuruTable
+        KategoriTable
     },
     data(){
         return {
@@ -49,25 +49,22 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Kategori',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'kategori'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Guru',
+                    text: 'List Kategori',
                     disabled: true,
                 },
             ],
             items: [],
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Jenis Kelamin', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis_kelamin' },
-                { text: 'Pangkat', align: 'start d-none d-sm-table-cell', sortable: true, value: 'pangkat' },
-                { text: 'Golongan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'golongan' },
-                { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
+                { text: 'Kategori', align: 'start', sortable: true, value: 'nama_kategori' },
+                { text: 'Dibuat pada', align: 'end d-none d-sm-table-cell', sortable: true, value: 'created_at' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
@@ -96,10 +93,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'guru/get',
+            getItems: 'kategori/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
+            showUbahDialog: 'kategori/setModalUbah',
+            showHapusDialog: 'kategori/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -130,7 +127,7 @@ export default {
             }, 800);
         },
         rowClick(e){
-            this.$emit('open:guru:info', e)
+            this.$emit('open:kategori:info', e)
         },
         editRow(e){
 
@@ -138,14 +135,14 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoGuru({id_guru: id}){
+        ubahInfoKategori({id_kategori: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru({id_guru: id}){
+        hapusInfoKategori({id_kategori: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoGuru({id_guru}){
-            this.$router.push({ name: 'guru.show', params: { id_guru } })
+        toInfoKategori({id_kategori}){
+            this.$router.push({ name: 'kategori.show', params: { id_kategori } })
         },
     },
     watch: {

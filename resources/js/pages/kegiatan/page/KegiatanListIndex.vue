@@ -7,7 +7,10 @@
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <guru-table
+            <v-card-text class="d-flex">
+                <input-hari-kegiatan @selected="filterByDay" :range="dayRange"/>
+            </v-card-text>
+            <kegiatan-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -16,9 +19,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoGuru"
-                @editRow="ubahInfoGuru"
-                @deleteRow="hapusInfoGuru"
+                @rowClick="toInfoKegiatan"
+                @editRow="ubahInfoKegiatan"
+                @deleteRow="hapusInfoKegiatan"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -27,16 +30,19 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import GuruTable from '../datatable/GuruTable.vue'
+import KegiatanTable from '../datatable/KegiatanTable.vue'
+import InputHariKegiatan from '../form/InputHariKegiatan.vue'
 export default {
     props: {
         dataSession: String|Number,
         params: Object,
         small: Boolean,
         noSelect: Boolean,
+        dayRange: Number,
     },
     components: {
-        GuruTable
+        KegiatanTable,
+        InputHariKegiatan
     },
     data(){
         return {
@@ -49,36 +55,37 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Kegiatan',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'kegiatan'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Guru',
+                    text: 'List Kegiatan',
                     disabled: true,
                 },
             ],
             items: [],
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Jenis Kelamin', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis_kelamin' },
-                { text: 'Pangkat', align: 'start d-none d-sm-table-cell', sortable: true, value: 'pangkat' },
-                { text: 'Golongan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'golongan' },
-                { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
+                { text: 'Nama Kegiatan', align: 'start', sortable: true, value: 'nama_kegiatan' },
+                { text: 'Lokasi', align: 'start d-none d-sm-table-cell', sortable: true, value: 'lokasi' },
+                { text: 'Tanggal', align: 'start d-none d-sm-table-cell', sortable: true, value: 'tanggal' },
+                { text: 'Waktu', align: 'start d-none d-sm-table-cell', sortable: true, value: 'waktu' },
+                { text: 'Hari', align: 'start d-none d-sm-table-cell', sortable: true, value: 'hari' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
                 page: 1,
                 itemsPerPage: 10,
-                sortBy: ['created_at'],
-                sortDesc: [true],
+                sortBy: ['tanggal', 'waktu'],
+                sortDesc: [true, true],
                 groupBy: [],
                 groupDesc: [],
                 mustSort: false,
                 multiSort: false,
+                hari: null,
             },
             selected: [],
             total: 0,
@@ -96,10 +103,10 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'guru/get',
+            getItems: 'kegiatan/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
+            showUbahDialog: 'kegiatan/setModalUbah',
+            showHapusDialog: 'kegiatan/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -130,7 +137,7 @@ export default {
             }, 800);
         },
         rowClick(e){
-            this.$emit('open:guru:info', e)
+            this.$emit('open:kegiatan:info', e)
         },
         editRow(e){
 
@@ -138,14 +145,17 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoGuru({id_guru: id}){
+        ubahInfoKegiatan({id_kegiatan: id}){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru({id_guru: id}){
+        hapusInfoKegiatan({id_kegiatan: id}){
             this.showHapusDialog({id, value: true})
         },
-        toInfoGuru({id_guru}){
-            this.$router.push({ name: 'guru.show', params: { id_guru } })
+        toInfoKegiatan({id_kegiatan}){
+            this.$router.push({ name: 'kegiatan.show', params: { id_kegiatan } })
+        },
+        filterByDay(val){
+            this.options.hari = val.toLowerCase()
         },
     },
     watch: {

@@ -3,14 +3,23 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Kegiatan;
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 
 $factory->define(Kegiatan::class, function (Faker $faker) {
+    $date = $faker->dateTime();
+    $date = Carbon::make($date);
+    $tanggal = $date->format('Y-m-d');
+    $waktu = $date->format('H:i:s');
+    $isDialy = $faker->boolean();
+    if($isDialy)
+        $hari = strtolower($date->locale('id-ID')->translatedFormat('l'));
+
     return [
-        'nama_kegiatan' => $faker->name,
+        'nama_kegiatan' => "Kegiatan {$faker->name}",
         'lokasi' => $faker->city,
-        'waktu' => $faker->dateTimeBetween('-1 years', 'now'),
-        'tanggal' => $faker->date('Y-m-d'),
-        'hari' => $faker->randomElement(['senin','selasa','rabu','kamis','jumat','sabtu','minggu']),
+        'waktu' => $waktu,
+        'tanggal' => $tanggal,
+        'hari' => $isDialy ? $hari : null,
     ];
 });

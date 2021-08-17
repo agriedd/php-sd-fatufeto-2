@@ -241,7 +241,7 @@
 						</v-list>
 					</v-menu>
 				</v-list-item>
-				<v-list-item dense link color="primary" :to="{ name: 'admin' }" exact>
+				<v-list-item dense link color="primary" :to="{ name: 'kegiatan' }" exact>
 					<v-list-item-icon>
 						<v-icon>mdi-flag</v-icon>
 					</v-list-item-icon>

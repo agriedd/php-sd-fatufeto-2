@@ -19,7 +19,7 @@ class CreateKegiatansTable extends Migration
             $table->string('lokasi');
             $table->time('waktu');
             $table->date('tanggal');
-            $table->enum('hari', ['senin','selasa','rabu','kamis','jumat','sabtu','minggu']);
+            $table->enum('hari', ['senin','selasa','rabu','kamis','jumat','sabtu','minggu'])->nullable();
             $table->unsignedBigInteger('id_profil')->nullable();
             $table->foreign('id_profil')->references('id_profil')->on('tbl_sekolah')
                 ->onUpdate('cascade')->onDelete('cascade');

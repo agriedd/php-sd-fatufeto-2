@@ -19,6 +19,9 @@
                     <v-img :src="item.foto.src_xs" :aspect-ratio="3/4" :height="!small ? '5rem' : '2.5rem'" :width="!small ? '5rem' : '2.5rem'" class="rounded"/>
                 </v-badge>
             </div>
+            <div v-else @click="rowClick(item)" class="py-2 d-flex justify-center">
+                <v-avatar color="grey lighten-4"></v-avatar>
+            </div>
         </template>
         <template #item.nama="{item}">
             <div class="d-block py-1" @click="rowClick(item)">
@@ -51,8 +54,8 @@
 						:key="item.id == currentId"
 						flat
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 d-flex shadow flex-no-wrap justify-center my-2"
+						dark>
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>

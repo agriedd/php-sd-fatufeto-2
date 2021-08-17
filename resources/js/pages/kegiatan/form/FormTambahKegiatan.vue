@@ -122,7 +122,7 @@
     </div>
 </template>
 <script>
-import InputJenisKelaminGuru from './InputJenisKelaminKegiatan.vue';
+import InputJenisKelaminGuru from './InputHariKegiatan.vue';
 export default {
     components: { InputJenisKelaminGuru },
     props: {

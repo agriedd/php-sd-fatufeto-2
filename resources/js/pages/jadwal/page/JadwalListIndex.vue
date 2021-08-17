@@ -179,7 +179,7 @@ export default {
         },
         filterByDay(val){
             this.options.hari = val.toLowerCase()
-        },        
+        },
         openModalTambah(){
             this.showTambahDialog(true)
         },

@@ -21,7 +21,7 @@
             </div>
         </template>
         <template #item.nama_kategori="{item}">
-            <div class="d-block" @click="rowClick(item)">
+            <div class="d-block" @click="">
                 <div class="mb-1 text-uppercase">
                     {{ item.nama_kategori }}
                 </div>
@@ -33,22 +33,21 @@
         <template #item.action="{item}">
 			<div>
 				<v-slide-x-transition mode="out-in">
-					<v-card
-						:key="item.id == currentId"
-						flat
-						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center my-2"
-						dark>
-						<v-btn icon color="error darken-1" @click="deleteRow(item)">
-							<v-icon small>mdi-delete</v-icon>
-						</v-btn>
-						<v-btn icon @click="editRow(item)">
-							<v-icon small>mdi-pencil</v-icon>
-						</v-btn>
-						<v-btn icon color="primary" @click="rowClick(item)">
-							<v-icon small>mdi-chevron-right</v-icon>
-						</v-btn>
-					</v-card>
+                    <div class="d-flex justify-end">
+                        <v-card
+                            :key="item.id == currentId"
+                            flat
+                            rounded="pill"
+                            class="pa-1 d-flex shadow flex-no-wrap justify-center my-2"
+                            dark>
+                            <v-btn icon color="error darken-1" @click="deleteRow(item)">
+                                <v-icon small>mdi-delete</v-icon>
+                            </v-btn>
+                            <v-btn icon @click="editRow(item)">
+                                <v-icon small>mdi-pencil</v-icon>
+                            </v-btn>
+                        </v-card>
+                    </div>
 				</v-slide-x-transition>
 			</div>
         </template>

@@ -22,7 +22,7 @@
                 <div v-else style="position: relative">
                     <v-expand-transition>
                         <div class="d-grid-sekolah" v-if="show">
-                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to="{ name: 'kategori.list' }">
+                            <v-card color="indigo lighten-5 overflow-hidden" rounded="xl" flat link :to2="{ name: 'kategori.list' }">
                                 <v-card-text>
                                     <div class="d-flex w-100">
                                         <v-avatar color="indigo lighten-4">
@@ -38,14 +38,14 @@
                                     Total Kategori
                                 </v-card-text>
                             </v-card>
-                            <div class="d-lg-block d-none">
+                            <div class="d-lg-block d-none fill-height">
                                 <div class="d-grid-sekolah mini">
                                     <div class="content-middle">
                                         <v-subheader>
                                             Terbaru
                                         </v-subheader>
                                     </div>
-                                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to="{ name: 'kategori.show', params: { id_guru: item.id_guru } }">
+                                    <v-card color="grey lighten-4 overflow-hidden fill-height" rounded="xl" flat link v-for="(item, i) in items" :key="item.id_guru" :to="{ name: 'kategori.show', params: { id_guru: item.id_guru } }">
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
@@ -103,12 +103,7 @@
                                             </div>
                                         </v-card-text>
                                         <v-card-text>
-                                            {{ item.nama }}
-                                            <div class="text-truncate">
-                                                <small>
-                                                    {{ item.nip }}
-                                                </small>
-                                            </div>
+                                            {{ item.nama_kategori }}
                                         </v-card-text>
                                     </v-card>
                                     

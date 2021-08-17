@@ -32,15 +32,8 @@ class KategoriController extends Controller{
         return new Response($collection, $kategori ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Kategori $kategori)
-    {
-        //
+    public function show(Kategori $kategori){
+        return new KategoriCollection($kategori);
     }
 
     /**

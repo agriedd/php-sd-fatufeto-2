@@ -24,6 +24,12 @@ Route::group(["prefix"=>"/admin", "middleware"=>"auth:web"], function(){
     Route::get('/', 'AdminController@index')->name('admin');
     Route::get('/{any}', 'AdminController@index')->where('any', '.*');
 });
+Route::group(["prefix"=>"/print"], function(){
+    Route::group(["prefix"=>"/rekap", "middleware"=>"auth:web"], function(){
+        Route::get('/siswa', 'prints\RekapController@siswa');
+        Route::get('/guru', 'prints\RekapController@guru');
+    });
+});
 
 /**
  * hanya membolehkan login

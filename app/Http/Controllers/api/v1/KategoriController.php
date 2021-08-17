@@ -4,6 +4,7 @@ namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\RequestKategoriStore;
+use App\Http\Requests\RequestKategoriUpdate;
 use App\Http\Resources\KategoriCollection;
 use App\Kategori;
 use Illuminate\Http\Request;
@@ -36,16 +37,11 @@ class KategoriController extends Controller{
         return new KategoriCollection($kategori);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Kategori  $kategori
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Kategori $kategori)
-    {
-        //
+    public function update(RequestKategoriUpdate $request, Kategori $kategori){
+        $data = collect($request->validated());
+        $result = $kategori->update($data->all());
+        $collection = new KategoriCollection($kategori);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

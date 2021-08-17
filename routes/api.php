@@ -38,4 +38,5 @@ Route::prefix('v1')->group(function(){
     Route::resource('pimpinan', 'api\v1\PimpinanController');
     Route::resource('berita', 'api\v1\BeritaController');
     Route::resource('kegiatan', 'api\v1\KegiatanController');
+    Route::resource('kategori', 'api\v1\KategoriController');
 });

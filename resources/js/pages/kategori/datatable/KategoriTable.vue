@@ -20,29 +20,15 @@
                 </v-badge>
             </div>
         </template>
-        <template #item.nama="{item}">
-            <div class="d-block py-1" @click="rowClick(item)">
-                <div class="mb-1">
-                    {{ item.nama }}
-                </div>
-                <div class="text--disabled">
-                    NIP.{{ item.nip }}
-                </div>
-                <div class="text--disabled">
-                    {{ item.alamat | sub(250) }}
+        <template #item.nama_kategori="{item}">
+            <div class="d-block" @click="rowClick(item)">
+                <div class="mb-1 text-uppercase">
+                    {{ item.nama_kategori }}
                 </div>
             </div>
         </template>
-        <template #item.tanggal_lahir="{item}">
-			{{ item.tempat_lahir ?  `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
-        </template>
-        <template #item.jenis_kelamin="{item}">
-			<template v-if="item.jenis_kelamin == 'l'">
-				Laki-laki
-			</template>
-			<template v-else-if="item.jenis_kelamin == 'p'">
-				Perempuan
-			</template>
+        <template #item.created_at="{item}">
+            {{ item.created_at | datetime }}
         </template>
         <template #item.action="{item}">
 			<div>
@@ -51,8 +37,8 @@
 						:key="item.id == currentId"
 						flat
 						rounded="pill"
-						class="pa-1 d-flex shadow flex-no-wrap justify-center"
-						color="grey lighten-4">
+						class="pa-1 d-flex shadow flex-no-wrap justify-center my-2"
+						dark>
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
 						</v-btn>

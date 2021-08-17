@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\api\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequestKategoriStore;
 use App\Http\Resources\KategoriCollection;
 use App\Kategori;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class KategoriController extends Controller{
 
@@ -23,15 +25,11 @@ class KategoriController extends Controller{
         return KategoriCollection::collection($data);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(RequestKategoriStore $request){
+        $data = collect($request->validated());
+        $kategori = Kategori::create($data->all());
+        $collection = new KategoriCollection($kategori);
+        return new Response($collection, $kategori ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
 
     /**

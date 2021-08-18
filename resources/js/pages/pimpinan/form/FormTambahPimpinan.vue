@@ -20,7 +20,10 @@
             v-model="item.jenis_kelamin" 
             :errors="errors" 
             @change="errors.jenis_kelamin = null"/>
-        <v-spacer/>
+        <input-foto-pimpinan 
+            :errors="errors" 
+            v-model="item"
+            :foto="item.foto ? item.foto : {}"/>
         <v-text-field
             dense
             outlined
@@ -122,9 +125,10 @@
     </div>
 </template>
 <script>
+import InputFotoPimpinan from './InputFotoPimpinan.vue';
 import InputJenisKelaminPimpinan from './InputJenisKelaminPimpinan.vue';
 export default {
-  components: { InputJenisKelaminPimpinan },
+  components: { InputJenisKelaminPimpinan, InputFotoPimpinan },
     props: {
         errors: Object,
         value: {

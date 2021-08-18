@@ -14,11 +14,9 @@
         v-model="selected"
         :mobile-breakpoint="0">
         <template #item.foto="{item}">
-            <div v-if="item.foto" @click="rowClick(item)" class="py-2 d-flex justify-center">
-                <v-badge :content="item.album_galeri_count || null" color="black" offset-x="15" offset-y="15" :value="item.album_galeri_count > 0" dark>
-                    <v-img :src="item.foto.src_xs" :aspect-ratio="3/4" :height="!small ? '5rem' : '2.5rem'" :width="!small ? '5rem' : '2.5rem'" class="rounded"/>
-                </v-badge>
-            </div>
+            <v-avatar v-if="item.foto" @click="rowClick(item)" class="py-2 d-flex justify-center">
+                <v-img :src="item.foto.url"/>
+            </v-avatar>
         </template>
         <template #item.nama="{item}">
             <div class="d-block py-1" @click="rowClick(item)">

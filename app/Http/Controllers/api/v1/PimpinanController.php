@@ -10,6 +10,7 @@ use App\Pimpinan;
 use App\Sekolah;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class PimpinanController extends Controller{
     public function index(){
@@ -27,12 +28,22 @@ class PimpinanController extends Controller{
     }
 
     public function store(RequestPimpinanStore $request){
-        $data = collect($request->validated());
+        $data = collect($request->validated())->except(['foto']);
         if(!request('id_profil')){
             $sekolah = Sekolah::latest()->first();
             $data->put('id_profil', $sekolah->id_profil);
         }
         $pimpinan = Pimpinan::create($data->all());
+        
+        /**
+         * update foto pimpinan
+         * 
+         */
+        if($request->file('foto') != null){
+            $foto = $request->file('foto')->store('pimpinan');
+            $foto = $pimpinan->foto()->create(['src' => $foto]);
+        }
+
         $collection = new PimpinanCollection($pimpinan);
         return new Response($collection, $pimpinan ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
@@ -42,8 +53,25 @@ class PimpinanController extends Controller{
     }
 
     public function update(RequestPimpinanUpdate $request, Pimpinan $pimpinan){
-        $data = collect($request->validated());
+        $data = collect($request->validated())->except(['foto']);
         $result = $pimpinan->update($data->all());
+        
+        /**
+         * update foto pimpinan
+         * 
+         */
+        if($request->file('foto') != null){
+            /**
+             * hapus foto pimpinan lama
+             * 
+             */
+            if($pimpinan->foto && Storage::exists($pimpinan->foto->src)){
+                Storage::delete($pimpinan->foto->src);
+                $pimpinan->foto->delete();
+            }
+            $foto = $request->file('foto')->store('pimpinan');
+            $foto = $pimpinan->foto()->create(['src' => $foto]);
+        }
         $collection = new PimpinanCollection($pimpinan);
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }

@@ -15,8 +15,8 @@ export const pimpinan = [
         { path: 'tambah', component: PimpinanIndex, children: [
             { path: '/', component: PimpinanTambah, name: 'pimpinan.insert' },
         ]},
-        { path: ':id_guru', component: PimpinanInfo, children: [
-            { path: 'kelas', component: PimpinanKelasIndex, name: 'pimpinan.kelas' },
+        { path: ':id_pimpinan', component: PimpinanInfo, children: [
+            // { path: 'kelas', component: PimpinanKelasIndex, name: 'pimpinan.kelas' },
             { path: '/', component: PimpinanInfoIndex, name: 'pimpinan.show' },
         ] },
         { path: '/', component: PimpinanIndex, children: [

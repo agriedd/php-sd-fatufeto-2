@@ -29,7 +29,7 @@
             </div>
         </template>
         <template #item.action="{item}">
-			<div>
+			<div class="d-flex justify-end">
 				<v-slide-x-transition mode="out-in">
 					<v-card
 						:key="item.id == currentId"

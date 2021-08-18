@@ -1,0 +1,165 @@
+{
+    "guru": [
+        {
+            "nama": "Maria Elisabeth Rae, S.Pd",
+            "nip": "19651105 198607 2 001",
+            "ttl": "Ende, 05-11-1965",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Pembina  TK.I, IV / b",
+            "jabatan": "Kepala Sekolah "
+        },
+        {
+            "nama": "Mariana Mailani, S.Pd",
+            "nip": "19620330 198207 2 001",
+            "ttl": "Alor, 30-03-1962",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Pembina  TK.I, IV / b",
+            "jabatan": "Guru Kelas IV A"
+        },
+        {
+            "nama": "Octosyane Hau, S.Pd",
+            "nip": "19631011 198303 2 009",
+            "ttl": "Kupang, 11-10-1963",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Pembina  TK.I, IV / b",
+            "jabatan": "Guru Kelas VI A"
+        },
+        {
+            "nama": "Dina Raga Wadu, S.Pd.K",
+            "nip": "19631231 198409 2 017",
+            "ttl": "Kupang, 31-12-1963",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Pembina  TK.I, IV / b",
+            "jabatan": "Guru Mapel PAK"
+        },
+        {
+            "nama": "Naomi Ratu Ie, S.Pd",
+            "nip": "19620811 198607 2 004",
+            "ttl": "Sabu, 11-08-1962",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Pembina  TK.I, IV / b",
+            "jabatan": "Guru Kelas III A"
+        },
+        {
+            "nama": "Dortje  Ariantje Djingi, S.Pd",
+            "nip": "19621207 198607 2 003",
+            "ttl": "Ende, 07-12-1962",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Pembina  TK.I, IV / b",
+            "jabatan": "Guru Kelas VI B"
+        },
+        {
+            "nama": "Yuliana  Lay Day, S.Pd",
+            "nip": "19760625 200501 2 011",
+            "ttl": "Sabu, 25-06-1976",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Penata TK. I, III.d",
+            "jabatan": "Guru Mapel PJOK"
+        },
+        {
+            "nama": "Antoneta  Fanggidae, S.Pd",
+            "nip": "19720513 200604 2 015",
+            "ttl": "Rote, 13-05-1972",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Penata  III /c",
+            "jabatan": "Guru Kelas II B"
+        },
+        {
+            "nama": "Stefanus Sene, S.Pd",
+            "nip": "19660725 200604 1 010",
+            "ttl": "Ende, 25-07-1966",
+            "pendidikan_terakhir": "S1",
+            "pendidikan_profesi": "PPG",
+            "pangkat": "Penata  III /c",
+            "jabatan": "Guru Kelas V B"
+        },
+        {
+            "nama": "Merlina Malon, S.Pd",
+            "nip": "19800212 201001 2 009",
+            "ttl": "Manggarai, 12-02-1980",
+            "pendidikan_terakhir": "S1",
+            "pangkat": "Penata Muda Tingkat I,III /b",
+            "jabatan": "Guru Kelas IV B"
+        },
+        {
+            "nama": "Elia Lukas Kafomai, S.Pd",
+            "nip": "19780920 201408 1 001",
+            "ttl": "Kupang, 20-09-1978",
+            "pendidikan_terakhir": "S1",
+            "pangkat": "Penata Muda III /a",
+            "jabatan": "Guru Kelas IV A"
+        },
+        {
+            "nama": "Sara Honin",
+            "nip": "19640621 201408 2 001",
+            "ttl": "Kupang, 21-06-1964",
+            "pendidikan_terakhir": "SPG",
+            "pangkat": "Pengatur II/c",
+            "jabatan": "Guru Kelas III B"
+        },
+        {
+            "nama": "Yanti Rosalin Ludji, S.Pd",
+            "nip": "-",
+            "ttl": "Kupang, 19-01-1986",
+            "pendidikan_terakhir": "S1",
+            "pangkat": "Honor",
+            "jabatan": "Guru Kelas II A dan OPERATOR SEKOLAH"
+        },
+        {
+            "nama": "Herlinda Malaikari, S.Pd",
+            "nip": "-",
+            "ttl": "Kupang, 11-04-1975",
+            "pendidikan_terakhir": "S1",
+            "pangkat": "Honor",
+            "jabatan": "Guru Kelas I A B"
+        },
+        {
+            "nama": "Imanuel Momay, S.Pd",
+            "nip": "-",
+            "ttl": "Kupang, 03-11-1989",
+            "pendidikan_terakhir": "S1",
+            "pangkat": "Honor",
+            "jabatan": "Guru Penjas"
+        },
+        {
+            "nama": "Friska Diana Malaimoi, S.Pd.K",
+            "nip": "-",
+            "ttl": "Alor, 14-04-1989",
+            "pendidikan_terakhir": "S1",
+            "pangkat": "Honor",
+            "jabatan": "Guru Agama"
+        },
+        {
+            "nama": "Helda Bale",
+            "nip": "-",
+            "ttl": "Kupang, 07-09-1986",
+            "pendidikan_terakhir": "SMK",
+            "pangkat": "Honor",
+            "jabatan": "Peg. Administrasi"
+        },
+        {
+            "nama": "Linda H. K. N Soetarto",
+            "nip": "-",
+            "ttl": "Bima, 10-09-1985",
+            "pendidikan_terakhir": "SMK",
+            "pangkat": "Honor",
+            "jabatan": "Peg. Perpustakaan"
+        },
+        {
+            "nama": "Anderias Melki Malaikari",
+            "nip": "-",
+            "ttl": "Alor, 05-04-1996",
+            "pendidikan_terakhir": "SMA",
+            "pangkat": "Honor",
+            "jabatan": "Penjaga Sekolah"
+        }
+    ]
+}

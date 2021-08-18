@@ -3,13 +3,13 @@
         <v-app-bar app flat floating absolute>
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Info Guru
+                Info Pimpinan
             </v-toolbar-title>
         </v-app-bar>
         <v-main>
             <v-container>
                 <div v-if="loading">
-                    <div class="d-grid-guru-info">
+                    <div class="d-grid-pimpinan-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" flat rounded="xl" class="mb-3">
                                 <v-card-text>
@@ -29,24 +29,24 @@
                 <div class="mx-auto" style="max-width: 400px" v-else-if="!exists && !loading">
                     <v-alert prominent text type="warning" rounded="xl">
                         <span>
-                            Info Guru Tidak Ditemukan
+                            Info Pimpinan Tidak Ditemukan
                         </span>
                     </v-alert>
-                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'guru' }">
+                    <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link :to="{ name: 'pimpinan' }">
                         <v-list-item>
                             <v-list-item-avatar color="grey lighten-2">
                                 <v-icon>mdi-account-tie</v-icon>
                             </v-list-item-avatar>
                             <v-list-item-content>
                                 <v-list-item-title>
-                                    Kembali ke daftar guru
+                                    Kembali ke daftar pimpinan
                                 </v-list-item-title>
                             </v-list-item-content>
                         </v-list-item>
                     </v-card>
                 </div>
                 <div v-else>
-                    <div class="d-grid-guru-info">
+                    <div class="d-grid-pimpinan-info">
                         <div>
                             <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat class="mb-3">
                                 <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
@@ -67,7 +67,7 @@
                                                 </template>
                                                 <v-list nav>
                                                     <v-subheader v-text="'Aksi'"/>
-                                                    <v-list-item dense link @click="ubahInfoGuru(item.id_guru)">
+                                                    <v-list-item dense link @click="ubahInfoPimpinan(item.id_pimpinan)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-pencil</v-icon>
                                                         </v-list-item-icon>
@@ -77,7 +77,7 @@
                                                             </v-list-item-title>
                                                         </v-list-item-content>
                                                     </v-list-item>
-                                                    <v-list-item dense link @click="hapusInfoGuru(item.id_guru)">
+                                                    <v-list-item dense link @click="hapusInfoPimpinan(item.id_pimpinan)">
                                                         <v-list-item-icon>
                                                             <v-icon>mdi-delete</v-icon>
                                                         </v-list-item-icon>
@@ -105,7 +105,7 @@
                                     <v-list-item>
                                         <v-list-item-content>
                                             <v-list-item-subtitle class="text--disabled">
-                                                Nama Guru
+                                                Nama Pimpinan
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="text-h5">
                                                 {{ item.nama }}
@@ -198,8 +198,7 @@
                             <div class="sticky-top" style="z-index: 1;">
                                 <v-toolbar flat rounded="xl">
                                     <v-tabs align-with-title>
-                                        <v-tab :to="{name: 'guru.show'}" exact>Informasi</v-tab>
-                                        <v-tab :to="{name: 'guru.kelas'}" exact>Kelas</v-tab>
+                                        <v-tab :to="{name: 'pimpinan.show'}" exact>Informasi</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>
@@ -231,14 +230,14 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Pimpinan',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'pimpinan'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'Info Guru',
+                    text: 'Info Pimpinan',
                     disabled: true,
                 },
             ]
@@ -246,13 +245,13 @@ export default {
     },
     computed: {
         ...mapState({
-            items: state => state.guru.items,
+            items: state => state.pimpinan.items,
         }),
         ...mapGetters({
-            session: 'guru/getSession',
+            session: 'pimpinan/getSession',
         }),
         id(){
-            return this.$route.params.id_guru
+            return this.$route.params.id_pimpinan
         }
     },
     watch: {
@@ -263,15 +262,15 @@ export default {
     methods: {
         ...mapMutations({  }),
         ...mapActions({
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
-            getItem: 'guru/show',
+            showUbahDialog: 'pimpinan/setModalUbah',
+            showHapusDialog: 'pimpinan/setModalHapus',
+            getItem: 'pimpinan/show',
         }),
         openModalTambah(){},
-        ubahInfoGuru(id){
+        ubahInfoPimpinan(id){
             this.showUbahDialog({id, value: true})
         },
-        hapusInfoGuru(id){
+        hapusInfoPimpinan(id){
             this.showHapusDialog({id, value: true})
         },
         async loadItem(){
@@ -279,7 +278,7 @@ export default {
             this.exists = false
 
             let res = await this.getItem({id: this.id}).catch(e => {
-                console.log("loadItem@GuruIndex.vue", e);
+                console.log("loadItem@PimpinanIndex.vue", e);
             });
             this.loading = false
 

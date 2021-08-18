@@ -1,0 +1,2717 @@
+{
+    "siswa": [
+        {
+            "NO": "1",
+            "nama_siswa": "ADNAN FERDINAN MOYKARI",
+            "jenis_kelamin": "l",
+            "agama": "Kristen Protestan",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "2",
+            "nama_siswa": "ALEXANDER ZHAMUEL MANU TARA WEO",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "3",
+            "nama_siswa": "AURELIA REVITA LAKAFING",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "MANUTAPEN"
+        },
+        {
+            "NO": "4",
+            "nama_siswa": "AXELSIUS JOSEF SENGGE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "5",
+            "nama_siswa": "BILL DANIEL PETRA TAKOY",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "6",
+            "nama_siswa": "BLISEAN GABRIEL MONE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "7",
+            "nama_siswa": "CARLO BENEDIT RAME HUKI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "8",
+            "nama_siswa": "CHRISTIAN PUTRA PRATAMA DJARA HADJO",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "9",
+            "nama_siswa": "DESTRI NATALIA MAUKOTA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "10",
+            "nama_siswa": "DEANY TALLO",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "11",
+            "nama_siswa": "DUTA JONATAN LETAN",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "12",
+            "nama_siswa": "EDGARD BHAGAWANTA DJINGI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "13",
+            "nama_siswa": "ENCRESTO PRINCE DENSEL",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "14",
+            "nama_siswa": "ENDRIL GRATIA BANA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "15",
+            "nama_siswa": "EVANGELISCA PRINCESSION SULUWETANG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NAMOSAIN"
+        },
+        {
+            "NO": "16",
+            "nama_siswa": "GERASIMUS RAFLIANDI NGGE",
+            "jenis_kelamin": "l",
+            "agama": "Kristen Katolik",
+            "kelas": "1a",
+            "alamat": "OEBUFU"
+        },
+        {
+            "NO": "17",
+            "nama_siswa": "GERYLL ANDREHAN ADU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "18",
+            "nama_siswa": "GEYSHA SEPTIANI LADO",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "LLBK"
+        },
+        {
+            "NO": "19",
+            "nama_siswa": "GIEZEL NAOMY MEIZYIS TEDJDJU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "20",
+            "nama_siswa": "IFANDHER GALLIO KANA KORE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "21",
+            "nama_siswa": "JAYDEN BENYAMIN ROHI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "22",
+            "nama_siswa": "JELOWIN JUVENTINO KAMALENG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "23",
+            "nama_siswa": "JOSH IMANUEL LAKAFING",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NAMOSAIN"
+        },
+        {
+            "NO": "24",
+            "nama_siswa": "JOVITA WILLA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "25",
+            "nama_siswa": "JULIENT OCTAVIANI RIWU DAKE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNLEU"
+        },
+        {
+            "NO": "26",
+            "nama_siswa": "KAKA PRESLEY PATRIA DOMINIQUS UDJU",
+            "jenis_kelamin": "l",
+            "agama": "Kristen Katolik",
+            "kelas": "1a",
+            "alamat": "LLBK"
+        },
+        {
+            "NO": "27",
+            "nama_siswa": "KATARINA VANIA KEFI",
+            "jenis_kelamin": "p",
+            "agama": "Kristen Katolik",
+            "kelas": "1a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "28",
+            "nama_siswa": "MAHER JIMENES BIAF",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "29",
+            "nama_siswa": "RESTI BANSOLE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "30",
+            "nama_siswa": "APRILLIONA ABIGAEL HAWU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "31",
+            "nama_siswa": "DIANA ELVIERA WILADIDA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "32",
+            "nama_siswa": "KEVIN AUGUSTIN TLOIM",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "33",
+            "nama_siswa": "LAMBERD ARSENIO RAME HUKI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "34",
+            "nama_siswa": "LAY MANNO IGREYA LUDJI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "35",
+            "nama_siswa": "MARCELLO ADITYA RATU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "36",
+            "nama_siswa": "MARCH HENDRY MALAIKAI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "BARUPLAT"
+        },
+        {
+            "NO": "37",
+            "nama_siswa": "MARISSA BEATRIS LUASE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "38",
+            "nama_siswa": "MARSELO GABRIELO DJIA KELLO",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "39",
+            "nama_siswa": "MARSYA SENORITA WELMAU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "40",
+            "nama_siswa": "MATHEW CRISTIAN HANOK MIHA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "41",
+            "nama_siswa": "MEY CLARISSA NAWA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "42",
+            "nama_siswa": "NADINE IMANUELA MANIKARI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "43",
+            "nama_siswa": "NOVELYA ADELVIN HERE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "44",
+            "nama_siswa": "NUGI RAFFI TIGE KE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "45",
+            "nama_siswa": "PUDJI GLORIANA NAOMI KAMALENG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "46",
+            "nama_siswa": "PUTRA LAY",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "47",
+            "nama_siswa": "QUEEN LARISTA BANAMTUAN",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "48",
+            "nama_siswa": "QUEEN SILOMITA MANNO MADDI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "ALAK"
+        },
+        {
+            "NO": "49",
+            "nama_siswa": "RAUOWDHY RIAUWZHY REZTI KADJA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "50",
+            "nama_siswa": "RIBKA MARIA PANUS",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "51",
+            "nama_siswa": "RISALDI MALAIRULI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "52",
+            "nama_siswa": "RIZKY YEHUDA HOLBALA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "53",
+            "nama_siswa": "SATRYAN ALVAREZH POYK",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "54",
+            "nama_siswa": "STANLEY XAVIER RIHI HUKI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "55",
+            "nama_siswa": "THALITA VIORENS NAN",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "56",
+            "nama_siswa": "TRISTAN APRILIO DIMA HUDA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "57",
+            "nama_siswa": "VALDY BERNALDINO LAY",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "58",
+            "nama_siswa": "YANDRI ABRAHAM BAPA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "1b",
+            "alamat": "MANTASI"
+        },
+        {
+            "NO": "59",
+            "nama_siswa": "ARJUN DIDA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "60",
+            "nama_siswa": "AVICKA HILLY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "61",
+            "nama_siswa": "BRUCE TAGA DOKO",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "62",
+            "nama_siswa": "CHANAYA BATI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "63",
+            "nama_siswa": "CHIKA LETAN",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "64",
+            "nama_siswa": "DESRIANA KALEB MANNO",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "65",
+            "nama_siswa": "DEVID RAME HUKI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "66",
+            "nama_siswa": "FADLHY SIMANULANG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "67",
+            "nama_siswa": "FERREL WADU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "68",
+            "nama_siswa": "FREDELLA MASIWENI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "69",
+            "nama_siswa": "FREDERICH DJINGI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "70",
+            "nama_siswa": "GEORGE RADJA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "MANUTAPEN"
+        },
+        {
+            "NO": "71",
+            "nama_siswa": "JIVARA LOE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "72",
+            "nama_siswa": "LIONEL DJARA LEBA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FONTEIN"
+        },
+        {
+            "NO": "73",
+            "nama_siswa": "LOUIS NAZIR RAHA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "74",
+            "nama_siswa": "OKLAN LOBAN",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "75",
+            "nama_siswa": "PUTRI BUNGA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "76",
+            "nama_siswa": "RAFAEL LEO LEDE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "77",
+            "nama_siswa": "RAYEND NAWA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "78",
+            "nama_siswa": "RENATA ELISABET HABA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "79",
+            "nama_siswa": "ROLAN KOANAK",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "80",
+            "nama_siswa": "VIONA LUDJI HABA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "81",
+            "nama_siswa": "ZEFANYA HETADI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "82",
+            "nama_siswa": "ADRIAN MALAILEHI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "83",
+            "nama_siswa": "ALBERTH POYK",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "84",
+            "nama_siswa": "ANGELO LEDE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "85",
+            "nama_siswa": "CHARLENE OIL",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "86",
+            "nama_siswa": "CHRISTABERRYL LAU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "87",
+            "nama_siswa": "FATRIN LAISKODAT",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "88",
+            "nama_siswa": "GABRIEL YANSEN",
+            "jenis_kelamin": "l",
+            "agama": "Kristen Katolik",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "89",
+            "nama_siswa": "HERMESTA GENAKAMA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "90",
+            "nama_siswa": "HOLLI KAMALENG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "91",
+            "nama_siswa": "IRENE DUKA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "92",
+            "nama_siswa": "JENI GRACIA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "93",
+            "nama_siswa": "JESICA LEKALONG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "94",
+            "nama_siswa": "KEREN KAPITAN",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "95",
+            "nama_siswa": "MAGDALENA LOE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "96",
+            "nama_siswa": "MEI MALAILEHI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "97",
+            "nama_siswa": "NAOMI OLBATA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "98",
+            "nama_siswa": "RAFAEL KARPADA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "99",
+            "nama_siswa": "RIANTI LAKALEGI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "100",
+            "nama_siswa": "SEMUEL LAUKARI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "101",
+            "nama_siswa": "TAMAR ATAKARY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "102",
+            "nama_siswa": "TRESA KARBEKA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "103",
+            "nama_siswa": "VALERIA MAGANGMA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "104",
+            "nama_siswa": "YOEL MOIKARI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "2b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "105",
+            "nisn": "0132043446",
+            "nama_siswa": "AFRILIANTI BAUN",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "106",
+            "nisn": "0122312242",
+            "nama_siswa": "ALVARO MICHAEL J. NAU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "107",
+            "nisn": "0131766491",
+            "nama_siswa": "ANGELO SYAPUTRA MANO MADDI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "108",
+            "nisn": "0135921932",
+            "nama_siswa": "ANGGUN S. NGURU MATA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "109",
+            "nisn": "0135628436",
+            "nama_siswa": "ARIS LODWIK MOIKARI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "110",
+            "nisn": "0133930206",
+            "nama_siswa": "AUDREY MARGARETH PURU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "111",
+            "nisn": "0132052463",
+            "nama_siswa": "AURORA A.  JUVENTINI DJO NAGA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "112",
+            "nisn": "3138096227",
+            "nama_siswa": "BRANDON KANA KORE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "113",
+            "nisn": "0125348644",
+            "nama_siswa": "CHRISTIAN B. NAWA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "114",
+            "nisn": "3132051601",
+            "nama_siswa": "FREEDOM WILLA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "MANTASI"
+        },
+        {
+            "NO": "115",
+            "nisn": "3122591200",
+            "nama_siswa": "GADDRIEL HAINGU MOTO",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "116",
+            "nisn": "3127110589",
+            "nama_siswa": "GLORYA C. LAY RADJA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "117",
+            "nisn": "0139714580",
+            "nama_siswa": "GREGORY SEBASTIAN KANNI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "118",
+            "nisn": "0131789846",
+            "nama_siswa": "HOONEY GLORYA TOGI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "119",
+            "nisn": "0136963128",
+            "nama_siswa": "KIREYNA LAY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "120",
+            "nisn": "0126717372",
+            "nama_siswa": "MARGARETHA PUTRI ARA RIWU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "121",
+            "nisn": "0139021470",
+            "nama_siswa": "MARIS CALYSTA RATU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "122",
+            "nisn": "0139499490",
+            "nama_siswa": "MARSEL KAMALENG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "123",
+            "nisn": "3132568111",
+            "nama_siswa": "NADA NAWA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "124",
+            "nisn": "3122016601",
+            "nama_siswa": "PUTRI MARU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "MANUTAPEN"
+        },
+        {
+            "NO": "125",
+            "nisn": "3137717935",
+            "nama_siswa": "REYNALDO CORNELIS DJINGI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "126",
+            "nisn": "0134008592",
+            "nama_siswa": "SEMRON ALOMAU MOYKARI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "127",
+            "nisn": "3139378070",
+            "nama_siswa": "WHYLLIAM CRISTIAN MIHA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "128",
+            "nisn": "0138128725",
+            "nama_siswa": "AGUERO GABRIEL MODOKH",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "129",
+            "nisn": "3098293234",
+            "nama_siswa": "ALEXANDRO YESKY SIMANULANG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "130",
+            "nisn": "3124882809",
+            "nama_siswa": "APRILIA LODIA KAMALENG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "131",
+            "nisn": "3121956212",
+            "nama_siswa": "CAHYANI HERAFLI GETRI KAFOLAKARI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "132",
+            "nisn": "0132672708",
+            "nama_siswa": "CARISA AURELI PHEZENIA BALANG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "133",
+            "nisn": "3135988447",
+            "nama_siswa": "CATTY P. PUTRICIA LAMAETDEO UDJU",
+            "jenis_kelamin": "p",
+            "agama": "KK",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "134",
+            "nisn": "3135825027",
+            "nama_siswa": "CINDY NISHA LOHMAY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "135",
+            "nisn": "3131907359",
+            "nama_siswa": "ELISABET WILHELMINA DO KARMO",
+            "jenis_kelamin": "p",
+            "agama": "Kristen Katolik",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "136",
+            "nisn": "3133502569",
+            "nama_siswa": "FEBRIANI ALEXA HELLY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "137",
+            "nisn": "0138233959",
+            "nama_siswa": "JOSHUA ENVIADO SULUWETANG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "138",
+            "nisn": "3137950408",
+            "nama_siswa": "KRISTIANUS HENDRIK SETU",
+            "jenis_kelamin": "l",
+            "agama": "Kristen Katolik",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "139",
+            "nisn": "0133166216",
+            "nama_siswa": "MARLAND POYK",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "140",
+            "nisn": "3136397588",
+            "nama_siswa": "MARVHA KRISTIANI DUKA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "141",
+            "nisn": "3131496874",
+            "nama_siswa": "MASAYU KRISTIN GAZ. AMALO",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "142",
+            "nisn": "3134256773",
+            "nama_siswa": "MISSHEL MARGARET HERE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "143",
+            "nisn": "0133129113",
+            "nama_siswa": "NOVINCE LUDJI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "144",
+            "nisn": "0133683395",
+            "nama_siswa": "REHUEL SERAFIM LULU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "145",
+            "nisn": "0137882416",
+            "nama_siswa": "ROLANDO JUNIOR AHALFANI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "146",
+            "nisn": "3136742045",
+            "nama_siswa": "SILVESTER VALENTINO LOE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "147",
+            "nama_siswa": "SINARTI FIKTORIA SINLAE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "ALAK"
+        },
+        {
+            "NO": "148",
+            "nisn": "3133164270",
+            "nama_siswa": "STIVEN IMANUEL KAMALENG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "149",
+            "nisn": "3133018666",
+            "nama_siswa": "YAKUB B. FALEY",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "3b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "150",
+            "nisn": "0127325116",
+            "nama_siswa": "AGUSTIN JENIFER TALO BERE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "151",
+            "nisn": "0124449243",
+            "nama_siswa": "ANGELA DOROTHEA SUSANA BALANG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "152",
+            "nama_siswa": "APRILIA TH. MANGNGI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "153",
+            "nisn": "0123967892 ",
+            "nama_siswa": "AVELYA ANASTASYA DWI PUSPA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "154",
+            "nisn": "0125994832 ",
+            "nama_siswa": "AZRIEL LEANDRA SAFER MOIYENI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "155",
+            "nisn": "3123835154",
+            "nama_siswa": "DAVIAN JOSY BIRE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "156",
+            "nisn": "0126948260 ",
+            "nama_siswa": "DERMIN AURIEL NALLE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "157",
+            "nama_siswa": "DESYA KALE MANNO",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "158",
+            "nisn": "0118344527 ",
+            "nama_siswa": "GIBRYAN ADHITIA DIDA",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "159",
+            "nisn": "0128176891 ",
+            "nama_siswa": "GRACIA ELEN QUEEN HEUMASSE",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "160",
+            "nisn": "0125628802 ",
+            "nama_siswa": "GRES TEFANI BATUK",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "161",
+            "nisn": "0124020640 ",
+            "nama_siswa": "IAN CHRISTIAN KAESMETAN",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "162",
+            "nisn": "0125002729 ",
+            "nama_siswa": "INTAN DEBORA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "163",
+            "nisn": "0128345579 ",
+            "nama_siswa": "JENARTY KAMLASI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "164",
+            "nisn": "3126646636",
+            "nama_siswa": "Jheevan Rey Mahersyalal Lede",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "165",
+            "nisn": "0122270901",
+            "nama_siswa": "MARCE SUSANA KARMANI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "166",
+            "nisn": "0129461324",
+            "nama_siswa": "MARZELO CRISTIAN LAGA RAE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "167",
+            "nisn": "0124782574 ",
+            "nama_siswa": "MICHAEL YUNIOR DJINGI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "168",
+            "nama_siswa": "MICHELLE S. RATU",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "169",
+            "nisn": "0127678186 ",
+            "nama_siswa": "NAOMI GAZELLA KARMA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "170",
+            "nisn": "0128631548 ",
+            "nama_siswa": "Nova Angelica Day",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "171",
+            "nisn": "0122111601 ",
+            "nama_siswa": "RICKY ADRIANUS LADO",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "172",
+            "nisn": "0128180271 ",
+            "nama_siswa": "Sean Delvy Henderina Day",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "173",
+            "nisn": "3140366200",
+            "nama_siswa": "SHINTA BUNGA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "174",
+            "nisn": "0127403681 ",
+            "nama_siswa": "VALENTINO DJU BAITANU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "175",
+            "nisn": "0119150112",
+            "nama_siswa": "YOSAFAT YANSEN",
+            "jenis_kelamin": "l",
+            "agama": "Kristen Katolik",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "176",
+            "nisn": "0127130954 ",
+            "nama_siswa": "YUDHEA ANAKAY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "177",
+            "nisn": "0122667470 / ",
+            "nama_siswa": "YUSUF KAREL KAMALENG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "178",
+            "nisn": "3127031695",
+            "nama_siswa": "Ade Edsel Daepanie",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "179",
+            "nisn": "0129899728 / ",
+            "nama_siswa": "ADEA HANNA LAILANG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "180",
+            "nisn": "0123204202 / ",
+            "nama_siswa": "Aerlyn Belvania Kale Kitu",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "181",
+            "nisn": "0127538520 / ",
+            "nama_siswa": "ARIYANUS J. FANGGIDAE",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "182",
+            "nisn": "0121086792 / ",
+            "nama_siswa": "Arryo Anggun Aditsteten Ratu",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "183",
+            "nisn": "0128042232 / ",
+            "nama_siswa": "Canthika Aksa Chilacapera Atamani",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "184",
+            "nisn": "0118647722 / ",
+            "nama_siswa": "CANTYKA ARIANTY KALE MODJO",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "185",
+            "nisn": "0124180025 / ",
+            "nama_siswa": "CHERYN LEBERTINA LAKAFING",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "186",
+            "nisn": "0123733041",
+            "nama_siswa": "DELIVA L. DIMA HUDA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "187",
+            "nisn": "0129170999",
+            "nama_siswa": "DINATARIA EMINERI GENAKAMA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "188",
+            "nisn": "0124346039",
+            "nama_siswa": "Erlin S. Lohmay",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "189",
+            "nisn": "3126719685",
+            "nama_siswa": "EUNIKE KARBEKA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "190",
+            "nisn": "0118078185 / ",
+            "nama_siswa": "Fransisca Januaritha Dalla",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "191",
+            "nisn": "0124624038 / ",
+            "nama_siswa": "GABRIEL JULIO A. RAME HUKI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "192",
+            "nisn": "0124013415 / ",
+            "nama_siswa": "Gianchelo Abraham Kaliha",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "193",
+            "nisn": "0128222964 / ",
+            "nama_siswa": "Grace Ridew Shanon Liman",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "194",
+            "nisn": "0123964505 / ",
+            "nama_siswa": "Grachintaniani Bertha Djo Kitu",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "195",
+            "nisn": "0128144308 / ",
+            "nama_siswa": "Indri Grasia Rihi Ie",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "196",
+            "nisn": "0123671028 / ",
+            "nama_siswa": "Jesica Intan Manu Tara",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "197",
+            "nisn": "0124157393 / ",
+            "nama_siswa": "JESSICA ELISABETH VIOLOVE RIHI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "198",
+            "nisn": "0126575996 / ",
+            "nama_siswa": "JOICE I. CAESARRINA MANIMALEY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "199",
+            "nisn": "3114229357",
+            "nama_siswa": "JUARNEL MALDINO PADALAU",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "200",
+            "nisn": "3121229017",
+            "nama_siswa": "JULIET ANGEL LY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "201",
+            "nisn": "0125236398 / ",
+            "nama_siswa": "KEVIN ALEZANDRO KOREH",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "202",
+            "nisn": "0128884900",
+            "nama_siswa": "KRIS DJAMI",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "203",
+            "nisn": "0122228202 / ",
+            "nama_siswa": "Marchello Aprilio Dju Hega",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "204",
+            "nisn": "0122736219 / ",
+            "nama_siswa": "Meyritsia Michela Dominik Lede",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "205",
+            "nisn": "0128931278 / ",
+            "nama_siswa": "NOVA GRACIA DO MAIO KARPADA",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "206",
+            "nisn": "0123067915 / ",
+            "nama_siswa": "NOYA MIRANDA KARMANI",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "207",
+            "nisn": "0111726979 ",
+            "nama_siswa": "PETER PRANATA LEKALONG",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "208",
+            "nama_siswa": "RENATA S. FALEY",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "209",
+            "nisn": "0121764077 ",
+            "nama_siswa": "Sagala Moses Deny",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "210",
+            "nisn": "0125291385 ",
+            "nama_siswa": "SYALOMITHA ASTINI KAMALENG",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "211",
+            "nisn": "0127879724 ",
+            "nama_siswa": "THITO ALEZANDRO LAY",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "4b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "212",
+            "nisn": "0111298955",
+            "nama_siswa": "Ady Imanuel Atamani",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "213",
+            "nama_siswa": "Yosua T. Ludji",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "214",
+            "nisn": "0117081648 ",
+            "nama_siswa": "Angelina Bansole",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "215",
+            "nisn": "0116702096 ",
+            "nama_siswa": "Ardy Ruge",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "216",
+            "nisn": "0113436041 ",
+            "nama_siswa": "Ariyanthy Angela",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "217",
+            "nisn": "0116487791 ",
+            "nama_siswa": "Bileam Didimus Oly",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "AIRMATA"
+        },
+        {
+            "NO": "218",
+            "nisn": "0115959662 ",
+            "nama_siswa": "Christiano Indrayana Panus",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "219",
+            "nisn": "0114648257 ",
+            "nama_siswa": "Fellix Adriansyah Hawu Huma",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "220",
+            "nisn": "0115034304 ",
+            "nama_siswa": "Feren Fellysia Tifanni Welmau",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "221",
+            "nisn": "0117024465 ",
+            "nama_siswa": "Fransin Manikari",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "222",
+            "nisn": "0118285397 ",
+            "nama_siswa": "Hendrik Thomas Maleymau",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "223",
+            "nisn": "0103182237",
+            "nama_siswa": "Jhony Alves Karma",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "224",
+            "nisn": "0111851131",
+            "nama_siswa": "Joshua Noia Ude Lay",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "OEPURA"
+        },
+        {
+            "NO": "225",
+            "nisn": "0111321977 ",
+            "nama_siswa": "Juanita Eirene Magangma",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "MANUTAPEN"
+        },
+        {
+            "NO": "226",
+            "nisn": "0106699345 ",
+            "nama_siswa": "Lorenzo Ly",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "227",
+            "nisn": "0112130717 ",
+            "nama_siswa": "Mathias Jason Karmani",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "228",
+            "nisn": "0109434238 ",
+            "nama_siswa": "Meylan Juliana Olivia Lakafing",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "229",
+            "nisn": "0118626230 ",
+            "nama_siswa": "Niken Shisilya Poyk",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "230",
+            "nisn": "0116137555",
+            "nama_siswa": "Nirwana Nawa",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "231",
+            "nisn": "0117810586 ",
+            "nama_siswa": "Resty Putryangelita Lay",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "232",
+            "nisn": "3105983709",
+            "nama_siswa": "Semuel Biaf",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "233",
+            "nisn": "0114619440 ",
+            "nama_siswa": "Shiren Radha Pulu Lede",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "MANUTAPEN"
+        },
+        {
+            "NO": "234",
+            "nisn": "0117539356 ",
+            "nama_siswa": "Vania Agnesia Ratu",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "235",
+            "nisn": "0119852352",
+            "nama_siswa": "Velly Amelia Luase",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "236",
+            "nisn": "0118765634",
+            "nama_siswa": "Yegar Sahaduta Januar Lulu",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "237",
+            "nisn": "0115641576 ",
+            "nama_siswa": "Adi James Jusuf Malelak",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "238",
+            "nisn": "0114828674 ",
+            "nama_siswa": "Adi Putra Radja",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "MANUTAPEN"
+        },
+        {
+            "NO": "239",
+            "nisn": "0118677249 ",
+            "nama_siswa": "Aprison Julianto Mangngi",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "240",
+            "nisn": "0113597332",
+            "nama_siswa": "Aurel Gloriella Djami",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "241",
+            "nisn": "0117861270",
+            "nama_siswa": "Brian Daspel Kamesah",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "242",
+            "nisn": "0114250669",
+            "nama_siswa": "Chatrin Yunida Abigail Lomi",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "243",
+            "nisn": "0116232711",
+            "nama_siswa": "Cheren Martinsel Ndun",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "244",
+            "nisn": "3124544984",
+            "nama_siswa": "Christopher Waang",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "245",
+            "nisn": "0119078821 ",
+            "nama_siswa": "Cleon Macarius Dju Kana",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "246",
+            "nisn": "0115403917",
+            "nama_siswa": "Daniel Edison Manilapai",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "247",
+            "nisn": "0106642532",
+            "nama_siswa": "Devan Reyn Laga Rae",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "248",
+            "nisn": "0111756199 ",
+            "nama_siswa": "Fandi Rizal Wadu",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "249",
+            "nisn": "0094382099",
+            "nama_siswa": "Kurnia Mau",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "250",
+            "nisn": "0118523908 ",
+            "nama_siswa": "Gian Alvaro Dima Huda",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "251",
+            "nisn": "0119662075",
+            "nama_siswa": "Marchello Ridwan Kamaleng",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "252",
+            "nisn": "0117579263",
+            "nama_siswa": "Mariana Hagar Kamaleng",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "253",
+            "nisn": "0116881781",
+            "nama_siswa": "Maryanti Juanda Djia Kello",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "254",
+            "nisn": "0116611177 ",
+            "nama_siswa": "Pascalia Avrili Magelin Marbun",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "255",
+            "nisn": "0077508700 ",
+            "nama_siswa": "Paulus Kalambuka",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "256",
+            "nisn": "0102106717",
+            "nama_siswa": "Putra Maru",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "257",
+            "nisn": "0111660034",
+            "nama_siswa": "Samuel Efraim Seran",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "258",
+            "nisn": "0118904119",
+            "nama_siswa": "Vandry Adhitia Riwu Djami",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "259",
+            "nisn": "0112643200 ",
+            "nama_siswa": "Velisitas Rae Lulu",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "260",
+            "nisn": "0117366533 ",
+            "nama_siswa": "Yohanis Maleymau",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "261",
+            "nisn": "0111393735",
+            "nama_siswa": "Ebenhaezer William Ludji",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "5b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "262",
+            "nisn": "0107920052",
+            "nama_siswa": "Adriel Azariah Lay Wohe",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "263",
+            "nisn": "0106339933 ",
+            "nama_siswa": "Ady Nehemia Legifani",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "264",
+            "nisn": "0102741233",
+            "nama_siswa": "Afrisal Rafiko Nicodemus Dalla",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "265",
+            "nisn": "0096428665 ",
+            "nama_siswa": "Alexandro Christian Poyk",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "266",
+            "nisn": "0106187270",
+            "nama_siswa": "Andra Johanis Wesley Nau",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "267",
+            "nisn": "0102478412",
+            "nama_siswa": "Angel Avriliany Lede",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "268",
+            "nisn": "0102296712 ",
+            "nama_siswa": "Caisar Farel Riwu Ratu",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "269",
+            "nisn": "0104481479 ",
+            "nama_siswa": "Chasita Triani Padja",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "NUNBAUN DELHA"
+        },
+        {
+            "NO": "270",
+            "nisn": "0103330091",
+            "nama_siswa": "Cheryl Trisckey Azzury Manikari",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "271",
+            "nisn": "0107080566 ",
+            "nama_siswa": "Clara Juanita Here",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "272",
+            "nisn": "0107106660 ",
+            "nama_siswa": "Dawya Grace Rianti Rame Huki",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "273",
+            "nisn": "0103565160 ",
+            "nama_siswa": "Evy Julianty Hae",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "274",
+            "nisn": "0104671255 ",
+            "nama_siswa": "Flantino Darma Putra Djami",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "275",
+            "nisn": "0107082723 ",
+            "nama_siswa": "Greygory Elsaday Karmani",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "276",
+            "nisn": "0107691106",
+            "nama_siswa": "Intan Delvinasela Ratu",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "277",
+            "nisn": "0107296010",
+            "nama_siswa": "Jaustin Bryan Nicodemus Radja",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "NAIKOTEN 1"
+        },
+        {
+            "NO": "278",
+            "nisn": "0104702582",
+            "nama_siswa": "Jovano Adyputra Valiryan Therik",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "279",
+            "nisn": "0109199359",
+            "nama_siswa": "Juan Rehan Genakama",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "280",
+            "nisn": "0106735923 ",
+            "nama_siswa": "Lovely Gracia Djara Hadjo",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "281",
+            "nisn": "0109863063 ",
+            "nama_siswa": "Mega Triflorensya Talo",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "282",
+            "nisn": "0089597041 ",
+            "nama_siswa": "Moses Manilang",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "283",
+            "nisn": "0109900059 ",
+            "nama_siswa": "Reinaldo Paulus Lenggu",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "284",
+            "nama_siswa": "William Juter Stiano Balabi",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "285",
+            "nisn": "0109022777 ",
+            "nama_siswa": "Winnie Rosmini Koreh",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "286",
+            "nisn": "0102387490",
+            "nama_siswa": "Yohanis Aprynando Pa Tari",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "287",
+            "nama_siswa": "Rizky Mone",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6a",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "288",
+            "nisn": "0106057931",
+            "nama_siswa": "Venu Stivani Karunia Neno",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "289",
+            "nisn": "0101102072 ",
+            "nama_siswa": "Agnes Angela Mangngi",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "290",
+            "nisn": "0091576667 ",
+            "nama_siswa": "Algan Richad Marcelino Mautang",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "291",
+            "nisn": "0102664598 ",
+            "nama_siswa": "Alwan Maylsan Leuanan",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "292",
+            "nisn": "0107885343 ",
+            "nama_siswa": "Aprilia Paramitha Talobere",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "293",
+            "nisn": "0116131805",
+            "nama_siswa": "Chalisty Takalapeta",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "294",
+            "nisn": "0104120113 ",
+            "nama_siswa": "Chelsy Alexandra Welvaart",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "AIRMATA"
+        },
+        {
+            "NO": "295",
+            "nisn": "0108715998 ",
+            "nama_siswa": "Eunike Marselina Lodya Malaikari",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "296",
+            "nisn": "0102109017 ",
+            "nama_siswa": "Evraim William Bunga",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "297",
+            "nisn": "                       ",
+            "nama_siswa": "Fajar Maibana",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "298",
+            "nisn": "0104805236  ",
+            "nama_siswa": "Febriany Noon Lavigne Bunga",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "299",
+            "nisn": "0102530127 ",
+            "nama_siswa": "Fidel Winaya Petrus Lango",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "300",
+            "nisn": "0105005632 ",
+            "nama_siswa": "Frida Anatha Ratu Doko",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "301",
+            "nisn": "0101662990 ",
+            "nama_siswa": "Gerald Alfredo Tao",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "302",
+            "nisn": "0104443977 ",
+            "nama_siswa": "Hesthy Vischa",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "303",
+            "nisn": "0108120020 ",
+            "nama_siswa": "Jezriel Lionel Safer Moiyeni",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "304",
+            "nisn": "0093274060 ",
+            "nama_siswa": "Julian The Vander Tari",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "305",
+            "nisn": "0101947479 ",
+            "nama_siswa": "Marcel Christian Genakalong",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "306",
+            "nama_siswa": "Mathias Atamani",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "307",
+            "nisn": "0116440562",
+            "nama_siswa": "Nona Defitri Jessica Hawu Pao",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "308",
+            "nisn": "0107169039",
+            "nama_siswa": "Pedrosi Bangngu",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "309",
+            "nisn": "0105412362",
+            "nama_siswa": "Permata Shopia Pesik",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "MANULAI 2"
+        },
+        {
+            "NO": "310",
+            "nisn": "0092452608 ",
+            "nama_siswa": "Putri Kristiana Palle",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "311",
+            "nisn": "0109650974 ",
+            "nama_siswa": "Ronald Arjuna Putra Dida",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "NUNHILA"
+        },
+        {
+            "NO": "312",
+            "nisn": "0105022722 ",
+            "nama_siswa": "Sefar Juliano Olbata",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "313",
+            "nisn": "0107388639 ",
+            "nama_siswa": "Syallomitha Kamesah",
+            "jenis_kelamin": "p",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "FATUFETO"
+        },
+        {
+            "NO": "314",
+            "nisn": "0105792342 ",
+            "nama_siswa": "Uke Adnesero Oly",
+            "jenis_kelamin": "l",
+            "agama": "KP",
+            "kelas": "6b",
+            "alamat": "AIRMATA"
+        }
+    ]
+}

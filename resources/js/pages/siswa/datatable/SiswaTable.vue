@@ -41,7 +41,7 @@
                 <div>
                     {{ item.kelas.nama }} 
                 </div>
-                <div>
+                <div v-if="item.kelas.guru">
                     <small>
                         {{ item.kelas.guru.nama }}
                     </small>

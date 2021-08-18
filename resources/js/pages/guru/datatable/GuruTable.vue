@@ -26,9 +26,9 @@
                 <div class="text--disabled">
                     NIP.{{ item.nip }}
                 </div>
-                <div class="text--disabled">
+                <!-- <div class="text--disabled">
                     {{ item.alamat | sub(250) }}
-                </div>
+                </div> -->
             </div>
         </template>
         <template #item.tanggal_lahir="{item}">

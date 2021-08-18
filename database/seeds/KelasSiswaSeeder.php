@@ -27,7 +27,7 @@ class KelasSiswaSeeder extends Seeder
         }
 
         
-        DB::table('tbl_kelas')->whereRaw('1')->delete();
+        // DB::table('tbl_kelas')->whereRaw('1')->delete();
         
         foreach($kelas as $key => $value){
             if(!Kelas::where('nama', $value)->count()){
@@ -43,7 +43,7 @@ class KelasSiswaSeeder extends Seeder
          * clear all data siswa
          * 
          */
-        Siswa::truncate();
+        // Siswa::truncate();
         
         foreach($dataGrouping as $kelas_key => $list_siswa){
             $kelasRoman = $kelas[$kelas_key];

@@ -1,5 +1,5 @@
 <template>
-    <div class="pa-md-3">
+    <div class="pa-md-3 mx-auto" style="max-width: 600px">
         <v-card color="white" rounded="xl" class="mb-3 shadow-sm">
             <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
         </v-card>

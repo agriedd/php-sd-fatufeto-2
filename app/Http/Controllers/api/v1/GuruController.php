@@ -30,7 +30,12 @@ class GuruController extends Controller{
     }
 
     public function store(RequestGuruStore $request){
-        $data = collect($request->validated())->except(['foto']);
+        $data = collect($request->validated())->except(['foto', 'password']);
+        /**
+         * encript password
+         * 
+         */
+        $data->put('password', bcrypt($request->input('password')));
         $guru = Guru::create($data->all());
         /**
          * update foto guru

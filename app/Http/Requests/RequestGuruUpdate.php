@@ -30,6 +30,10 @@ class RequestGuruUpdate extends FormRequest{
             'telepon'   => 'nullable',
             'alamat'   => 'nullable',
             'foto'   => 'nullable|image|max:2048',
+            'email'   => [
+                'required',
+                Rule::unique('tbl_guru', 'email')->ignore($id, 'id_guru')
+            ],
         ];
     }
 }

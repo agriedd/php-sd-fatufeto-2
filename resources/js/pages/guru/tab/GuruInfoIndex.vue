@@ -6,6 +6,36 @@
         <v-card-text>
             <v-list-item>
                 <v-list-item-icon>
+                    <v-icon>mdi-mail</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-subtitle>
+                        Email
+                    </v-list-item-subtitle>
+                    <v-list-item-title class="">
+                        {{ item.email }}
+                    </v-list-item-title>
+                </v-list-item-content>
+            </v-list-item>
+            <v-list-item @click="" link>
+                <v-list-item-icon>
+                    <v-icon>mdi-key</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
+                    <v-list-item-title class="">
+                        Reset Sandi
+                    </v-list-item-title>
+                    <v-list-item-subtitle>
+                        Reset kata sandi guru menjadi kata sandi default 
+                    </v-list-item-subtitle>
+                </v-list-item-content>
+                <v-list-item-action>
+                    <v-icon>mdi-chevron-right</v-icon>
+                </v-list-item-action>
+            </v-list-item>
+            <v-divider inset/>
+            <v-list-item>
+                <v-list-item-icon>
                     <v-icon></v-icon>
                 </v-list-item-icon>
                 <v-list-item-content>

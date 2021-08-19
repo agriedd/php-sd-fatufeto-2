@@ -36,6 +36,8 @@ class RequestGuruStore extends FormRequest
             'telepon'   => 'nullable',
             'alamat'   => 'nullable',
             'foto'   => 'nullable|image|max:2048',
+            'email'   => 'required|unique:tbl_guru,email',
+            'password'   => 'required',
         ];
     }
 }

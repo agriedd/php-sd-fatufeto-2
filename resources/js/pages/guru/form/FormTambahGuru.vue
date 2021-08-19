@@ -167,7 +167,7 @@ export default {
          */
         password(){
             let tanggal_lahir = this.item.tanggal_lahir;
-            let password = '';
+            let password = 'password';
             if(tanggal_lahir){
                 /**
                  * replace item item.tanggal_lahir special characters with nothing

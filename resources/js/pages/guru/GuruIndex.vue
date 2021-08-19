@@ -103,7 +103,9 @@
                                             </div>
                                         </v-card-text>
                                         <v-card-text>
-                                            {{ item.nama }}
+                                            <div class="text-truncate">
+                                                {{ item.nama }}
+                                            </div>
                                             <div class="text-truncate">
                                                 <small>
                                                     {{ item.nip }}

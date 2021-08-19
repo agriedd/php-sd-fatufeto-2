@@ -42,7 +42,7 @@
             </div>
         </template>
         <template #item.action="{item}">
-			<div>
+			<div class="d-flex justify-end">
 				<v-slide-x-transition mode="out-in">
 					<v-card
 						:key="item.id == currentId"
@@ -56,7 +56,7 @@
 						<v-btn icon @click="editRow(item)">
 							<v-icon small>mdi-pencil</v-icon>
 						</v-btn>
-						<v-btn icon color="primary" @click="rowClick(item)">
+						<v-btn icon @click="rowClick(item)">
 							<v-icon small>mdi-chevron-right</v-icon>
 						</v-btn>
 					</v-card>

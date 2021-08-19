@@ -45211,6 +45211,83 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
       state.session.code = payload;
     }
+  },
+  modules: {
+    password: {
+      namespaced: true,
+      state: {
+        errors: {},
+        session: {
+          code: 0
+        }
+      },
+      getters: {},
+      actions: {
+        reset: function reset(context, _ref10) {
+          return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee11() {
+            var data, id;
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee11$(_context11) {
+              while (1) {
+                switch (_context11.prev = _context11.next) {
+                  case 0:
+                    data = _ref10.data, id = _ref10.id;
+
+                    if (!id) {
+                      _context11.next = 6;
+                      break;
+                    }
+
+                    if (data instanceof FormData) data.append('_method', 'PUT');
+                    return _context11.abrupt("return", new Promise( /*#__PURE__*/function () {
+                      var _ref11 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee10(resolve, reject) {
+                        var res;
+                        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee10$(_context10) {
+                          while (1) {
+                            switch (_context10.prev = _context10.next) {
+                              case 0:
+                                _context10.next = 2;
+                                return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])("v1/guru/reset/".concat(id)), data)["catch"](function (e) {
+                                  return reject(e);
+                                });
+
+                              case 2:
+                                res = _context10.sent;
+                                if (res) resolve(res);
+
+                              case 4:
+                              case "end":
+                                return _context10.stop();
+                            }
+                          }
+                        }, _callee10);
+                      }));
+
+                      return function (_x13, _x14) {
+                        return _ref11.apply(this, arguments);
+                      };
+                    }()));
+
+                  case 6:
+                    console.warn("update@guru.js", "id kosong 🤦‍♂️");
+
+                  case 7:
+                  case "end":
+                    return _context11.stop();
+                }
+              }
+            }, _callee11);
+          }))();
+        },
+        updateSession: function updateSession(context, data) {
+          context.commit('SET_SESSION_CODE', data || new Date().getTime());
+        }
+      },
+      mutations: {
+        SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
+          state.session.code = payload;
+        }
+      }
+    }
   }
 });
 

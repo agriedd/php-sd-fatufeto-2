@@ -78,6 +78,16 @@ class GuruController extends Controller{
         $collection = new SekolahCollection($guru);
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }
+    public function reset(Request $request, Guru $guru){
+        /**
+         * make new password encypted
+         * 
+         */
+        $data = collect(['password' => bcrypt('password')]);
+        $result = $guru->update($data->all());
+        $collection = new SekolahCollection($guru);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
 
     public function destroy(Guru $guru){
         $result = $guru->delete();

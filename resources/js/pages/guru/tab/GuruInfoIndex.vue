@@ -17,7 +17,7 @@
                     </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
-            <v-list-item @click="" link>
+            <v-list-item @click="resetPasswordGuru" link>
                 <v-list-item-icon>
                     <v-icon>mdi-key</v-icon>
                 </v-list-item-icon>
@@ -117,9 +117,45 @@
     </v-card>
 </template>
 <script>
+import { mapActions } from 'vuex'
 export default {
     props: {
         item: Object
+    },
+    computed: {
+        /**
+         * get id from params id_guru
+         * 
+         */
+        id: function () {
+            return this.$route.params.id_guru
+        }
+    },
+    methods: {
+        ...mapActions({
+            resetPassword: 'guru/password/reset',
+        }),
+        async resetPasswordGuru() {
+            /**
+             * confirm before execute code bellow
+             * 
+             */
+            if (confirm('Yakin akan mereset sandi guru ini?')) {
+                // this.loading = true
+                let res = await this.resetPassword({ data: new FormData(), id: this.id }).catch(e => {
+                    console.log("resetGuru@GuruInfoIndex.vue", e)
+                    this.notif({
+                        message: e.message
+                    })
+                })
+                // this.loading = false
+                if(res){
+                    this.notif({
+                        message: `Berhasil mereset kata sandi guru ${item.nama}`
+                    })
+                }
+            }
+        }
     }
 }
 </script>

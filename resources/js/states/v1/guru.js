@@ -182,4 +182,38 @@ export default {
             state.session.code = payload
         }
     },
+    modules: {
+        password: {
+            namespaced: true,
+            state: {
+                errors: {},
+                session: {
+                    code: 0
+                }
+            },
+            getters: {},
+            actions: {
+                async reset(context, { data, id }){
+                    if(id){
+                        if(data instanceof FormData)
+                            data.append('_method', 'PUT')
+                        return new Promise(async(resolve, reject)=>{
+                            let res = await axios.post(api(`v1/guru/reset/${id}`), data).catch(e => reject(e))
+                            if(res) resolve(res)
+                        })
+                    }
+                    else
+                        console.warn("update@guru.js", "id kosong 🤦‍♂️");
+                },
+                updateSession(context, data){
+                    context.commit('SET_SESSION_CODE', data || (new Date).getTime())
+                },
+            },
+            mutations: {
+                SET_SESSION_CODE(state, payload){
+                    state.session.code = payload
+                }
+            },
+        }
+    }
 }

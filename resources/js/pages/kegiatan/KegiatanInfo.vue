@@ -185,10 +185,11 @@
                             </div>
                         </div>
                         <div>
-                            <div class="sticky-top" style="z-index: 1;">
-                                <v-toolbar flat rounded="xl">
+                            <div class="sticky-top" style="z-index: 10;">
+                                <v-toolbar rounded="xl" class="shadow-sm">
                                     <v-tabs align-with-title>
                                         <v-tab :to="{name: 'kegiatan.show'}" exact>Informasi</v-tab>
+                                        <v-tab :to="{name: 'kegiatan.gambar'}" exact>Gambar Kegiatan</v-tab>
                                     </v-tabs>
                                 </v-toolbar>
                             </div>

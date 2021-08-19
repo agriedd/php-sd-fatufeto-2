@@ -1,13 +1,13 @@
 <template>
     <div class="pa-md-3">
-        <v-card color="white" rounded="xl" class="mb-3 shadow-sm">
+        <v-card color="white" rounded="xl" class="mb-3 shadow-sm" v-if="!noBreadcrumb">
             <v-breadcrumbs :items="breadcrumb"></v-breadcrumbs>
         </v-card>
         <v-card class="shadow-sm" rounded="xl">
             <v-card-text class="d-flex">
                 <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
             </v-card-text>
-            <guru-table
+            <gambar-kegiatan-table
                 :headers="headers"
                 :items="items"
                 :options="options"
@@ -16,9 +16,9 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoGuru"
-                @editRow="ubahInfoGuru"
-                @deleteRow="hapusInfoGuru"
+                @rowClick="toInfoKegiatan"
+                @editRow="ubahInfoKegiatan"
+                @deleteRow="hapusInfoKegiatan"
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
@@ -27,16 +27,17 @@
 </template>
 <script>
 import { mapActions } from 'vuex'
-import GuruTable from '../datatable/GuruTable.vue'
+import GambarKegiatanTable from '../datatable/GambarKegiatanTable.vue'
 export default {
     props: {
         dataSession: String|Number,
         params: Object,
         small: Boolean,
         noSelect: Boolean,
+        noBreadcrumb: Boolean
     },
     components: {
-        GuruTable
+        GambarKegiatanTable
     },
     data(){
         return {
@@ -49,25 +50,20 @@ export default {
                     exact: true,
                 },
                 {
-                    text: 'Guru',
+                    text: 'Kegiatan',
                     disabled: false,
-                    to: {name: 'guru'},
+                    to: {name: 'kegiatan'},
                     link: true,
                     exact: true,
                 },
                 {
-                    text: 'List Guru',
+                    text: 'List Kegiatan',
                     disabled: true,
                 },
             ],
             items: [],
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: 'Nama', align: 'start', sortable: true, value: 'nama' },
-                { text: 'Jenis Kelamin', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis_kelamin' },
-                { text: 'Jabatan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jabatan' },
-                // { text: 'Golongan', align: 'start d-none d-sm-table-cell', sortable: true, value: 'golongan' },
-                { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
                 { text: null, align: '', sortable: true, value: 'action' },
             ],
             options: {
@@ -96,10 +92,9 @@ export default {
     },
     methods: {
         ...mapActions({
-            getItems: 'guru/get',
+            getItems: 'kegiatan/gambar/get',
             notif: 'notifikasi/show',
-            showUbahDialog: 'guru/setModalUbah',
-            showHapusDialog: 'guru/setModalHapus',
+            showHapusDialog: 'kegiatan/gambar/setModalHapus',
         }),
         async loadItems(){
             this.loading = true
@@ -130,7 +125,7 @@ export default {
             }, 800);
         },
         rowClick(e){
-            this.$emit('open:guru:info', e)
+            this.$emit('open:kegiatan:info', e)
         },
         editRow(e){
 
@@ -138,14 +133,11 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoGuru({id_guru: id}){
-            this.showUbahDialog({id, value: true})
+        ubahInfoKegiatan({id_guru: id}){
+
         },
-        hapusInfoGuru({id_guru: id}){
+        hapusInfoKegiatan({id_guru: id}){
             this.showHapusDialog({id, value: true})
-        },
-        toInfoGuru({id_guru}){
-            this.$router.push({ name: 'guru.show', params: { id_guru } })
         },
     },
     watch: {

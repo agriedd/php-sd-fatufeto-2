@@ -11,7 +11,7 @@ class Guru extends Model{
     protected $with = ['kelas', 'foto'];
     
     public function kelas(){
-        return $this->hasOne(Kelas::class, 'id_guru', 'id_guru')->without(['guru']);
+        return $this->hasOne(Kelas::class, 'id_guru', 'id_guru')->without(['guru'])->withCount(['siswa']);
     }
 
     public function foto(){

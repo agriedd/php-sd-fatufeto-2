@@ -14,6 +14,22 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @endif
+    <script>
+        function initMap() {
+            // The location of Uluru
+            const uluru = { lat: -10.169017209105768, lng: 123.57494483170778 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 17,
+                center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map: map,
+            });
+        }
+    </script>
 </head>
 <body class="position-relative">
     <div id="app">
@@ -22,5 +38,9 @@
         </main>
     </div>
     @stack('footer')
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWopilYZbUSAKPyaLJpYNqSgM45H6aOhY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
 </body>
 </html>

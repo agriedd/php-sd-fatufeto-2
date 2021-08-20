@@ -17,6 +17,9 @@
                     {{ env('ALAMAT', $alamat ?? '') }}
                 </div>
             </div>
+            <div class="pt-5">
+                <div id="map" style="width:100%;height:400px; border-radius: 1rem"></div>
+            </div>
         </div>
     </div>
 </div>

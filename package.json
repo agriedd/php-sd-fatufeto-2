@@ -27,6 +27,7 @@
         "@popperjs/core": "^2.9.2",
         "moment": "^2.29.1",
         "vue-router": "^3.5.2",
+        "vue2-google-maps": "^0.10.7",
         "vuetify": "^2.5.7",
         "vuex": "^3.6.2"
     }

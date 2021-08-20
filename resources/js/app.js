@@ -4,6 +4,7 @@ window.Vue = Vue
 
 import Vuex from 'vuex'
 import states from './states/app-states'
+
 /**
  * konfigurasi vuex state
  * 

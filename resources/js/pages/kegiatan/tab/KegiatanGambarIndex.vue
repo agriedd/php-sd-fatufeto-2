@@ -10,7 +10,7 @@
         </v-fab-transition>
         <v-card-text>
             <v-card color="grey lighten-4" rounded="xl" flat>
-                <gambar-kegiatan-list-index :noSelect="true" :headers="headers" no-breadcrumb/>
+                <gambar-kegiatan-list-index :noSelect="true" :headers="headers" no-breadcrumb :dataSession="session"/>
             </v-card>
         </v-card-text>
         <gambar-kegiatan-tambah/>
@@ -18,7 +18,7 @@
     </v-card>
 </template>
 <script>
-import { mapActions, mapMutations } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import GambarKegiatanHapus from '../../gambarkegiatan/GambarKegiatanHapus.vue'
 import GambarKegiatanTambah from '../../gambarkegiatan/GambarKegiatanTambah.vue'
 import GambarKegiatanListIndex from '../../gambarkegiatan/page/GambarKegiatanListIndex.vue'
@@ -35,6 +35,11 @@ export default {
                 // { text: '', align: 'end d-none d-sm-table-cell', sortable: true, value: 'aksi' },
             ]
         }
+    },
+    computed: {
+        ...mapGetters({
+            session: 'kegiatan/gambar/getSession',
+        }),
     },
     methods: {
         ...mapMutations({

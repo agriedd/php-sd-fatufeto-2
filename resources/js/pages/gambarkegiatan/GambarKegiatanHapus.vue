@@ -66,7 +66,7 @@ export default {
         async submit(e){
             let data = new FormData(e.target)
             this.loading = true
-            let res = await this.deleteGambarKegiatan({ data, id: this.id }).catch(e => {
+            let res = await this.deleteGambarKegiatan({ data, id: this.id, id_kegiatan: this.$route.params.id_kegiatan }).catch(e => {
                 console.log("deleteGambarKegiatan@GambarKegiatanTambah.vue", e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors

@@ -253,14 +253,14 @@ export default {
                     else
                         console.warn("update@kegiatan.js", "id kosong 🤦‍♂️");
                 },
-                async destroy(context, { data, id, id_gambar }){
-                    if(id && id_gambar){
+                async destroy(context, { data, id, id_kegiatan }){
+                    if(id && id_kegiatan){
                         if(data instanceof FormData)
                             data.append('_method', 'DELETE')
                         return new Promise(async(resolve, reject)=>{
                             let res = await axios({
                                 method: 'post',
-                                url: api(`v1/kegiatan/${id}`),
+                                url: api(`v1/kegiatan/${id_kegiatan}/gambar/${id}`),
                                 data,
                                 category: 'DELETE',
                             }).catch(e => reject(e))

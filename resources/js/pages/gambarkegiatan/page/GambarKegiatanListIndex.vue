@@ -131,11 +131,11 @@ export default {
         clickEvent(t, d){
             this.$emit(t, d)
         },
-        ubahInfoKegiatan({id_guru: id}){
+        ubahInfoKegiatan({id_gambar_kegiatan: id}){
 
         },
-        hapusInfoKegiatan({id_guru: id}){
-            this.showHapusDialog({id, value: true})
+        hapusInfoKegiatan({id_gambar_kegiatan: id}){
+            this.showHapusDialog({id, id_kegiatan: this.$route.id_kegiatan, value: true})
         },
     },
     watch: {

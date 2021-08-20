@@ -9,6 +9,7 @@ use App\Http\Resources\GambarKegiatanCollection;
 use App\Kegiatan;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Storage;
 
 class GambarKegiatanController extends Controller{
 
@@ -50,6 +51,11 @@ class GambarKegiatanController extends Controller{
     public function update(Request $request, GambarKegiatan $gambar){
     }
 
-    public function destroy(GambarKegiatan $gambar){
+    public function destroy(Kegiatan $kegiatan, GambarKegiatan $gambar){
+        if(Storage::exists($gambar->foto->src))
+            Storage::delete($gambar->foto->src);
+        $gambar->foto()->delete();
+        $result = $gambar->delete();
+        return new Response(null, Response::HTTP_NO_CONTENT);
     }
 }

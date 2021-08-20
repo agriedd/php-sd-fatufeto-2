@@ -94,7 +94,7 @@ a{
         gap: 1rem;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         grid-auto-rows: minmax(100px, 1fr);
-        & > div{
+        & > a{
             background-position: center;
             background-size: cover;
             border-radius: 1.5rem;

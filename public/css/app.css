@@ -11786,17 +11786,17 @@ a.card {
   grid-auto-rows: minmax(100px, 1fr);
 }
 
-.galery-home > div {
+.galery-home > a {
   background-position: center;
   background-size: cover;
   border-radius: 1.5rem;
 }
 
-.galery-home > div.wide {
+.galery-home > a.wide {
   grid-column-end: span 2;
 }
 
-.galery-home > div.large {
+.galery-home > a.large {
   grid-column-end: span 2;
   grid-row-end: span 2;
 }

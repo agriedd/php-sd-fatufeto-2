@@ -56,7 +56,8 @@
                                     <v-card-text>
                                         <div class="d-flex w-100">
                                             <v-avatar color="grey lighten-2">
-                                                <v-icon>mdi-account-tie</v-icon>
+                                                <v-img :src="item.cover.foto.url" v-if="item.cover && item.cover.foto"/>
+                                                <v-icon v-else>mdi-image</v-icon>
                                             </v-avatar>
                                             <v-spacer/>
                                             <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">

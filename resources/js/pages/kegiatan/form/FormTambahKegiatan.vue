@@ -68,6 +68,13 @@
                 label="Kegiatan Mingguan"
                 messages="Tandai Kegiatan sebagai Kegiatan Mingguan"/>
         </div>
+        <div class="d-flex justify-center">
+            <v-alert type="info" text prominent rounded="xl" class="mt-10" style="max-width: 400px">
+                <small>
+                    Gambar gambar kegiatan dapat ditambahkan pada bagian info kegiatan > tab gambar kegiatan
+                </small>
+            </v-alert>
+        </div>
     </div>
 </template>
 <script>

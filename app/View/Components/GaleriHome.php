@@ -2,27 +2,20 @@
 
 namespace App\View\Components;
 
+use App\GambarKegiatan;
 use Illuminate\View\Component;
 
 class GaleriHome extends Component
 {
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+    private $list_galeri;
+
+    public function __construct(){
+        $this->list_galeri = GambarKegiatan::paginate(10);
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
-    public function render()
-    {
-        return view('components.galeri-home');
+    public function render(){
+        return view('components.galeri-home', [
+            'list_galeri'   => $this->list_galeri
+        ]);
     }
 }

@@ -4,12 +4,12 @@
     </h4>
 </div>
 <div class="mb-3">
+    @php
+        $list = ['large', null, 'wide', null, 'large'];
+    @endphp
     <div class="galery-home">
-        <div class="large" style="background-image: url('{{ asset('img/kyle-swaneveld-UdvuaATBaAU-unsplash.jpg') }}');"></div>
-        <div style="background-image: url('{{ asset('img/liz-weddon-Ia31KncEMpo-unsplash.jpg') }}');"></div>
-        <div style="background-image: url('{{ asset('img/mihai-moisa-CaVEetK-bIY-unsplash.jpg') }}');"></div>
-        <div class="wide" style="background-image: url('{{ asset('img/mitchell-orr-_0qSYr-IRbg-unsplash.jpg') }}');"></div>
-        <div style="background-image: url('{{ asset('img/ryan-ancill-aJYO8JmVodY-unsplash.jpg') }}');"></div>
-        <div class="large" style="background-image: url('{{ asset('img/samuel-regan-asante-4UWfXZpQM4k-unsplash.jpg') }}');"></div>
+        @foreach ($list_galeri as $index => $galeri)
+            <div class="{{ isset($list[$index]) && $list[$index] != null ? $list[$index] : null }}" style="background-image: url('{{ $galeri->foto->url }}');"></div>
+        @endforeach
     </div>
 </div>

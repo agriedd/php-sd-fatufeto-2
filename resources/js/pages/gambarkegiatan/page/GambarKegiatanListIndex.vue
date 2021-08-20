@@ -16,8 +16,6 @@
                 v-model="selected"
                 @update:options="options = $event"
                 @update="update"
-                @rowClick="toInfoKegiatan"
-                @editRow="ubahInfoKegiatan"
                 @deleteRow="hapusInfoKegiatan"
                 :small="small"
                 :no-select="noSelect"/>
@@ -64,7 +62,7 @@ export default {
             items: [],
             headers: [
                 { text: null, align: 'center', sortable: false, value: 'foto' },
-                { text: null, align: '', sortable: true, value: 'action' },
+                { text: "Tanggal Dibuat", align: '', sortable: true, value: 'created_at' },
             ],
             options: {
                 page: 1,
@@ -98,7 +96,7 @@ export default {
         }),
         async loadItems(){
             this.loading = true
-            let res = await this.getItems({...this.options, search: this.search, ...this.params }).catch(e => {});
+            let res = await this.getItems({ id_kegiatan: this.$route.params.id_kegiatan, params: {...this.options, search: this.search, ...this.params} }).catch(e => {});
             this.loading = false
             if(res){
                 this.items = res.data.data

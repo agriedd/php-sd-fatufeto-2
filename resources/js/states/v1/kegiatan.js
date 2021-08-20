@@ -214,9 +214,9 @@ export default {
                 },
             },
             actions: {
-                get(context, params = {}){
+                get(context, {id_kegiatan, params = {}}){
                     return new Promise(async(resolve, reject)=>{
-                        let res = await axios.get(api('v1/kegiatan/gambar'), { params: params }).catch(e => reject(e))
+                        let res = await axios.get(api(`v1/kegiatan/${id_kegiatan}/gambar`), { params: params }).catch(e => reject(e))
                         if(res) resolve(res)
                     })
                 },
@@ -235,9 +235,9 @@ export default {
                     else
                         console.warn("show@kegiatan.js", "id kosong 🤦‍♂️");
                 },
-                store(context, data){
+                store(context, {id_kegiatan, data}){
                     return new Promise(async(resolve, reject)=>{
-                        let res = await axios.post(api('v1/kegiatan/gambar'), data).catch(e => reject(e))
+                        let res = await axios.post(api(`v1/kegiatan/${id_kegiatan}/gambar`), data).catch(e => reject(e))
                         if(res) resolve(res)
                     })
                 },

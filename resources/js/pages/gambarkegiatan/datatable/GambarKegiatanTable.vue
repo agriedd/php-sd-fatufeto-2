@@ -12,11 +12,11 @@
         :show-select="!noSelect"
         single-select
         v-model="selected"
-        :mobile-breakpoint="0">
+        :mobile-breakpoint="10000">
         <template #item.foto="{item}">
-            <v-avatar v-if="item.foto" @click="rowClick(item)">
-                <v-img :src="item.foto.url" :aspect-ratio="1/1"/>
-            </v-avatar>
+            <div v-if="item.foto" @click="rowClick(item)" class="pa-3">
+                <v-img :src="item.foto.url" height="300" width="300" :aspect-ratio="1/1" class="rounded-xl"/>
+            </div>
         </template>
         <template #item.nama="{item}">
             <div class="d-block py-1" @click="rowClick(item)">
@@ -42,7 +42,7 @@
 				Perempuan
 			</template>
         </template>
-        <template #item.action="{item}">
+        <template #item.created_at="{item}">
 			<div class="d-flex justify-end">
 				<v-slide-x-transition mode="out-in">
 					<v-card
@@ -53,12 +53,6 @@
 						dark>
 						<v-btn icon color="error darken-1" @click="deleteRow(item)">
 							<v-icon small>mdi-delete</v-icon>
-						</v-btn>
-						<v-btn icon @click="editRow(item)">
-							<v-icon small>mdi-pencil</v-icon>
-						</v-btn>
-						<v-btn icon @click="rowClick(item)">
-							<v-icon small>mdi-chevron-right</v-icon>
 						</v-btn>
 					</v-card>
 				</v-slide-x-transition>

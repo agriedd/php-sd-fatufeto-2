@@ -59,7 +59,7 @@
         <v-file-input
             accept="image/png, image/jpeg, image/bmp"
             prepend-icon="mdi-image"
-            label="Foto Guru"
+            label="Gambar Kegiatan"
             v-model="item.input_foto"
             @change="errors.foto = []"
             :error-messages="errors.foto"

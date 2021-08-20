@@ -41,11 +41,11 @@
                             </svg>
                         </a>
                         <ul class="dropdown-menu shadow border-0" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Panel Admin</a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin') }}">Panel Admin</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Tambah Pengumuman</a></li>
+                            <li><a class="dropdown-item" href="{{ route('admin') }}/berita/tambah">Tambah Pengumuman</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

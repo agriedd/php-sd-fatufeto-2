@@ -1,7 +1,11 @@
-<div class="mb-3 py-3" id="misi">
-    <h4 class="mb-0">
+<div class="mb-3 py-3 text-center" id="misi">
+    <h3 class="mb-0">
         Misi
-    </h4>
+    </h3>
+    <small class="text-muted">
+        Misi {{ env('APP_NAME') }}
+    </small>
+    <div class="mx-auto my-2" style="border-bottom: 3px solid var(--bs-teal); max-width: 2rem"></div>
 </div>
 <div class="mb-3">
     <div class="card border-0 p-3" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">

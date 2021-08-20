@@ -25,6 +25,9 @@ class GuruController extends Controller{
                             : 'ASC' );
                 }
             })
+            ->when(request('search'), function($query, $search){
+                $query->where('nama', 'like', "%{$search}%");
+            })
             ->paginate(request('itemsPerPage') ?? 10);
         return GuruCollection::collection($data);
     }

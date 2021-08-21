@@ -30,11 +30,11 @@ class KelasSiswaSeeder extends Seeder
         // DB::table('tbl_kelas')->whereRaw('1')->delete();
         
         foreach($kelas as $key => $value){
-            if(!Kelas::where('nama', $value)->count()){
+            // if(!Kelas::where('nama', $value)->count()){
                 Kelas::create([
                     'nama' => "Kelas $value"
                 ]);
-            }
+            // }
         }
         $dataCollection = collect($data);
         $dataGrouping = $dataCollection->groupBy('kelas');
@@ -49,7 +49,7 @@ class KelasSiswaSeeder extends Seeder
             $kelasRoman = $kelas[$kelas_key];
             $kelasSiswa = Kelas::where('nama', "Kelas $kelasRoman")->first();
             foreach($list_siswa as $siswa){
-                if(!Siswa::where('nama_siswa', $siswa['nama_siswa'])->count()){
+                // if(!Siswa::where('nama_siswa', $siswa['nama_siswa'])->count()){
                     Siswa::create([
                         'nama_siswa'    => $siswa['nama_siswa'],
                         'jenis_kelamin'    => $siswa['jenis_kelamin'],
@@ -58,7 +58,7 @@ class KelasSiswaSeeder extends Seeder
                         'alamat'    => $siswa['alamat'],
                         'nisn'      => $siswa['nisn'] ?? null
                     ]);
-                }
+                // }
             }
         }
     }

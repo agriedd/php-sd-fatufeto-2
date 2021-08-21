@@ -11,6 +11,9 @@ class GuruSeeder extends Seeder{
 
         $json = json_decode(file_get_contents(storage_path().'/guru.json'), true);
         $data = [];
+
+        Guru::whereRaw("1")->delete();
+
         foreach ($json['guru'] as $key => $value) {
             $tempat_lahir = preg_replace( '/^(.*)(,.*)$/', "$1", $value['ttl']);
             $tanggal_lahir = preg_replace( '/^(.*,\s*)(.*)$/', "$2", $value['ttl']);
@@ -34,7 +37,7 @@ class GuruSeeder extends Seeder{
             } catch (\Throwable $th) {
                 //throw $th;
             }
-            if(Guru::where('nip', $value['nip'])->count() == 0){
+            if(Guru::where('nama', $value['nama'])->count() == 0){
                 $data[] = $item;
             }
         }

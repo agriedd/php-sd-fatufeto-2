@@ -17,6 +17,7 @@ class RequestSekolahUpdate extends FormRequest{
             'visi_misi'     => 'required',
             'alamat'        => 'required',
             'npsn'          => 'required',
+            'kontak'        => 'required',
         ];
     }
 }

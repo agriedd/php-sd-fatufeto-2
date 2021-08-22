@@ -75,14 +75,18 @@
                 @keyup="errors.npsn = null"/>
         </div>
         <div>
+            <input-kontak-sekolah
+                v-model="item.kontak"
+                :errors="errors"/>
         </div>
     </div>
 </template>
 <script>
+import InputKontakSekolah from './InputKontakSekolah.vue';
 import InputStukturOrganisasiSekolah from './InputStukturOrganisasiSekolah.vue';
 import InputVisiMisiSekolah from './InputVisiMisiSekolah.vue';
 export default {
-    components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah },
+    components: { InputStukturOrganisasiSekolah, InputVisiMisiSekolah, InputKontakSekolah },
     props: {
         errors: Object,
         value: {

@@ -18,6 +18,7 @@ class RequestSekolahStore extends FormRequest{
             'visi_misi'     => 'required',
             'alamat'        => 'required',
             'npsn'          => 'required|unique:tbl_sekolah',
+            'kontak'        => 'required',
         ];
     }
 }

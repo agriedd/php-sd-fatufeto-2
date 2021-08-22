@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Casts\KontakCast;
 use App\Casts\StrukturOrganisasi;
 use App\Casts\VisiMisiCast;
 use Illuminate\Database\Eloquent\Model;
@@ -13,6 +14,7 @@ class Sekolah extends Model{
     protected $casts = [
         'struktur_organisasi' => StrukturOrganisasi::class,
         'visi_misi' => VisiMisiCast::class,
+        'kontak'    => KontakCast::class,
     ];
 
     public function pimpinan(){

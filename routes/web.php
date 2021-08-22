@@ -18,6 +18,7 @@ Route::group(["prefix"=>"/"], function(){
     Route::get('/profil', 'HomeController@profil')->name('home.profil');
     Route::get('/guru', 'HomeController@guru')->name('home.guru');
     Route::get('/siswa', 'HomeController@siswa')->name('home.siswa');
+    Route::get('/kelas', 'HomeController@kelas')->name('home.kelas');
     Route::get('/pengumuman/{pengumuman}', 'HomeController@pengumumanInfo')->name('home.pengumuman.info');
 });
 Route::group(["prefix"=>"/admin", "middleware"=>"auth:web"], function(){

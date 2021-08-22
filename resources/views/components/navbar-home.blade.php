@@ -21,7 +21,7 @@
                     <a class="nav-link {{ request()->is('siswa*') ? 'active' : null }}" href="{{ route('home.siswa') }}">Siswa</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kelas</a>
+                    <a class="nav-link {{ request()->is('kelas*') ? 'active' : null }}" href="{{ route('home.kelas') }}">Kelas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Sarana /Prasarana</a>

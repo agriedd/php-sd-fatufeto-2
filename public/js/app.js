@@ -5636,7 +5636,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       items: [],
       total: 0,
       options: {
-        page: 1
+        page: 1,
+        id_kelas: null
       },
       scrollSpy: null,
       lazyTimeout: null,
@@ -5739,6 +5740,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   created: function created() {
+    var urlParams = new URLSearchParams(window.location.search);
+    this.options.id_kelas = urlParams.get('id_kelas');
     this.loadData();
   },
   mounted: function mounted() {

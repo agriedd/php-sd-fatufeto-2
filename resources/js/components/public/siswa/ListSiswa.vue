@@ -107,6 +107,7 @@ export default {
 			total: 0,
 			options: {
 				page: 1,
+				id_kelas: null,
 			},
 			scrollSpy: null,
 			lazyTimeout: null,
@@ -182,6 +183,8 @@ export default {
 		}
 	},
 	created () {
+		const urlParams = new URLSearchParams(window.location.search);
+		this.options.id_kelas = urlParams.get('id_kelas');
 		this.loadData()
 	},
 	mounted(){

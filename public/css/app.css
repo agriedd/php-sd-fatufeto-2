@@ -11861,6 +11861,25 @@ a.card {
   max-height: 300px;
 }
 
+.grid-kelas {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(70px, 1fr);
+}
+
+.grid-kelas > div {
+  grid-row-end: span 2;
+}
+
+.grid-kelas > .rowspan-2 {
+  grid-row-end: span 5;
+}
+
+.grid-kelas > .rowspan-2 .foto-profil {
+  max-height: 300px;
+}
+
 :root {
   --bs-indigo: #515da4;
 }

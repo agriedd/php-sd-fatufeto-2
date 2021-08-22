@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Kelas;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller{
@@ -34,6 +35,16 @@ class HomeController extends Controller{
      *      /siswa
      */
     public function siswa(){
-        return view('pages.home.siswa');
+
+        $kelas = null;
+        
+        request('id_kelas') && $kelas = Kelas::find(request('id_kelas'));
+        return view('pages.home.siswa', [
+            'kelas' => $kelas
+        ]);
+    }
+
+    public function kelas(){
+        return view('pages.home.kelas');
     }
 }

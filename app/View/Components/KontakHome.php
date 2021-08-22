@@ -2,18 +2,14 @@
 
 namespace App\View\Components;
 
+use App\Sekolah;
 use Illuminate\View\Component;
 
-class KontakHome extends Component
-{
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+class KontakHome extends Component{
+    private $kontak;
+
+    public function __construct(){
+        $this->kontak = Sekolah::first()->kontak ?? [];
     }
 
     /**
@@ -23,6 +19,8 @@ class KontakHome extends Component
      */
     public function render()
     {
-        return view('components.kontak-home');
+        return view('components.kontak-home', [
+            'kontak' => $this->kontak
+        ]);
     }
 }

@@ -11861,3 +11861,7 @@ a.card {
   max-height: 300px;
 }
 
+:root {
+  --bs-indigo: #515da4;
+}
+

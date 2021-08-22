@@ -6,9 +6,13 @@
 <div class="mb-3">
     <div class="card border-0 p-3" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
         <div class="card-body">
-            <li>
-                Telepon: {{ env('TELEPON', '') }}
-            </li>
+            @forelse($kontak as $item)
+                <li>
+                    {{ $item }}
+                </li>
+            @empty
+                
+            @endforelse
         </div>
     </div>
 </div>

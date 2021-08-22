@@ -46,7 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4" style="max-width: 400px;">
+            <div class="col-4" >
                 <x-pengumuman-home></x-pengumuman-home>
             </div>
         </div>

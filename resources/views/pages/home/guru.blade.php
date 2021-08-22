@@ -42,7 +42,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-4 col-md-5" style="max-width: 400px;">
+            <div class="col-lg-4 col-md-5" >
                 <x-pengumuman-home></x-pengumuman-home>
             </div>
         </div>

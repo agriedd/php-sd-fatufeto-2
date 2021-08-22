@@ -40,6 +40,7 @@ class KelasController extends Controller{
     }
 
     public function show(Kelas $kela){
+        $kela->loadCount('siswa');
         return new KelasCollection($kela);
     }
 

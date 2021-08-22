@@ -6,7 +6,7 @@
         </div>
     </div>
 </div>
-<div class="shadow-sm bg-white" style="background-image: url('{{ asset('img/kyle-swaneveld-UdvuaATBaAU-unsplash.jpg') }}'); background-position: center; background-size: cover">
+<div class="shadow-sm bg-white" style="background-image: url('{{ asset('img/index.jpg') }}'); background-position: 0px -60%; background-size: cover">
     <div class="" style="background: linear-gradient(100deg, #fffe 80%, transparent);">
         <div class="container">
             <header class="header">

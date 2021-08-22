@@ -10,7 +10,7 @@ class GaleriHome extends Component
     private $list_galeri;
 
     public function __construct(){
-        $this->list_galeri = GambarKegiatan::paginate(10);
+        $this->list_galeri = GambarKegiatan::latest()->paginate(10);
     }
 
     public function render(){

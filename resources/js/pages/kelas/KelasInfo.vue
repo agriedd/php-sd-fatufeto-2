@@ -135,7 +135,7 @@
                                                 Jumlah Siswa
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{ (item.jumlah || 0) | number }}
+                                                {{ (item.siswa_count || 0) | number }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>

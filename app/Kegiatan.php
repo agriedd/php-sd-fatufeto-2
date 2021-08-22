@@ -9,6 +9,7 @@ class Kegiatan extends Model{
     protected $primaryKey = 'id_kegiatan';
     protected $guarded = [];
     protected $with = ['cover'];
+    protected $dates = ['tanggal'];
 
     public function cover(){
         return $this->hasOne(GambarKegiatan::class, 'id_kegiatan', 'id_kegiatan');

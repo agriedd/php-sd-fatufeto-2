@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\GambarKegiatan;
+use App\Kegiatan;
 use App\Kelas;
 use Illuminate\Http\Request;
 
@@ -48,6 +50,12 @@ class HomeController extends Controller{
         return view('pages.home.kelas');
     }
     public function kegiatan(){
-        return view('pages.home.kegiatan');
+        $galeri = GambarKegiatan::find(request('id_galeri'));
+        $kegiatan = Kegiatan::findOrFail(request('id_kegiatan'));
+
+        return view('pages.home.kegiatan', [
+            'galeri' => $galeri,
+            'kegiatan' => $kegiatan
+        ]);
     }
 }

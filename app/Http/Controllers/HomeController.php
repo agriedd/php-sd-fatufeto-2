@@ -47,4 +47,7 @@ class HomeController extends Controller{
     public function kelas(){
         return view('pages.home.kelas');
     }
+    public function kegiatan(){
+        return view('pages.home.kegiatan');
+    }
 }

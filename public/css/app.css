@@ -11767,7 +11767,7 @@ fieldset:disabled .btn {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-height: 200px;
+  min-height: 300px;
 }
 
 .header-logo {

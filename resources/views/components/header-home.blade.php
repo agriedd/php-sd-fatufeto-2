@@ -1,13 +1,13 @@
-<div class="bg-white p-2 border-bottom">
+{{-- <div class="bg-white p-2 border-bottom">
     <div class="container-fluid small d-flex justify-content-between ">
         <div></div>
         <div class="text-muted">
             {{ now()->format('d/M/Y') }}
         </div>
     </div>
-</div>
-<div class="shadow-sm bg-white" style="background-image: url('{{ asset('img/index.jpg') }}'); background-position: 0px -60%; background-size: cover">
-    <div class="" style="background: linear-gradient(100deg, #fffe 80%, transparent);">
+</div> --}}
+<div class="shadow-sm bg-white" style="background-image: url('{{ asset('img/index.jpg') }}'); background-position: 0px 140%; background-size: cover; background-attachment: fixed">
+    <div class="" style="background: linear-gradient(45deg, rgb(101 116 205 / 60%) 70%, transparent);">
         <div class="container">
             <header class="header">
                 <div class="px-3">
@@ -17,10 +17,10 @@
                 </div>
                 <div class="py-3">
                     <div class="content-middle">
-                        <div class="divider-vertical" style="max-height: 75px;"></div>
+                        <div class="divider-vertical" style="max-height: 75px; border-color: white"></div>
                     </div>
                 </div>
-                <div class="flex-grow">
+                <div class="flex-grow text-white">
                     <div class="content-middle px-4 align-items-start">
                         <h4 class="mb-0">
                             Website Profil 

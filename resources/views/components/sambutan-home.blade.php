@@ -3,7 +3,7 @@
         <div class="d-flex">
             <div class="flex-grow-1">
                 <h4>
-                    Selamat datang di ...
+                    Selamat datang di Website {{ config('app.name') }}
                 </h4>
                 <div class="text-muted">
                     <small>
@@ -22,7 +22,7 @@
     </div>
     <div class="card-body pt-0">
         <small>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique beatae iure delectus earum. Accusantium eaque ea laudantium sapiente unde nisi, iusto dicta corrupti commodi recusandae aperiam maxime assumenda enim quia.
+            {{ $sambutan }}
         </small>
     </div>
 </div>

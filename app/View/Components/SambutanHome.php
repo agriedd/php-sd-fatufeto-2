@@ -2,18 +2,14 @@
 
 namespace App\View\Components;
 
+use App\Sekolah;
 use Illuminate\View\Component;
 
-class SambutanHome extends Component
-{
-    /**
-     * Create a new component instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        //
+class SambutanHome extends Component{
+
+    private $sambutan;
+    public function __construct(){
+        $this->sambutan = Sekolah::first()->sambutan ?? "";
     }
 
     /**
@@ -21,8 +17,9 @@ class SambutanHome extends Component
      *
      * @return \Illuminate\View\View|string
      */
-    public function render()
-    {
-        return view('components.sambutan-home');
+    public function render(){
+        return view('components.sambutan-home', [
+            'sambutan' => $this->sambutan
+        ]);
     }
 }

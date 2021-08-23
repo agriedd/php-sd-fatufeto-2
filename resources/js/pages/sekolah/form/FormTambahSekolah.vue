@@ -79,6 +79,16 @@
                 v-model="item.kontak"
                 :errors="errors"/>
         </div>
+        <div>
+            <v-text-field
+                dense
+                outlined
+                v-model="item.sambutan"
+                name="sambutan"
+                label="Sambutan Website"
+                :error-messages="errors.sambutan"
+                @keyup="errors.sambutan = null"/>
+        </div>
     </div>
 </template>
 <script>

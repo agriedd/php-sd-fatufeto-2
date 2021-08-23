@@ -6,6 +6,7 @@ use App\Berita;
 use App\GambarKegiatan;
 use App\Kegiatan;
 use App\Kelas;
+use App\Prasarana;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller{
@@ -63,6 +64,15 @@ class HomeController extends Controller{
         $pengumuman   = Berita::where('jenis', 'pengumuman')->where('id_berita', $pengumuman)->firstOrFail();
         return view('pages.home.pengumuman', [
             'pengumuman'  => $pengumuman
+        ]);
+    }
+    public function prasarana(){
+        $prasarana = Prasarana::when(request('search'), function($query){
+            $query->where('nama', 'like', '%'.request('search').'%');
+        })
+        ->paginate(10);
+        return view('pages.home.prasarana', [
+            'prasarana'  => $prasarana
         ]);
     }
 }

@@ -24,7 +24,10 @@
                     <a class="nav-link {{ request()->is('kelas*') ? 'active' : null }}" href="{{ route('home.kelas') }}">Kelas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sarana /Prasarana</a>
+                    <a class="nav-link {{ request()->is('sarana*') ? 'active' : null }}" href="{{ route('home.prasarana') }}">Sarana</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('prasarana*') ? 'active' : null }}" href="{{ route('home.prasarana') }}">Prasarana</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Kegiatan</a>

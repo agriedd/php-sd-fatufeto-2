@@ -10,7 +10,7 @@ class PengumumanHome extends Component
     private $list_pengumuman;
 
     public function __construct(){
-        $this->list_pengumuman = Berita::where('jenis', 'pengumuman')->whereRaw("expired_at >= NOW()")->orderBy('tanggal_terbit', 'desc')->paginate(5);
+        $this->list_pengumuman = Berita::where('jenis', 'pengumuman')->whereRaw("expired_at >= NOW()")->orderBy('tanggal_terbit', 'desc')->limit(5)->get();
     }
 
     public function render(){

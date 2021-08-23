@@ -7,6 +7,7 @@ use App\GambarKegiatan;
 use App\Kegiatan;
 use App\Kelas;
 use App\Prasarana;
+use App\Sarana;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller{
@@ -73,6 +74,15 @@ class HomeController extends Controller{
         ->paginate(10);
         return view('pages.home.prasarana', [
             'prasarana'  => $prasarana
+        ]);
+    }
+    public function sarana(){
+        $sarana = Sarana::when(request('search'), function($query){
+            $query->where('nama', 'like', '%'.request('search').'%');
+        })
+        ->paginate(10);
+        return view('pages.home.sarana', [
+            'sarana'  => $sarana
         ]);
     }
 }

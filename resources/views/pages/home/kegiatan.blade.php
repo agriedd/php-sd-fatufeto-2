@@ -63,7 +63,7 @@
                                 @if($kegiatan->hari)
                                     Setiap hari {{ $kegiatan->hari }}
                                 @else
-                                    Tanggal: {{ $kegiatan->tanggal->locale('id-ID')->translatedFormat('l, d F Y') }}
+                                    {{ $kegiatan->tanggal->locale('id-ID')->translatedFormat('l, d F Y') }}
                                 @endif
                             </div>
                         </div>

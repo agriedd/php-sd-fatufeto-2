@@ -74,13 +74,11 @@
                 :error-messages="errors.npsn"
                 @keyup="errors.npsn = null"/>
         </div>
-        <div>
+        <div class="d-grid-form">
             <input-kontak-sekolah
                 v-model="item.kontak"
                 :errors="errors"/>
-        </div>
-        <div>
-            <v-text-field
+            <v-textarea
                 dense
                 outlined
                 v-model="item.sambutan"

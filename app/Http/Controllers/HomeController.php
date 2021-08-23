@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Berita;
 use App\GambarKegiatan;
 use App\Kegiatan;
 use App\Kelas;
@@ -50,12 +51,18 @@ class HomeController extends Controller{
         return view('pages.home.kelas');
     }
     public function kegiatan(){
-        $galeri = GambarKegiatan::find(request('id_galeri'));
-        $kegiatan = Kegiatan::findOrFail(request('id_kegiatan'));
+        $galeri     = GambarKegiatan::find(request('id_galeri'));
+        $kegiatan   = Kegiatan::findOrFail(request('id_kegiatan'));
 
         return view('pages.home.kegiatan', [
-            'galeri' => $galeri,
-            'kegiatan' => $kegiatan
+            'galeri'    => $galeri,
+            'kegiatan'  => $kegiatan
+        ]);
+    }
+    public function pengumumanInfo($pengumuman){
+        $pengumuman   = Berita::where('jenis', 'pengumuman')->where('id_berita', $pengumuman)->firstOrFail();
+        return view('pages.home.pengumuman', [
+            'pengumuman'  => $pengumuman
         ]);
     }
 }

@@ -10,6 +10,7 @@ class Berita extends Model{
     protected $guarded = [];
     protected $appends = ['terbit'];
     protected $with = ['kategori'];
+    protected $dates = ['tanggal_terbit', 'expired_at'];
 
     public function kategori(){
         return $this->belongsTo(Kategori::class,'id_kategori','id_kategori');

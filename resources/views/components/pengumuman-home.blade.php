@@ -32,9 +32,11 @@
                                     terbaru
                                 </small>
                             </div>
-                            <h5>
-                                {{ $item->judul }}
-                            </h5>
+                            <a href="{{ route('home.pengumuman.info', [ "pengumuman" => $item->id_berita ]) }}" class="text-decoration-none link-dark">
+                                <h5>
+                                    {{ $item->judul }}
+                                </h5>
+                            </a>
                         </div>
                         <div class="ps-3">
                             <div class="position-relative">

@@ -10,20 +10,26 @@ class GaleriHome extends Component
 {
     private $list_galeri;
     private $kegiatan;
+    private $hideGaleri;
+    private $max;
 
-    public function __construct(){
-        $this->kegiatan = Kegiatan::find(request('id_kegiatan'));
+    public function __construct($idKegiatan = null, $hideGaleri = false, $max = 10){
+        $this->hideGaleri = $hideGaleri;
+        $this->max = $max;
+        $this->kegiatan = Kegiatan::find($idKegiatan ?? request('id_kegiatan'));
         $this->list_galeri = GambarKegiatan::latest()
-            ->when(request('id_kegiatan'), function ($query, $kegiatan) {
+            ->when($idKegiatan ?? request('id_kegiatan'), function ($query, $kegiatan) {
                 return $query->where('id_kegiatan', $kegiatan);
             })
-            ->paginate(10);
+            ->paginate($max);
     }
 
     public function render(){
         return view('components.galeri-home', [
             'list_galeri'   => $this->list_galeri,
-            'kegiatan'      => $this->kegiatan
+            'kegiatan'      => $this->kegiatan,
+            'hideGaleri'    => $this->hideGaleri,
+            'max'           => $this->max
         ]);
     }
 }

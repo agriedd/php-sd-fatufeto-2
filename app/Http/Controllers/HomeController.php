@@ -56,7 +56,7 @@ class HomeController extends Controller{
         $galeri     = GambarKegiatan::find(request('id_galeri'));
         $kegiatan   = Kegiatan::findOrFail(request('id_kegiatan'));
 
-        return view('pages.home.kegiatan', [
+        return view('pages.home.kegiatanshow', [
             'galeri'    => $galeri,
             'kegiatan'  => $kegiatan
         ]);
@@ -86,12 +86,14 @@ class HomeController extends Controller{
         ]);
     }
     public function kegiatan(){
-        $sarana = Kegiatan::when(request('search'), function($query){
+        $kegiatan = Kegiatan::when(request('search'), function($query){
             $query->where('nama', 'like', '%'.request('search').'%');
         })
+        ->orderBy('tanggal', 'desc')
+        ->orderBy('waktu', 'asc')
         ->paginate(10);
-        return view('pages.home.sarana', [
-            'sarana'  => $sarana
+        return view('pages.home.kegiatan', [
+            'kegiatan'  => $kegiatan
         ]);
     }
 }

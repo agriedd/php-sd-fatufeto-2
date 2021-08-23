@@ -13,7 +13,7 @@
     @endphp
     <div class="galery-home">
         @foreach ($list_galeri as $index => $galeri)
-            <a href="{{ route('home.kegiatan', [
+            <a href="{{ route('home.kegiatan.show', [
                 'id_kegiatan'   => $galeri->id_kegiatan,
                 'id_galeri'     => $galeri->id_gambar_kegiatan,
             ]) }}" class="{{ isset($list[$index]) && $list[$index] != null ? $list[$index] : null }}" style="background-image: url('{{ $galeri->foto->url }}');"></a>

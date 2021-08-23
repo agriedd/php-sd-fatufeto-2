@@ -52,7 +52,7 @@ class HomeController extends Controller{
     public function kelas(){
         return view('pages.home.kelas');
     }
-    public function kegiatan(){
+    public function kegiatanShow(){
         $galeri     = GambarKegiatan::find(request('id_galeri'));
         $kegiatan   = Kegiatan::findOrFail(request('id_kegiatan'));
 
@@ -78,6 +78,15 @@ class HomeController extends Controller{
     }
     public function sarana(){
         $sarana = Sarana::when(request('search'), function($query){
+            $query->where('nama', 'like', '%'.request('search').'%');
+        })
+        ->paginate(10);
+        return view('pages.home.sarana', [
+            'sarana'  => $sarana
+        ]);
+    }
+    public function kegiatan(){
+        $sarana = Kegiatan::when(request('search'), function($query){
             $query->where('nama', 'like', '%'.request('search').'%');
         })
         ->paginate(10);

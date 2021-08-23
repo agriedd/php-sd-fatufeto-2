@@ -30,7 +30,7 @@
                     <a class="nav-link {{ request()->is('prasarana*') ? 'active' : null }}" href="{{ route('home.prasarana') }}">Prasarana</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kegiatan</a>
+                    <a class="nav-link {{ request()->is('kegiatan*') ? 'active' : null }}" href="{{ route('home.kegiatan') }}">Kegiatan</a>
                 </li>
                 @auth()
                 <li class="nav-item d-flex">

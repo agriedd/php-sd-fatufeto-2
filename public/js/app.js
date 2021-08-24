@@ -5074,6 +5074,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -5133,7 +5142,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   mounted: function mounted() {
     this.$nextTick(function (e) {
       window.scrollTo({
-        top: 237,
+        top: 300,
         behavior: 'smooth'
       });
     });
@@ -29963,148 +29972,184 @@ var render = function() {
       ? _c(
           "div",
           {
-            staticClass: "card shadow p-3 border-0",
+            staticClass: "card shadow border-0",
             staticStyle: { "border-radius": ".5rem" },
             attrs: { id: "login-panel" }
           },
           [
-            _c("div", { staticClass: "card-body" }, [
-              _c("h5", [_vm._v("\n                Form Login\n            ")])
-            ]),
-            _vm._v(" "),
             _c(
               "div",
-              { staticClass: "card-body bg-white text-dark rounded-3" },
+              {
+                staticClass:
+                  "nav-scroller border-bottom d-flex justify-content-center py-2"
+              },
               [
                 _c(
-                  "form",
+                  "nav",
                   {
-                    attrs: {
-                      method: "POST",
-                      action: _vm.action,
-                      disabled: _vm.loading
-                    },
-                    on: {
-                      submit: function($event) {
-                        $event.preventDefault()
-                        return _vm.submit($event)
-                      }
-                    }
+                    staticClass: "nav nav-underline",
+                    attrs: { "aria-label": "Secondary navigation" }
                   },
                   [
-                    _vm._t("csrf"),
+                    _c(
+                      "a",
+                      { staticClass: "nav-link active", attrs: { href: "#" } },
+                      [_vm._v("Admin")]
+                    ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group mb-3" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-label text-md-right small",
-                          attrs: { for: "email" }
-                        },
-                        [_vm._v("E-mail")]
-                      ),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        class: {
-                          "is-invalid":
-                            _vm.errors.email && _vm.errors.email.length
-                        },
-                        attrs: {
-                          id: "email",
-                          type: "email",
-                          name: "email",
-                          required: "",
-                          autocomplete: "off",
-                          autofocus: ""
-                        }
-                      }),
-                      _vm._v(" "),
-                      _vm.errors.email && _vm.errors.email.length
-                        ? _c(
-                            "span",
-                            {
-                              staticClass: "invalid-feedback",
-                              attrs: { role: "alert" }
-                            },
-                            _vm._l(_vm.errors.email, function(message) {
-                              return _c("strong", { key: message }, [
-                                _vm._v(_vm._s(message))
-                              ])
-                            }),
-                            0
-                          )
-                        : _vm._e()
+                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                      _vm._v("Guru")
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "form-group mb-3" }, [
-                      _c(
-                        "label",
-                        {
-                          staticClass: "form-label text-md-right small",
-                          attrs: { for: "password" }
-                        },
-                        [_vm._v("Password")]
-                      ),
-                      _vm._v(" "),
-                      _c("input", {
-                        staticClass: "form-control",
-                        attrs: {
-                          id: "password",
-                          type: "password",
-                          name: "password",
-                          required: "",
-                          autocomplete: "current-password"
+                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
+                      _vm._v("Pimpinan")
+                    ])
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "p-3" }, [
+              _c("div", { staticClass: "card-body" }, [
+                _c("h5", [
+                  _vm._v("\n                    Form Login\n                ")
+                ])
+              ]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "card-body bg-white text-dark rounded-3" },
+                [
+                  _c(
+                    "form",
+                    {
+                      attrs: {
+                        method: "POST",
+                        action: _vm.action,
+                        disabled: _vm.loading
+                      },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.submit($event)
                         }
-                      })
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group mb-5" }, [
-                      _c("div", { staticClass: "form-check" }, [
-                        _c("input", {
-                          staticClass: "form-check-input",
-                          attrs: {
-                            type: "checkbox",
-                            name: "remember",
-                            id: "remember"
-                          }
-                        }),
-                        _vm._v(" "),
+                      }
+                    },
+                    [
+                      _vm._t("csrf"),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group mb-3" }, [
                         _c(
                           "label",
                           {
-                            staticClass: "form-check-label",
-                            attrs: { for: "remember" }
+                            staticClass: "form-label text-md-right small",
+                            attrs: { for: "email" }
+                          },
+                          [_vm._v("E-mail")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          class: {
+                            "is-invalid":
+                              _vm.errors.email && _vm.errors.email.length
+                          },
+                          attrs: {
+                            id: "email",
+                            type: "email",
+                            name: "email",
+                            required: "",
+                            autocomplete: "off",
+                            autofocus: ""
+                          }
+                        }),
+                        _vm._v(" "),
+                        _vm.errors.email && _vm.errors.email.length
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "invalid-feedback",
+                                attrs: { role: "alert" }
+                              },
+                              _vm._l(_vm.errors.email, function(message) {
+                                return _c("strong", { key: message }, [
+                                  _vm._v(_vm._s(message))
+                                ])
+                              }),
+                              0
+                            )
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group mb-3" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "form-label text-md-right small",
+                            attrs: { for: "password" }
+                          },
+                          [_vm._v("Password")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "password",
+                            type: "password",
+                            name: "password",
+                            required: "",
+                            autocomplete: "current-password"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group mb-5" }, [
+                        _c("div", { staticClass: "form-check" }, [
+                          _c("input", {
+                            staticClass: "form-check-input",
+                            attrs: {
+                              type: "checkbox",
+                              name: "remember",
+                              id: "remember"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "label",
+                            {
+                              staticClass: "form-check-label",
+                              attrs: { for: "remember" }
+                            },
+                            [
+                              _vm._v(
+                                "\n                                Ingat saya di perangkat ini\n                            "
+                              )
+                            ]
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "form-group mb-0" }, [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "btn btn-primary w-100 py-3 text-white shadow",
+                            attrs: { type: "submit", disabled: _vm.loading }
                           },
                           [
                             _vm._v(
-                              "\n                            Ingat saya di perangkat ini\n                        "
+                              "\n                            Login\n                        "
                             )
                           ]
                         )
                       ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "form-group mb-0" }, [
-                      _c(
-                        "button",
-                        {
-                          staticClass:
-                            "btn btn-primary w-100 py-3 text-white shadow",
-                          attrs: { type: "submit", disabled: _vm.loading }
-                        },
-                        [
-                          _vm._v(
-                            "\n                        Login\n                    "
-                          )
-                        ]
-                      )
-                    ])
-                  ],
-                  2
-                )
-              ]
-            )
+                    ],
+                    2
+                  )
+                ]
+              )
+            ])
           ]
         )
       : _vm._e()

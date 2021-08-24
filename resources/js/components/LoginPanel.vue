@@ -78,7 +78,7 @@ export default {
         ...mapActions({
             login: 'login/admin/login',
         }),
-        async submit(form){
+        submit(form){
             switch (this.tab) {
                 case 0:
                 default:
@@ -91,7 +91,7 @@ export default {
                     break;
             }
         },
-        loginAdmin(){
+        async loginAdmin(){
             this.loading = true
             let data = new FormData(form.target);
             let res = await axios.post(this.action, data).catch(e => {
@@ -110,7 +110,7 @@ export default {
                 }, 250)
             }
         },
-        loginGuru(){
+        async loginGuru(){
             this.loading = true
             let data = new FormData(form.target);
             let res = await axios.post(this.action, data).catch(e => {

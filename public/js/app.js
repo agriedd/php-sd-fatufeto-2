@@ -5013,141 +5013,9 @@ module.exports = {
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/LoginPanel.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
-
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  props: {
-    action: String
-  },
-  data: function data() {
-    return {
-      loading: false,
-      errors: {},
-      show: true
-    };
-  },
-  methods: _objectSpread(_objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_1__["mapActions"])({
-    login: 'login/admin/login'
-  })), {}, {
-    submit: function submit(form) {
-      var _this = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var data, res;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _this.loading = true;
-                data = new FormData(form.target);
-                _context.next = 4;
-                return axios.post(_this.action, data)["catch"](function (e) {
-                  if (e.response.status == 422) _this.errors = e.response.data.errors;
-                  if (e.response.status == 429) _this.errors = {
-                    email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit']
-                  };
-                });
-
-              case 4:
-                res = _context.sent;
-                _this.loading = false;
-
-                if (res) {
-                  window.localStorage.setItem('authToken', res.data.token);
-                  _this.show = false;
-                  setTimeout(function () {
-                    window.history.pushState({}, "Panel Admin", "/admin");
-                    window.history.go();
-                  }, 250);
-                }
-
-              case 7:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    }
-  }),
-  mounted: function mounted() {
-    this.$nextTick(function (e) {
-      window.scrollTo({
-        top: 300,
-        behavior: 'smooth'
-      });
-    });
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /mnt/c/projects/2021/sdfatufetoii/resources/js/components/LoginPanel.vue: Unexpected reserved word 'await'. (97:22)\n\n\u001b[0m \u001b[90m  95 |\u001b[39m             \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mloading \u001b[33m=\u001b[39m \u001b[36mtrue\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  96 |\u001b[39m             \u001b[36mlet\u001b[39m data \u001b[33m=\u001b[39m \u001b[36mnew\u001b[39m \u001b[33mFormData\u001b[39m(form\u001b[33m.\u001b[39mtarget)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 |\u001b[39m             \u001b[36mlet\u001b[39m res \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m axios\u001b[33m.\u001b[39mpost(\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39maction\u001b[33m,\u001b[39m data)\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(e \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m  98 |\u001b[39m                 \u001b[36mif\u001b[39m(e\u001b[33m.\u001b[39mresponse\u001b[33m.\u001b[39mstatus \u001b[33m==\u001b[39m \u001b[35m422\u001b[39m)\u001b[0m\n\u001b[0m \u001b[90m  99 |\u001b[39m                     \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39merrors \u001b[33m=\u001b[39m e\u001b[33m.\u001b[39mresponse\u001b[33m.\u001b[39mdata\u001b[33m.\u001b[39merrors\u001b[0m\n\u001b[0m \u001b[90m 100 |\u001b[39m                 \u001b[36mif\u001b[39m(e\u001b[33m.\u001b[39mresponse\u001b[33m.\u001b[39mstatus \u001b[33m==\u001b[39m \u001b[35m429\u001b[39m)\u001b[0m\n    at Parser._raise (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:816:17)\n    at Parser.raiseWithData (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:809:17)\n    at Parser.raise (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:770:17)\n    at Parser.checkReservedWord (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:12158:12)\n    at Parser.parseIdentifierName (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:12112:12)\n    at Parser.parseIdentifier (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:12084:23)\n    at Parser.parseExprAtom (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11140:27)\n    at Parser.parseExprSubscripts (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10670:23)\n    at Parser.parseMaybeAssign (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10633:21)\n    at /mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10595:39\n    at Parser.allowInAnd (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:12328:16)\n    at Parser.parseMaybeAssignAllowIn (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10595:17)\n    at Parser.parseVar (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:13204:70)\n    at Parser.parseVarStatement (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:13018:10)\n    at Parser.parseStatementContent (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:12601:21)\n    at Parser.parseStatement (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:13123:25)\n    at Parser.parseBlockBody (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:13114:10)\n    at Parser.parseBlock (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:13098:10)\n    at Parser.parseFunctionBody (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11989:24)\n    at Parser.parseFunctionBodyAndFinish (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11973:10)\n    at Parser.parseMethod (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11923:10)\n    at Parser.parseObjectMethod (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11851:19)\n    at Parser.parseObjPropValue (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11884:23)\n    at Parser.parsePropertyDefinition (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11808:10)\n    at Parser.parseObjectLike (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11699:25)\n    at Parser.parseExprAtom (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:11223:23)\n    at Parser.parseExprSubscripts (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/mnt/c/projects/2021/sdfatufetoii/node_modules/@babel/parser/lib/index.js:10670:23)");
 
 /***/ }),
 
@@ -10781,7 +10649,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".fly-down[data-v-fe24e974] {\n  opacity: 1;\n}\n.fly-down-leave-active[data-v-fe24e974] {\n  transition: all 0.25s ease;\n}\n.fly-down-leave-to[data-v-fe24e974] {\n  transform: translateY(100px);\n  opacity: 0;\n}", ""]);
+exports.push([module.i, ".fly-down[data-v-fe24e974] {\n  opacity: 1;\n}\n.fly-down-leave-active[data-v-fe24e974] {\n  transition: all 0.25s ease;\n}\n.fly-down-leave-to[data-v-fe24e974] {\n  transform: translateY(100px);\n  opacity: 0;\n}\n.active[data-v-fe24e974] {\n  border-bottom: 3px solid var(--bs-primary);\n}", ""]);
 
 // exports
 
@@ -29981,7 +29849,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "nav-scroller border-bottom d-flex justify-content-center py-2"
+                  "nav-scroller border-bottom d-flex justify-content-center"
               },
               [
                 _c(
@@ -29993,17 +29861,51 @@ var render = function() {
                   [
                     _c(
                       "a",
-                      { staticClass: "nav-link active", attrs: { href: "#" } },
+                      {
+                        staticClass: "nav-link py-3",
+                        class: { active: _vm.tab == 0 },
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.tab = 0
+                          }
+                        }
+                      },
                       [_vm._v("Admin")]
                     ),
                     _vm._v(" "),
-                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                      _vm._v("Guru")
-                    ]),
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link py-3",
+                        class: { active: _vm.tab == 1 },
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.tab = 1
+                          }
+                        }
+                      },
+                      [_vm._v("Guru")]
+                    ),
                     _vm._v(" "),
-                    _c("a", { staticClass: "nav-link", attrs: { href: "#" } }, [
-                      _vm._v("Pimpinan")
-                    ])
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link py-3",
+                        class: { active: _vm.tab == 2 },
+                        attrs: { href: "#" },
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.tab = 2
+                          }
+                        }
+                      },
+                      [_vm._v("Pimpinan")]
+                    )
                   ]
                 )
               ]

@@ -1,11 +1,11 @@
 <template>
     <transition name="fly-down">
         <div class="card shadow border-0" style="border-radius: .5rem;" id="login-panel" v-if="show">
-            <div class="nav-scroller border-bottom d-flex justify-content-center py-2">
+            <div class="nav-scroller border-bottom d-flex justify-content-center">
                 <nav class="nav nav-underline" aria-label="Secondary navigation">
-                    <a class="nav-link active" href="#">Admin</a>
-                    <a class="nav-link" href="#">Guru</a>
-                    <a class="nav-link" href="#">Pimpinan</a>
+                    <a class="nav-link py-3" :class="{ active: tab == 0 }" href="#" @click.prevent="tab = 0">Admin</a>
+                    <a class="nav-link py-3" :class="{ active: tab == 1 }" href="#" @click.prevent="tab = 1">Guru</a>
+                    <a class="nav-link py-3" :class="{ active: tab == 2 }" href="#" @click.prevent="tab = 2">Pimpinan</a>
                 </nav>
             </div>
             <div class="p-3">
@@ -51,6 +51,7 @@
 </template>
 <script>
 import { mapActions } from 'vuex';
+import { Tooltip } from 'bootstrap'
 export default {
     props: {
         action: String,
@@ -59,7 +60,18 @@ export default {
         return {
             loading: false,
             errors: {},
-            show: true
+            show: true,
+            tab: 0
+        }
+    },
+    computed: {
+        tabActive:{
+            get(){
+                return this.tab;
+            },
+            set(value){
+                this.tab = value;
+            }
         }
     },
     methods: {
@@ -67,6 +79,38 @@ export default {
             login: 'login/admin/login',
         }),
         async submit(form){
+            switch (this.tab) {
+                case 0:
+                default:
+                    this.loginAdmin(form);
+                    break;
+                case 1:
+                    this.loginGuru(form);
+                    break;
+                case 2:
+                    break;
+            }
+        },
+        loginAdmin(){
+            this.loading = true
+            let data = new FormData(form.target);
+            let res = await axios.post(this.action, data).catch(e => {
+                if(e.response.status == 422)
+                    this.errors = e.response.data.errors
+                if(e.response.status == 429)
+                    this.errors = { email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit'] }
+            })
+            this.loading = false
+            if(res){
+                window.localStorage.setItem('authToken', res.data.token)
+                this.show = false
+                setTimeout(()=>{
+                    window.history.pushState({}, "Panel Admin", "/admin")
+                    window.history.go();
+                }, 250)
+            }
+        },
+        loginGuru(){
             this.loading = true
             let data = new FormData(form.target);
             let res = await axios.post(this.action, data).catch(e => {
@@ -92,6 +136,14 @@ export default {
                 top: 300,
                 behavior: 'smooth'
             });
+            let element = this.$el.querySelector('.nav-scroller')
+            var tooltip = new Tooltip(element, {
+                placement: 'top',
+                trigger: 'manual',
+                title: 'Gunakan navigasi untuk mengubah form',
+                popperConfig: function (defaultBsPopperConfig) {}
+            })
+            tooltip.show()
         })
     }
 }
@@ -106,5 +158,8 @@ export default {
             transform: translateY(100px);
             opacity: 0;
         }
+    }
+    .active{
+        border-bottom: 3px solid var(--bs-primary);
     }
 </style>

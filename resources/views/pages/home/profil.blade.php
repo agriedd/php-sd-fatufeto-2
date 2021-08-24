@@ -36,9 +36,9 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="mb-3" id="sejarah">
+                    <div class="mb-3" id="sejarah">
                         <x-sejarah-profil></x-sejarah-profil>
-                    </div> --}}
+                    </div>
                     <x-visi-profil></x-visi-profil>
                     <x-misi-profil></x-misi-profil>
                 </div>

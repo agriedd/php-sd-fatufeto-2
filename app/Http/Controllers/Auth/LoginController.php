@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -35,11 +36,18 @@ class LoginController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
+    public function __construct(){
+        $this->middleware(['guest'])->except('logout');
     }
-    
+
+    public function redirectTo(){
+        if(Auth::check())
+            return $this->redirectTo;
+        elseif(Auth::guard('guru')->check())
+            return RouteServiceProvider::HOME_GURU;
+        return RouteServiceProvider::HOME;
+    }
+
     protected function authenticated(Request $request, $user){
         $token = $user->createToken('authToken')->accessToken;
         return new Response([

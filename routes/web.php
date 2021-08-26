@@ -29,6 +29,10 @@ Route::group(["prefix"=>"/admin", "middleware"=>"auth:web"], function(){
     Route::get('/', 'AdminController@index')->name('admin');
     Route::get('/{any}', 'AdminController@index')->where('any', '.*');
 });
+Route::group(["prefix"=>"/u/guru", "middleware"=>"auth:guru"], function(){
+    Route::get('/', 'GuruController@index')->name('guru');
+    Route::get('/{any}', 'GuruController@index')->where('any', '.*');
+});
 Route::group(["prefix"=>"/print"], function(){
     Route::group(["prefix"=>"/rekap", "middleware"=>"auth:web"], function(){
         Route::get('/siswa', 'prints\RekapController@siswa');

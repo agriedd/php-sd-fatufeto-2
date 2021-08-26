@@ -43,3 +43,4 @@ Route::group(["prefix"=>"/print"], function(){
 Auth::routes([
     'register' => false
 ]);
+Route::post('login/guru', 'AuthGuru\LoginController@login')->name('login.guru');

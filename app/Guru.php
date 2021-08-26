@@ -2,9 +2,15 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
 
-class Guru extends Model{
+class Guru extends Authenticatable {
+    
+    use Notifiable, HasApiTokens;
+
     protected $table = "tbl_guru";
     protected $primaryKey = "id_guru";
     protected $guarded = [];

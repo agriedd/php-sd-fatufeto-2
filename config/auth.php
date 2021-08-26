@@ -41,10 +41,22 @@ return [
             'provider' => 'users',
         ],
 
+        'guru' => [
+            'driver'    => 'session',
+            'provider'  => 'guru',
+        ],
+
         'api' => [
             // 'driver' => 'token',
             'driver' => 'passport',
             'provider' => 'users',
+            'hash' => false,
+        ],
+
+        'api_guru' => [
+            // 'driver' => 'token',
+            'driver' => 'passport',
+            'provider' => 'guru',
             'hash' => false,
         ],
     ],
@@ -70,6 +82,10 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'guru' => [
+            'driver' => 'eloquent',
+            'model' => App\Guru::class,
         ],
 
         // 'users' => [

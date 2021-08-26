@@ -5088,7 +5088,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
-    action: String
+    action: Object
   },
   data: function data() {
     return {
@@ -5138,7 +5138,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this.loading = true;
                 data = new FormData(form.target);
                 _context.next = 4;
-                return axios.post(_this.action, data)["catch"](function (e) {
+                return axios.post(_this.action['admin'], data)["catch"](function (e) {
                   if (e.response.status == 422) _this.errors = e.response.data.errors;
                   if (e.response.status == 429) _this.errors = {
                     email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit']
@@ -5178,7 +5178,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this2.loading = true;
                 data = new FormData(form.target);
                 _context2.next = 4;
-                return axios.post(_this2.action, data)["catch"](function (e) {
+                return axios.post(_this2.action['guru'], data)["catch"](function (e) {
                   if (e.response.status == 422) _this2.errors = e.response.data.errors;
                   if (e.response.status == 429) _this2.errors = {
                     email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit']

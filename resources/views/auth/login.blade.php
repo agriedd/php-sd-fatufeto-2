@@ -11,7 +11,7 @@
         <div style="background: rgba(0, 0, 0, .2); backdrop-filter: blur(.15rem)" class="h-100 w-100 position-absolute top-0 start-0"></div>
         <div class="row g-0 justify-content-center py-5">
             <div class="col-lg-4" style="max-width: 400px">
-                <login-panel action="{{ route('login') }}">
+                <login-panel :action="[admin: '{{ route('login') }}', guru: '{{ route('login.guru') }}']">
                     <template #csrf>
                         @csrf
                     </template>

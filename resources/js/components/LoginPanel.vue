@@ -54,7 +54,7 @@ import { mapActions } from 'vuex';
 import { Tooltip } from 'bootstrap'
 export default {
     props: {
-        action: String,
+        action: Object,
     },
     data(){
         return {
@@ -94,7 +94,7 @@ export default {
         async loginAdmin(){
             this.loading = true
             let data = new FormData(form.target);
-            let res = await axios.post(this.action, data).catch(e => {
+            let res = await axios.post(this.action['admin'], data).catch(e => {
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 if(e.response.status == 429)
@@ -113,7 +113,7 @@ export default {
         async loginGuru(){
             this.loading = true
             let data = new FormData(form.target);
-            let res = await axios.post(this.action, data).catch(e => {
+            let res = await axios.post(this.action['guru'], data).catch(e => {
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 if(e.response.status == 429)

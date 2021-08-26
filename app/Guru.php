@@ -15,6 +15,9 @@ class Guru extends Authenticatable {
     protected $primaryKey = "id_guru";
     protected $guarded = [];
     protected $with = ['kelas', 'foto'];
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
     
     public function kelas(){
         return $this->hasOne(Kelas::class, 'id_guru', 'id_guru')->without(['guru'])->withCount(['siswa']);

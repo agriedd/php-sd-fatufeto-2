@@ -5179,7 +5179,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 data = new FormData(form.target);
                 _context2.next = 4;
                 return axios.post(_this2.action['guru'], data)["catch"](function (e) {
-                  console.log(e);
                   if (e.response.status == 422) _this2.errors = e.response.data.errors;
                   if (e.response.status == 429) _this2.errors = {
                     email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit']
@@ -5191,12 +5190,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 _this2.loading = false;
 
                 if (res) {
-                  console.log(res); // window.localStorage.setItem('authToken', res.data.token)
-                  // this.show = false
-                  // setTimeout(()=>{
-                  //     window.history.pushState({}, "Panel Admin", "/admin")
-                  //     window.history.go();
-                  // }, 250)
+                  window.localStorage.setItem('authToken', res.data.token);
+                  _this2.show = false;
+                  setTimeout(function () {
+                    window.history.pushState({}, "Panel Admin", "/admin");
+                    window.history.go();
+                  }, 250);
                 }
 
               case 7:

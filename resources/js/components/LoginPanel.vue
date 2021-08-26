@@ -114,7 +114,6 @@ export default {
             this.loading = true
             let data = new FormData(form.target);
             let res = await axios.post(this.action['guru'], data).catch(e => {
-                console.log(e);
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 if(e.response.status == 429)
@@ -122,13 +121,12 @@ export default {
             })
             this.loading = false
             if(res){
-                console.log(res);
-                // window.localStorage.setItem('authToken', res.data.token)
-                // this.show = false
-                // setTimeout(()=>{
-                //     window.history.pushState({}, "Panel Admin", "/admin")
-                //     window.history.go();
-                // }, 250)
+                window.localStorage.setItem('authToken', res.data.token)
+                this.show = false
+                setTimeout(()=>{
+                    window.history.pushState({}, "Panel Admin", "/admin")
+                    window.history.go();
+                }, 250)
             }
         }
     },

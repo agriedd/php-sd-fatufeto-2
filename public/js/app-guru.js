@@ -86727,6 +86727,9 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]({
 });
 router.beforeEach( /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee(to, from, next) {
+    var _res$data;
+
+    var token, res;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -86738,16 +86741,18 @@ router.beforeEach( /*#__PURE__*/function () {
              */
             next();
             axios__WEBPACK_IMPORTED_MODULE_6___default.a.interceptors.response.use(function (response) {
-              // if(response.config.category == 'DELETE' && response.status == 204){
-              //     store.dispatch('notifikasi/show', {
-              //         message: "Berhasil menghapus data 👌"
-              //     })
-              // }
-              // if(response.status == 201){
-              //     store.dispatch('notifikasi/show', {
-              //         message: "Berhasil menyimpan data 👌"
-              //     })
-              // }
+              if (response.config.category == 'DELETE' && response.status == 204) {
+                _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
+                  message: "Berhasil menghapus data 👌"
+                });
+              }
+
+              if (response.status == 201) {
+                _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('notifikasi/show', {
+                  message: "Berhasil menyimpan data 👌"
+                });
+              }
+
               return response;
             }, function (error) {
               // if(error.response.status == 401){
@@ -86765,36 +86770,44 @@ router.beforeEach( /*#__PURE__*/function () {
               // }
               return Promise.reject(error);
             }); // store.commit('SETLOADINGAPP', true)
-            // if(to.path == '/admin/401') return next()
-            // let token = localStorage.getItem('authToken')
-            // let res = await store.dispatch('login/admin/check', {
-            //     token
-            // })
-            // if(res.status == 200 && res?.data?.data){
-            //     store.commit('login/admin/SET_USER', res.data.data)
-            //     if(store.state.login.admin.user){
 
-            /**
-             * jika ke sekolah
-             * skip
-             * atau jika sudah di sekolah tapi mau ke sekolah lagi
-             * skip
-             * atau ke sekolah dan dari kosong
-             */
-            //     if((to.name == 'sekolah' || from.name == 'sekolah') && (to.name == 'sekolah' && from.name != null)) return next()
-            //     let res = await store.dispatch('sekolah/get')
-            //     if(res?.status == 200 && res?.data?.data && res?.data?.data?.length){
-            //         store.commit('sekolah/SET_ITEMS', res.data.data)
-            //         return next()
-            //     }
-            //     else return next({ name: 'sekolah' })
-            // }
-            // }
-            // next({
-            //     path: '/admin/403'
-            // })
+            if (!(to.path == '/admin/401')) {
+              _context.next = 4;
+              break;
+            }
 
-          case 2:
+            return _context.abrupt("return", next());
+
+          case 4:
+            token = localStorage.getItem('authToken');
+            _context.next = 7;
+            return _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].dispatch('login/guru/check', {
+              token: token
+            });
+
+          case 7:
+            res = _context.sent;
+
+            if (!(res.status == 200 && res !== null && res !== void 0 && (_res$data = res.data) !== null && _res$data !== void 0 && _res$data.data)) {
+              _context.next = 12;
+              break;
+            }
+
+            _states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].commit('login/guru/SET_USER', res.data.data);
+
+            if (!_states_vuex_admin__WEBPACK_IMPORTED_MODULE_5__["default"].state.login.guru.user) {
+              _context.next = 12;
+              break;
+            }
+
+            return _context.abrupt("return", next());
+
+          case 12:
+            next({
+              path: '/admin/403'
+            });
+
+          case 13:
           case "end":
             return _context.stop();
         }
@@ -90173,6 +90186,135 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
             return function (_x3, _x4) {
               return _ref3.apply(this, arguments);
+            };
+          }());
+        },
+        updateSession: function updateSession(context, data) {
+          context.commit('SET_SESSION_CODE', data || new Date().getTime());
+        }
+      },
+      mutations: {
+        SET_ERRORS: function SET_ERRORS(state, payload) {
+          state.errors = payload;
+        },
+        CLEAR_ERROR: function CLEAR_ERROR(state, payload) {
+          state.errors[payload] = null;
+        },
+        CLEAR_ERRORS: function CLEAR_ERRORS(state, payload) {
+          state.errors = {};
+        },
+        SET_ID: function SET_ID(state, payload) {
+          state.selected.id = payload;
+        },
+        SET_USER: function SET_USER(state, payload) {
+          state.user = payload;
+        },
+        SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
+          state.session.code = payload;
+        },
+        SET_LOGOUT_MODAL: function SET_LOGOUT_MODAL(state, payload) {
+          state.modal.logout = payload;
+        }
+      }
+    },
+    guru: {
+      namespaced: true,
+      state: {
+        data: [],
+        user: {},
+        loading: false,
+        selected: {
+          id: null,
+          ids: [],
+          data: null,
+          datas: []
+        },
+        modal: {
+          logout: false
+        },
+        errors: {},
+        session: {
+          code: 0
+        }
+      },
+      getters: {
+        getUser: function getUser(state) {
+          return state.user;
+        },
+        exists: function exists(state) {
+          var exists = false;
+          if (state.user.id) exists = true;
+          return exists;
+        }
+      },
+      actions: {
+        check: function check(context, _ref4) {
+          var _ref4$token = _ref4.token,
+              token = _ref4$token === void 0 ? null : _ref4$token;
+          return new Promise( /*#__PURE__*/function () {
+            var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(resolve, reject) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      _context3.next = 2;
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/guru/user/authorize'), {}, {
+                        headers: {
+                          Authorization: "Bearer ".concat(token)
+                        }
+                      })["catch"](function (e) {
+                        return reject(e);
+                      });
+
+                    case 2:
+                      res = _context3.sent;
+                      if (res) resolve(res);
+
+                    case 4:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3);
+            }));
+
+            return function (_x5, _x6) {
+              return _ref5.apply(this, arguments);
+            };
+          }());
+        },
+        logout: function logout(context, data) {
+          return new Promise( /*#__PURE__*/function () {
+            var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(resolve, reject) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+                while (1) {
+                  switch (_context4.prev = _context4.next) {
+                    case 0:
+                      _context4.next = 2;
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["host"])('logout'), {}, {
+                        headers: {
+                          'X-CSRF-TOKEN': _config__WEBPACK_IMPORTED_MODULE_2__["csrf"]
+                        }
+                      })["catch"](function (e) {
+                        return reject(e);
+                      });
+
+                    case 2:
+                      res = _context4.sent;
+                      if (res) resolve(res);
+
+                    case 4:
+                    case "end":
+                      return _context4.stop();
+                  }
+                }
+              }, _callee4);
+            }));
+
+            return function (_x7, _x8) {
+              return _ref6.apply(this, arguments);
             };
           }());
         },

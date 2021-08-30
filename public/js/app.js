@@ -45645,6 +45645,135 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           state.modal.logout = payload;
         }
       }
+    },
+    guru: {
+      namespaced: true,
+      state: {
+        data: [],
+        user: {},
+        loading: false,
+        selected: {
+          id: null,
+          ids: [],
+          data: null,
+          datas: []
+        },
+        modal: {
+          logout: false
+        },
+        errors: {},
+        session: {
+          code: 0
+        }
+      },
+      getters: {
+        getUser: function getUser(state) {
+          return state.user;
+        },
+        exists: function exists(state) {
+          var exists = false;
+          if (state.user.id) exists = true;
+          return exists;
+        }
+      },
+      actions: {
+        check: function check(context, _ref4) {
+          var _ref4$token = _ref4.token,
+              token = _ref4$token === void 0 ? null : _ref4$token;
+          return new Promise( /*#__PURE__*/function () {
+            var _ref5 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3(resolve, reject) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+                while (1) {
+                  switch (_context3.prev = _context3.next) {
+                    case 0:
+                      _context3.next = 2;
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/guru/user/authorize'), {}, {
+                        headers: {
+                          Authorization: "Bearer ".concat(token)
+                        }
+                      })["catch"](function (e) {
+                        return reject(e);
+                      });
+
+                    case 2:
+                      res = _context3.sent;
+                      if (res) resolve(res);
+
+                    case 4:
+                    case "end":
+                      return _context3.stop();
+                  }
+                }
+              }, _callee3);
+            }));
+
+            return function (_x5, _x6) {
+              return _ref5.apply(this, arguments);
+            };
+          }());
+        },
+        logout: function logout(context, data) {
+          return new Promise( /*#__PURE__*/function () {
+            var _ref6 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4(resolve, reject) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+                while (1) {
+                  switch (_context4.prev = _context4.next) {
+                    case 0:
+                      _context4.next = 2;
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["host"])('logout'), {}, {
+                        headers: {
+                          'X-CSRF-TOKEN': _config__WEBPACK_IMPORTED_MODULE_2__["csrf"]
+                        }
+                      })["catch"](function (e) {
+                        return reject(e);
+                      });
+
+                    case 2:
+                      res = _context4.sent;
+                      if (res) resolve(res);
+
+                    case 4:
+                    case "end":
+                      return _context4.stop();
+                  }
+                }
+              }, _callee4);
+            }));
+
+            return function (_x7, _x8) {
+              return _ref6.apply(this, arguments);
+            };
+          }());
+        },
+        updateSession: function updateSession(context, data) {
+          context.commit('SET_SESSION_CODE', data || new Date().getTime());
+        }
+      },
+      mutations: {
+        SET_ERRORS: function SET_ERRORS(state, payload) {
+          state.errors = payload;
+        },
+        CLEAR_ERROR: function CLEAR_ERROR(state, payload) {
+          state.errors[payload] = null;
+        },
+        CLEAR_ERRORS: function CLEAR_ERRORS(state, payload) {
+          state.errors = {};
+        },
+        SET_ID: function SET_ID(state, payload) {
+          state.selected.id = payload;
+        },
+        SET_USER: function SET_USER(state, payload) {
+          state.user = payload;
+        },
+        SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
+          state.session.code = payload;
+        },
+        SET_LOGOUT_MODAL: function SET_LOGOUT_MODAL(state, payload) {
+          state.modal.logout = payload;
+        }
+      }
     }
   }
 });

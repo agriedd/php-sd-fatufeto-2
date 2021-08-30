@@ -25,16 +25,16 @@ router.beforeEach(async (to, from, next) => {
      */
     next()
     axios.interceptors.response.use(function (response) {
-        // if(response.config.category == 'DELETE' && response.status == 204){
-        //     store.dispatch('notifikasi/show', {
-        //         message: "Berhasil menghapus data 👌"
-        //     })
-        // }
-        // if(response.status == 201){
-        //     store.dispatch('notifikasi/show', {
-        //         message: "Berhasil menyimpan data 👌"
-        //     })
-        // }
+        if(response.config.category == 'DELETE' && response.status == 204){
+            store.dispatch('notifikasi/show', {
+                message: "Berhasil menghapus data 👌"
+            })
+        }
+        if(response.status == 201){
+            store.dispatch('notifikasi/show', {
+                message: "Berhasil menyimpan data 👌"
+            })
+        }
         return response;
     }, function (error) {
         // if(error.response.status == 401){
@@ -55,35 +55,21 @@ router.beforeEach(async (to, from, next) => {
 
     // store.commit('SETLOADINGAPP', true)
 
-    // if(to.path == '/admin/401') return next()
+    if(to.path == '/admin/401') return next()
 
-    // let token = localStorage.getItem('authToken')
-    // let res = await store.dispatch('login/admin/check', {
-    //     token
-    // })
-    // if(res.status == 200 && res?.data?.data){
-    //     store.commit('login/admin/SET_USER', res.data.data)
-    //     if(store.state.login.admin.user){
-            /**
-             * jika ke sekolah
-             * skip
-             * atau jika sudah di sekolah tapi mau ke sekolah lagi
-             * skip
-             * atau ke sekolah dan dari kosong
-             */
-        //     if((to.name == 'sekolah' || from.name == 'sekolah') && (to.name == 'sekolah' && from.name != null)) return next()
-
-        //     let res = await store.dispatch('sekolah/get')
-        //     if(res?.status == 200 && res?.data?.data && res?.data?.data?.length){
-        //         store.commit('sekolah/SET_ITEMS', res.data.data)
-        //         return next()
-        //     }
-        //     else return next({ name: 'sekolah' })
-        // }
-    // }
-    // next({
-    //     path: '/admin/403'
-    // })
+    let token = localStorage.getItem('authToken')
+    let res = await store.dispatch('login/guru/check', {
+        token
+    })
+    if(res.status == 200 && res?.data?.data){
+        store.commit('login/guru/SET_USER', res.data.data)
+        if(store.state.login.guru.user){
+            return next()
+        }
+    }
+    next({
+        path: '/admin/403'
+    })
 })
 
 router.afterEach(async (to, from, next) => {

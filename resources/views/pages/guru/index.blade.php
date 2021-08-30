@@ -1,8 +1,8 @@
-@extends('layouts.app-admin')
+@extends('layouts.app-guru')
 
 @push('head')
 
 @endpush
 @section('content')
-    <panel-admin></panel-admin>
+    <dashboard></dashboard>
 @endsection

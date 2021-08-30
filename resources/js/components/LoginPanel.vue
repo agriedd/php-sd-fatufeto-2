@@ -29,7 +29,7 @@
                             <input id="password" type="password" class="form-control" name="password" required autocomplete="current-password">
                         </div>
 
-                        <div class="form-group mb-5">
+                        <div class="form-group mb-5" v-if="tab == 0">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember">
                                 <label class="form-check-label" for="remember">
@@ -37,6 +37,7 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="mb-5" v-else></div>
 
                         <div class="form-group mb-0">
                             <button type="submit" class="btn btn-primary w-100 py-3 text-white shadow" :disabled="loading">
@@ -61,7 +62,8 @@ export default {
             loading: false,
             errors: {},
             show: true,
-            tab: 0
+            tab: 0,
+            tooltip: null,
         }
     },
     computed: {
@@ -130,6 +132,16 @@ export default {
             }
         }
     },
+    watch: {
+        show(val, old){
+            if(!val){
+                this.tooltip.hide()
+            }
+        }
+    },
+    updated(){
+        this.tooltip && this.tooltip.update()
+    },
     mounted(){
         this.$nextTick(e => {
             window.scrollTo({
@@ -137,13 +149,13 @@ export default {
                 behavior: 'smooth'
             });
             let element = this.$el.querySelector('.nav-scroller')
-            var tooltip = new Tooltip(element, {
+            this.tooltip = new Tooltip(element, {
                 placement: 'top',
                 trigger: 'manual',
                 title: 'Gunakan navigasi untuk mengubah form',
                 popperConfig: function (defaultBsPopperConfig) {}
             })
-            tooltip.show()
+            this.tooltip.show()
         })
     }
 }

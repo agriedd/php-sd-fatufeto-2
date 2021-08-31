@@ -1,0 +1,182 @@
+<template>
+    <div class="pa-md-3">
+		<div v-if="!guru.kelas">
+			<v-alert prominent text type="warning">
+				Anda belum menjadi wali kelas :(
+			</v-alert>
+		</div>
+        <v-card class="shadow-sm" rounded="xl" v-else>
+            <!-- <v-card-text>
+                <filter-kelas-siswa class="elevation-0" @selected="options.id_kelas = $event"/>
+            </v-card-text> -->
+            <v-card-text class="d-flex">
+                <v-text-field type="search" hide-details rounded dense placeholder="Temukan..." v-model="search"/>
+            </v-card-text>
+            <siswa-table
+                :headers="headers"
+                :items="items"
+                :options="options"
+                :total="total"
+                :loading="loading"
+                v-model="selected"
+                @update:options="options = $event"
+                @update="update"
+                @rowClick="toInfoSiswa"
+                @editRow="ubahInfoSiswa"
+                @deleteRow="hapusInfoSiswa"
+                :small="small"
+                :no-select="noSelect"/>
+            <slot v-bind:update="update"></slot>
+			<v-btn fab fixed bottom right color="primary" @click="openModalTambah">
+				<v-icon>mdi-plus</v-icon>
+			</v-btn>
+        </v-card>
+    </div>
+</template>
+<script>
+import { mapActions, mapGetters, mapMutations } from 'vuex'
+import SiswaTable from '../../../../siswa/datatable/SiswaTable.vue'
+export default {
+    props: {
+        params: Object,
+        small: Boolean,
+        noSelect: Boolean,
+    },
+    components: {
+        SiswaTable
+    },
+    data(){
+        return {
+            breadcrumb: [
+                {
+                    text: 'Panel Admin',
+                    disabled: false,
+                    to: {name: 'admin'},
+                    link: true,
+                    exact: true,
+                },
+                {
+                    text: 'Siswa',
+                    disabled: false,
+                    to: {name: 'siswa'},
+                    link: true,
+                    exact: true,
+                },
+                {
+                    text: 'List Siswa',
+                    disabled: true,
+                },
+            ],
+            items: [],
+            headers: [
+                { text: null, align: 'center', sortable: false, value: 'foto' },
+                { text: 'Nama', align: 'start', sortable: true, value: 'nama_siswa' },
+                { text: 'Jenis Kelamin', align: 'start d-none d-sm-table-cell', sortable: true, value: 'jenis_kelamin' },
+                { text: 'Alamat', align: 'start d-none d-sm-table-cell', sortable: true, value: 'alamat' },
+                { text: 'Kelas', align: 'start d-none d-sm-table-cell', sortable: true, value: 'id_kelas' },
+                // { text: 'TTL', align: 'end d-none d-sm-table-cell', sortable: true, value: 'tanggal_lahir' },
+                { text: null, align: '', sortable: true, value: 'action' },
+            ],
+            options: {
+                page: 1,
+                itemsPerPage: 10,
+                sortBy: ['created_at'],
+                sortDesc: [true],
+                groupBy: [],
+                groupDesc: [],
+                mustSort: false,
+                multiSort: false,
+            },
+            filters: {
+                id_kelas: null,
+            },
+            selected: [],
+            total: 0,
+            search: '',
+            loading: false,
+            view: 'table',
+            snackbar: {
+                status: true,
+                message: "Error!",
+            },
+            lazyTransition: null,
+        }
+    },
+    computed: {
+		...mapGetters({
+			guru: 'login/guru/getUser',
+	        dataSession: 'siswa/getSession'
+		}),
+    },
+    methods: {
+        ...mapMutations({
+            showTambahDialog: 'siswa/SET_MODAL_TAMBAH',
+        }),
+        openModalTambah(){
+            this.showTambahDialog(true)
+        },
+        ...mapActions({
+            getItems: 'siswa/get',
+            notif: 'notifikasi/show',
+            showUbahDialog: 'siswa/setModalUbah',
+            showHapusDialog: 'siswa/setModalHapus',
+        }),
+        async loadItems(){
+            this.loading = true
+            let res = await this.getItems({...this.options, id_kelas: this.guru.kelas?.id_kelas, search: this.search, ...this.params }).catch(e => {});
+            this.loading = false
+            if(res){
+                this.items = res.data.data
+                let meta = res.data.meta
+                this.options = {
+                    ...this.options,
+                    page: parseInt(meta.current_page),
+                    itemsPerPage: parseInt(meta.per_page),
+                    mustSort: false,
+                    multiSort: false,
+                }
+                this.total = parseInt(meta.total)
+            }
+        },
+        update(){
+            this.loadItems()
+        },
+        lazy(callback){
+            if(this.lazyTransition)
+                clearTimeout(this.lazyTransition);
+            this.lazyTransition = setTimeout(()=>{
+                callback();
+                this.lazyTransition = null;
+            }, 800);
+        },
+        rowClick(e){
+            this.$emit('open:siswa:info', e)
+        },
+        editRow(e){
+
+        },
+        clickEvent(t, d){
+            this.$emit(t, d)
+        },
+        ubahInfoSiswa({id: id}){
+            this.showUbahDialog({id, value: true})
+        },
+        hapusInfoSiswa({id: id}){
+            this.showHapusDialog({id, value: true})
+        },
+        toInfoSiswa({id}){
+            this.$router.push({ name: 'siswa.show', params: { id } })
+        },
+    },
+    watch: {
+        search(val, old){
+            if(val != old)
+                this.lazy(_=>this.loadItems())
+        },
+        dataSession(val, old){
+            this.update()
+        },
+    },
+    created(){}
+}
+</script>

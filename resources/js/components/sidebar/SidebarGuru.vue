@@ -1,7 +1,7 @@
 <template>
 	<v-navigation-drawer app width="275">
 		<template #prepend>
-            <sidebar-admin-header/>
+            <sidebar-guru-header/>
 			<v-divider></v-divider>
 		</template>
 		<v-subheader v-text="'Menu'" inset/>
@@ -15,7 +15,7 @@
 					<v-list-item-subtitle v-text="'Halaman Dashboard'" />
 				</v-list-item-content>
 			</v-list-item>
-			<v-subheader v-text="'Pimpinan dan Laporan'" inset/>
+			<!-- <v-subheader v-text="'Pimpinan dan Laporan'" inset/>
 			<v-list-item-group dense flat nav>
 				<v-list-item dense link color="primary" :to="{ name: 'pimpinan' }" exact>
 					<v-list-item-icon>
@@ -123,7 +123,7 @@
 						<v-list-item-subtitle v-text="'Daftar Kegiatan'" />
 					</v-list-item-content>
 				</v-list-item>
-			</v-list-item-group>
+			</v-list-item-group> -->
 		</v-list>
 		<template #append>
 			<v-divider/>
@@ -167,10 +167,10 @@
 </template>
 <script>
 import { mapGetters, mapMutations, mapState } from 'vuex'
-import SidebarAdminHeader from './SidebarAdminHeader.vue'
+import SidebarGuruHeader from './SidebarGuruHeader.vue'
 export default {
     components: { 
-        SidebarAdminHeader 
+        SidebarGuruHeader 
     },
 	computed: {
         ...mapGetters({

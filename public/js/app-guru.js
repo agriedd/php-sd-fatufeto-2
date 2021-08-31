@@ -1959,17 +1959,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _pages_guru_tab_GuruKelasIndex_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../pages/guru/tab/GuruKelasIndex.vue */ "./resources/js/pages/guru/tab/GuruKelasIndex.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _pages_guru_tab_GuruKelasIndex_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../pages/guru/tab/GuruKelasIndex.vue */ "./resources/js/pages/guru/tab/GuruKelasIndex.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1983,21 +1980,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    GuruKelasIndex: _pages_guru_tab_GuruKelasIndex_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    GuruKelasIndex: _pages_guru_tab_GuruKelasIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
-    return {
-      user: {
-        nama: '',
-        email: '',
-        foto: '',
-        role: '',
-        id: ''
-      }
-    };
-  }
+    return {};
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    user: 'login/guru/getUser'
+  }))
 });
 
 /***/ }),
@@ -2553,7 +2546,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_dashboard_guru_kelas_InfoWalikelasGuru_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../components/dashboard/guru/kelas/InfoWalikelasGuru.vue */ "./resources/js/components/dashboard/guru/kelas/InfoWalikelasGuru.vue");
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _components_dashboard_guru_kelas_InfoWalikelasGuru_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../components/dashboard/guru/kelas/InfoWalikelasGuru.vue */ "./resources/js/components/dashboard/guru/kelas/InfoWalikelasGuru.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -2583,21 +2583,62 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    InfoWalikelasGuru: _components_dashboard_guru_kelas_InfoWalikelasGuru_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    InfoWalikelasGuru: _components_dashboard_guru_kelas_InfoWalikelasGuru_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
-    return {
-      user: {
-        name: 'Lorem Ipsum.',
-        email: 'guru@sdfatufeto.sch.id'
-      },
-      guru: {
-        count: 49
-      }
-    };
-  }
+    return {};
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    user: 'login/guru/getUser'
+  }))
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");
+/* harmony import */ var _guru_tab_GuruKelasIndex_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../guru/tab/GuruKelasIndex.vue */ "./resources/js/pages/guru/tab/GuruKelasIndex.vue");
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    GuruKelasIndex: _guru_tab_GuruKelasIndex_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  computed: _objectSpread({}, Object(vuex__WEBPACK_IMPORTED_MODULE_0__["mapGetters"])({
+    user: 'login/guru/getUser'
+  }))
 });
 
 /***/ }),
@@ -21901,46 +21942,20 @@ var render = function() {
           _c(
             "v-tabs",
             [
-              _c("v-tab", [_vm._v("Kelas")]),
+              _c("v-tab", { attrs: { to: { name: "dashboard" } } }, [
+                _vm._v("Kelas")
+              ]),
               _vm._v(" "),
-              _c("v-tab", [_vm._v("Siswa")])
+              _c("v-tab", { attrs: { to: { name: "siswa" } } }, [
+                _vm._v("Siswa")
+              ])
             ],
             1
           ),
           _vm._v(" "),
           _c("v-divider"),
           _vm._v(" "),
-          _c("v-card-text", [
-            _c(
-              "div",
-              { staticClass: "d-flex justify-start" },
-              [
-                _c(
-                  "v-alert",
-                  {
-                    staticClass: "mb-0",
-                    attrs: {
-                      rounded: "xl",
-                      text: "",
-                      prominent: "",
-                      type: "info",
-                      "max-width": "500"
-                    }
-                  },
-                  [
-                    _vm._v(
-                      "\n\t\t\t\t\tSelamat datang " +
-                        _vm._s(_vm.user.nama) +
-                        ", silahkan gunakan navigasi pada tab untuk melihat\n\t\t\t\t\tinfo kelas dan siswa, gunakan navigasi di bagian kiri untuk menjelajah halaman.\n\t\t\t\t"
-                    )
-                  ]
-                )
-              ],
-              1
-            )
-          ]),
-          _vm._v(" "),
-          _c("v-card-text", [_c("guru-kelas-index")], 1)
+          _c("router-view")
         ],
         1
       )
@@ -23050,17 +23065,15 @@ var render = function() {
                     "div",
                     { staticClass: "d-flex" },
                     [
-                      _c("v-avatar", [
-                        _c("img", {
-                          attrs: {
-                            src: "https://cdn.vuetifyjs.com/images/lists/1.jpg"
-                          }
-                        })
+                      _c("v-avatar", { attrs: { color: "grey lighten-4" } }, [
+                        _vm.user.foto
+                          ? _c("img", { attrs: { src: _vm.user.foto.url } })
+                          : _vm._e()
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "d-flex flex-column ml-3" }, [
                         _c("h4", { staticClass: "font-weight-bold mb-0" }, [
-                          _vm._v(_vm._s(_vm.user.name))
+                          _vm._v(_vm._s(_vm.user.nama))
                         ]),
                         _vm._v(" "),
                         _c("small", { staticClass: "text-muted" }, [
@@ -23080,6 +23093,65 @@ var render = function() {
           1
         )
       ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=template&id=e3d008b4&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=template&id=e3d008b4& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("v-card-text", [
+        _c(
+          "div",
+          { staticClass: "d-flex justify-start" },
+          [
+            _c(
+              "v-alert",
+              {
+                staticClass: "mb-0",
+                attrs: { text: "", prominent: "", type: "info" }
+              },
+              [
+                _vm._v(
+                  "\n\t\t\t\tSelamat datang " +
+                    _vm._s(_vm.user.jenis_kelamin == "l" ? "Bpk." : "Ibu") +
+                    _vm._s(_vm.user.nama) +
+                    ", silahkan gunakan navigasi pada tab untuk melihat\n\t\t\t\tinfo kelas dan siswa, gunakan navigasi di bagian kiri untuk menjelajah halaman.\n\t\t\t"
+                )
+              ]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c(
+        "v-card-text",
+        [_c("guru-kelas-index", { attrs: { item: _vm.user } })],
+        1
+      )
     ],
     1
   )
@@ -86595,6 +86667,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _GuruKelasTab_vue_vue_type_template_id_e3d008b4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GuruKelasTab.vue?vue&type=template&id=e3d008b4& */ "./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=template&id=e3d008b4&");
+/* harmony import */ var _GuruKelasTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GuruKelasTab.vue?vue&type=script&lang=js& */ "./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _GuruKelasTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _GuruKelasTab_vue_vue_type_template_id_e3d008b4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _GuruKelasTab_vue_vue_type_template_id_e3d008b4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruKelasTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruKelasTab.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruKelasTab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=template&id=e3d008b4&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=template&id=e3d008b4& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruKelasTab_vue_vue_type_template_id_e3d008b4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GuruKelasTab.vue?vue&type=template&id=e3d008b4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue?vue&type=template&id=e3d008b4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruKelasTab_vue_vue_type_template_id_e3d008b4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GuruKelasTab_vue_vue_type_template_id_e3d008b4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/guru/tab/GuruKelasIndex.vue":
 /*!********************************************************!*\
   !*** ./resources/js/pages/guru/tab/GuruKelasIndex.vue ***!
@@ -86674,11 +86815,21 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_dashboard_guru_Index_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../pages/dashboard/guru/Index.vue */ "./resources/js/pages/dashboard/guru/Index.vue");
+/* harmony import */ var _pages_dashboard_guru_tab_GuruKelasTab_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../pages/dashboard/guru/tab/GuruKelasTab.vue */ "./resources/js/pages/dashboard/guru/tab/GuruKelasTab.vue");
+
 
 /* harmony default export */ __webpack_exports__["default"] = ([{
   path: '/u/guru',
   component: _pages_dashboard_guru_Index_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-  name: 'dashboard'
+  children: [{
+    path: 'siswa',
+    component: _pages_dashboard_guru_tab_GuruKelasTab_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    name: 'siswa'
+  }, {
+    path: '',
+    component: _pages_dashboard_guru_tab_GuruKelasTab_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    name: 'dashboard'
+  }]
 }]);
 
 /***/ }),

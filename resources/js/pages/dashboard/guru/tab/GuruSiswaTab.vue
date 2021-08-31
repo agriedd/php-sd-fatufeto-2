@@ -27,16 +27,18 @@
                 :small="small"
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
+			<v-btn fab fixed bottom right color="primary" @click="openModalTambah">
+				<v-icon>mdi-plus</v-icon>
+			</v-btn>
         </v-card>
     </div>
 </template>
 <script>
-import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import SiswaTable from '../../../siswa/datatable/SiswaTable.vue'
 import FilterKelasSiswa from '../../../siswa/form/FilterKelasSiswa.vue'
 export default {
     props: {
-        dataSession: String|Number,
         params: Object,
         small: Boolean,
         noSelect: Boolean,
@@ -104,10 +106,17 @@ export default {
     },
     computed: {
 		...mapGetters({
-			guru: 'login/guru/getUser'
-		})
+			guru: 'login/guru/getUser',
+	        dataSession: 'siswa/getSession'
+		}),
     },
     methods: {
+        ...mapMutations({
+            showTambahDialog: 'siswa/SET_MODAL_TAMBAH',
+        }),
+        openModalTambah(){
+            this.showTambahDialog(true)
+        },
         ...mapActions({
             getItems: 'siswa/get',
             notif: 'notifikasi/show',

@@ -89,13 +89,23 @@
             label="Alamat"
             :error-messages="errors.alamat"
             @keyup="errors.alamat = null"/>
+        <v-text-field
+            v-model="guru.kelas.id_kelas"
+            v-if="guru && guru.kelas"
+            outlined
+            dense
+            readonly
+            :success-messages="`Kelas mengikuti ${guru.kelas.nama}`"
+            name="id_kelas"/>
         <input-kelas-siswa
             v-model="item.id_kelas" 
             :errors="errors" 
-            @change="errors.id_kelas = null"/>
+            @change="errors.id_kelas = null"
+            v-else/>
     </div>
 </template>
 <script>
+import { mapState } from 'vuex';
 import InputAgamaSiswa from './InputAgamaSiswa.vue';
 import InputJenisKelaminSiswa from './InputJenisKelaminSiswa.vue';
 import InputKelasSiswa from './InputKelasSiswa.vue';
@@ -119,6 +129,9 @@ export default {
         }
     },
     computed: {
+        ...mapState({
+            guru: state => state.login?.guru?.user,
+        }),
         item: {
             get(){
                 return this.value

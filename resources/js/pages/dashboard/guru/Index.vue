@@ -24,13 +24,19 @@
 				<info-walikelas-guru/>
 			</div>
 		</v-container>
+		<siswa-tambah/>
+		<siswa-ubah/>
+		<siswa-hapus/>
 	</v-main>
 </template>
 <script>
 import { mapGetters } from 'vuex'
 import InfoWalikelasGuru from '../../../components/dashboard/guru/kelas/InfoWalikelasGuru.vue'
+import SiswaHapus from '../../siswa/SiswaHapus.vue'
+import SiswaTambah from '../../siswa/SiswaTambah.vue'
+import SiswaUbah from '../../siswa/SiswaUbah.vue'
 export default {
-  	components: { InfoWalikelasGuru },
+  	components: { InfoWalikelasGuru, SiswaUbah, SiswaHapus, SiswaTambah },
 	data () {
 		return {
 		}

@@ -31,7 +31,7 @@ class RequestGuruUpdate extends FormRequest{
             'alamat'   => 'nullable',
             'foto'   => 'nullable|image|max:2048',
             'email'   => [
-                'required',
+                'nullable',
                 Rule::unique('tbl_guru', 'email')->ignore($id, 'id_guru')
             ],
         ];

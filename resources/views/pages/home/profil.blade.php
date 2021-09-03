@@ -41,8 +41,8 @@
                     </div>
                     <x-visi-profil></x-visi-profil>
                     <x-misi-profil></x-misi-profil>
-                    <x-kontak-home></x-kontak-home>
-                    <x-alamat-home></x-alamat-home>
+                    {{-- <x-kontak-home></x-kontak-home>
+                    <x-alamat-home></x-alamat-home> --}}
                 </div>
             </div>
 

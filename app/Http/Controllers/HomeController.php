@@ -52,6 +52,9 @@ class HomeController extends Controller{
     public function kelas(){
         return view('pages.home.kelas');
     }
+    public function search(){
+        return view('pages.home.pencarian');
+    }
     public function kegiatanShow(){
         $galeri     = GambarKegiatan::find(request('id_galeri'));
         $kegiatan   = Kegiatan::findOrFail(request('id_kegiatan'));

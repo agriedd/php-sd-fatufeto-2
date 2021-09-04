@@ -8,10 +8,16 @@
 					<div class="col">
 						Nama
 					</div>
-					<div class="col-3">
+					<div class="col-2">
 						Jenis Kelamin
 					</div>
-					<div class="col-3 d-none d-sm-block">
+					<div class="col-2 d-none d-sm-block">
+						NIS
+					</div>
+					<div class="col-2 d-none d-sm-block">
+						NISN
+					</div>
+					<div class="col-2 d-none d-sm-block">
 						Keterangan
 					</div>
 				</div>
@@ -39,14 +45,24 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-3">
+							<div class="col-2">
 								<div class="content-middle align-items-start">
 									<small>
 										{{ siswa.jenis_kelamin == 'l' ? 'Laki-laki' : 'Perempuan' }}
 									</small>
 								</div>
 							</div>
-							<div class="col-3 d-none d-sm-block">
+							<div class="col-2 d-none d-sm-block">
+								<div class="content-middle align-items-start">
+									{{ siswa.nis }}
+								</div>
+							</div>
+							<div class="col-2 d-none d-sm-block">
+								<div class="content-middle align-items-start">
+									{{ siswa.nisn }}
+								</div>
+							</div>
+							<div class="col-2 d-none d-sm-block">
 								<div class="content-middle align-items-start">
 									<small>
 										{{ siswa.kelas.nama }}

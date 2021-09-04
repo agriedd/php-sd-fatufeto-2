@@ -5703,6 +5703,22 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -30816,7 +30832,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-3" }, [
+                    _c("div", { staticClass: "col-2" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30836,7 +30852,35 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-3 d-none d-sm-block" }, [
+                    _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+                      _c(
+                        "div",
+                        { staticClass: "content-middle align-items-start" },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(siswa.nis) +
+                              "\n\t\t\t\t\t\t\t"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+                      _c(
+                        "div",
+                        { staticClass: "content-middle align-items-start" },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(siswa.nisn) +
+                              "\n\t\t\t\t\t\t\t"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30956,11 +31000,19 @@ var staticRenderFns = [
               _vm._v("\n\t\t\t\t\tNama\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-3" }, [
+            _c("div", { staticClass: "col-2" }, [
               _vm._v("\n\t\t\t\t\tJenis Kelamin\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-3 d-none d-sm-block" }, [
+            _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+              _vm._v("\n\t\t\t\t\tNIS\n\t\t\t\t")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+              _vm._v("\n\t\t\t\t\tNISN\n\t\t\t\t")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
               _vm._v("\n\t\t\t\t\tKeterangan\n\t\t\t\t")
             ])
           ])

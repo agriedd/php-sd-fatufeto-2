@@ -52,6 +52,9 @@ class HomeController extends Controller{
     public function kelas(){
         return view('pages.home.kelas');
     }
+    public function jadwal(){
+        return view('pages.home.jadwal');
+    }
     public function search(){
         return view('pages.home.pencarian');
     }

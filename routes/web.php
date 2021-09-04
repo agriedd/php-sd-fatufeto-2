@@ -21,6 +21,7 @@ Route::group(["prefix"=>"/"], function(){
     Route::get('/kelas', 'HomeController@kelas')->name('home.kelas');
     Route::get('/kegiatan/show', 'HomeController@kegiatanShow')->name('home.kegiatan.show');
     Route::get('/sarana', 'HomeController@sarana')->name('home.sarana');
+    Route::get('/jadwal', 'HomeController@jadwal')->name('home.jadwal');
     Route::get('/prasarana', 'HomeController@prasarana')->name('home.prasarana');
     Route::get('/kegiatan', 'HomeController@kegiatan')->name('home.kegiatan');
     Route::get('/pengumuman/{pengumuman}', 'HomeController@pengumumanInfo')->name('home.pengumuman.info');

@@ -12,7 +12,6 @@
     <x-navbar-home></x-navbar-home>
     <div class="container-fluid bg-white flex-grow p-3 py-5" style="flex-grow: 1;">
         <div class="row g-0">
-            <div class="col-1"></div>
             <div class="col-md">
                 <div class="p-3">
                     <div class="mb-3" id="breadcrumb">
@@ -38,7 +37,7 @@
                         </div>
                     </div>
                     <div class="mb-3" id="daftar-kelas">
-                        <x-list-kelas></x-list-kelas>
+                        <x-list-jadwal></x-list-jadwal>
                     </div>
                 </div>
             </div>

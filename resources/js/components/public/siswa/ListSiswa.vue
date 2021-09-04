@@ -140,8 +140,11 @@ export default {
 				search: this.search
 			}).catch(err => console.error(err))
 			if(res){
-				if(push)
-					this.items.push(...res.data?.data)
+				if(push){
+					res.data?.data?.forEach(newdata => {
+						this.items.findIndex(item => item.id === newdata.id) === -1 ? this.items.push(newdata) : null
+					});
+				}
 				else
 					this.items = res.data?.data 
 				this.total = res.data?.meta?.total || 0
@@ -185,7 +188,7 @@ export default {
 	created () {
 		const urlParams = new URLSearchParams(window.location.search);
 		this.options.id_kelas = urlParams.get('id_kelas');
-		this.loadData()
+		this.loadData(false)
 	},
 	mounted(){
 		this.$nextTick(() => {

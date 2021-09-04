@@ -5260,18 +5260,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _paginations_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../paginations/Pagination.vue */ "./resources/js/components/public/paginations/Pagination.vue");
 
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -5421,7 +5409,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var push, res, _this$items, _res$data, _res$data2, _res$data3, _res$data3$meta;
+        var push, res, _res$data2, _res$data3, _res$data3$meta, _res$data, _res$data$data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
@@ -5444,7 +5432,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 res = _context.sent;
 
                 if (res) {
-                  if (push) (_this$items = _this.items).push.apply(_this$items, _toConsumableArray((_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.data));else _this.items = (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data;
+                  if (push) {
+                    (_res$data = res.data) === null || _res$data === void 0 ? void 0 : (_res$data$data = _res$data.data) === null || _res$data$data === void 0 ? void 0 : _res$data$data.forEach(function (newdata) {
+                      _this.items.findIndex(function (item) {
+                        return item.id_guru === newdata.id_guru;
+                      }) === -1 ? _this.items.push(newdata) : null;
+                    });
+                  } else _this.items = (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data;
+
                   _this.total = ((_res$data3 = res.data) === null || _res$data3 === void 0 ? void 0 : (_res$data3$meta = _res$data3.meta) === null || _res$data3$meta === void 0 ? void 0 : _res$data3$meta.total) || 0;
 
                   if (_this.scrollSpy) {
@@ -5607,18 +5602,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _paginations_Pagination_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../paginations/Pagination.vue */ "./resources/js/components/public/paginations/Pagination.vue");
 
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
@@ -5767,7 +5750,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var push, res, _this$items, _res$data, _res$data2, _res$data3, _res$data3$meta;
+        var push, res, _res$data2, _res$data3, _res$data3$meta, _res$data, _res$data$data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
@@ -5790,7 +5773,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                 res = _context.sent;
 
                 if (res) {
-                  if (push) (_this$items = _this.items).push.apply(_this$items, _toConsumableArray((_res$data = res.data) === null || _res$data === void 0 ? void 0 : _res$data.data));else _this.items = (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data;
+                  if (push) {
+                    (_res$data = res.data) === null || _res$data === void 0 ? void 0 : (_res$data$data = _res$data.data) === null || _res$data$data === void 0 ? void 0 : _res$data$data.forEach(function (newdata) {
+                      _this.items.findIndex(function (item) {
+                        return item.id === newdata.id;
+                      }) === -1 ? _this.items.push(newdata) : null;
+                    });
+                  } else _this.items = (_res$data2 = res.data) === null || _res$data2 === void 0 ? void 0 : _res$data2.data;
+
                   _this.total = ((_res$data3 = res.data) === null || _res$data3 === void 0 ? void 0 : (_res$data3$meta = _res$data3.meta) === null || _res$data3$meta === void 0 ? void 0 : _res$data3$meta.total) || 0;
 
                   if (_this.scrollSpy) {
@@ -5844,7 +5834,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   created: function created() {
     var urlParams = new URLSearchParams(window.location.search);
     this.options.id_kelas = urlParams.get('id_kelas');
-    this.loadData();
+    this.loadData(false);
   },
   mounted: function mounted() {
     var _this4 = this;

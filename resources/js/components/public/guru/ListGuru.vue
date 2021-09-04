@@ -141,8 +141,11 @@ export default {
 				search: this.search
 			}).catch(err => console.error(err))
 			if(res){
-				if(push)
-					this.items.push(...res.data?.data)
+				if(push){
+					res.data?.data?.forEach(newdata => {
+						this.items.findIndex(item => item.id_guru === newdata.id_guru) === -1 ? this.items.push(newdata) : null
+					});
+				}
 				else
 					this.items = res.data?.data 
 				this.total = res.data?.meta?.total || 0

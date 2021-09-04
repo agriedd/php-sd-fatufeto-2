@@ -23,7 +23,7 @@ class ListJadwal extends Component{
             ->orderBy('tbl_jadwal.id_kelas', 'desc')
             ->orderBy('tbl_jadwal.waktu_mulai', 'asc')
             ->get();
-        $this->jadwal = $jadwal->groupBy(['id_kelas', 'waktu_mulai']);
+        $this->jadwal = $jadwal->groupBy(['id_kelas', 'waktu_mulai'])->sortDesc();
         // dd($this->jadwal);
     }
 

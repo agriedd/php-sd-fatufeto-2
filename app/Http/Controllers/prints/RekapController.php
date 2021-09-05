@@ -4,8 +4,10 @@ namespace App\Http\Controllers\prints;
 
 use App\Guru;
 use App\Http\Controllers\Controller;
+use App\Jadwal;
 use App\Kelas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class RekapController extends Controller{
     public function siswa(){
@@ -33,5 +35,18 @@ class RekapController extends Controller{
             'guru' => $guru
         ])->render());
         return $mpdf->Output('Rekap Guru.pdf', 'I');
+    }
+    public function jadwal(){
+        $mpdf = new \Mpdf\Mpdf();
+        $jadwal = Jadwal::rightJoin('tbl_kelas', 'tbl_jadwal.id_kelas', '=', 'tbl_kelas.id_kelas')
+            ->leftJoin(DB::raw('(Select DISTINCT waktu_mulai from tbl_jadwal) as tbl_waktu'), 'tbl_waktu.waktu_mulai', '=', 'tbl_jadwal.waktu_mulai')
+            ->orderBy('tbl_jadwal.id_kelas', 'desc')
+            ->orderBy('tbl_jadwal.waktu_mulai', 'asc')
+            ->get();
+        $jadwal = $jadwal->groupBy(['id_kelas', 'waktu_mulai'])->sortDesc();
+        $mpdf->WriteHTML(view('rekap/jadwal', [
+            'items' => $jadwal
+        ])->render());
+        return $mpdf->Output('Jadwal.pdf', 'I');
     }
 }

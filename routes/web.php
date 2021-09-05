@@ -40,9 +40,10 @@ Route::group(["prefix"=>"/u/pimpinan", "middleware"=>"auth:pimpinan"], function(
     Route::get('/{any}', 'PimpinanController@index')->where('any', '.*');
 });
 Route::group(["prefix"=>"/print"], function(){
-    Route::group(["prefix"=>"/rekap", "middleware"=>"auth:web"], function(){
+    Route::group(["prefix"=>"/rekap", ], function(){
         Route::get('/siswa', 'prints\RekapController@siswa');
         Route::get('/guru', 'prints\RekapController@guru');
+        Route::get('/jadwal', 'prints\RekapController@jadwal');
     });
 });
 

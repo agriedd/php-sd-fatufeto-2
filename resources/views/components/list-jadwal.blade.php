@@ -44,6 +44,9 @@
                                 @php
                                     $last_key_waktu = $key_waktu;
                                 @endphp    
+                                @if($waktu_counter != 1)
+                                    <tr>
+                                @endif
                                         <td>{{ $nomor }}</td>
                                         <td>{{ $item->waktu_mulai }}</td>
                                         @foreach (['senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu'] as $hari_item)

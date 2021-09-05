@@ -60,7 +60,7 @@
                                                 <v-icon v-else>mdi-image</v-icon>
                                             </v-avatar>
                                             <v-spacer/>
-                                            <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
+                                            <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false" v-if="!isPimpinan">
                                                 <template #activator="{ attrs, on }">
                                                     <v-btn icon v-on.prevent="on" v-bind="attrs">
                                                         <v-icon>mdi-dots-vertical</v-icon>
@@ -241,10 +241,11 @@ export default {
         }),
         ...mapGetters({
             session: 'kegiatan/getSession',
+            isPimpinan: 'login/isPimpinan'
         }),
         id(){
             return this.$route.params.id_kegiatan
-        }
+        },
     },
     watch: {
         session(){

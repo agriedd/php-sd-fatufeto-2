@@ -124,56 +124,6 @@
 			</v-list-item-group>
 			<v-subheader v-text="'Berita dan Kegiatan'" inset/>
 			<v-list-item-group dense flat nav>
-				<v-list-item dense link color="primary" :to="{ name: 'berita' }" exact>
-					<v-list-item-icon>
-						<v-icon>mdi-newspaper</v-icon>
-					</v-list-item-icon>
-					<v-list-item-content>
-						<v-list-item-title v-text="'Berita'" />
-					</v-list-item-content>
-					<v-menu content-class="shadow-lg rounded-lg" open-on-hover right min-width="250" :close-on-content-click="false" :close-on-click="false" open-delay=".5" transition="slide-x-transition">
-						<template #activator="{ attrs, on }">
-							<v-list-item-action v-on="on" v-bind="attrs">
-								<v-icon>mdi-plus</v-icon>
-							</v-list-item-action>
-						</template>
-						<v-list>
-							<v-list-item dense link :to="{ name: 'berita.insert' }">
-								<v-list-item-icon>
-									<v-icon>mdi-newspaper-plus</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Tambah Berita'"/>
-								</v-list-item-content>
-							</v-list-item>
-							<v-list-item dense :to="{ name: 'berita.list' }">
-								<v-list-item-icon>
-									<v-icon>mdi-magnify</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Temukan Berita'"/>
-								</v-list-item-content>
-							</v-list-item>
-							<v-subheader v-text="'Kategori Berita'" inset/>
-							<v-list-item dense link :to="{ name: 'kategori' }">
-								<v-list-item-icon>
-									<v-icon>mdi-tag</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Kategori Berita'"/>
-								</v-list-item-content>
-							</v-list-item>
-							<v-list-item dense link :to="{ name: 'kategori.insert' }">
-								<v-list-item-icon>
-									<v-icon>mdi-tag-plus</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Tambah Kategori Berita'"/>
-								</v-list-item-content>
-							</v-list-item>
-						</v-list>
-					</v-menu>
-				</v-list-item>
 				<v-list-item dense link color="primary" :to="{ name: 'kegiatan' }" exact>
 					<v-list-item-icon>
 						<v-icon>mdi-flag</v-icon>

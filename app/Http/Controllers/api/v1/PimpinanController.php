@@ -33,6 +33,12 @@ class PimpinanController extends Controller{
             $sekolah = Sekolah::latest()->first();
             $data->put('id_profil', $sekolah->id_profil);
         }
+        
+        /**
+         * encript password
+         * 
+         */
+        $data->put('password', bcrypt($request->input('password')));
         $pimpinan = Pimpinan::create($data->all());
         
         /**
@@ -72,6 +78,17 @@ class PimpinanController extends Controller{
             $foto = $request->file('foto')->store('pimpinan');
             $foto = $pimpinan->foto()->create(['src' => $foto]);
         }
+        $collection = new PimpinanCollection($pimpinan);
+        return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
+    }
+    
+    public function reset(Request $request, Pimpinan $pimpinan){
+        /**
+         * make new password encypted
+         * 
+         */
+        $data = collect(['password' => bcrypt('password')]);
+        $result = $pimpinan->update($data->all());
         $collection = new PimpinanCollection($pimpinan);
         return new Response($collection, $result ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }

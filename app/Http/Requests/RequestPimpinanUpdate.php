@@ -43,6 +43,10 @@ class RequestPimpinanUpdate extends FormRequest
             'alamat'   => 'nullable',
             'id_profil' => 'nullable,exists:tbl_pimpinan,id_profil',
             'foto'   => 'nullable|image|max:2048',
+            'email'   => [
+                'nullable',
+                Rule::unique('tbl_pimpinan', 'email')->ignore($id, 'id_pimpinan')
+            ],
         ];
     }
 }

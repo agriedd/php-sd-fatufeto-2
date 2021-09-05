@@ -26,6 +26,8 @@ class RequestPimpinanStore extends FormRequest{
             'alamat'   => 'nullable',
             'id_profil' => 'nullable,exists:tbl_pimpinan,id_profil',
             'foto'   => 'nullable|image|max:2048',
+            'email'   => 'required|unique:tbl_pimpinan,email',
+            'password'   => 'required',
         ];
     }
 }

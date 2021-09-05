@@ -28,28 +28,30 @@
             {{ item.waktu_berakhir | time }}
         </template>
         <template #item.action="{item}">
-			<div>
-				<v-slide-x-transition mode="out-in">
-					<v-card
-						:key="item.id == currentId"
-						flat
-						rounded="pill"
-						class="pa-1 my-2 d-flex shadow flex-no-wrap justify-center"
-                        dark>
-						<v-btn icon color="error darken-1" @click="deleteRow(item)">
-							<v-icon small>mdi-delete</v-icon>
-						</v-btn>
-						<v-btn icon @click="editRow(item)">
-							<v-icon small>mdi-pencil</v-icon>
-						</v-btn>
-					</v-card>
-				</v-slide-x-transition>
-			</div>
+            <template v-if="!isPimpinan">
+                <div>
+                    <v-slide-x-transition mode="out-in">
+                        <v-card
+                            :key="item.id == currentId"
+                            flat
+                            rounded="pill"
+                            class="pa-1 my-2 d-flex shadow flex-no-wrap justify-center"
+                            dark>
+                            <v-btn icon color="error darken-1" @click="deleteRow(item)">
+                                <v-icon small>mdi-delete</v-icon>
+                            </v-btn>
+                            <v-btn icon @click="editRow(item)">
+                                <v-icon small>mdi-pencil</v-icon>
+                            </v-btn>
+                        </v-card>
+                    </v-slide-x-transition>
+                </div>
+            </template>
         </template>
     </v-data-table>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     props: {
         headers: Array,
@@ -70,7 +72,10 @@ export default {
         selected: {
             get(){ return this.value },
             set(val){ this.$emit('input', val) }
-        }
+        },
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan'
+        })
     },
     methods: {
         update(e){

@@ -24,13 +24,13 @@
                 :no-select="noSelect"/>
             <slot v-bind:update="update"></slot>
         </v-card>
-        <v-btn fab bottom fixed right color="indigo" class="mr-4" dark @click="openModalTambah">
+        <v-btn fab bottom fixed right color="indigo" class="mr-4" dark @click="openModalTambah" v-if="!isPimpinan">
             <v-icon>mdi-plus</v-icon>
         </v-btn>
     </div>
 </template>
 <script>
-import { mapActions, mapMutations } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import JadwalTable from '../datatable/JadwalTable.vue'
 import InputPilihHariJadwalGrid from '../form/InputPilihHariJadwalGrid.vue'
 export default {
@@ -105,6 +105,9 @@ export default {
         }
     },
     computed: {
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan',
+        })
     },
     methods: {
         ...mapMutations({

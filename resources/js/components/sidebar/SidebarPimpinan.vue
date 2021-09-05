@@ -63,31 +63,6 @@
 						<v-list-item-title v-text="'Guru'" />
 						<v-list-item-subtitle v-text="'Kelola data guru'" />
 					</v-list-item-content>
-					<v-menu content-class="shadow-lg rounded-lg" open-on-hover right min-width="250" :close-on-content-click="false" :close-on-click="false" open-delay=".5" transition="slide-x-transition">
-						<template #activator="{ attrs, on }">
-							<v-list-item-action v-on="on" v-bind="attrs">
-								<v-icon>mdi-plus</v-icon>
-							</v-list-item-action>
-						</template>
-						<v-list nav>
-							<v-list-item dense link :to="{ name: 'guru.insert' }">
-								<v-list-item-icon>
-									<v-icon>mdi-plus</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Tambah Guru'"/>
-								</v-list-item-content>
-							</v-list-item>
-							<v-list-item dense link :to="{ name: 'guru' }">
-								<v-list-item-icon>
-									<v-icon>mdi-magnify</v-icon>
-								</v-list-item-icon>
-								<v-list-item-content>
-									<v-list-item-title v-text="'Temukan Guru'"/>
-								</v-list-item-content>
-							</v-list-item>
-						</v-list>
-					</v-menu>
 				</v-list-item>
 				<v-list-item dense link color="primary" :to="{ name: 'prasarana' }" exact>
 					<v-list-item-icon>

@@ -1,12 +1,15 @@
 <template>
     <div>
         <router-view/>
-        <prasarana-tambah/>
-        <prasarana-ubah/>
-        <prasarana-hapus/>
+        <template v-if="!isPimpinan">
+            <prasarana-tambah/>
+            <prasarana-ubah/>
+            <prasarana-hapus/>
+        </template>
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import PrasaranaHapus from './PrasaranaHapus.vue'
 import PrasaranaTambah from './PrasaranaTambah.vue'
 import PrasaranaUbah from './PrasaranaUbah.vue'
@@ -16,5 +19,10 @@ export default {
         PrasaranaUbah,
         PrasaranaHapus 
     },
+    computed: {
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan'
+        })
+    }
 }
 </script>

@@ -3,7 +3,7 @@
         <v-app-bar app flat absolute class="white">
             <v-app-bar-nav-icon></v-app-bar-nav-icon>
             <v-toolbar-title>
-                Guru
+                Gambar Kegiatan
             </v-toolbar-title>
         </v-app-bar>
         <v-main>

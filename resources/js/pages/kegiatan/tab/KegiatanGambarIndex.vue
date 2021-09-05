@@ -4,7 +4,7 @@
             Gambar Kegiatan
         </v-card-title>
         <v-fab-transition>
-            <v-btn fab bottom fixed right color="teal" dark :key="$route.name" @click="openModalTambah">
+            <v-btn fab bottom fixed right color="teal" dark :key="$route.name" @click="openModalTambah" v-if="!isPimpinan">
                 <v-icon>mdi-image-plus</v-icon>
             </v-btn>
         </v-fab-transition>
@@ -13,8 +13,10 @@
                 <gambar-kegiatan-list-index :noSelect="true" :headers="headers" no-breadcrumb :dataSession="session"/>
             </v-card>
         </v-card-text>
-        <gambar-kegiatan-tambah/>
-        <gambar-kegiatan-hapus/>
+        <template v-if="!isPimpinan">
+            <gambar-kegiatan-tambah/>
+            <gambar-kegiatan-hapus/>
+        </template>
     </v-card>
 </template>
 <script>
@@ -39,6 +41,7 @@ export default {
     computed: {
         ...mapGetters({
             session: 'kegiatan/gambar/getSession',
+            isPimpinan: 'login/isPimpinan'
         }),
     },
     methods: {

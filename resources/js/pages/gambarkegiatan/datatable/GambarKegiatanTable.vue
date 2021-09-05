@@ -43,7 +43,7 @@
 			</template>
         </template>
         <template #item.created_at="{item}">
-			<div class="d-flex justify-end">
+			<div class="d-flex justify-end" v-if="!isPimpinan">
 				<v-slide-x-transition mode="out-in">
 					<v-card
 						:key="item.id == currentId"
@@ -61,7 +61,7 @@
     </v-data-table>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     props: {
         headers: Array,
@@ -82,7 +82,10 @@ export default {
         selected: {
             get(){ return this.value },
             set(val){ this.$emit('input', val) }
-        }
+        },
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan'
+        })
     },
     methods: {
         update(e){

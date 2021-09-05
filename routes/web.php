@@ -35,6 +35,10 @@ Route::group(["prefix"=>"/u/guru", "middleware"=>"auth:guru"], function(){
     Route::get('/', 'GuruController@index')->name('guru');
     Route::get('/{any}', 'GuruController@index')->where('any', '.*');
 });
+Route::group(["prefix"=>"/u/pimpinan", "middleware"=>"auth:pimpinan"], function(){
+    Route::get('/', 'PimpinanController@index')->name('pimpinan');
+    Route::get('/{any}', 'PimpinanController@index')->where('any', '.*');
+});
 Route::group(["prefix"=>"/print"], function(){
     Route::group(["prefix"=>"/rekap", "middleware"=>"auth:web"], function(){
         Route::get('/siswa', 'prints\RekapController@siswa');
@@ -50,3 +54,4 @@ Auth::routes([
     'register' => false
 ]);
 Route::post('login/guru', 'AuthGuru\LoginController@login')->name('login.guru');
+Route::post('login/pimpinan', 'AuthPimpinan\LoginController@login')->name('login.pimpinan');

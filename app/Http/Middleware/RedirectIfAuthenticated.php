@@ -21,6 +21,8 @@ class RedirectIfAuthenticated
             return redirect(RouteServiceProvider::HOME);
         } else if(Auth::guard('guru')->check()){
             return redirect(RouteServiceProvider::HOME_GURU);
+        } else if(Auth::guard('pimpinan')->check()){
+            return redirect(RouteServiceProvider::HOME_PIMPINAN);
         }
 
         return $next($request);

@@ -45,6 +45,10 @@ return [
             'driver'    => 'session',
             'provider'  => 'guru',
         ],
+        'pimpinan' => [
+            'driver'    => 'session',
+            'provider'  => 'pimpinan',
+        ],
 
         'api' => [
             // 'driver' => 'token',
@@ -57,6 +61,13 @@ return [
             // 'driver' => 'token',
             'driver' => 'passport',
             'provider' => 'guru',
+            'hash' => false,
+        ],
+
+        'api_pimpinan' => [
+            // 'driver' => 'token',
+            'driver' => 'passport',
+            'provider' => 'pimpinan',
             'hash' => false,
         ],
     ],
@@ -86,6 +97,10 @@ return [
         'guru' => [
             'driver' => 'eloquent',
             'model' => App\Guru::class,
+        ],
+        'pimpinan' => [
+            'driver' => 'eloquent',
+            'model' => App\Pimpinan::class,
         ],
 
         // 'users' => [

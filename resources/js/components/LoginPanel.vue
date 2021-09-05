@@ -90,6 +90,7 @@ export default {
                     this.loginGuru(form);
                     break;
                 case 2:
+                    this.loginPimpinan(form);
                     break;
             }
         },
@@ -116,6 +117,25 @@ export default {
             this.loading = true
             let data = new FormData(form.target);
             let res = await axios.post(this.action['guru'], data).catch(e => {
+                if(e.response.status == 422)
+                    this.errors = e.response.data.errors
+                if(e.response.status == 429)
+                    this.errors = { email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit'] }
+            })
+            this.loading = false
+            if(res){
+                window.localStorage.setItem('authToken', res.data.token)
+                this.show = false
+                setTimeout(()=>{
+                    window.history.pushState({}, "Panel Admin", "/admin")
+                    window.history.go();
+                }, 250)
+            }
+        },
+        async loginPimpinan(form){
+            this.loading = true
+            let data = new FormData(form.target);
+            let res = await axios.post(this.action['pimpinan'], data).catch(e => {
                 if(e.response.status == 422)
                     this.errors = e.response.data.errors
                 if(e.response.status == 429)

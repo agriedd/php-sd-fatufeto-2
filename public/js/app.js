@@ -5125,6 +5125,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           break;
 
         case 2:
+          this.loginPimpinan(form);
           break;
       }
     },
@@ -5207,6 +5208,46 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }, _callee2);
       }))();
+    },
+    loginPimpinan: function loginPimpinan(form) {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var data, res;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this3.loading = true;
+                data = new FormData(form.target);
+                _context3.next = 4;
+                return axios.post(_this3.action['pimpinan'], data)["catch"](function (e) {
+                  if (e.response.status == 422) _this3.errors = e.response.data.errors;
+                  if (e.response.status == 429) _this3.errors = {
+                    email: ['Aktivitas anda mencurigakan', 'harap coba kembali dalam 1 menit']
+                  };
+                });
+
+              case 4:
+                res = _context3.sent;
+                _this3.loading = false;
+
+                if (res) {
+                  window.localStorage.setItem('authToken', res.data.token);
+                  _this3.show = false;
+                  setTimeout(function () {
+                    window.history.pushState({}, "Panel Admin", "/admin");
+                    window.history.go();
+                  }, 250);
+                }
+
+              case 7:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     }
   }),
   watch: {
@@ -5220,7 +5261,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.tooltip && this.tooltip.update();
   },
   mounted: function mounted() {
-    var _this3 = this;
+    var _this4 = this;
 
     this.$nextTick(function (e) {
       window.scrollTo({
@@ -5228,16 +5269,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         behavior: 'smooth'
       });
 
-      var element = _this3.$el.querySelector('.nav-scroller');
+      var element = _this4.$el.querySelector('.nav-scroller');
 
-      _this3.tooltip = new bootstrap__WEBPACK_IMPORTED_MODULE_2__["Tooltip"](element, {
+      _this4.tooltip = new bootstrap__WEBPACK_IMPORTED_MODULE_2__["Tooltip"](element, {
         placement: 'top',
         trigger: 'manual',
         title: 'Gunakan navigasi untuk mengubah form',
         popperConfig: function popperConfig(defaultBsPopperConfig) {}
       });
 
-      _this3.tooltip.show();
+      _this4.tooltip.show();
     });
   }
 });

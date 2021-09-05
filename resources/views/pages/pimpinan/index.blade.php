@@ -1,4 +1,4 @@
-@extends('layouts.app-guru')
+@extends('layouts.app-pimpinan')
 
 @push('head')
 

@@ -3,6 +3,8 @@
     "/css/app.css": "/css/app.css",
     "/css/app-admin.css": "/css/app-admin.css",
     "/css/app-guru.css": "/css/app-guru.css",
+    "/css/app-pimpinan.css": "/css/app-pimpinan.css",
     "/js/app-admin.js": "/js/app-admin.js",
-    "/js/app-guru.js": "/js/app-guru.js"
+    "/js/app-guru.js": "/js/app-guru.js",
+    "/js/app-pimpinan.js": "/js/app-pimpinan.js"
 }

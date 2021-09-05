@@ -17,4 +17,6 @@ mix
     .js('resources/js/app-admin.js', 'public/js')
     .sass('resources/sass/app-admin.scss', 'public/css')
     .js('resources/js/app-guru.js', 'public/js')
-    .sass('resources/sass/app-guru.scss', 'public/css');
+    .sass('resources/sass/app-guru.scss', 'public/css')
+    .js('resources/js/app-pimpinan.js', 'public/js')
+    .sass('resources/sass/app-pimpinan.scss', 'public/css');

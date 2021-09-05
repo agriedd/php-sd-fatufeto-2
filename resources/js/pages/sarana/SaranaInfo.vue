@@ -59,7 +59,7 @@
                                                 <v-icon>mdi-package-variant</v-icon>
                                             </v-avatar>
                                             <v-spacer/>
-                                            <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
+                                            <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false" v-if="!isPimpinan">
                                                 <template #activator="{ attrs, on }">
                                                     <v-btn icon v-on.prevent="on" v-bind="attrs">
                                                         <v-icon>mdi-dots-grid</v-icon>
@@ -226,6 +226,7 @@ export default {
         }),
         ...mapGetters({
             session: 'sarana/getSession',
+            isPimpinan: 'login/isPimpinan'
         }),
         id(){
             return this.$route.params.id_sarana

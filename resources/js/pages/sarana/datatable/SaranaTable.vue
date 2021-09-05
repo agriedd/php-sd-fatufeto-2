@@ -33,12 +33,14 @@
 						rounded="pill"
 						class="pa-1 d-flex shadow flex-no-wrap justify-center"
 						color="grey lighten-4">
-						<v-btn icon color="error darken-1" @click="deleteRow(item)">
-							<v-icon small>mdi-delete</v-icon>
-						</v-btn>
-						<v-btn icon @click="editRow(item)">
-							<v-icon small>mdi-pencil</v-icon>
-						</v-btn>
+                        <template v-if="!isPimpinan">
+                            <v-btn icon color="error darken-1" @click="deleteRow(item)">
+                                <v-icon small>mdi-delete</v-icon>
+                            </v-btn>
+                            <v-btn icon @click="editRow(item)">
+                                <v-icon small>mdi-pencil</v-icon>
+                            </v-btn>
+                        </template>
 						<v-btn icon color="primary" @click="rowClick(item)">
 							<v-icon small>mdi-chevron-right</v-icon>
 						</v-btn>
@@ -49,7 +51,7 @@
     </v-data-table>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     props: {
         headers: Array,
@@ -70,7 +72,10 @@ export default {
         selected: {
             get(){ return this.value },
             set(val){ this.$emit('input', val) }
-        }
+        },
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan'
+        })
     },
     methods: {
         update(e){

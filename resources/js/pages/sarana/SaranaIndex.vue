@@ -49,7 +49,7 @@
                                         <v-card-text>
                                             <div class="d-flex w-100">
                                                 <v-spacer/>
-                                                <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
+                                                <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false" v-if="!isPimpinan">
                                                     <template #activator="{ attrs, on }">
                                                         <v-btn icon v-on="on" v-bind="attrs" @click.prevent="">
                                                             <v-icon>mdi-dots-grid</v-icon>
@@ -122,7 +122,7 @@
                                     </v-card>
                                 </div>
                             </div>
-                            <v-card color="pink lighten-5 overflow-hidden" rounded="xl" flat link @click="openModalTambah">
+                            <v-card color="pink lighten-5 overflow-hidden" rounded="xl" flat link @click="openModalTambah" v-if="!isPimpinan">
                                 <div style="min-height: 300px" class="d-flex">
                                     <div class="w-100">
                                         <div class="content-middle">
@@ -174,10 +174,11 @@ export default {
         ...mapState({}),
         ...mapGetters({
             session: 'sarana/getSession',
+            isPimpinan: 'login/isPimpinan'
         }),
         exists(){
             return this.total > 0
-        }
+        },
     },
     watch: {
         '$route.name': function(val){

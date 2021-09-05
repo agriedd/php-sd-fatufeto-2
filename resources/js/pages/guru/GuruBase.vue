@@ -1,12 +1,15 @@
 <template>
     <div>
         <router-view/>
-        <guru-tambah/>
-        <guru-ubah/>
-        <guru-hapus/>
+        <template v-if="!isPimpinan">
+            <guru-tambah/>
+            <guru-ubah/>
+            <guru-hapus/>
+        </template>
     </div>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import GuruHapus from './GuruHapus.vue'
 import GuruTambah from './GuruTambah.vue'
 import GuruUbah from './GuruUbah.vue'
@@ -16,5 +19,10 @@ export default {
         GuruUbah, 
         GuruHapus 
     },
+    computed: {
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan'
+        })
+    }
 }
 </script>

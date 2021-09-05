@@ -17,7 +17,7 @@
                     </v-list-item-title>
                 </v-list-item-content>
             </v-list-item>
-            <v-list-item @click="resetPasswordGuru" link>
+            <v-list-item @click="resetPasswordGuru" link v-if="!isPimpinan">
                 <v-list-item-icon>
                     <v-icon>mdi-key</v-icon>
                 </v-list-item-icon>
@@ -117,7 +117,7 @@
     </v-card>
 </template>
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
     props: {
         item: Object
@@ -129,7 +129,10 @@ export default {
          */
         id: function () {
             return this.$route.params.id_guru
-        }
+        },
+        ...mapGetters({
+            isPimpinan: 'login/isPimpinan'
+        })
     },
     methods: {
         ...mapActions({

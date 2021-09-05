@@ -22,6 +22,14 @@
                             </div>
                         </v-card-text>
                     </v-card>
+                    <v-card link color="yellow" class="shadow-sm" rounded="xl" :href="rekap_jadwal" target="blank">
+                        <v-card-text class="content-middle">
+                            <v-icon x-large>mdi-download</v-icon>
+                            <div class="text-center px-10 pt-4">
+                                Unduh Jadwal Pelajaran Tahun {{ tahun }}
+                            </div>
+                        </v-card-text>
+                    </v-card>
                 </div>
             </v-card-text>
             <slot v-bind:update="update"></slot>
@@ -81,6 +89,9 @@ export default {
         },
         rekap_guru(){
             return `/print/rekap/guru`
+        },
+        rekap_jadwal(){
+            return `/print/rekap/jadwal`
         },
     },
     methods: {

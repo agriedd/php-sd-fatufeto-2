@@ -309,7 +309,7 @@ export default {
     },
 	computed: {
         ...mapGetters({
-            total_sekolah: 'sekolah/getTotal'
+            total_sekolah: 'sekolah/getTotal',
         }),
 		warning_sekolah(){
 			return this.total_sekolah <= 0

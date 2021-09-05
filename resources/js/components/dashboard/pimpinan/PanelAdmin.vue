@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<v-app>
-			<sidebar-admin/>
+			<sidebar-pimpinan/>
 			<router-view />
 			<logout-admin/>
 			<image-viewer/>
@@ -13,8 +13,8 @@
 import ImageViewer from '../../image/ImageViewer.vue'
 import LogoutAdmin from '../../login/LogoutAdmin.vue'
 import Notification from '../../notification/Notification.vue'
-import SidebarAdmin from '../../sidebar/SidebarAdmin.vue'
+import SidebarPimpinan from '../../sidebar/SidebarPimpinan.vue'
 export default {
-  	components: { ImageViewer, Notification, LogoutAdmin, SidebarAdmin },
+  	components: { ImageViewer, Notification, LogoutAdmin, SidebarPimpinan },
 }
 </script>

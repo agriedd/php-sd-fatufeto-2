@@ -60,7 +60,7 @@
                                         <v-icon>mdi-pin</v-icon>
                                     </v-avatar>
                                     <v-spacer/>
-                                    <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false">
+                                    <v-menu open-on-click content-class="shadow-sm rounded-lg" :close-on-content-click="false" v-if="!isPimpinan">
                                         <template #activator="{ attrs, on }">
                                             <v-btn icon v-on="on" v-bind="attrs" @click.prevent="">
                                                 <v-icon>mdi-dots-vertical</v-icon>
@@ -129,7 +129,7 @@
                                 </div>
                             </v-card-text>
                         </v-card>
-                        <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="openModalTambah" v-if="!exists">
+                        <v-card color="grey lighten-4 overflow-hidden" rounded="xl" flat link @click="openModalTambah" v-if="!exists && !isPimpinan">
                             <div style="min-height: 300px" class="d-flex">
                                 <div class="w-100">
                                     <div class="content-middle">
@@ -171,6 +171,7 @@ export default {
             items: state => state.sekolah.items,
         }),
         ...mapGetters({
+            isPimpinan: 'login/isPimpinan',
             total_sekolah: 'sekolah/getTotal',
             session: 'sekolah/getSession',
         }),

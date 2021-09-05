@@ -15,6 +15,8 @@ class UserController extends Controller
             return new AdminCollection(Auth::guard('api')->user());
         if(Auth::guard('api_guru')->check())
             return new GuruCollection(Auth::guard('api_guru')->user());
+        if(Auth::guard('api_pimpinan')->check())
+            return new GuruCollection(Auth::guard('api_pimpinan')->user());
         return response([
             "data"      => null,
             "message"   => "Masalah autentikasi"

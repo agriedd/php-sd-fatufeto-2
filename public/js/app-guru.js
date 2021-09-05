@@ -91519,21 +91519,8 @@ router.beforeEach( /*#__PURE__*/function () {
 
               return response;
             }, function (error) {
-              // if(error.response.status == 401){
-              //     localStorage.removeItem('authToken')
-              //     // store.commit('app/SET_LOADING_APP', false)
-              //     if(to.path == '/admin/401'){
-              //         return null
-              //     }
-              //     next({ path: '/admin/401' })
-              //     return null
-              // } else if(error.response.status == 403){
-              //     store.dispatch('notifikasi/show', {
-              //         message: error.message
-              //     })
-              // }
               return Promise.reject(error);
-            }); // store.commit('SETLOADINGAPP', true)
+            });
 
             if (!(to.path == '/admin/401')) {
               _context.next = 4;
@@ -94848,7 +94835,14 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /* harmony default export */ __webpack_exports__["default"] = ({
   namespaced: true,
   state: {},
-  getters: {},
+  getters: {
+    isAdmin: function isAdmin(state, getters, root) {
+      return getters['admin/exists'];
+    },
+    isPimpinan: function isPimpinan(state, getters, root) {
+      return getters['pimpinan/exists'];
+    }
+  },
   actions: {},
   mutations: {},
   modules: {
@@ -95079,6 +95073,135 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
             return function (_x7, _x8) {
               return _ref6.apply(this, arguments);
+            };
+          }());
+        },
+        updateSession: function updateSession(context, data) {
+          context.commit('SET_SESSION_CODE', data || new Date().getTime());
+        }
+      },
+      mutations: {
+        SET_ERRORS: function SET_ERRORS(state, payload) {
+          state.errors = payload;
+        },
+        CLEAR_ERROR: function CLEAR_ERROR(state, payload) {
+          state.errors[payload] = null;
+        },
+        CLEAR_ERRORS: function CLEAR_ERRORS(state, payload) {
+          state.errors = {};
+        },
+        SET_ID: function SET_ID(state, payload) {
+          state.selected.id = payload;
+        },
+        SET_USER: function SET_USER(state, payload) {
+          state.user = payload;
+        },
+        SET_SESSION_CODE: function SET_SESSION_CODE(state, payload) {
+          state.session.code = payload;
+        },
+        SET_LOGOUT_MODAL: function SET_LOGOUT_MODAL(state, payload) {
+          state.modal.logout = payload;
+        }
+      }
+    },
+    pimpinan: {
+      namespaced: true,
+      state: {
+        data: [],
+        user: {},
+        loading: false,
+        selected: {
+          id: null,
+          ids: [],
+          data: null,
+          datas: []
+        },
+        modal: {
+          logout: false
+        },
+        errors: {},
+        session: {
+          code: 0
+        }
+      },
+      getters: {
+        getUser: function getUser(state) {
+          return state.user;
+        },
+        exists: function exists(state) {
+          var exists = false;
+          if (state.user.id_pimpinan) exists = true;
+          return exists;
+        }
+      },
+      actions: {
+        check: function check(context, _ref7) {
+          var _ref7$token = _ref7.token,
+              token = _ref7$token === void 0 ? null : _ref7$token;
+          return new Promise( /*#__PURE__*/function () {
+            var _ref8 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee5(resolve, reject) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee5$(_context5) {
+                while (1) {
+                  switch (_context5.prev = _context5.next) {
+                    case 0:
+                      _context5.next = 2;
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["api"])('v1/pimpinan/user/authorize'), {}, {
+                        headers: {
+                          Authorization: "Bearer ".concat(token)
+                        }
+                      })["catch"](function (e) {
+                        return reject(e);
+                      });
+
+                    case 2:
+                      res = _context5.sent;
+                      if (res) resolve(res);
+
+                    case 4:
+                    case "end":
+                      return _context5.stop();
+                  }
+                }
+              }, _callee5);
+            }));
+
+            return function (_x9, _x10) {
+              return _ref8.apply(this, arguments);
+            };
+          }());
+        },
+        logout: function logout(context, data) {
+          return new Promise( /*#__PURE__*/function () {
+            var _ref9 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee6(resolve, reject) {
+              var res;
+              return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee6$(_context6) {
+                while (1) {
+                  switch (_context6.prev = _context6.next) {
+                    case 0:
+                      _context6.next = 2;
+                      return axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(Object(_config__WEBPACK_IMPORTED_MODULE_2__["host"])('logout'), {}, {
+                        headers: {
+                          'X-CSRF-TOKEN': _config__WEBPACK_IMPORTED_MODULE_2__["csrf"]
+                        }
+                      })["catch"](function (e) {
+                        return reject(e);
+                      });
+
+                    case 2:
+                      res = _context6.sent;
+                      if (res) resolve(res);
+
+                    case 4:
+                    case "end":
+                      return _context6.stop();
+                  }
+                }
+              }, _callee6);
+            }));
+
+            return function (_x11, _x12) {
+              return _ref9.apply(this, arguments);
             };
           }());
         },

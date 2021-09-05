@@ -29,6 +29,15 @@ Route::prefix('v1')->group(function(){
     });
 
     
+    Route::group(['prefix' => '/pimpinan', 'middleware' => ['auth:api_pimpinan']], function(){
+        Route::group(['prefix' => 'user'], function(){
+            /**
+             * authentikasi
+             * 
+             */
+            Route::post('authorize', 'api\v1\UserController@authorization');
+        });
+    });
     Route::group(['prefix' => '/guru', 'middleware' => ['auth:api_guru']], function(){
         Route::group(['prefix' => 'user'], function(){
             /**

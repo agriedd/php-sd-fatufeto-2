@@ -21,10 +21,11 @@
                 v-model="item.jenis_kelamin" 
                 :errors="errors" 
                 @change="errors.jenis_kelamin = null"/>
-            <input-foto-guru
+            <v-spacer/>
+            <!-- <input-foto-guru
                 v-model="item"
                 :errors="errors"
-                :foto="item.foto ? item.foto : {}"/>
+                :foto="item.foto ? item.foto : {}"/> -->
             <v-text-field
                 dense
                 outlined

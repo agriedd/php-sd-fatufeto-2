@@ -8,10 +8,13 @@
 					<div class="col">
 						Nama
 					</div>
-					<div class="col-3">
+					<div class="col">
+						NIP
+					</div>
+					<div class="col">
 						Jenis Kelamin
 					</div>
-					<div class="col-3 d-none d-sm-block">
+					<div class="col d-none d-sm-block">
 						Keterangan
 					</div>
 				</div>
@@ -41,14 +44,21 @@
 									</div>
 								</div>
 							</div>
-							<div class="col-3">
+							<div class="col">
+								<div class="content-middle align-items-start">
+									<small>
+										{{ guru.nip }}
+									</small>
+								</div>
+							</div>
+							<div class="col">
 								<div class="content-middle align-items-start">
 									<small>
 										{{ guru.jenis_kelamin == 'l' ? 'Laki-laki' : 'Perempuan' }}
 									</small>
 								</div>
 							</div>
-							<div class="col-3 d-none d-sm-block">
+							<div class="col d-none d-sm-block">
 								<div class="content-middle align-items-start">
 									<small v-if="guru.kelas">
 										Walikelas {{ guru.kelas.nama }}

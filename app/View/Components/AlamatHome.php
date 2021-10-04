@@ -15,7 +15,7 @@ class AlamatHome extends Component
 
     public function render(){
         return view('components.alamat-home', [
-            'alamat' => $this->alamat
+            'alamat' => $this->alamat,
         ]);
     }
 }

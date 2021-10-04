@@ -5404,6 +5404,16 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5653,6 +5663,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -30466,7 +30485,23 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-3" }, [
+                    _c("div", { staticClass: "col" }, [
+                      _c(
+                        "div",
+                        { staticClass: "content-middle align-items-start" },
+                        [
+                          _c("small", [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\t\t" +
+                                _vm._s(guru.nip) +
+                                "\n\t\t\t\t\t\t\t\t"
+                            )
+                          ])
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30486,7 +30521,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-3 d-none d-sm-block" }, [
+                    _c("div", { staticClass: "col d-none d-sm-block" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30608,11 +30643,15 @@ var staticRenderFns = [
               _vm._v("\n\t\t\t\t\tNama\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-3" }, [
+            _c("div", { staticClass: "col" }, [
+              _vm._v("\n\t\t\t\t\tNIP\n\t\t\t\t")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col" }, [
               _vm._v("\n\t\t\t\t\tJenis Kelamin\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-3 d-none d-sm-block" }, [
+            _c("div", { staticClass: "col d-none d-sm-block" }, [
               _vm._v("\n\t\t\t\t\tKeterangan\n\t\t\t\t")
             ])
           ])
@@ -30873,7 +30912,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-2" }, [
+                    _c("div", { staticClass: "col" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30893,7 +30932,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+                    _c("div", { staticClass: "col d-none d-sm-block" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30907,7 +30946,7 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+                    _c("div", { staticClass: "col d-none d-sm-block" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -30921,7 +30960,21 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+                    _c("div", { staticClass: "col d-none d-sm-block" }, [
+                      _c(
+                        "div",
+                        { staticClass: "content-middle align-items-start" },
+                        [
+                          _vm._v(
+                            "\n\t\t\t\t\t\t\t\t" +
+                              _vm._s(siswa.alamat) +
+                              "\n\t\t\t\t\t\t\t"
+                          )
+                        ]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col d-none d-sm-block" }, [
                       _c(
                         "div",
                         { staticClass: "content-middle align-items-start" },
@@ -31041,19 +31094,23 @@ var staticRenderFns = [
               _vm._v("\n\t\t\t\t\tNama\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-2" }, [
+            _c("div", { staticClass: "col" }, [
               _vm._v("\n\t\t\t\t\tJenis Kelamin\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+            _c("div", { staticClass: "col d-none d-sm-block" }, [
               _vm._v("\n\t\t\t\t\tNIS\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+            _c("div", { staticClass: "col d-none d-sm-block" }, [
               _vm._v("\n\t\t\t\t\tNISN\n\t\t\t\t")
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-2 d-none d-sm-block" }, [
+            _c("div", { staticClass: "col d-none d-sm-block" }, [
+              _vm._v("\n\t\t\t\t\talamat\n\t\t\t\t")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col d-none d-sm-block" }, [
               _vm._v("\n\t\t\t\t\tKeterangan\n\t\t\t\t")
             ])
           ])
@@ -46463,11 +46520,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-admin.scss */"./resources/sass/app-admin.scss");
-__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-guru.scss */"./resources/sass/app-guru.scss");
-module.exports = __webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-pimpinan.scss */"./resources/sass/app-pimpinan.scss");
+__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\js\app.js */"./resources/js/app.js");
+__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-admin.scss */"./resources/sass/app-admin.scss");
+__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-guru.scss */"./resources/sass/app-guru.scss");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-pimpinan.scss */"./resources/sass/app-pimpinan.scss");
 
 
 /***/ })

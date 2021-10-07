@@ -263,3 +263,11 @@ a{
     43% { transform: rotate(0); }
     100% { transform: rotate(0); }
 }
+
+.bg-gradients{
+    background-image: url('/img/3px-tile.png'), linear-gradient(45deg, #FF6766, rgb(19, 18, 56))!important;
+}
+
+.shadow-lg{
+    box-shadow: 0rem 2rem 2rem rgba($cyan-700, .15)!important;
+}

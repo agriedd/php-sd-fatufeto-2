@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark shadow" style="position: sticky; top: 0px; z-index: 10; background: var(--bs-indigo)">
+<nav class="navbar navbar-expand-lg navbar-dark shadow py-3" style="position: sticky; top: 0px; z-index: 10; background-image: url('/img/3px-tile.png'), linear-gradient(45deg, #FF6766, rgb(19, 18, 56))">
     <div class="container">
         <div></div>
         <button class="btn btn-md btn-link text-white d-lg-none d-block" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -7,7 +7,7 @@
             </svg>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('/') ? 'active' : null }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
@@ -68,9 +68,9 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li> -->
             </ul>
-            <form class="d-flex" action="{{ route('home.search') }}">
+            {{-- <form class="d-flex" action="{{ route('home.search') }}">
                 <input class="form-control me-2 rounded-pill border-0 shadow-none text-light" type="search" placeholder="Search" aria-label="Search" style="background: rgba(0,0,0,.25)" name="q" value="{{ request('q') }}">
-            </form>
+            </form> --}}
         </div>
     </div>
 </nav>

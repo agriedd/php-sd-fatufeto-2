@@ -12142,3 +12142,11 @@ a.card {
   }
 }
 
+.bg-gradients {
+  background-image: url("/img/3px-tile.png"), linear-gradient(45deg, #FF6766, #131238) !important;
+}
+
+.shadow-lg {
+  box-shadow: 0rem 2rem 2rem rgba(65, 107, 141, 0.15) !important;
+}
+

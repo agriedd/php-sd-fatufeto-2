@@ -13,7 +13,7 @@
     @php
         $list = ['large', null, null, 'wide', null, null, 'large'];
     @endphp
-    <div class="galery-home">
+    <div class="galery-home" style="gap: .25rem">
         @foreach ($list_galeri as $index => $galeri)
             <a href="{{ route('home.kegiatan.show', [
                 'id_kegiatan'   => $galeri->id_kegiatan,

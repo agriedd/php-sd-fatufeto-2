@@ -11,14 +11,14 @@
         <div class="row g-0">
             <div class="col-lg-3">
                 <div class="sticky-top px-3 pb-3" style="z-index: 0; top: 80px">
-                    <div class="card" style="border-radius: 1.5rem">
+                    <div class="card border-0 shadow-sm" style="border-radius: 1.5rem">
                         <div class="card-body py-5">
                             <div class="d-flex justify-content-between">
                                 <div>
                                     <div class="small">
-                                        Jumlah prasarana
+                                        Jumlah jenis prasarana
                                     </div>
-                                    <div class="display-4">
+                                    <div class="display-4 fw-bold">
                                         {{ $prasarana->total() }}
                                     </div>
                                 </div>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md">
+            <div class="col-md px-3">
                 <div class="mb-3">
                     <form action="" method="GET">
                         <div class="form-group">

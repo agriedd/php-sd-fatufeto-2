@@ -1,4 +1,9 @@
 <div>
+    <div>
+        <h3 class="mb-5 px-3">
+            Jadwal Pelajaran T.A. {{ now()->format('Y') }}/{{ now()->addYear()->format('Y') }}
+        </h3>
+    </div>
     <div class="table-responsive">
         <table class="table table-striped table-bordered">
             <thead>

@@ -97,14 +97,14 @@ a{
         & > a{
             background-position: center;
             background-size: cover;
-            border-radius: 1.5rem;
+            border-radius: .5rem;
 
             &.wide{
                 grid-column-end: span 2;
             }
             &.large{
-                grid-column-end: span 2;
-                grid-row-end: span 2;
+                grid-column-end: span 3;
+                grid-row-end: span 3;
             }
         }
     }

@@ -11,7 +11,7 @@
 @endif
 <div class="mb-3">
     @php
-        $list = ['large', null, null, 'wide', null, null, 'large'];
+        $list = ['large', null, null, null, null, 'large', null, null, 'wide', 'wide'];
     @endphp
     <div class="galery-home" style="gap: .25rem">
         @foreach ($list_galeri as $index => $galeri)

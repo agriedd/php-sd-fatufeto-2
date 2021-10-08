@@ -26,6 +26,7 @@
                     $nomor = 0;
                     $last_key_waktu = 0;
                 @endphp
+                {{-- @dd($kelas) --}}
                 @foreach ($kelas as $key_waktu => $waktu)
                     @php
                         $nomor++;
@@ -37,12 +38,14 @@
                                 @if($waktu_counter == 1)
                                     <tr>
                                         <td rowspan="{{ count($kelas) }}" class="text-center">
-                                            <h5>
-                                                @php
-                                                    $nama_kelas = preg_replace("/kelas\s/i", "", $item->kelas->nama);
-                                                @endphp
-                                                {{ $nama_kelas }}
-                                            </h5>
+                                            @if(count($item->kelas))
+                                                <h5>
+                                                    @php
+                                                        $nama_kelas = preg_replace("/^(kelas\s*)([^-]+)(.*)$/i", "$2", $item->kelas[0]->nama);
+                                                    @endphp
+                                                    {{ $nama_kelas }}
+                                                </h5>
+                                            @endif
                                         </td>
                                 @endif
                                 @if($last_key_waktu != $key_waktu)

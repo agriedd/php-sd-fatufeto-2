@@ -77,7 +77,7 @@
                                                                 </v-list-item-title>
                                                             </v-list-item-content>
                                                         </v-list-item>
-                                                        <v-list-item dense link @click="hapusInfoJadwal(item.jadwal)">
+                                                        <v-list-item dense link @click="hapusInfoJadwal(item.id_jadwal)">
                                                             <v-list-item-icon>
                                                                 <v-icon>mdi-delete</v-icon>
                                                             </v-list-item-icon>

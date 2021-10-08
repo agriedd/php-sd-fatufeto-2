@@ -43,10 +43,35 @@ class RekapController extends Controller{
             ->orderBy('tbl_jadwal.id_kelas', 'desc')
             ->orderBy('tbl_jadwal.waktu_mulai', 'asc')
             ->get();
-        $jadwal = $jadwal->groupBy(['id_kelas', 'waktu_mulai'])->sortDesc();
+        $jadwal = $jadwal->sortBy(function($jadwal){
+            $kelas_a = $jadwal->kelas[0]->nama ?? 'M';
+            $kelas_a = preg_replace('/^(kelas\s+)([^-]+)(.*)$/i', "$2", $kelas_a);
+            return $this->romanToDecimal($kelas_a) - 1;
+        });
+        $jadwal = $jadwal->groupBy(['id_kelas', 'waktu_mulai']);
         $mpdf->WriteHTML(view('rekap/jadwal', [
             'items' => $jadwal
         ])->render());
         return $mpdf->Output('Jadwal.pdf', 'I');
+    }
+    /**
+     * function to convert roman to decimal
+     * 
+     */
+    public function romanToDecimal($roman){
+        $romans = array(
+            'I' => 1,
+            'V' => 5,
+            'X' => 10,
+            'L' => 50,
+            'C' => 100,
+            'D' => 500,
+            'M' => 1000
+        );
+        $result = 0;
+        for($i = 0; $i < strlen($roman); $i++){
+            $result += $romans[$roman[$i]];
+        }
+        return $result;
     }
 }

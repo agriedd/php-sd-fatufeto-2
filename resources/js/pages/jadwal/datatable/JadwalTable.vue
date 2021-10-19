@@ -14,8 +14,10 @@
         v-model="selected"
         :mobile-breakpoint="0">
         <template #item.id_kelas="{item}">
-            <div v-if="item.kelas">
-                {{ item.kelas.nama }}
+            <div v-if="item.kelas.length">
+                <div v-for="kelas in item.kelas">
+                    {{ kelas.nama }}
+                </div>
             </div>
         </template>
         <template #item.jumlah="{item}">

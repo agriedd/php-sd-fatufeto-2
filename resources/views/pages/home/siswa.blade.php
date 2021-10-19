@@ -51,7 +51,7 @@
             </div>
         </div>
     </div>
-    <div class="" style="background: linear-gradient(45deg, rgb(101 116 205 / 90%) 70%, transparent), url('{{ asset('img/index.jpg') }}'); background-position: 0%; background-size: cover; background-attachment: fixed">
+    <div class=" bg-gradients">
         <div class="row g-0">
             <div class="col-2"></div>
             <div class="col-md">

@@ -7,6 +7,7 @@ use App\Http\Requests\RequestJadwalStore;
 use App\Http\Requests\RequestJadwalUpdate;
 use App\Http\Resources\JadwalCollection;
 use App\Jadwal;
+use App\Kelas;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -26,18 +27,30 @@ class JadwalController extends Controller{
             $query->where('hari', '=', "{$search}");
         })
         ->when(request('id_kelas'), function($query, $search){
-            $query->where('id_kelas', '=', "{$search}");
+            $query->whereHas('kelas', function($query) use ($search){
+                // dd($search);
+                $query->where('jadwal_kelas.id_kelas', '=', $search);
+            });
+            // $query->where('id_kelas', '=', "{$search}");
         })
         ->when(request('search'), function($query, $search){
             $query->where('mata_pelajaran', 'like', "%{$search}%");
         })
+        // dd($data);
         ->paginate(request('itemsPerPage') ?? 10);
         return JadwalCollection::collection($data);
     }
 
     public function store(RequestJadwalStore $request){
+        
         $data = collect($request->validated());
         $jadwal = Jadwal::create($data->all());
+        
+        $kelas = Kelas::find($data->get('id_kelas'));
+        $kelas_trimmed = preg_replace("/^(kelas\s*[^-_\s]+)(.*)$/i", "$1", $kelas->nama);
+        $kelas_sama_tingkat = Kelas::whereRaw("REGEXP_LIKE(nama, '^{$kelas_trimmed}[^a-zA-Z0-9]+')")->pluck('id_kelas')->toArray();
+        $jadwal->kelas()->attach($kelas_sama_tingkat);
+
         $collection = new JadwalCollection($jadwal);
         return new Response($collection, $jadwal ? Response::HTTP_CREATED : Response::HTTP_INTERNAL_SERVER_ERROR);
     }

@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="row g-0 bg-primary">
+    <div class="row g-0 bg-gradients">
         <div class="col-8 offset-2">
             <x-footer-home></x-footer-home>
         </div>

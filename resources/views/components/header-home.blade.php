@@ -7,7 +7,7 @@
     </div>
 </div> --}}
 <div class="shadow-sm bg-white" style="background-image: url('{{ asset('img/index.jpg') }}'); background-position: 0px 140%; background-size: cover; background-attachment: fixed">
-    <div class="" style="background: linear-gradient(45deg, rgb(0 0 0 / 90%) 60%, transparent 100%);">
+    <div class="" style="background: linear-gradient(45deg, rgb(0 0 0 / 70%) 30%, transparent 100%);">
         <div class="container">
             <header class="header">
                 <div class="px-3">

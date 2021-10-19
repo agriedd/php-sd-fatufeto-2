@@ -1,5 +1,5 @@
-<div class="p-3" style="position: sticky; top: 55px; bottom: 0px">
-    <a href="#sambutan" class="card border-0 p-3 mb-3 text-dark" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
+<div class="p-3 rounded-lg" style="position: sticky; top: calc(55px + 1rem); bottom: 0px; min-height: calc(100vh - 55px);">
+    <a href="#sambutan" class="card p-3 text-muted border-bottom border-0" style="background-image: url('/img/asfalt-light.png'), linear-gradient(45deg, rgb(255 255 255), #ffeeee)">
         <div class="card-body">
             <div class="d-flex">
                 <div class="pe-3">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </a>
-    <a href="#galeri" class="card border-0 p-3 mb-3 text-dark" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
+    <a href="#galeri" class="card p-3 text-muted border-bottom border-0" style="background-image: url('/img/asfalt-light.png'), linear-gradient(45deg, rgb(255 255 255), #ffeeee)">
         <div class="card-body">
             <div class="d-flex">
                 <div class="pe-3">
@@ -40,7 +40,7 @@
             </div>
         </div>
     </a>
-    <a href="#kontak" class="card border-0 p-3 mb-3 text-dark" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
+    <a href="#kontak" class="card p-3 text-muted border-bottom border-0" style="background-image: url('/img/asfalt-light.png'), linear-gradient(45deg, rgb(255 255 255), #ffeeee)">
         <div class="card-body">
             <div class="d-flex">
                 <div class="pe-3">
@@ -60,7 +60,7 @@
             </div>
         </div>
     </a>
-    <a href="#alamat" class="card border-0 p-3 mb-3 text-dark" style="border-radius: 1.5rem; background: rgba(0,0,0,.025)">
+    <a href="#alamat" class="card p-3 text-muted border-0" style="background-image: url('/img/asfalt-light.png'), linear-gradient(45deg, rgb(255 255 255), #ffeeee)">
         <div class="card-body">
             <div class="d-flex">
                 <div class="pe-3">

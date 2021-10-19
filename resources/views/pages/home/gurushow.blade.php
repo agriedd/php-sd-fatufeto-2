@@ -17,10 +17,10 @@
                 </div>
                 <div class="mx-auto" style="max-width: 500px">
                     <h3 class="text-center">
-                        {{ $kegiatan->nama_kegiatan }}
+                        {{ $guru->nama_guru }}
                     </h3>
                     <div class="text-center text-muted">
-                        {{ $kegiatan->tanggal->locale('id-ID')->translatedFormat('l, d F Y') }}
+                        {{ $guru->tanggal->locale('id-ID')->translatedFormat('l, d F Y') }}
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                                 Nama Kegiatan
                             </div>
                             <div class="h5">
-                                {{ $kegiatan->nama_kegiatan }}
+                                {{ $guru->nama_guru }}
                             </div>
                         </div>
                     </div>
@@ -60,10 +60,10 @@
                                 Tanggal Kegiatan
                             </div>
                             <div class="h5">
-                                @if($kegiatan->hari)
-                                    Setiap hari {{ $kegiatan->hari }}
+                                @if($guru->hari)
+                                    Setiap hari {{ $guru->hari }}
                                 @else
-                                    {{ $kegiatan->tanggal->locale('id-ID')->translatedFormat('l, d F Y') }}
+                                    {{ $guru->tanggal->locale('id-ID')->translatedFormat('l, d F Y') }}
                                 @endif
                             </div>
                         </div>
@@ -79,7 +79,7 @@
                                 Waktu Kegiatan
                             </div>
                             <div class="h5">
-                                {{ $kegiatan->waktu }} WITA
+                                {{ $guru->waktu }} WITA
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                 Lokasi
                             </div>
                             <div class="h5">
-                                {{ $kegiatan->lokasi }}
+                                {{ $guru->lokasi }}
                             </div>
                         </div>
                     </div>

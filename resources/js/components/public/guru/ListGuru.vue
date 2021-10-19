@@ -35,14 +35,14 @@
 								</div>
 							</div>
 							<div class="col">
-								<div class="content-middle align-items-start">
+								<a href="#" @click.prevent="item = guru; dialog = true" class="content-middle align-items-start text-decoration-none text-dark">
 									<div class="text-uppercase small fw-bold">
 										{{ guru.nama }}
 									</div>
 									<div class="text-muted small">
 										NIP. {{ guru.nip }}
 									</div>
-								</div>
+								</a>
 							</div>
 							<div class="col">
 								<div class="content-middle align-items-start">
@@ -84,7 +84,6 @@
 				Klik disini untuk memuat data lainnya
 			</div>
 		</a>
-
 		<div class="" style="bottom: 0; top: unset; display: none">
 			<div id="list-example" class="list-group p-3" style="min-width: 200px">
 				<a class="list-group-item list-group-item-action" href="#list-item-2">
@@ -98,17 +97,22 @@
 				</a>
 			</div>
 		</div>
-
+		<dialog-guru v-model="dialog" :item="item"/>
 	</div>
 </template>
 <script>
 import { ScrollSpy } from 'bootstrap'
 import { mapActions } from 'vuex'
 import Pagination from '../paginations/Pagination.vue'
+import DialogGuru from './DialogGuru.vue'
 export default {
-  	components: { Pagination },
+  	components: { Pagination, DialogGuru },
 	props: {
 		value: {
+			type: String,
+			default: ''
+		},
+		url: {
 			type: String,
 			default: ''
 		},
@@ -120,9 +124,11 @@ export default {
 			options: {
 				page: 1,
 			},
+			dialog: false,
 			scrollSpy: null,
 			lazyTimeout: null,
-			stopWatchOptions: false
+			stopWatchOptions: false,
+			item: null,
 		}
 	},
 	computed: {

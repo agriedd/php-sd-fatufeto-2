@@ -10,7 +10,12 @@ class Jadwal extends Model{
     protected $guarded = [];
     protected $with = ['kelas'];
     
+    // public function kelas(){
+    //     return $this->belongsTo(Kelas::class, 'id_kelas', 'id_kelas');
+    // }
+
     public function kelas(){
-        return $this->belongsTo(Kelas::class, 'id_kelas', 'id_kelas');
+        return $this->belongsToMany(Kelas::class, 'jadwal_kelas', 'id_jadwal', 'id_kelas', 'id_jadwal', 'id_kelas');
     }
+
 }

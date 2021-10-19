@@ -40,14 +40,14 @@
 								</div>
 							</div>
 							<div class="col">
-								<div class="content-middle align-items-start">
+								<a href="#" @click.prevent="item = siswa; dialog = true" class="content-middle align-items-start text-decoration-none text-dark">
 									<div class="text-uppercase small fw-bold">
 										{{ siswa.nama_siswa }}
 									</div>
 									<div class="text-muted small">
 										{{ siswa.nis }}
 									</div>
-								</div>
+								</a>
 							</div>
 							<div class="col">
 								<div class="content-middle align-items-start">
@@ -112,14 +112,17 @@
 			</div>
 		</div>
 
+		<dialog-siswa v-model="dialog" :item="item"/>
+
 	</div>
 </template>
 <script>
 import { ScrollSpy } from 'bootstrap'
 import { mapActions } from 'vuex'
 import Pagination from '../paginations/Pagination.vue'
+import DialogSiswa from './DialogSiswa.vue'
 export default {
-  	components: { Pagination },
+  	components: { Pagination, DialogSiswa },
 	props: {
 		value: {
 			type: String,
@@ -136,7 +139,9 @@ export default {
 			},
 			scrollSpy: null,
 			lazyTimeout: null,
-			stopWatchOptions: false
+			stopWatchOptions: false,
+			dialog: false,
+			item: {},
 		}
 	},
 	computed: {

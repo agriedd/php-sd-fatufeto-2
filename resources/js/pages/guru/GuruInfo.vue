@@ -147,7 +147,7 @@
                                                 Tempat Tanggal Lahir
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                {{  item.tanggal_lahir ? `${item.tanggal_lahir},` : null }} {{ item.tanggal_lahir | date }}
+                                                {{  item.tempat_lahir ? `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>

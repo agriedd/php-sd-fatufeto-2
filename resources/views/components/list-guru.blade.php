@@ -1,4 +1,4 @@
-<div class="mb-3 sticky-top pt-3" style="top: 55px;">
+<div class="mb-3 sticky-top pt-3" style="top: calc(55px + 1rem);">
     <div class="card border-0 bg-white shadow-sm mx-auto" style="border-radius: .5rem; max-width: 400px">
         <div class="card-body">
             <div class="d-flex">

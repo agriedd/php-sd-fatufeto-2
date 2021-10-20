@@ -12,11 +12,6 @@ class SambutanHome extends Component{
         $this->sambutan = Sekolah::first()->sambutan ?? "";
     }
 
-    /**
-     * Get the view / contents that represent the component.
-     *
-     * @return \Illuminate\View\View|string
-     */
     public function render(){
         return view('components.sambutan-home', [
             'sambutan' => $this->sambutan

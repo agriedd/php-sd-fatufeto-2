@@ -11,7 +11,7 @@
             </div>
         </div>
         <v-slide-y-transition class="d-grid-sekolah" group>
-            <v-hover v-slot="{ hover }" v-for="item in items" :key="item.id_kelas" >
+            <v-hover v-slot="{ hover }" v-for="item in items_filtered" :key="item.id_kelas" >
                 <v-card rounded="xl" :class="hover ? 'shadow-sm' : 'elevation-0'" :outlined="!hover" link style="transition: all .25s" class="overflow-hidden" :to="{ name: 'jadwal.list.kelas', params: { id_kelas: item.id_kelas } }">
                     <v-card-text class="content-middle">
                         <div class="text-h6">
@@ -54,6 +54,13 @@ export default {
             const r = RegExp(this.search)
             return this.items.filter(it => r.test(it.nama) )
         },
+        items_filtered(){
+            return this.items.filter((it, index, self) => {
+                return index === self.findIndex((t) => {
+                    return t.nama.substring(0, 7).toLocaleLowerCase() == it.nama.substring(0, 7).toLocaleLowerCase()
+                })
+            })
+        }
     },
     data(){
         return {
@@ -80,6 +87,7 @@ export default {
             this.loading = true
             let res = await this.getItem({
                 search: this.search,
+                itemsPerPage: 20
             }).catch(e => {
                 this.loading = false
             })

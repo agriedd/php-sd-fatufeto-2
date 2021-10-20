@@ -47,8 +47,8 @@ class JadwalController extends Controller{
         $jadwal = Jadwal::create($data->all());
         
         $kelas = Kelas::find($data->get('id_kelas'));
-        $kelas_trimmed = preg_replace("/^(kelas\s*[^-_\s]+)(.*)$/i", "$1", $kelas->nama);
-        $kelas_sama_tingkat = Kelas::whereRaw("REGEXP_LIKE(nama, '^{$kelas_trimmed}[^a-zA-Z0-9]+')")->pluck('id_kelas')->toArray();
+        $kelas_trimmed = preg_replace("/[^0-9]/i", "", $kelas->nama);
+        $kelas_sama_tingkat = Kelas::whereRaw("SUBSTRING(`nama`, 6) = {$kelas_trimmed}")->pluck('id_kelas')->toArray();
         $jadwal->kelas()->attach($kelas_sama_tingkat);
 
         $collection = new JadwalCollection($jadwal);

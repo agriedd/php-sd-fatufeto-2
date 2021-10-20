@@ -44,9 +44,9 @@ class RekapController extends Controller{
             ->orderBy('tbl_jadwal.waktu_mulai', 'asc')
             ->get();
         $jadwal = $jadwal->sortBy(function($jadwal){
-            $kelas_a = $jadwal->kelas[0]->nama ?? 'M';
-            $kelas_a = preg_replace('/^(kelas\s+)([^-]+)(.*)$/i', "$2", $kelas_a);
-            return $this->romanToDecimal($kelas_a) - 1;
+            $kelas_a = $jadwal->kelas[0]->nama ?? '100';
+            $kelas_a = preg_replace('/[^0-9]/i', "", $kelas_a);
+            return $kelas_a;
         });
         $jadwal = $jadwal->groupBy(['id_kelas', 'waktu_mulai']);
         $mpdf->WriteHTML(view('rekap/jadwal', [

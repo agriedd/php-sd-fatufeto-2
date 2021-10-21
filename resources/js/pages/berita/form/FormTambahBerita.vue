@@ -19,6 +19,8 @@
             counter="191"/>
         <input-pilih-kategori
             v-model="item.id_kategori"
+            :kategori="kategori"
+            @inputkategori="kategori = $event"
             :errors="errors"/>
         <v-textarea
             dense
@@ -28,12 +30,7 @@
             label="Isi Berita"
             :error-messages="errors.isi"
             @keyup="errors.isi = null"/>
-        <input-jenis-berita
-            v-model="item.jenis" 
-            :errors="errors" 
-            @change="errors.jenis = null"/>
-
-        <div v-if="item.jenis == 'pengumuman'">
+        <div v-if="is_pengumuman">
             <v-dialog
                 ref="expired_at"
                 v-model="modal_tanggal_lahir"
@@ -92,6 +89,9 @@ export default {
                     alamat: null,
                 }
             }
+        },
+        kategori: {
+            type: Object
         }
     },
     computed: {
@@ -102,6 +102,9 @@ export default {
             set(val){
                 this.$emit('input', val)
             },
+        },
+        is_pengumuman(){
+            return this.kategori && this.kategori.nama_kategori.toLocaleLowerCase() == 'pengumuman'
         }
     },
     data() {

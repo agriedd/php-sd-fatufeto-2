@@ -30,6 +30,9 @@ export default {
         kategori: {
             get(){ return this.value },
             set(val){ 
+                let item = this.items.find(item => item.id_kategori == val)
+
+                this.$emit('inputkategori', item ? item : { id_kategori: null, nama_kategori: null })
                 this.$emit('input', val)
             },
         },

@@ -73,7 +73,9 @@ class HomeController extends Controller{
         ]);
     }
     public function pengumumanInfo($pengumuman){
-        $pengumuman   = Berita::where('jenis', 'pengumuman')->where('id_berita', $pengumuman)->firstOrFail();
+        $pengumuman   = Berita::whereHas('kategori', function($query){
+            $query->where('nama_kategori', 'pengumuman');
+        })->where('id_berita', $pengumuman)->firstOrFail();
         return view('pages.home.pengumuman', [
             'pengumuman'  => $pengumuman
         ]);

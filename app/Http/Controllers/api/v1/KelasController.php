@@ -9,6 +9,7 @@ use App\Http\Resources\KelasCollection;
 use App\Kelas;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 
 class KelasController extends Controller{
     public function index(){

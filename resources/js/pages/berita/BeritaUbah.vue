@@ -14,7 +14,7 @@
                     </v-toolbar>
                     <v-divider/>
                     <v-card-text v-if="dialog && exists">
-                        <form-tambah-berita v-model="item" :errors="errors"/>
+                        <form-tambah-berita v-model="item" :errors="errors" :kategori="item.kategori"/>
                     </v-card-text>
                     <v-card-text v-else-if="dialog && loading">
                         <form-tambah-berita-placeholder/>

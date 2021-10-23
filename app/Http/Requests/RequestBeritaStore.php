@@ -27,10 +27,9 @@ class RequestBeritaStore extends FormRequest
             'judul'   => 'required',
             'isi'   => 'required',
             'deskripsi'   => 'required',
-            'jenis'   => 'required|in:berita,pengumuman',
             'expired_at'   => 'nullable',
             'terbit'   => 'in:0,1',
-            'id_kategori'   => 'exists:tbl_kategori,id_kategori',
+            'id_kategori'   => 'required|exists:tbl_kategori,id_kategori',
         ];
     }
 }

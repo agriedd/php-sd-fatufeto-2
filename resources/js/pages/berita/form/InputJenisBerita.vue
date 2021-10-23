@@ -1,7 +1,7 @@
 <template>
     <v-select
         :items="items"
-        label="Jenis Berita"
+        label="Kategori Berita"
         v-model="jenis"
         item-text="text"
         item-value="value"

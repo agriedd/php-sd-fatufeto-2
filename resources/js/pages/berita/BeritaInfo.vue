@@ -122,33 +122,18 @@
                                     <v-divider/>
                                     <v-list-item>
                                         <v-list-item-icon>
-                                            <v-icon>mdi-{{ item.jenis == 'berita' ? 'newspaper' : 'bell' }}</v-icon>
+                                            <v-icon>mdi-{{ item.kategori.nama_kategori.toLocaleLowerCase() == 'pengumuman' ? 'bell' : 'newspaper' }}</v-icon>
                                         </v-list-item-icon>
                                         <v-list-item-content>
                                             <v-list-item-subtitle>
-                                                Jenis Berita
+                                                Kategori Berita
                                             </v-list-item-subtitle>
                                             <v-list-item-title class="">
-                                                <template v-if="item.jenis == 'berita'">
+                                                <template v-if="item.kategori.nama_kategori.toLocaleLowerCase() == 'berita'">
                                                     Berita
                                                 </template>
-                                                <template v-else-if="item.jenis == 'pengumuman'">
+                                                <template v-else-if="item.kategori.nama_kategori.toLocaleLowerCase() == 'pengumuman'">
                                                     Pengumuman
-                                                </template>
-                                            </v-list-item-title>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-list-item color="teal">
-                                        <v-list-item-icon>
-                                            <v-icon color="teal">mdi-tag</v-icon>
-                                        </v-list-item-icon>
-                                        <v-list-item-content>
-                                            <v-list-item-subtitle>
-                                                Kategori
-                                            </v-list-item-subtitle>
-                                            <v-list-item-title class="">
-                                                <template v-if="item.id_kategori && item.kategori">
-                                                    {{ item.kategori.nama_kategori }}
                                                 </template>
                                             </v-list-item-title>
                                         </v-list-item-content>
@@ -166,7 +151,7 @@
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item v-if="item.jenis == 'pengumuman'">
+                                    <v-list-item v-if="item.kategori.nama_kategori.toLocaleLowerCase() == 'pengumuman'">
                                         <v-list-item-icon>
                                             <v-icon>mdi-calendar</v-icon>
                                         </v-list-item-icon>

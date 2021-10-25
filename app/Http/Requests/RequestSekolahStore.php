@@ -19,6 +19,7 @@ class RequestSekolahStore extends FormRequest{
             'alamat'        => 'required',
             'npsn'          => 'required|unique:tbl_sekolah',
             'kontak'        => 'required',
+            'luas_tanah'    => 'required',
             'sambutan'        => 'required',
         ];
     }

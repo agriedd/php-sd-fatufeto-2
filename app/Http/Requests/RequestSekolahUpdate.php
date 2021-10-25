@@ -18,7 +18,8 @@ class RequestSekolahUpdate extends FormRequest{
             'alamat'        => 'required',
             'npsn'          => 'required',
             'kontak'        => 'required',
-            'sambutan'        => 'required',
+            'luas_tanah'    => 'required',
+            'sambutan'      => 'required',
         ];
     }
 }

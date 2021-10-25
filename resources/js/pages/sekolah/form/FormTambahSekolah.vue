@@ -50,6 +50,15 @@
                     </v-btn>
                 </v-date-picker>
             </v-dialog>
+            <v-text-field
+                dense
+                outlined
+                v-model="item.luas_tanah"
+                name="luas_tanah"
+                label="Luas Tanah"
+                :error-messages="errors.luas_tanah"
+                @keyup="errors.luas_tanah = null"/>
+            <v-spacer />
             <input-stuktur-organisasi-sekolah
                 v-model="item"
                 :errors="errors"

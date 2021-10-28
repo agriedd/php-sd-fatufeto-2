@@ -68,7 +68,7 @@
 								</h6>
 							</div>
 						</div>
-						<div class="mb-3">
+						<!-- <div class="mb-3">
 							<div class="text-muted">
 								<small>
 									Tempat, Tanggal Lahir
@@ -79,7 +79,7 @@
 									{{  item.tempat_lahir ? `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
 								</h6>
 							</div>
-						</div>
+						</div> -->
 						<div class="mb-3">
 							<div class="text-muted">
 								<small>

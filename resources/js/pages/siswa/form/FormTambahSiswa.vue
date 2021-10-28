@@ -1,3 +1,4 @@
+
 <template>
     <div class="d-grid-form">
         <v-text-field
@@ -33,7 +34,7 @@
             v-model="item.agama" 
             :errors="errors" 
             @change="errors.agama = null"/>
-        <v-text-field
+        <!-- <v-text-field
             dense
             outlined
             v-model="item.tempat_lahir"
@@ -72,7 +73,7 @@
                     Pilih
                 </v-btn>
             </v-date-picker>
-        </v-dialog>
+        </v-dialog> -->
         <v-text-field
             dense
             outlined

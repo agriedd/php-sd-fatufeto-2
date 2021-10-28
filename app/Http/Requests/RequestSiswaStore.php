@@ -17,8 +17,8 @@ class RequestSiswaStore extends FormRequest{
             'alamat' => 'nullable',
             'agama' => 'nullable|in:0,1,2,3,4,5',
             'jenis_kelamin' => 'in:l,p',
-            'tempat_lahir'   => 'nullable',
-            'tanggal_lahir'   => 'nullable',
+            // 'tempat_lahir'   => 'nullable',
+            // 'tanggal_lahir'   => 'nullable',
             'kip' => 'nullable|unique:tbl_siswa,kip',
             'id_kelas'              => 'required|exists:tbl_kelas,id_kelas',
         ];

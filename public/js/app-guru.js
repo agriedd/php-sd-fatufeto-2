@@ -4345,6 +4345,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
 
 
 
@@ -26781,150 +26782,6 @@ var render = function() {
           expression: "item.agama"
         }
       }),
-      _vm._v(" "),
-      _c("v-text-field", {
-        attrs: {
-          dense: "",
-          outlined: "",
-          name: "tempat_lahir",
-          label: "Tempat Lahir",
-          "error-messages": _vm.errors.tempat_lahir
-        },
-        on: {
-          keyup: function($event) {
-            _vm.errors.tempat_lahir = null
-          }
-        },
-        model: {
-          value: _vm.item.tempat_lahir,
-          callback: function($$v) {
-            _vm.$set(_vm.item, "tempat_lahir", $$v)
-          },
-          expression: "item.tempat_lahir"
-        }
-      }),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          ref: "tanggal_lahir",
-          attrs: {
-            "return-value": _vm.item.tanggal_lahir,
-            persistent: "",
-            width: "300px",
-            "content-class": "shadow-sm rounded-xl",
-            "overlay-opacity": ".25",
-            eager: ""
-          },
-          on: {
-            "update:returnValue": function($event) {
-              return _vm.$set(_vm.item, "tanggal_lahir", $event)
-            },
-            "update:return-value": function($event) {
-              return _vm.$set(_vm.item, "tanggal_lahir", $event)
-            }
-          },
-          scopedSlots: _vm._u([
-            {
-              key: "activator",
-              fn: function(ref) {
-                var on = ref.on
-                var attrs = ref.attrs
-                return [
-                  _c(
-                    "v-text-field",
-                    _vm._g(
-                      _vm._b(
-                        {
-                          attrs: {
-                            dense: "",
-                            outlined: "",
-                            name: "tanggal_lahir",
-                            label: "Tanggal Lahir",
-                            "append-icon": "mdi-calendar",
-                            readonly: "",
-                            "error-messages": _vm.errors.tanggal_lahir
-                          },
-                          model: {
-                            value: _vm.item.tanggal_lahir,
-                            callback: function($$v) {
-                              _vm.$set(_vm.item, "tanggal_lahir", $$v)
-                            },
-                            expression: "item.tanggal_lahir"
-                          }
-                        },
-                        "v-text-field",
-                        attrs,
-                        false
-                      ),
-                      on
-                    )
-                  )
-                ]
-              }
-            }
-          ]),
-          model: {
-            value: _vm.modal_tanggal_lahir,
-            callback: function($$v) {
-              _vm.modal_tanggal_lahir = $$v
-            },
-            expression: "modal_tanggal_lahir"
-          }
-        },
-        [
-          _vm._v(" "),
-          _c(
-            "v-date-picker",
-            {
-              attrs: {
-                scrollable: "",
-                locale: "id-id",
-                "first-day-of-week": "1"
-              },
-              model: {
-                value: _vm.item.tanggal_lahir,
-                callback: function($$v) {
-                  _vm.$set(_vm.item, "tanggal_lahir", $$v)
-                },
-                expression: "item.tanggal_lahir"
-              }
-            },
-            [
-              _c("v-spacer"),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { text: "", color: "primary" },
-                  on: {
-                    click: function($event) {
-                      _vm.modal_tanggal_berdiri = false
-                    }
-                  }
-                },
-                [_vm._v("\n                    Batal\n                ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "v-btn",
-                {
-                  attrs: { text: "", color: "primary" },
-                  on: {
-                    click: function($event) {
-                      _vm.$refs.tanggal_lahir.save(_vm.item.tanggal_lahir)
-                      _vm.errors.tanggal_lahir = null
-                    }
-                  }
-                },
-                [_vm._v("\n                    Pilih\n                ")]
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
       _vm._v(" "),
       _c("v-text-field", {
         attrs: {
@@ -97532,7 +97389,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\js\app-guru.js */"./resources/js/app-guru.js");
+module.exports = __webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/js/app-guru.js */"./resources/js/app-guru.js");
 
 
 /***/ })

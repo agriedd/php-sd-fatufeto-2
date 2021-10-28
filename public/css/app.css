@@ -11782,8 +11782,8 @@ a.card {
 .galery-home {
   display: grid;
   gap: 1rem;
-  grid-template-columns: 1fr;
-  grid-auto-rows: minmax(250px, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  grid-auto-rows: minmax(100px, 1fr);
 }
 
 .galery-home > a {
@@ -11794,6 +11794,11 @@ a.card {
 
 .galery-home > a.wide {
   grid-column-end: span 2;
+}
+
+.galery-home > a.large {
+  grid-column-end: span 3;
+  grid-row-end: span 3;
 }
 
 .footer-absolute {

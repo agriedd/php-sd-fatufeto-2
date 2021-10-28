@@ -31673,26 +31673,6 @@ var render = function() {
                         _c("h6", [
                           _vm._v(
                             "\n\t\t\t\t\t\t\t\t" +
-                              _vm._s(
-                                _vm.item.tempat_lahir
-                                  ? _vm.item.tempat_lahir + ","
-                                  : null
-                              ) +
-                              " " +
-                              _vm._s(_vm._f("date")(_vm.item.tanggal_lahir)) +
-                              "\n\t\t\t\t\t\t\t"
-                          )
-                        ])
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mb-3" }, [
-                      _vm._m(6),
-                      _vm._v(" "),
-                      _c("div", [
-                        _c("h6", [
-                          _vm._v(
-                            "\n\t\t\t\t\t\t\t\t" +
                               _vm._s(_vm.item.agama) +
                               "\n\t\t\t\t\t\t\t"
                           )
@@ -31701,7 +31681,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mb-3 border-bottom" }, [
-                      _vm._m(7),
+                      _vm._m(6),
                       _vm._v(" "),
                       _c("div", [
                         _c("h6", [
@@ -31715,7 +31695,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mb-3" }, [
-                      _vm._m(8),
+                      _vm._m(7),
                       _vm._v(" "),
                       _c("div", [
                         _c("h6", [
@@ -31729,7 +31709,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mb-3" }, [
-                      _vm._m(9),
+                      _vm._m(8),
                       _vm._v(" "),
                       _c("div", [
                         _c("h6", [
@@ -31800,16 +31780,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-muted" }, [
       _c("small", [_vm._v("\n\t\t\t\t\t\t\t\tJenis Kelamin\n\t\t\t\t\t\t\t")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-muted" }, [
-      _c("small", [
-        _vm._v("\n\t\t\t\t\t\t\t\tTempat, Tanggal Lahir\n\t\t\t\t\t\t\t")
-      ])
     ])
   },
   function() {
@@ -47775,11 +47745,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\js\app.js */"./resources/js/app.js");
-__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app.scss */"./resources/sass/app.scss");
-__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-admin.scss */"./resources/sass/app-admin.scss");
-__webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-guru.scss */"./resources/sass/app-guru.scss");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\sass\app-pimpinan.scss */"./resources/sass/app-pimpinan.scss");
+__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-admin.scss */"./resources/sass/app-admin.scss");
+__webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-guru.scss */"./resources/sass/app-guru.scss");
+module.exports = __webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/sass/app-pimpinan.scss */"./resources/sass/app-pimpinan.scss");
 
 
 /***/ })

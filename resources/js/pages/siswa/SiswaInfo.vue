@@ -138,7 +138,7 @@
                                             </v-list-item-title>
                                         </v-list-item-content>
                                     </v-list-item>
-                                    <v-list-item>
+                                    <!-- <v-list-item>
                                         <v-list-item-icon>
                                             <v-icon>mdi-calendar</v-icon>
                                         </v-list-item-icon>
@@ -150,7 +150,7 @@
                                                 {{  item.tempat_lahir ? `${item.tempat_lahir},` : null }} {{ item.tanggal_lahir | date }}
                                             </v-list-item-title>
                                         </v-list-item-content>
-                                    </v-list-item>
+                                    </v-list-item> -->
                                     <v-list-item>
                                         <v-list-item-icon>
                                             <v-icon>mdi-map-marker</v-icon>

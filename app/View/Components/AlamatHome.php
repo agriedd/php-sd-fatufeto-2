@@ -10,7 +10,8 @@ class AlamatHome extends Component
 
     private $alamat;
     public function __construct(){
-        $this->alamat = optional(Sekolah::first())->alamat;
+        $sekolah = Sekolah::first();
+        $this->alamat = $sekolah->alamat;
     }
 
     public function render(){

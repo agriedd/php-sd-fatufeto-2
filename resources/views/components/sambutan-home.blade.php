@@ -1,4 +1,4 @@
-<div class="card border-0 p-3" style="border-radius: 1.5rem; background: #a59c6838">
+<div class="card border-0 p-3 mb-4" style="border-radius: 1.5rem; background: #a59c6838">
     <div class="d-flex">
         <div>
             <div class="card-body">
@@ -33,6 +33,29 @@
         <div>
             <div style="height: 200px; width: 200px; border-radius: 1rem; background-image: url('{{ asset('img/kepala.jpeg') }}'); background-position: 340px 250px; background-size: 400px">
             </div>
+        </div>
+    </div>
+</div>
+<div class="card border-0 p-3" style="border-radius: 1.5rem; background: #a59c6838">
+    <div class="card-body">
+        <div class="d-flex">
+            <h5>
+                Identitas Sekolah
+            </h5>
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <div>
+            Berdiri sejak {{ \Carbon\Carbon::make($tgl_berdiri)->format("d-m-Y") }}
+        </div>
+        <div>
+            NPSN {{ $npsn }}
+        </div>
+        <div>
+            Luas Tanah {{ $luas_tanah }}m<sup>2</sup>
+        </div>
+        <div>
+            Jenjang {{ $jenjang }}
         </div>
     </div>
 </div>

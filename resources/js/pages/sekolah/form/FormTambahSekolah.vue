@@ -57,7 +57,8 @@
                 name="luas_tanah"
                 label="Luas Tanah"
                 :error-messages="errors.luas_tanah"
-                @keyup="errors.luas_tanah = null"/>
+                @keyup="errors.luas_tanah = null"
+                suffix="m²"/>
             <v-spacer />
             <input-stuktur-organisasi-sekolah
                 v-model="item"

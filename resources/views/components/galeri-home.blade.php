@@ -9,11 +9,11 @@
 </div>
 <div class="mb-3">
     @php
-        $list = ['large', null, null, null, null, 'large', null, null, 'wide', 'wide'];
+        $list = ['large', 'large', 'large', 'large', 'large', 'large', 'large', 'large', 'wide', 'wide'];
     @endphp
     <div class="galery-home" style="gap: .25rem">
         @foreach ($list_galeri as $index => $galeri)
-            <a href="#" class="{{ isset($list[$index]) && $list[$index] != null ? $list[$index] : null }}" style="background-image: url('{{ $galeri->foto->url }}');"></a>
+            <a href="{{ route('home.kegiatan.show', ['id_galeri' => $galeri->id_gambar_kegiatan, 'id_kegiatan' => $galeri->id_kegiatan ]) }}" class="{{ isset($list[$index]) && $list[$index] != null ? $list[$index] : null }}" style="background-image: url('{{ $galeri->foto->url }}');"></a>
         @endforeach
     </div>
 </div>

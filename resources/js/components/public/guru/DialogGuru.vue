@@ -83,12 +83,36 @@
 						<div class="mb-3">
 							<div class="text-muted">
 								<small>
+									Pendidikan Profesi
+								</small>
+							</div>
+							<div>
+								<h6>
+									{{ item.pendidikan_profesi }}
+								</h6>
+							</div>
+						</div>
+						<div class="mb-3">
+							<div class="text-muted">
+								<small>
 									Alamat
 								</small>
 							</div>
 							<div>
 								<h6>
 									{{ item.alamat }}
+								</h6>
+							</div>
+						</div>
+						<div class="mb-3">
+							<div class="text-muted">
+								<small>
+									Telepon
+								</small>
+							</div>
+							<div>
+								<h6>
+									{{ item.telepon }}
 								</h6>
 							</div>
 						</div>

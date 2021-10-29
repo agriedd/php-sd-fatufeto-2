@@ -5394,6 +5394,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     value: {
@@ -5950,6 +5974,32 @@ __webpack_require__.r(__webpack_exports__);
       },
       set: function set(value) {
         this.$emit('input', value);
+      }
+    }
+  },
+  filters: {
+    agama: function agama(value) {
+      switch (value) {
+        case '0':
+          return 'Islam';
+
+        case '1':
+          return 'Kristen Protestan';
+
+        case '2':
+          return 'Kristen Katolik';
+
+        case '3':
+          return 'Hindu';
+
+        case '4':
+          return 'Budha';
+
+        case '5':
+          return 'Konghucu';
+
+        default:
+          return '-';
       }
     }
   }
@@ -30952,7 +31002,35 @@ var render = function() {
                     _c("h6", [
                       _vm._v(
                         "\n\t\t\t\t\t\t\t\t" +
+                          _vm._s(_vm.item.pendidikan_profesi) +
+                          "\n\t\t\t\t\t\t\t"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-3" }, [
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("h6", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t" +
                           _vm._s(_vm.item.alamat) +
+                          "\n\t\t\t\t\t\t\t"
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "mb-3" }, [
+                  _vm._m(8),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c("h6", [
+                      _vm._v(
+                        "\n\t\t\t\t\t\t\t\t" +
+                          _vm._s(_vm.item.telepon) +
                           "\n\t\t\t\t\t\t\t"
                       )
                     ])
@@ -31028,7 +31106,25 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-muted" }, [
+      _c("small", [
+        _vm._v("\n\t\t\t\t\t\t\t\tPendidikan Profesi\n\t\t\t\t\t\t\t")
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-muted" }, [
       _c("small", [_vm._v("\n\t\t\t\t\t\t\t\tAlamat\n\t\t\t\t\t\t\t")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "text-muted" }, [
+      _c("small", [_vm._v("\n\t\t\t\t\t\t\t\tTelepon\n\t\t\t\t\t\t\t")])
     ])
   }
 ]
@@ -31673,7 +31769,7 @@ var render = function() {
                         _c("h6", [
                           _vm._v(
                             "\n\t\t\t\t\t\t\t\t" +
-                              _vm._s(_vm.item.agama) +
+                              _vm._s(_vm._f("agama")(_vm.item.agama)) +
                               "\n\t\t\t\t\t\t\t"
                           )
                         ])

@@ -88,7 +88,7 @@
 							</div>
 							<div>
 								<h6>
-									{{ item.agama }}
+									{{ item.agama | agama }}
 								</h6>
 							</div>
 						</div>
@@ -159,6 +159,26 @@ export default {
 			},
 			set(value){
 				this.$emit('input', value);
+			}
+		}
+	},
+	filters: {
+		agama(value){
+			switch(value){
+				case '0':
+					return 'Islam'
+				case '1':
+					return 'Kristen Protestan'
+				case '2':
+					return 'Kristen Katolik'
+				case '3':
+					return 'Hindu'
+				case '4':
+					return 'Budha'
+				case '5':
+					return 'Konghucu'
+				default:
+					return '-'
 			}
 		}
 	}

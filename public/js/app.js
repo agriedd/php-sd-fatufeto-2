@@ -5085,6 +5085,13 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -30706,48 +30713,93 @@ var render = function() {
                     [
                       _vm._t("csrf"),
                       _vm._v(" "),
-                      _c("div", { staticClass: "form-group mb-3" }, [
-                        _c(
-                          "label",
-                          {
-                            staticClass: "form-label text-md-right small",
-                            attrs: { for: "email" }
-                          },
-                          [_vm._v("E-mail")]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          staticClass: "form-control",
-                          class: {
-                            "is-invalid":
-                              _vm.errors.email && _vm.errors.email.length
-                          },
-                          attrs: {
-                            id: "email",
-                            type: "email",
-                            name: "email",
-                            required: "",
-                            autocomplete: "off",
-                            autofocus: ""
-                          }
-                        }),
-                        _vm._v(" "),
-                        _vm.errors.email && _vm.errors.email.length
-                          ? _c(
-                              "span",
+                      _vm.tab == 0
+                        ? _c("div", { staticClass: "form-group mb-3" }, [
+                            _c(
+                              "label",
                               {
-                                staticClass: "invalid-feedback",
-                                attrs: { role: "alert" }
+                                staticClass: "form-label text-md-right small",
+                                attrs: { for: "email" }
                               },
-                              _vm._l(_vm.errors.email, function(message) {
-                                return _c("strong", { key: message }, [
-                                  _vm._v(_vm._s(message))
-                                ])
-                              }),
-                              0
-                            )
-                          : _vm._e()
-                      ]),
+                              [_vm._v("E-mail")]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass: "form-control",
+                              class: {
+                                "is-invalid":
+                                  _vm.errors.email && _vm.errors.email.length
+                              },
+                              attrs: {
+                                id: "email",
+                                type: "email",
+                                name: "email",
+                                required: "",
+                                autocomplete: "off",
+                                autofocus: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.email && _vm.errors.email.length
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    attrs: { role: "alert" }
+                                  },
+                                  _vm._l(_vm.errors.email, function(message) {
+                                    return _c("strong", { key: message }, [
+                                      _vm._v(_vm._s(message))
+                                    ])
+                                  }),
+                                  0
+                                )
+                              : _vm._e()
+                          ])
+                        : _vm.tab == 1 || _vm.tab == 2
+                        ? _c("div", { staticClass: "form-group mb-3" }, [
+                            _c(
+                              "label",
+                              {
+                                staticClass: "form-label text-md-right small",
+                                attrs: { for: "nip" }
+                              },
+                              [_vm._v("NIP")]
+                            ),
+                            _vm._v(" "),
+                            _c("input", {
+                              staticClass: "form-control",
+                              class: {
+                                "is-invalid":
+                                  _vm.errors.nip && _vm.errors.nip.length
+                              },
+                              attrs: {
+                                id: "nip",
+                                type: "nip",
+                                name: "nip",
+                                required: "",
+                                autocomplete: "off",
+                                autofocus: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm.errors.nip && _vm.errors.nip.length
+                              ? _c(
+                                  "span",
+                                  {
+                                    staticClass: "invalid-feedback",
+                                    attrs: { role: "alert" }
+                                  },
+                                  _vm._l(_vm.errors.nip, function(message) {
+                                    return _c("strong", { key: message }, [
+                                      _vm._v(_vm._s(message))
+                                    ])
+                                  }),
+                                  0
+                                )
+                              : _vm._e()
+                          ])
+                        : _vm._e(),
                       _vm._v(" "),
                       _c("div", { staticClass: "form-group mb-3" }, [
                         _c(

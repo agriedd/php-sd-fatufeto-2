@@ -17,11 +17,18 @@
                 <div class="card-body bg-white text-dark rounded-3">
                     <form method="POST" :action="action" @submit.prevent="submit($event)" :disabled="loading">
                         <slot name="csrf"></slot>
-                        <div class="form-group mb-3">
+                        <div class="form-group mb-3" v-if="tab == 0">
                             <label for="email" class="form-label text-md-right small">E-mail</label>
                             <input id="email" type="email" class="form-control" :class="{'is-invalid' : errors.email && errors.email.length}" name="email" required autocomplete="off" autofocus>
                             <span class="invalid-feedback" role="alert" v-if="errors.email && errors.email.length">
                                 <strong v-for="message in errors.email" :key="message">{{ message }}</strong>
+                            </span>
+                        </div>
+                        <div class="form-group mb-3" v-else-if="tab == 1 || tab == 2">
+                            <label for="nip" class="form-label text-md-right small">NIP</label>
+                            <input id="nip" type="nip" class="form-control" :class="{'is-invalid' : errors.nip && errors.nip.length}" name="nip" required autocomplete="off" autofocus>
+                            <span class="invalid-feedback" role="alert" v-if="errors.nip && errors.nip.length">
+                                <strong v-for="message in errors.nip" :key="message">{{ message }}</strong>
                             </span>
                         </div>
                         <div class="form-group mb-3">

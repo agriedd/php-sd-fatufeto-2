@@ -13,6 +13,7 @@ class PimpinanSeeder extends Seeder
      */
     public function run()
     {
+        Pimpinan::first()->delete();
         $sekolah = Sekolah::first();
         factory(Pimpinan::class, 1)->create([
             'id_profil' => $sekolah->id_profil,

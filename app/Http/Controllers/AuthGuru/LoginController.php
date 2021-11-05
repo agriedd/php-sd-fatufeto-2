@@ -44,6 +44,12 @@ class LoginController extends Controller
         return Auth::guard('guru');
     }
 
+    
+    public function username()
+    {
+        return 'nip';
+    }
+
     protected function authenticated(Request $request, $user){
         $token = $user->createToken('authToken')->accessToken;
         return new Response([

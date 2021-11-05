@@ -40,6 +40,10 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function username(){
+        return 'nip';
+    }
+
     protected function guard(){
         return Auth::guard('pimpinan');
     }

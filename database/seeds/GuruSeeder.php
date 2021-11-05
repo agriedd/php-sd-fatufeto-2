@@ -12,7 +12,7 @@ class GuruSeeder extends Seeder{
         $json = json_decode(file_get_contents(storage_path().'/guru.json'), true);
         $data = [];
 
-        // Guru::whereRaw("1")->delete();
+        Guru::whereRaw("1")->delete();
 
         foreach ($json['guru'] as $key => $value) {
             $tempat_lahir = preg_replace( '/^(.*)(,.*)$/', "$1", $value['ttl']);

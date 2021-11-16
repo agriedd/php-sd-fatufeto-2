@@ -17,6 +17,7 @@ class RequestKelasUpdate extends FormRequest{
             ],
             'keterangan'    => 'nullable',
             'id_guru'       => 'nullable|exists:tbl_guru,id_guru',
+            'id_prasarana'  => 'nullable|exists:tbl_prasarana,id_prasarana',
         ];
     }
 }

@@ -13,6 +13,7 @@ class RequestKelasStore extends FormRequest{
             'nama'          => 'required|unique:tbl_kelas,nama',
             'keterangan'    => 'nullable',
             'id_guru'       => 'nullable|exists:tbl_guru,id_guru',
+            'id_prasarana'  => 'nullable|exists:tbl_prasarana,id_prasarana',
         ];
     }
 }

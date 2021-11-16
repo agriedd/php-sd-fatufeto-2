@@ -17,12 +17,14 @@
             :error-messages="errors.keterangan"
             @keyup="errors.keterangan = null"/>
         <input-pilih-wali-kelas v-model="item.id_guru" :errors="errors"/>
+        <input-pilih-prasarana v-model="item.id_prasarana" :errors="errors"/>
     </div>
 </template>
 <script>
 import InputPilihWaliKelas from './InputPilihWaliKelas.vue';
+import InputPilihPrasarana from './InputPilihPrasarana.vue';
 export default {
-    components: { InputPilihWaliKelas },
+    components: { InputPilihWaliKelas, InputPilihPrasarana },
     props: {
         errors: Object,
         value: {

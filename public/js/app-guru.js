@@ -97389,7 +97389,7 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /mnt/c/projects/2021/sdfatufetoii/resources/js/app-guru.js */"./resources/js/app-guru.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\sdfatufetoii\resources\js\app-guru.js */"./resources/js/app-guru.js");
 
 
 /***/ })

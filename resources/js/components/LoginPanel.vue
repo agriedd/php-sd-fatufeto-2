@@ -17,7 +17,7 @@
                 <div class="card-body bg-white text-dark rounded-3">
                     <form method="POST" :action="action" @submit.prevent="submit($event)" :disabled="loading">
                         <slot name="csrf"></slot>
-                        <div class="form-group mb-3" v-if="tab == 0">
+                        <div class="form-group mb-3" v-if="tab == 0 || tab == 3">
                             <label for="email" class="form-label text-md-right small">E-mail</label>
                             <input id="email" type="email" class="form-control" :class="{'is-invalid' : errors.email && errors.email.length}" name="email" required autocomplete="off" autofocus>
                             <span class="invalid-feedback" role="alert" v-if="errors.email && errors.email.length">
